@@ -1,0 +1,18 @@
+PODS:
+  - Swiftilities (0.1.0):
+    - Swiftilities/All (= 0.1.0)
+  - Swiftilities/All (0.1.0):
+    - Swiftilities/Logging
+  - Swiftilities/Logging (0.1.0)
+
+DEPENDENCIES:
+  - Swiftilities (from `../`)
+
+EXTERNAL SOURCES:
+  Swiftilities:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Swiftilities: 1fcfa5107a7e377831166a5f314db53650eaa866
+
+COCOAPODS: 0.39.0

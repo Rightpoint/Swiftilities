@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Swiftilities
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Logger
+        
+        Log.logLevel = .Error
+        Log.error("Test log")
     }
 
     override func didReceiveMemoryWarning() {
