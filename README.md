@@ -1,9 +1,7 @@
 # Swiftilities
 
-[![CI Status](http://img.shields.io/travis/Nicholas Bonatsakis/Swiftilities.svg?style=flat)](https://travis-ci.org/Nicholas Bonatsakis/Swiftilities)
-[![Version](https://img.shields.io/cocoapods/v/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/Swiftilities)
-[![License](https://img.shields.io/cocoapods/l/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/Swiftilities)
-[![Platform](https://img.shields.io/cocoapods/p/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/Swiftilities)
+[![Build Status](https://travis-ci.org/Raizlabs/Swiftilities.svg)](https://travis-ci.org/Raizlabs/Swiftilities)
+[![Version](https://img.shields.io/cocoapods/v/Swiftilities.svg?style=flat)](http://cocoadocs.org/docsets/Swiftilities)
 
 ## Usage
 
