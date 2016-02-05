@@ -22,7 +22,7 @@ pod "Swiftilities"
 
 ## Author
 
-Nicholas Bonatsakis, nbonatsakis@gmail.com
+Nicholas Bonatsakis, nick.bonatsakis@raizlabs.com
 
 ## License
 
