@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'Swiftilities_Example', :exclusive => true do
+  pod 'Swiftilities', :path => '../'
+end
+
+target 'Swiftilities_Tests', :exclusive => true do
+  pod 'Swiftilities', :path => '../'
+
+  
+end
