@@ -1,8 +1,5 @@
 # Swiftilities
 
-[![Build Status](https://travis-ci.org/Raizlabs/Swiftilities.svg)](https://travis-ci.org/Raizlabs/Swiftilities)
-[![Version](https://img.shields.io/cocoapods/v/Swiftilities.svg?style=flat)](http://cocoadocs.org/docsets/Swiftilities)
-
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
