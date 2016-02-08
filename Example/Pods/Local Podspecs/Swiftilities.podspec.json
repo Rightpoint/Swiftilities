@@ -30,6 +30,14 @@
       "frameworks": "Foundation"
     },
     {
+      "name": "UIWindow",
+      "source_files": "Pod/UIWindow",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ]
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Logging": [
