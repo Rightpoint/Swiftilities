@@ -30,31 +30,20 @@
 
 import UIKit
 
-public typealias RZPresentRootViewControllerCompletion = () -> Void
-
 /**
  *  UIWindow extension for setting the rootViewController on a UIWindow instance in a safe and animatable way.
  */
 public extension UIWindow {
+
 
     /**
      Set the rootViewController on this UIWindow instance.
      
      - parameter viewController: The view controller to set
      - parameter animated:       Whether or not to animate the transition, animation is a cross-fade
-     */
-    func setRootViewController(viewController: UIViewController, animated: Bool) {
-        setRootViewController(viewController, animated: animated, completion: nil)
-    }
-    
-    /**
-     Set the rootViewController on this UIWindow instance, with completion block.
-     
-     - parameter viewController: The view controller to set
-     - parameter animated:       Whether or not to animate the transition, animation is a cross-fade
      - parameter completion:     Completion block to be invoked after the transition finishes
      */
-    func setRootViewController(viewController: UIViewController, animated: Bool, completion: RZPresentRootViewControllerCompletion?) {
+    func setRootViewController(viewController: UIViewController, animated: Bool, completion: () -> Void = {}) {
         if animated {
 
             UIView.transitionWithView(self, duration: 0.3, options: .TransitionCrossDissolve, animations: { () -> Void in
@@ -64,10 +53,8 @@ public extension UIWindow {
                 self.rootViewController = viewController
 
                 UIView.setAnimationsEnabled(oldState)
-                }, completion: { (finished) -> Void in
-                    if let completion = completion where finished {
-                        completion()
-                    }
+            }, completion: { (finished) -> Void in
+                completion()
             })
         } else {
             self.rootViewController = viewController
