@@ -30,6 +30,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = "Foundation"
   end
 
+  # UIWindow
+
+  s.subspec "UIWindow" do |ss|
+    ss.source_files = "Pod/UIWindow"
+    ss.frameworks   = ["Foundation", "UIKit"]
+  end
+
   # Catch All
 
   s.subspec "All" do |ss|
