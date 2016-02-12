@@ -1,5 +1,5 @@
 //
-//  UIView+Extensions.swift
+//  UIView+KeyboardLayoutGuide.swift
 //  Swiftilities
 //
 //  Created by Rob Visentin on 2/8/16.
@@ -59,14 +59,15 @@ public extension UIView {
         let guide = KeyboardLayoutGuide()
         addLayoutGuide(guide)
 
-        guide.leftAnchor.constraintEqualToAnchor(leftAnchor)
-        guide.rightAnchor.constraintEqualToAnchor(rightAnchor)
-        guide.bottomAnchor.constraintEqualToAnchor(bottomAnchor)
+        guide.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
+        guide.rightAnchor.constraintEqualToAnchor(rightAnchor).active = true
+        guide.bottomAnchor.constraintEqualToAnchor(bottomAnchor).active = true
 
         let topConstraint = guide.topAnchor.constraintEqualToAnchor(bottomAnchor)
+        topConstraint.active = true
 
         Keyboard.addFrameObserver(guide) { [weak self] keyboardFrame in
-            if let sself = self {
+            if let sself = self where sself.window != nil {
                 let convertedFrame = sself.convertRect(keyboardFrame, fromView: nil)
                 topConstraint.constant = -(UIScreen.mainScreen().bounds.maxY - convertedFrame.minY)
 
@@ -78,8 +79,7 @@ public extension UIView {
     }
 
     /**
-     Remove the keyboard layout guide, must be called in deinit to ensure underlying keyboard frame
-     handler is cancelled.
+     Remove the keyboard layout guide. NOTE: you do not need to invoke this method, it is purely optional.
      */
     func removeKeyboardLayoutGuide() {
         if let keyboardLayoutGuide = keyboardLayoutGuide {

@@ -46,7 +46,7 @@ final class Keyboard {
      Add a keyboard frame observer with associated handler. Perform view changes in the handler to have them tied to the animation
      characteristics of the keyboard frame changes.
      
-     - parameter observer: The object that will act as the observer for keyboard frame changes.
+     - parameter observer: The object that will act as the observer for keyboard frame changes. NOTE: this object is not strongly held, therefore a corresponding call to remove is not required.
      - parameter animated: Whether or not to animate changes in the handler block alongside the keyboard frame changes.
      - parameter handler:  A block in which to perform view changes.
      */
@@ -59,7 +59,7 @@ final class Keyboard {
     }
 
     /**
-     Remove the object as a keyboard frame observer.
+     Remove the object as a keyboard frame observer. NOTE: observer is not strongly held, therefore this method is purely optional.
      
      - parameter observer: The object being observed to remove.
      */
@@ -71,6 +71,19 @@ final class Keyboard {
         }
     }
 
+}
+
+extension UIViewAnimationCurve {
+    
+    func animationOption() -> UIViewAnimationOptions {
+        switch self {
+        case .EaseInOut: return .CurveEaseInOut
+        case .EaseIn:    return .CurveEaseIn
+        case .EaseOut:   return .CurveEaseOut
+        case .Linear:    return .CurveLinear
+        }
+    }
+    
 }
 
 // MARK: - Private
@@ -121,19 +134,6 @@ private final class KeyboardHandler<T> {
     init(handler: T, animated: Bool) {
         self.handler = handler
         self.animated = animated
-    }
-
-}
-
-extension UIViewAnimationCurve {
-
-    func animationOption() -> UIViewAnimationOptions {
-        switch self {
-        case .EaseInOut: return .CurveEaseInOut
-        case .EaseIn:    return .CurveEaseIn
-        case .EaseOut:   return .CurveEaseOut
-        case .Linear:    return .CurveLinear
-        }
     }
 
 }
