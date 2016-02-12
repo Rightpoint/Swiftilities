@@ -13,6 +13,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Swiftilities: ed08db477ea09dc52beb80ee8074003c65f24900
+  Swiftilities: 78aa9b0b7882c201270509e11b5d1fc6392ae3e8
 
 COCOAPODS: 0.39.0
