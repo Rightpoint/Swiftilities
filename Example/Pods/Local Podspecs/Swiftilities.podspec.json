@@ -13,7 +13,7 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
@@ -30,8 +30,16 @@
       "frameworks": "Foundation"
     },
     {
-      "name": "UIWindow",
-      "source_files": "Pod/UIWindow",
+      "name": "RootViewController",
+      "source_files": "Pod/RootViewController",
+      "frameworks": [
+        "Foundation",
+        "UIKit"
+      ]
+    },
+    {
+      "name": "Keyboard",
+      "source_files": "Pod/Keyboard",
       "frameworks": [
         "Foundation",
         "UIKit"

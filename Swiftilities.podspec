@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.author           = { "Nicholas Bonatsakis" => "nick.bonatsakis@raizlabs.com" }
   s.source           = { :git => "https://github.com/raizlabs/Swiftilities.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '9.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
@@ -30,10 +30,17 @@ Pod::Spec.new do |s|
     ss.frameworks   = "Foundation"
   end
 
-  # UIWindow
+  # RootViewController
 
-  s.subspec "UIWindow" do |ss|
-    ss.source_files = "Pod/UIWindow"
+  s.subspec "RootViewController" do |ss|
+    ss.source_files = "Pod/RootViewController"
+    ss.frameworks   = ["Foundation", "UIKit"]
+  end
+
+  # Keyboard
+
+  s.subspec "Keyboard" do |ss|
+    ss.source_files = "Pod/Keyboard"
     ss.frameworks   = ["Foundation", "UIKit"]
   end
 
