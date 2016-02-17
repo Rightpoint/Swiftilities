@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Swiftilities"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "A collection of useful Swift utilities."
 
   s.description      = <<-DESC
@@ -17,30 +17,26 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'Swiftilities' => ['Pod/Assets/*.png']
-  }
   s.default_subspec = 'All'
 
   # Logging
 
   s.subspec "Logging" do |ss|
-    ss.source_files = "Pod/Logging"
+    ss.source_files = "Pod/Classes/Logging/*.swift"
     ss.frameworks   = "Foundation"
   end
 
   # RootViewController
 
   s.subspec "RootViewController" do |ss|
-    ss.source_files = "Pod/RootViewController"
+    ss.source_files = "Pod/Classes/RootViewController/*.swift"
     ss.frameworks   = ["Foundation", "UIKit"]
   end
 
   # Keyboard
 
   s.subspec "Keyboard" do |ss|
-    ss.source_files = "Pod/Keyboard"
+    ss.source_files = "Pod/Classes/Keyboard/*.swift"
     ss.frameworks   = ["Foundation", "UIKit"]
   end
 
@@ -48,6 +44,8 @@ Pod::Spec.new do |s|
 
   s.subspec "All" do |ss|
     ss.dependency 'Swiftilities/Logging'
+    ss.dependency 'Swiftilities/RootViewController'
+    ss.dependency 'Swiftilities/Keyboard'
   end
 
 end
