@@ -74,7 +74,7 @@ public extension UIView {
                     frameInWindow = superview.convertRect(sself.frame, toView: nil)
                 }
 
-                topConstraint.constant = -(frameInWindow.maxY - keyboardFrame.minY)
+                topConstraint.constant = min(0.0, -(frameInWindow.maxY - keyboardFrame.minY))
 
                 sself.layoutIfNeeded()
             }
