@@ -68,8 +68,13 @@ public extension UIView {
 
         Keyboard.addFrameObserver(guide) { [weak self] keyboardFrame in
             if let sself = self where sself.window != nil {
-                let convertedFrame = sself.convertRect(keyboardFrame, fromView: nil)
-                topConstraint.constant = -(UIScreen.mainScreen().bounds.maxY - convertedFrame.minY)
+                var frameInWindow = sself.frame
+
+                if let superview = sself.superview {
+                    frameInWindow = superview.convertRect(sself.frame, toView: nil)
+                }
+
+                topConstraint.constant = -(frameInWindow.maxY - keyboardFrame.minY)
 
                 sself.layoutIfNeeded()
             }
