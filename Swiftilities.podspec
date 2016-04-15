@@ -39,12 +39,11 @@ Pod::Spec.new do |s|
     ss.source_files = "Pod/Classes/Keyboard/*.swift"
     ss.frameworks   = ["UIKit"]
   end
-
-  # MathHelpers
-
-  s.subspec "MathHelpers" do |ss|
-    ss.source_files = "Pod/Classes/MathHelpers/*.swift"
-    ss.frameworks   = ["Foundation"]
+  
+  # Math
+  
+  s.subspec "Math" do |ss|
+    ss.source_files = "Pod/Classes/Math/*.swift"
   end
 
   # Catch All
@@ -53,7 +52,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Logging'
     ss.dependency 'Swiftilities/RootViewController'
     ss.dependency 'Swiftilities/Keyboard'
-    ss.dependency 'Swiftilities/MathHelpers'
+    ss.dependency 'Swiftilities/Math'
   end
 
 end
