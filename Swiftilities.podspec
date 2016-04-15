@@ -30,14 +30,14 @@ Pod::Spec.new do |s|
 
   s.subspec "RootViewController" do |ss|
     ss.source_files = "Pod/Classes/RootViewController/*.swift"
-    ss.frameworks   = ["Foundation", "UIKit"]
+    ss.frameworks   = ["UIKit"]
   end
 
   # Keyboard
 
   s.subspec "Keyboard" do |ss|
     ss.source_files = "Pod/Classes/Keyboard/*.swift"
-    ss.frameworks   = ["Foundation", "UIKit"]
+    ss.frameworks   = ["UIKit"]
   end
 
   # MathHelpers
