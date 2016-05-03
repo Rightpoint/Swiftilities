@@ -96,23 +96,24 @@ public class Log {
     
     // MARK: Log Methods
     
-    static public func error<T>(object: T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+    static public func error<T>(object: T, _ fileName: String = __FILE__, _ functionName: String = __FUNCTION__, _ line: Int = __LINE__) {
         log(object, level:.Error, color: Color.red, fileName, functionName, line)
     }
-    
-    public static func warn<T>(object: T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+
+    public static func warn<T>(object: T, _ fileName: String = __FILE__, _ functionName: String = __FUNCTION__, _ line: Int = __LINE__) {
         log(object, level:.Warn, color: Color.yellow, fileName, functionName, line)
     }
-    
-    public static func info<T>(object: T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+
+    public static func info<T>(object: T, _ fileName: String = __FILE__, _ functionName: String = __FUNCTION__, _ line: Int = __LINE__) {
         log(object, level:.Info, color: Color.green, fileName, functionName, line)
     }
-    
-    public static func debug<T>(object: T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+
+    public static func debug<T>(object: T, _ fileName: String = __FILE__, _ functionName: String = __FUNCTION__, _ line: Int = __LINE__) {
         log(object, level:.Debug, color: Color.green, fileName, functionName, line)
     }
 
-    public static func verbose<T>(object: T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+    public static func verbose<T>(object: T, _ fileName: String = __FILE__, _ functionName: String = __FUNCTION__, _ line: Int = __LINE__) {
         log(object, level:.Verbose, color: Color.green, fileName, functionName, line)
     }
+
 }
