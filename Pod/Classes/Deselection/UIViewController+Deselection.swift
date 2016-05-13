@@ -33,8 +33,9 @@ import UIKit
 extension UIViewController {
 
     ///  Smoothly deselect selected rows in a table view during an animated
-    /// transition, and intelligently reselect those rows if the interactive
-    /// transition is canceled.
+    ///  transition, and intelligently reselect those rows if the interactive
+    ///  transition is canceled. Call this method from inside your view
+    ///  controller's `viewWillAppear(_:)` method.
     ///
     ///  - parameter tableView: The table view in which to perform deselection/reselection.
     func rz_smoothlyDeselectRows(tableView tableView: UITableView?) {
@@ -62,7 +63,8 @@ extension UIViewController {
 
     ///  Smoothly deselect selected items in a collection view during an animated
     /// transition, and intelligently reselect those items if the interactive
-    /// transition is canceled.
+    /// transition is canceled. Call this method from inside your view
+    ///  controller's `viewWillAppear(_:)` method.
     ///
     ///  - parameter collectionView: The table view in which to perform deselection/reselection.
     func rz_smoothlyDeselectItems(collectionView collectionView: UICollectionView?) {
