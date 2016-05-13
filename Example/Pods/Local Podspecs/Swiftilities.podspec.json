@@ -42,6 +42,13 @@
       "source_files": "Pod/Classes/Math/*.swift"
     },
     {
+      "name": "Deselection",
+      "source_files": "Pod/Classes/Deselection/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Logging": [
@@ -54,6 +61,9 @@
 
         ],
         "Swiftilities/Math": [
+
+        ],
+        "Swiftilities/Deselection": [
 
         ]
       }

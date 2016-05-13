@@ -45,6 +45,13 @@ Pod::Spec.new do |s|
   s.subspec "Math" do |ss|
     ss.source_files = "Pod/Classes/Math/*.swift"
   end
+  
+  # Deselection
+
+  s.subspec "Deselection" do |ss|
+    ss.source_files = "Pod/Classes/Deselection/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
 
   # Catch All
 
@@ -53,6 +60,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/RootViewController'
     ss.dependency 'Swiftilities/Keyboard'
     ss.dependency 'Swiftilities/Math'
+    ss.dependency 'Swiftilities/Deselection'
   end
 
 end
