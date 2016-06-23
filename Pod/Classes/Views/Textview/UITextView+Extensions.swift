@@ -99,6 +99,8 @@ extension HeightAutoAdjustable where Self:UITextView {
 
         setNeedsLayout()
 
+        // this is (most likely) the right view to animate to make for a smooth animation.
+        // TODO: Make a delegate callback to get the view to be animating.
         guard let container = superview?.superview where animated else {
             scrollToBottom(animated)
             return
