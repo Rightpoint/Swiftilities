@@ -37,6 +37,12 @@ public class PlaceholderTextView: UITextView, PlaceholderConfigurable {
         }
     }
 
+    override public var textContainerInset: UIEdgeInsets {
+        didSet {
+            adjustPlaceholder()
+        }
+    }
+
     override public init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         configureTextView()
