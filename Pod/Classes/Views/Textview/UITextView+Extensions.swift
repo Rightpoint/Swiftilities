@@ -58,11 +58,13 @@ extension PlaceholderConfigurable where Self:UITextView {
 
 extension HeightAutoAdjustable where Self:UITextView {
     private var bottomOffset: CGPoint {
+        let verticalInset =  abs(textContainerInset.top - textContainerInset.bottom)
         return CGPoint(x: 0.0,
-                       y: contentSize.height - CGRectGetHeight(self.bounds) + abs(textContainerInset.top - textContainerInset.bottom))
+                       y: contentSize.height - CGRectGetHeight(self.bounds) + verticalInset)
     }
 
-    var heightConstraint: NSLayoutConstraint {
+    // Attempts to find the apporpriate constraint and creates one if needed.
+    func heightConstraint() -> NSLayoutConstraint {
         let constraint: NSLayoutConstraint = constraints
             .filter({ (constraint: NSLayoutConstraint) -> Bool in
                 return constraint.firstAttribute == .Height &&
