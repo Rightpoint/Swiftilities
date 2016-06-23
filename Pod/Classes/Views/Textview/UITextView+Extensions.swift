@@ -94,8 +94,8 @@ extension HeightAutoAdjustable where Self:UITextView {
 
     func adjustHeight(animated: Bool) {
         let height = intrinsicContentHeight
-        guard height > 0 && heightConstraint.constant != height else { return }
-        heightConstraint.constant = height
+        guard height > 0 && heightConstraint().constant != height else { return }
+        heightConstraint().constant = height
 
         setNeedsLayout()
 

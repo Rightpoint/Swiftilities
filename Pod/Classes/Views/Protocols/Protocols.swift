@@ -20,8 +20,8 @@ protocol PlaceholderConfigurable {
 
 protocol HeightAutoAdjustable {
     var heightPriority: UILayoutPriority { get }
-    var heightConstraint: NSLayoutConstraint { get }
     var intrinsicContentHeight: CGFloat { get }
 
+    func heightConstraint() -> NSLayoutConstraint
     func adjustHeight(animated: Bool)
 }
