@@ -38,7 +38,7 @@ public extension UIViewController {
     ///  controller's `viewWillAppear(_:)` method.
     ///
     ///  - parameter tableView: The table view in which to perform deselection/reselection.
-    func rz_smoothlyDeselectRows(tableView tableView: UITableView?) {
+    public func rz_smoothlyDeselectRows(tableView tableView: UITableView?) {
         let selectedIndexPaths = tableView?.indexPathsForSelectedRows ?? []
 
         if let coordinator = transitionCoordinator() {
@@ -67,7 +67,7 @@ public extension UIViewController {
     ///  controller's `viewWillAppear(_:)` method.
     ///
     ///  - parameter collectionView: The table view in which to perform deselection/reselection.
-    func rz_smoothlyDeselectItems(collectionView collectionView: UICollectionView?) {
+    public func rz_smoothlyDeselectItems(collectionView collectionView: UICollectionView?) {
         let selectedIndexPaths = collectionView?.indexPathsForSelectedItems() ?? []
 
         if let coordinator = transitionCoordinator() {
