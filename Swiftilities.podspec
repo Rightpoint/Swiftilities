@@ -53,6 +53,14 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # Logo
+
+  s.subspec "Logo" do |ss|
+    ss.source_files = "Pod/Classes/Logo/*.swift"
+    ss.resources    = "Pod/Assets/Logo/*"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Catch All
 
   s.subspec "All" do |ss|
@@ -61,6 +69,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Keyboard'
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/Deselection'
+    ss.dependency 'Swiftilities/Logo'
   end
 
 end
