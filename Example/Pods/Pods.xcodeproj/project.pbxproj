@@ -10,6 +10,7 @@
 		02B2576C95BF77601D378BED30B388AF /* UIViewController+Deselection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29029E64EA4205471575F99ED5476E /* UIViewController+Deselection.swift */; };
 		211A3EE904AC58E2EDCAF9211520BEB8 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C31EFD890B03EF4251407B14AC23BB /* Keyboard.swift */; };
 		27E303A10A833D9A0E49F9407276466E /* Pods-Swiftilities_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A7B341FD9122C117C1415CE785712C68 /* Pods-Swiftilities_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B7E4B381D46F93400C21729 /* Integer+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E4B361D46F8AB00C21729 /* Integer+Random.swift */; };
 		4994E0808178AF9F8829C8D09A50F657 /* UIWindow+RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08C38DC6368DB6E919541BB1471767 /* UIWindow+RootViewController.swift */; };
 		5B0626F4B3EE6F475DCCE2CF9916250E /* MathHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6380BBE819448FCCF5C99AFFE391FD8 /* MathHelpers.swift */; };
 		5C0B9E152287AAEEBEE8022467029AA2 /* Pods-Swiftilities_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E601A7D5D3DF3B8145E7929E30E3E270 /* Pods-Swiftilities_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,6 +50,7 @@
 		19540C4F50B7C5A0C5B1EC984D657E76 /* Pods-Swiftilities_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swiftilities_Example-dummy.m"; sourceTree = "<group>"; };
 		211DA2CEB272FC0E88768F9909E52CE9 /* Pods-Swiftilities_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swiftilities_Tests-dummy.m"; sourceTree = "<group>"; };
 		269F29704ED137D6449054AEC30E9386 /* Pods-Swiftilities_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Swiftilities_Example.modulemap"; sourceTree = "<group>"; };
+		2B7E4B361D46F8AB00C21729 /* Integer+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Integer+Random.swift"; sourceTree = "<group>"; };
 		3035183B16054A3B4058A44450889E6E /* UIView+KeyboardLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+KeyboardLayoutGuide.swift"; sourceTree = "<group>"; };
 		313C2C7B6FC024518592392C600437E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33525786BBB9CFE5DE5BAC47DE1B6451 /* Swiftilities-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swiftilities-prefix.pch"; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				A820B31B36D95266778C59230CFAA0C5 /* Double+Scale.swift */,
+				2B7E4B361D46F8AB00C21729 /* Integer+Random.swift */,
 				E6380BBE819448FCCF5C99AFFE391FD8 /* MathHelpers.swift */,
 			);
 			path = Math;
@@ -517,6 +520,7 @@
 				5B0626F4B3EE6F475DCCE2CF9916250E /* MathHelpers.swift in Sources */,
 				A3EAAC78E34F4B3AE8103BD8AC3367C6 /* Swiftilities-dummy.m in Sources */,
 				F178301ADEAD993C0BF3436058C71FF3 /* UIView+KeyboardLayoutGuide.swift in Sources */,
+				2B7E4B381D46F93400C21729 /* Integer+Random.swift in Sources */,
 				02B2576C95BF77601D378BED30B388AF /* UIViewController+Deselection.swift in Sources */,
 				4994E0808178AF9F8829C8D09A50F657 /* UIWindow+RootViewController.swift in Sources */,
 			);
