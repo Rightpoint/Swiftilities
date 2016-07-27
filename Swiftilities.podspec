@@ -55,7 +55,7 @@ Pod::Spec.new do |s|
 
   # FieldValidation
 
-  s.subspec "Deselection" do |ss|
+  s.subspec "FieldValidation" do |ss|
     ss.source_files = "Pod/Classes/FieldValidation/*.swift"
     ss.frameworks   = "Foundation"
   end
