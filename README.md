@@ -14,7 +14,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
     ss.source_files = "Pod/Classes/<Your Subsepc Name>/*.swift"
     ss.frameworks   = ["<Any Required Modules>"]
   end `
-4. Apend a `ss.dependency` to `s.subsec` within the podspec file with the following format: ```ss.dependency 'Swiftilities/<Your Subsepc Name>'```
+4. Apend a `ss.dependency` to `s.subsec` within the podspec file with the following format: ```ss.dependency 'Swiftilities/<Your Subsepc Name>'
+```
 5. Navigate to the example project driectory and run `pod update`
 
 ## Requirements
