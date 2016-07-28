@@ -12,6 +12,7 @@
 		1A2598962918DF2BA0534E83565382F7 /* UIViewController+Deselection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29029E64EA4205471575F99ED5476E /* UIViewController+Deselection.swift */; };
 		23C251FEFA3B6FC2011994F20362C73E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C31EFD890B03EF4251407B14AC23BB /* Keyboard.swift */; };
 		27E303A10A833D9A0E49F9407276466E /* Pods-Swiftilities_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A7B341FD9122C117C1415CE785712C68 /* Pods-Swiftilities_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BD1D7981D4AC6E10093490F /* CollectionType+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD1D7961D4AC6A10093490F /* CollectionType+Random.swift */; };
 		5C0B9E152287AAEEBEE8022467029AA2 /* Pods-Swiftilities_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E601A7D5D3DF3B8145E7929E30E3E270 /* Pods-Swiftilities_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		733F498DEB52A4378A789C06EBBA9B4C /* MathHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ACBBAB723344BDB7659708C56A653E /* MathHelpers.swift */; };
 		7EDF1D2A6884B48466B747448ADBB60F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
@@ -51,6 +52,7 @@
 		1FB5BD58BA40B50895AEB66359149781 /* Integer+Random.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Integer+Random.swift"; sourceTree = "<group>"; };
 		211DA2CEB272FC0E88768F9909E52CE9 /* Pods-Swiftilities_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swiftilities_Tests-dummy.m"; sourceTree = "<group>"; };
 		269F29704ED137D6449054AEC30E9386 /* Pods-Swiftilities_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Swiftilities_Example.modulemap"; sourceTree = "<group>"; };
+		2BD1D7961D4AC6A10093490F /* CollectionType+Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CollectionType+Random.swift"; path = "Pod/Classes/Collections/CollectionType+Random.swift"; sourceTree = "<group>"; };
 		3035183B16054A3B4058A44450889E6E /* UIView+KeyboardLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+KeyboardLayoutGuide.swift"; sourceTree = "<group>"; };
 		313C2C7B6FC024518592392C600437E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33525786BBB9CFE5DE5BAC47DE1B6451 /* Swiftilities-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swiftilities-prefix.pch"; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 				E3B0FC5E1611CA8A1A3C7BD11A98183B /* Classes */,
 			);
 			path = Pod;
+			sourceTree = "<group>";
+		};
+		2BD1D7951D4ABDB50093490F /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				2BD1D7961D4AC6A10093490F /* CollectionType+Random.swift */,
+			);
+			name = Collections;
 			sourceTree = "<group>";
 		};
 		2C27BEC645ADFF087BB947D73F411652 /* Pod */ = {
@@ -390,6 +400,7 @@
 				028196A6E1965A1FDD51FCDDC2074DA5 /* Deselection */,
 				7829FB856F5B4815C8CF78DAEDC2DE1A /* Keyboard */,
 				80D3413E5D7168DF8D9B5B5CD36CB0DB /* Logging */,
+				2BD1D7951D4ABDB50093490F /* Collections */,
 				E0643BC730808CEC4ACAE307A90B7029 /* Math */,
 				62AF0511BC1966E7904058790F5AF09B /* RootViewController */,
 				990B93E611FB23B968402A50B4FE0A2A /* Support Files */,
@@ -520,6 +531,7 @@
 				FC27EF97D8A6BDEFD6ADBB6BE3FE3B17 /* Log.swift in Sources */,
 				733F498DEB52A4378A789C06EBBA9B4C /* MathHelpers.swift in Sources */,
 				0DFFE5E963EBC1DDC733CC084B3E7776 /* Swiftilities-dummy.m in Sources */,
+				2BD1D7981D4AC6E10093490F /* CollectionType+Random.swift in Sources */,
 				EC63AA23AE5CCE2E0D4E4CB67B08D3D3 /* UIView+KeyboardLayoutGuide.swift in Sources */,
 				1A2598962918DF2BA0534E83565382F7 /* UIViewController+Deselection.swift in Sources */,
 				B96933F8E128C256BDED7B1DCD613181 /* UIWindow+RootViewController.swift in Sources */,

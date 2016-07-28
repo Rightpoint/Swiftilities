@@ -40,6 +40,12 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
   
+  # Collections
+  
+  s.subspec "Collections" do |ss|
+    ss.source_files = "Pod/Classes/Collections/*.swift"
+  end
+    
   # Math
   
   s.subspec "Math" do |ss|
@@ -59,6 +65,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Logging'
     ss.dependency 'Swiftilities/RootViewController'
     ss.dependency 'Swiftilities/Keyboard'
+    ss.dependency 'Swiftilities/Collections'
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/Deselection'
   end
