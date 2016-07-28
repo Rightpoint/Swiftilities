@@ -30,7 +30,7 @@
 
 import Foundation
 
-public extension CollectionType where Self.Index: RandomAccessIndexType, Self.Index.Distance == IntMax {
+public extension CollectionType where Self.Index: RandomAccessIndexType, Self.Index.Distance == Int {
 
     func randomElement() -> Self.Generator.Element {
         let randomInt = Self.Index.Distance.random(max: count)
