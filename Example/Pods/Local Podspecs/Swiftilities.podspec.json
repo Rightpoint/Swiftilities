@@ -38,6 +38,10 @@
       ]
     },
     {
+      "name": "Collections",
+      "source_files": "Pod/Classes/Collections/*.swift"
+    },
+    {
       "name": "Math",
       "source_files": "Pod/Classes/Math/*.swift"
     },
@@ -58,6 +62,9 @@
 
         ],
         "Swiftilities/Keyboard": [
+
+        ],
+        "Swiftilities/Collections": [
 
         ],
         "Swiftilities/Math": [
