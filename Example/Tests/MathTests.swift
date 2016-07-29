@@ -25,4 +25,58 @@ class Tests: XCTestCase {
         XCTAssertEqualWithAccuracy(-10.0.scale(from: -50.0...0.0, to: 0.0...1.0, clamp: true), -1.0, accuracy: epsilon)
     }
 
+    func testIntegerTypeRandom() {
+        Int.testRandom()
+        Int64.testRandom()
+        Int32.testRandom()
+        Int16.testRandom()
+        Int8.testRandom()
+
+        UInt.testRandom()
+        UInt64.testRandom()
+        UInt32.testRandom()
+        UInt16.testRandom()
+        UInt8.testRandom()
+    }
+
+}
+
+private extension UnsignedIntegerType where Stride == Int {
+
+    static func testRandom() {
+        for _ in 0...10000 {
+            Self.testRandomBoundaries(0, max: 0)
+            Self.testRandomBoundaries(0, max: 1)
+            Self.testRandomBoundaries(0, max: 13)
+        }
+    }
+
+    static func testRandomBoundaries(min: UIntMax, max: UIntMax) {
+        let randomInt = Self.random(Self(min), max: Self(max))
+        XCTAssertLessThanOrEqual(randomInt, Self(max))
+        XCTAssertGreaterThanOrEqual(randomInt, Self(min))
+    }
+
+}
+
+private extension SignedIntegerType where Stride == Int {
+
+    static func testRandom() {
+        for _ in 0...10000 {
+            Self.testRandomBoundaries(0, max: 0)
+            Self.testRandomBoundaries(0, max: 1)
+            Self.testRandomBoundaries(0, max: 13)
+
+            Self.testRandomBoundaries(-1, max: 0)
+            Self.testRandomBoundaries(-13, max: 0)
+            Self.testRandomBoundaries(-13, max: 13)
+        }
+    }
+
+    static func testRandomBoundaries(min: IntMax, max: IntMax) {
+        let randomInt = Self.random(Self(min), max: Self(max))
+        XCTAssertLessThanOrEqual(randomInt, Self(max))
+        XCTAssertGreaterThanOrEqual(randomInt, Self(min))
+    }
+
 }
