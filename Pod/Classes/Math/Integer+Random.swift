@@ -31,6 +31,12 @@
 import Foundation
 
 public extension IntegerType where Stride == Int {
+    /**
+     Generate a random integer using random data from arc4random_buf.
+     `man arc4random_buf` for specifics about the generation of random data.
+
+     - returns: a random integer
+     */
     static func random() -> Self {
         var randomInt: Self = 0
         arc4random_buf(&randomInt, sizeofValue(randomInt))
@@ -39,6 +45,14 @@ public extension IntegerType where Stride == Int {
 }
 
 public extension SignedIntegerType where Stride == Int {
+    /**
+     Generate a random signed integer between specific boundaries
+
+     - parameter min: the minimum value allowed, defaults to 0
+     - parameter max: the maximzum value allowed
+
+     - returns: a bounded random signed integer
+     */
     static func random(min: Self = 0, max: Self) -> Self {
         let difference = (max - min)
         return abs(random() % difference) + min
@@ -46,6 +60,14 @@ public extension SignedIntegerType where Stride == Int {
 }
 
 public extension UnsignedIntegerType where Stride == Int {
+    /**
+     Generate a random integer between specific boundaries
+
+     - parameter min: the minimum value allowed, defaults to 0
+     - parameter max: the maximzum value allowed
+
+     - returns: a bounded random unsigned integer
+     */
     static func random(min: Self = 0, max: Self) -> Self {
         let difference = (max - min)
         return (random() % difference) + min
