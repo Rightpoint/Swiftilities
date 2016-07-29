@@ -49,7 +49,7 @@ public extension SignedIntegerType where Stride == Int {
      Generate a random signed integer between specific boundaries
 
      - parameter min: the minimum value allowed, defaults to 0
-     - parameter max: the maximzum value allowed
+     - parameter max: the maximum value allowed
 
      - returns: a bounded random signed integer
      */
@@ -64,7 +64,7 @@ public extension UnsignedIntegerType where Stride == Int {
      Generate a random integer between specific boundaries
 
      - parameter min: the minimum value allowed, defaults to 0
-     - parameter max: the maximzum value allowed
+     - parameter max: the maximum value allowed
 
      - returns: a bounded random unsigned integer
      */

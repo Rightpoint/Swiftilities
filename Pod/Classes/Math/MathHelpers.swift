@@ -49,7 +49,7 @@ public struct MathHelpers {
 
      - parameter value: the value to be clamped
      - parameter min: the minimum value allowed
-     - parameter max: the maximzum value allowed
+     - parameter max: the maximum value allowed
 
      - returns: the clamped value
      */
