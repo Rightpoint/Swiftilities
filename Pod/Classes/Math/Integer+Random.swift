@@ -54,7 +54,7 @@ public extension SignedIntegerType where Stride == Int {
      - returns: a bounded random signed integer
      */
     static func random(min: Self = 0, max: Self) -> Self {
-        let difference = (max - min)
+        let difference = (max - min) + Self(1)
         return abs(random() % difference) + min
     }
 }
@@ -69,7 +69,7 @@ public extension UnsignedIntegerType where Stride == Int {
      - returns: a bounded random unsigned integer
      */
     static func random(min: Self = 0, max: Self) -> Self {
-        let difference = (max - min)
+        let difference = (max - min) + Self(1)
         return (random() % difference) + min
     }
 }

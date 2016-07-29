@@ -33,7 +33,7 @@ import Foundation
 public extension CollectionType where Self.Index: RandomAccessIndexType, Self.Index.Distance == Int {
 
     func randomElement() -> Self.Generator.Element {
-        let randomInt = Self.Index.Distance.random(max: count)
+        let randomInt = Self.Index.Distance.random(max: count - 1)
         let randomIndex = startIndex.advancedBy(randomInt)
         return self[randomIndex]
     }
