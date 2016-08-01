@@ -1,8 +1,8 @@
 //
-//  MathHelpers.swift
+//  CollectionType+Random.swift
 //  Swiftilities
 //
-//  Created by John Stricker on 5/3/16.
+//  Created by Rob Cadwallader on 7/28/16.
 //  Copyright © 2016 Raizlabs Inc. All rights reserved.
 //
 // Copyright 2016 Raizlabs and other contributors
@@ -30,31 +30,12 @@
 
 import Foundation
 
-public struct MathHelpers {
+public extension CollectionType where Self.Index: RandomAccessIndexType, Self.Index.Distance == Int {
 
-    /**
-     Clamp a value to a ClosedInterval
-
-     - parameter value: the value to be clamped
-     - parameter to:    a ClosedInterval whose start and end specify the clamp's minimum and maximum
-
-     - returns: the clamped value
-     */
-    static func clamp<T: Comparable>(value: T, to: ClosedInterval<T>) -> T {
-        return clamp(value, min: to.start, max: to.end)
-    }
-
-    /**
-     Clamp a value to a minimum and maximum value.
-
-     - parameter value: the value to be clamped
-     - parameter min: the minimum value allowed
-     - parameter max: the maximum value allowed
-
-     - returns: the clamped value
-     */
-    static func clamp<T: Comparable>(value: T, min lower: T, max upper: T) -> T {
-        return min(max(value, lower), upper)
+    func randomElement() -> Self.Generator.Element {
+        let randomInt = Self.Index.Distance.random(max: count - 1)
+        let randomIndex = startIndex.advancedBy(randomInt)
+        return self[randomIndex]
     }
 
 }

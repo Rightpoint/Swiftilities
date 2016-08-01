@@ -25,4 +25,78 @@ class Tests: XCTestCase {
         XCTAssertEqualWithAccuracy(-10.0.scale(from: -50.0...0.0, to: 0.0...1.0, clamp: true), -1.0, accuracy: epsilon)
     }
 
+    func testIntegerTypeRandom() {
+        Int.testRandom()
+        Int64.testRandom()
+        Int32.testRandom()
+        Int16.testRandom()
+        Int8.testRandom()
+
+        UInt.testRandom()
+        UInt64.testRandom()
+        UInt32.testRandom()
+        UInt16.testRandom()
+        UInt8.testRandom()
+    }
+
+}
+
+private protocol EdgeCaseable {
+    static var min: Self {get}
+    static var max: Self {get}
+}
+
+extension Int: EdgeCaseable {}
+extension Int64: EdgeCaseable {}
+extension Int32: EdgeCaseable {}
+extension Int16: EdgeCaseable {}
+extension Int8: EdgeCaseable {}
+
+extension UInt: EdgeCaseable {}
+extension UInt64: EdgeCaseable {}
+extension UInt32: EdgeCaseable {}
+extension UInt16: EdgeCaseable {}
+extension UInt8: EdgeCaseable {}
+
+private extension UnsignedIntegerType where Self: EdgeCaseable {
+
+    static func testRandom() {
+        for _ in 0...10000 {
+            Self.testRandomBoundaries(0, max: 0)
+            Self.testRandomBoundaries(0, max: 1)
+            Self.testRandomBoundaries(0, max: 13)
+
+            Self.testRandomBoundaries(Self.min, max: Self.max)
+        }
+    }
+
+    static func testRandomBoundaries(min: Self, max: Self) {
+        let randomInt = Self.random(min, max: max)
+        XCTAssertLessThanOrEqual(randomInt, max)
+        XCTAssertGreaterThanOrEqual(randomInt, min)
+    }
+
+}
+
+private extension SignedIntegerType where Self: EdgeCaseable {
+
+    static func testRandom() {
+        for _ in 0...10000 {
+            Self.testRandomBoundaries(0, max: 0)
+            Self.testRandomBoundaries(0, max: 1)
+            Self.testRandomBoundaries(0, max: 13)
+
+            Self.testRandomBoundaries(-1, max: 0)
+            Self.testRandomBoundaries(-13, max: 0)
+            Self.testRandomBoundaries(-13, max: 13)
+
+            Self.testRandomBoundaries(Self.min, max: Self.max)
+        }
+    }
+
+    static func testRandomBoundaries(min: Self, max: Self) {
+        let randomInt = Self.random(min, max: max)
+        XCTAssertLessThanOrEqual(randomInt, max)
+        XCTAssertGreaterThanOrEqual(randomInt, min)
+    }
 }

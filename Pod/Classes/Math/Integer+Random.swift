@@ -1,8 +1,8 @@
 //
-//  MathHelpers.swift
+//  Integer+Random.swift
 //  Swiftilities
 //
-//  Created by John Stricker on 5/3/16.
+//  Created by Rob Cadwallader on 7/25/16.
 //  Copyright © 2016 Raizlabs Inc. All rights reserved.
 //
 // Copyright 2016 Raizlabs and other contributors
@@ -30,31 +30,46 @@
 
 import Foundation
 
-public struct MathHelpers {
-
+public extension IntegerType {
     /**
-     Clamp a value to a ClosedInterval
+     Generate a random integer using random data from arc4random_buf.
+     `man arc4random_buf` for specifics about the generation of random data.
 
-     - parameter value: the value to be clamped
-     - parameter to:    a ClosedInterval whose start and end specify the clamp's minimum and maximum
-
-     - returns: the clamped value
+     - returns: a random integer
      */
-    static func clamp<T: Comparable>(value: T, to: ClosedInterval<T>) -> T {
-        return clamp(value, min: to.start, max: to.end)
+    static func random() -> Self {
+        var randomInt: Self = 0
+        arc4random_buf(&randomInt, sizeofValue(randomInt))
+        return randomInt
     }
+}
 
+public extension SignedIntegerType {
     /**
-     Clamp a value to a minimum and maximum value.
+     Generate a random signed integer between specific boundaries
 
-     - parameter value: the value to be clamped
-     - parameter min: the minimum value allowed
+     - parameter min: the minimum value allowed, defaults to 0
      - parameter max: the maximum value allowed
 
-     - returns: the clamped value
+     - returns: a bounded random signed integer
      */
-    static func clamp<T: Comparable>(value: T, min lower: T, max upper: T) -> T {
-        return min(max(value, lower), upper)
+    static func random(min: Self = 0, max: Self) -> Self {
+        let difference = (max - min) + Self(1)
+        return abs(random() % difference) + min
     }
+}
 
+public extension UnsignedIntegerType {
+    /**
+     Generate a random integer between specific boundaries
+
+     - parameter min: the minimum value allowed, defaults to 0
+     - parameter max: the maximum value allowed
+
+     - returns: a bounded random unsigned integer
+     */
+    static func random(min: Self = 0, max: Self) -> Self {
+        let difference = (max - min) + Self(1)
+        return (random() % difference) + min
+    }
 }
