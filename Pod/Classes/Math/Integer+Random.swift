@@ -30,7 +30,7 @@
 
 import Foundation
 
-public extension IntegerType where Stride == Int {
+public extension IntegerType {
     /**
      Generate a random integer using random data from arc4random_buf.
      `man arc4random_buf` for specifics about the generation of random data.
@@ -44,7 +44,7 @@ public extension IntegerType where Stride == Int {
     }
 }
 
-public extension SignedIntegerType where Stride == Int {
+public extension SignedIntegerType {
     /**
      Generate a random signed integer between specific boundaries
 
@@ -59,7 +59,7 @@ public extension SignedIntegerType where Stride == Int {
     }
 }
 
-public extension UnsignedIntegerType where Stride == Int {
+public extension UnsignedIntegerType {
     /**
      Generate a random integer between specific boundaries
 
