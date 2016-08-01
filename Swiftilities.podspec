@@ -44,6 +44,7 @@ Pod::Spec.new do |s|
   
   s.subspec "Collections" do |ss|
     ss.source_files = "Pod/Classes/Collections/*.swift"
+    ss.dependency 'Swiftilities/Math'
   end
     
   # Math

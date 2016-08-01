@@ -39,7 +39,12 @@
     },
     {
       "name": "Collections",
-      "source_files": "Pod/Classes/Collections/*.swift"
+      "source_files": "Pod/Classes/Collections/*.swift",
+      "dependencies": {
+        "Swiftilities/Math": [
+
+        ]
+      }
     },
     {
       "name": "Math",
