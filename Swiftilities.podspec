@@ -53,6 +53,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # FieldValidation
+
+  s.subspec "FieldValidation" do |ss|
+    ss.source_files = "Pod/Classes/FieldValidation/*.swift"
+    ss.frameworks   = "Foundation"
+  end
+
   # Catch All
 
   s.subspec "All" do |ss|
@@ -61,6 +68,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Keyboard'
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/Deselection'
+    ss.dependency 'Swiftilities/FieldValidation'
   end
 
 end

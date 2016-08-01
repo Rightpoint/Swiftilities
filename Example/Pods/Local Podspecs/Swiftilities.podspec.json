@@ -49,6 +49,11 @@
       ]
     },
     {
+      "name": "FieldValidation",
+      "source_files": "Pod/Classes/FieldValidation/*.swift",
+      "frameworks": "Foundation"
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Logging": [
@@ -64,6 +69,9 @@
 
         ],
         "Swiftilities/Deselection": [
+
+        ],
+        "Swiftilities/FieldValidation": [
 
         ]
       }
