@@ -35,6 +35,20 @@ extension UIView {
         }
         return views
     }
+    
+    public func lookupNextView<T: UIView>(currentView: T, includeHidden: Bool = false, includeNonInteractable: Bool = false) -> T? {
+        let views: [T] = self.lookupSortedViews(includeHidden, includeNonInteractable: includeNonInteractable)
+        guard let index = views.indexOf(currentView) else { return nil }
+        let nextIndex = index.successor()
+        return (views.indices.contains(nextIndex)) ? views[nextIndex] : nil
+    }
+    
+    public func lookupPreviousView<T: UIView>(currentView: T, includeHidden: Bool = false, includeNonInteractable: Bool = false) -> T? {
+        let views: [T] = self.lookupSortedViews(includeHidden, includeNonInteractable: includeNonInteractable)
+        guard let index = views.indexOf(currentView) else { return nil }
+        let previousIndex = index.predecessor()
+        return (views.indices.contains(previousIndex)) ? views[previousIndex] : nil
+    }
 
     public func lookupParentView<T: UIView>() -> T? {
         var parent: UIView? = superview
