@@ -16,7 +16,7 @@ extension UIView {
     /// - parameter includeNonInteractable: Return views that do not have user interaction enabled. The default is false.
     ///
     /// - returns: An array of views, of type T, sorted by y position.
-    public func rz_sortedSubviews<T: UIView>(ofType type: T.Type, includeHidden: Bool = false, includeNonInteractable: Bool = false) -> [T] {
+    final public func sortedSubviews<T: UIView>(ofType type: T.Type, includeHidden: Bool = false, includeNonInteractable: Bool = false) -> [T] {
         if let view = self as? T {
             if (hidden == false || (includeHidden && hidden == true)) &&
                 (userInteractionEnabled == true || includeNonInteractable && userInteractionEnabled == false) {
@@ -25,7 +25,7 @@ extension UIView {
         }
         var views: [T] = Array()
         for subview in subviews {
-            let results = subview.rz_sortedSubviews(ofType: T.self, includeHidden: includeHidden, includeNonInteractable: includeNonInteractable)
+            let results = subview.sortedSubviews(ofType: T.self, includeHidden: includeHidden, includeNonInteractable: includeNonInteractable)
             views.appendContentsOf(results)
         }
         views.sortInPlace { (view, otherView) -> Bool in
@@ -36,7 +36,7 @@ extension UIView {
         return views
     }
 
-    public func rz_nearestSuperview<T: UIView>(ofType type: T.Type) -> T? {
+    final public func nearestSuperview<T: UIView>(ofType type: T.Type) -> T? {
         var parent: UIView? = superview
         while parent != nil && parent as? T == nil {
             parent = parent?.superview
