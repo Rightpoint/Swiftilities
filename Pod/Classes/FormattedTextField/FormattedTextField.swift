@@ -19,8 +19,10 @@ public class FormattedTextField: UITextField {
     */
     public var formatter: Formatter? {
         didSet {
+            removeTarget(self, action: #selector(textChanged), forControlEvents: .EditingChanged)
             if let formatter = formatter {
                 super.text = formatter(text)
+                addTarget(self, action: #selector(textChanged), forControlEvents: .EditingChanged)
             }
         }
     }
@@ -42,22 +44,10 @@ public class FormattedTextField: UITextField {
     public convenience init(formatter: Formatter?, frame: CGRect = .zero) {
         self.init(frame: frame)
         self.formatter = formatter
+        if formatter != nil {
+            addTarget(self, action: #selector(textChanged), forControlEvents: .EditingChanged)
+        }
     }
-
-    public convenience init() {
-        self.init(frame: .zero)
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addTarget(self, action: #selector(textChanged), forControlEvents: .EditingChanged)
-    }
-
-    public required init?(coder aDecoder: NSCoder){
-        super.init(coder: aDecoder)
-        addTarget(self, action: #selector(textChanged), forControlEvents: .EditingChanged)
-    }
-
 
 }
 
