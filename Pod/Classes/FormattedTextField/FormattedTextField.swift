@@ -1,6 +1,6 @@
 //
 //  FormattedTextField.swift
-//  Pods
+//  Swiftilities
 //
 //  Created by Rob Visentin on 8/9/16.
 //  Copyright (c) 2016 Raizlabs. All rights reserved.
@@ -8,11 +8,16 @@
 
 import UIKit
 
-class FormattedTextField: UITextField {
+public class FormattedTextField: UITextField {
 
-    typealias Formatter = String? -> String?
+    public typealias Formatter = String? -> String?
 
-    var formatter: Formatter? {
+    /*
+     An optional formatter that transforms any text values set set for the text field into the new value
+     Because this is a closure, it cannot be encoded with NSCoding and must be restored manually if
+     state restoration is used.
+    */
+    public var formatter: Formatter? {
         didSet {
             if let formatter = formatter {
                 super.text = formatter(text)
@@ -20,7 +25,7 @@ class FormattedTextField: UITextField {
         }
     }
 
-    override var text: String? {
+    public override var text: String? {
         didSet {
             if let formatter = formatter {
                 super.text = formatter(text)
@@ -28,16 +33,31 @@ class FormattedTextField: UITextField {
         }
     }
 
-    private var savedLength = 0
-    private var savedSelectedRange: UITextRange?
+    /**
+     A convenience initializer that allows setting the formatter on init()
 
-    convenience init(formatter: Formatter? = nil) {
-        self.init(frame: .zero)
-
+     - parameter formatter: The string tranfromation to apply to the text set for this control.
+     - parameter frame:     The frame of the view, default value is CGRect.zero
+     */
+    public convenience init(formatter: Formatter?, frame: CGRect = .zero) {
+        self.init(frame: frame)
         self.formatter = formatter
+    }
 
+    public convenience init() {
+        self.init(frame: .zero)
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         addTarget(self, action: #selector(textChanged), forControlEvents: .EditingChanged)
     }
+
+    public required init?(coder aDecoder: NSCoder){
+        super.init(coder: aDecoder)
+        addTarget(self, action: #selector(textChanged), forControlEvents: .EditingChanged)
+    }
+
 
 }
 
@@ -45,30 +65,29 @@ class FormattedTextField: UITextField {
 
 private extension FormattedTextField {
 
-    func saveSelectionState() {
-        savedLength = text?.characters.count ?? 0
-        savedSelectedRange = selectedTextRange
+    typealias TextFieldState = (length: Int, selectedRange: UITextRange?)
+
+    func saveTextFieldState() -> TextFieldState {
+        let savedLength = text?.characters.count ?? 0
+        return (length: savedLength, selectedRange: selectedTextRange)
     }
 
-    func restoreSelectedState() {
-        if let savedRange = savedSelectedRange, text = text {
+    func restoreTextFieldState(state: TextFieldState) {
+        if let savedRange = state.selectedRange, text = text {
             let newLen = text.characters.count
-            let diff = max(0, newLen - savedLength)
+            let diff = max(0, newLen - state.length)
 
             if let start = positionFromPosition(savedRange.start, offset: diff), end = positionFromPosition(savedRange.end, offset: diff) {
                 selectedTextRange = textRangeFromPosition(start, toPosition: end)
             }
-
-            savedLength = 0
-            savedSelectedRange = nil
         }
     }
 
     @objc func textChanged() {
         if let formatter = formatter {
-            saveSelectionState()
+            let oldState = saveTextFieldState()
             super.text = formatter(text)
-            restoreSelectedState()
+            restoreTextFieldState(oldState)
         }
     }
     
