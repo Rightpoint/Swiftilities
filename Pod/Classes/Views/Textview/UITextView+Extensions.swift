@@ -39,12 +39,8 @@ extension PlaceholderConfigurable where Self:UITextView {
     }
 
     var placeholderPosition: CGPoint {
-        guard let range = textRangeFromPosition(beginningOfDocument, toPosition: beginningOfDocument) else {
-            return CGPointZero
-        }
-
-        let rect = firstRectForRange(range)
-        return CGPoint(x:rect.origin.x, y:rect.origin.y)
+        return CGPoint(x: textContainerInset.left + textContainer.lineFragmentPadding,
+                       y: textContainerInset.top)
     }
 
     func adjustPlaceholder() {
