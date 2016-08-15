@@ -30,7 +30,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
 
     ///  Smoothly deselect selected rows in a table view during an animated
     ///  transition, and intelligently reselect those rows if the interactive

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Swiftilities"
-  s.version          = "0.2.0"
+  s.version          = "0.2.1"
   s.summary          = "A collection of useful Swift utilities."
 
   s.description      = <<-DESC
@@ -19,17 +19,24 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'All'
 
-  # Logging
+  # Deselection
 
-  s.subspec "Logging" do |ss|
-    ss.source_files = "Pod/Classes/Logging/*.swift"
-    ss.frameworks   = "Foundation"
+  s.subspec "Deselection" do |ss|
+    ss.source_files = "Pod/Classes/Deselection/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+  
+  # Forms
+
+  s.subspec "Forms" do |ss|
+    ss.source_files = "Pod/Classes/Forms/*.swift"
+    ss.frameworks   = ["UIKit"]
   end
 
-  # RootViewController
+  # Views
 
-  s.subspec "RootViewController" do |ss|
-    ss.source_files = "Pod/Classes/RootViewController/*.swift"
+  s.subspec "Views" do |ss|
+    ss.source_files = ["Pod/Classes/Views/Protocols/*.swift", "Pod/Classes/Views/Textview/*.swift"]
     ss.frameworks   = ["UIKit"]
   end
 
@@ -39,28 +46,37 @@ Pod::Spec.new do |s|
     ss.source_files = "Pod/Classes/Keyboard/*.swift"
     ss.frameworks   = ["UIKit"]
   end
-  
+
+  # Logging
+
+  s.subspec "Logging" do |ss|
+    ss.source_files = "Pod/Classes/Logging/*.swift"
+    ss.frameworks   = "Foundation"
+  end
+
   # Math
   
   s.subspec "Math" do |ss|
     ss.source_files = "Pod/Classes/Math/*.swift"
   end
-  
-  # Deselection
 
-  s.subspec "Deselection" do |ss|
-    ss.source_files = "Pod/Classes/Deselection/*.swift"
+  # RootViewController
+
+  s.subspec "RootViewController" do |ss|
+    ss.source_files = "Pod/Classes/RootViewController/*.swift"
     ss.frameworks   = ["UIKit"]
   end
 
   # Catch All
 
   s.subspec "All" do |ss|
-    ss.dependency 'Swiftilities/Logging'
-    ss.dependency 'Swiftilities/RootViewController'
-    ss.dependency 'Swiftilities/Keyboard'
-    ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/Deselection'
+    ss.dependency 'Swiftilities/Forms'
+    ss.dependency 'Swiftilities/Views'
+    ss.dependency 'Swiftilities/Keyboard'
+    ss.dependency 'Swiftilities/Logging'
+    ss.dependency 'Swiftilities/Math'
+    ss.dependency 'Swiftilities/RootViewController'
   end
 
 end

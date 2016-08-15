@@ -1,6 +1,6 @@
 {
   "name": "Swiftilities",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "summary": "A collection of useful Swift utilities.",
   "description": "A collection of useful Swift utilities. All components and\nextensions found in this library are consise enough on their own\nso as to not warrant their own project.",
   "homepage": "https://github.com/raizlabs/Swiftilities",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/raizlabs/Swiftilities.git",
-    "tag": "0.2.0"
+    "tag": "0.2.1"
   },
   "platforms": {
     "ios": "9.0"
@@ -19,13 +19,25 @@
   "default_subspecs": "All",
   "subspecs": [
     {
-      "name": "Logging",
-      "source_files": "Pod/Classes/Logging/*.swift",
-      "frameworks": "Foundation"
+      "name": "Deselection",
+      "source_files": "Pod/Classes/Deselection/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
     },
     {
-      "name": "RootViewController",
-      "source_files": "Pod/Classes/RootViewController/*.swift",
+      "name": "Forms",
+      "source_files": "Pod/Classes/Forms/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
+      "name": "Views",
+      "source_files": [
+        "Pod/Classes/Views/Protocols/*.swift",
+        "Pod/Classes/Views/Textview/*.swift"
+      ],
       "frameworks": [
         "UIKit"
       ]
@@ -38,12 +50,17 @@
       ]
     },
     {
+      "name": "Logging",
+      "source_files": "Pod/Classes/Logging/*.swift",
+      "frameworks": "Foundation"
+    },
+    {
       "name": "Math",
       "source_files": "Pod/Classes/Math/*.swift"
     },
     {
-      "name": "Deselection",
-      "source_files": "Pod/Classes/Deselection/*.swift",
+      "name": "RootViewController",
+      "source_files": "Pod/Classes/RootViewController/*.swift",
       "frameworks": [
         "UIKit"
       ]
@@ -51,19 +68,25 @@
     {
       "name": "All",
       "dependencies": {
-        "Swiftilities/Logging": [
+        "Swiftilities/Deselection": [
 
         ],
-        "Swiftilities/RootViewController": [
+        "Swiftilities/Forms": [
+
+        ],
+        "Swiftilities/Views": [
 
         ],
         "Swiftilities/Keyboard": [
 
         ],
+        "Swiftilities/Logging": [
+
+        ],
         "Swiftilities/Math": [
 
         ],
-        "Swiftilities/Deselection": [
+        "Swiftilities/RootViewController": [
 
         ]
       }
