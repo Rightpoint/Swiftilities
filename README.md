@@ -20,7 +20,7 @@ pod "Swiftilities"
 Nicholas Bonatsakis, nick.bonatsakis@raizlabs.com
 
 ## Code of Conduct
-Please read our contribution [Code of Conduct](./CONTRIBUTING.md)
+Please read our contribution [Code of Conduct](./CONTRIBUTING.md).
 
 ## License
 
