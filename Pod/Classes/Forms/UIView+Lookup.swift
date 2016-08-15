@@ -36,7 +36,7 @@ extension UIView {
         return views
     }
 
-    final public func nearestSuperview<T: UIView>(ofType type: T.Type) -> T? {
+    final public func superview<T: UIView>(ofType type: T.Type) -> T? {
         var parent: UIView? = superview
         while parent != nil && parent as? T == nil {
             parent = parent?.superview
