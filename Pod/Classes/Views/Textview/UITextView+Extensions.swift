@@ -92,16 +92,15 @@ extension HeightAutoAdjustable where Self:UITextView {
         return constraint
     }
 
-    func adjustHeight(animated: Bool) {
+    func adjustHeight() {
+        let animated = animationDelegate?.shouldAnimateHeightChange(self) ?? false
         let height = intrinsicContentHeight
         guard height > 0 && heightConstraint().constant != height else { return }
         heightConstraint().constant = height
 
         setNeedsLayout()
 
-        // this is (most likely) the right view to animate to make for a smooth animation.
-        // TODO: Make a delegate callback to get the view to be animating.
-        guard let container = superview?.superview where animated else {
+        guard let container = animationDelegate?.containerToLayout(forTextView: self) where animated else {
             scrollToBottom(animated)
             return
         }
