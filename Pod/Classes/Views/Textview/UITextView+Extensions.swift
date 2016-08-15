@@ -94,18 +94,20 @@ extension HeightAutoAdjustable where Self:UITextView {
 
     func adjustHeight() {
         let animated = animationDelegate?.shouldAnimateHeightChange(self) ?? false
+        let duration = animationDelegate?.animationDuration(self) ?? 0.1
+
         let height = intrinsicContentHeight
         guard height > 0 && heightConstraint().constant != height else { return }
         heightConstraint().constant = height
 
         setNeedsLayout()
 
-        guard let container = animationDelegate?.containerToLayout(forTextView: self) where animated else {
+        guard let container = animationDelegate?.containerToLayout(self) where animated else {
             scrollToBottom(animated)
             return
         }
 
-        UIView.animateWithDuration(0.1, animations: {
+        UIView.animateWithDuration(duration, animations: {
             container.layoutIfNeeded()
             if self.bottomOffset.y < (self.font?.lineHeight ?? 0.0) {
                 self.scrollToBottom(animated)

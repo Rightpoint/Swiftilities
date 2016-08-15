@@ -29,7 +29,12 @@ public protocol TextViewAnimationDelegate {
     /// Gets the container view that will call `setNeedsLayout` in order to animate the given UITextView. Should be a parent of `textView`, but if not, the call will have no effect. Will also have no effect if `shouldAnimateHeightChange` returns false.
     /// - Parameter textView: The UITextView whose height is to be changed.
     /// - Returns: The UIView responsible for animating layout changes by laying out its subviews.
-    func containerToLayout(forTextView textView: UITextView) -> UIView?
+    func containerToLayout(textView: UITextView) -> UIView?
+
+    /// Gets the animation duration for when `textView` changes height. Value is not used if `shouldAnimateHeightChange` returns false.
+    /// - Parameter textView: The UITextView whose height is to be changed.
+    /// - Returns: The duration of the animation, in seconds.
+    func animationDuration(textView: UITextView) -> NSTimeInterval?
 }
 
 protocol HeightAutoAdjustable {
