@@ -30,7 +30,7 @@
 
 import Foundation
 
-struct MathHelpers {
+public struct MathHelpers {
 
     /**
      Clamp a value to a ClosedInterval
