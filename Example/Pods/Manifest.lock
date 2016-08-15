@@ -1,19 +1,21 @@
 PODS:
-  - Swiftilities (0.2.0):
-    - Swiftilities/All (= 0.2.0)
-  - Swiftilities/All (0.2.0):
+  - Swiftilities (0.2.1):
+    - Swiftilities/All (= 0.2.1)
+  - Swiftilities/All (0.2.1):
     - Swiftilities/Deselection
     - Swiftilities/Forms
     - Swiftilities/Keyboard
     - Swiftilities/Logging
     - Swiftilities/Math
     - Swiftilities/RootViewController
-  - Swiftilities/Deselection (0.2.0)
-  - Swiftilities/Forms (0.2.0)
-  - Swiftilities/Keyboard (0.2.0)
-  - Swiftilities/Logging (0.2.0)
-  - Swiftilities/Math (0.2.0)
-  - Swiftilities/RootViewController (0.2.0)
+    - Swiftilities/Views
+  - Swiftilities/Deselection (0.2.1)
+  - Swiftilities/Forms (0.2.1)
+  - Swiftilities/Keyboard (0.2.1)
+  - Swiftilities/Logging (0.2.1)
+  - Swiftilities/Math (0.2.1)
+  - Swiftilities/RootViewController (0.2.1)
+  - Swiftilities/Views (0.2.1)
 
 DEPENDENCIES:
   - Swiftilities (from `../`)
@@ -23,7 +25,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: 1b091ffb256676cc8c2c582ee962182b14bca27f
+  Swiftilities: 64418b23112025c5fdc34605f350f743ce889abb
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
