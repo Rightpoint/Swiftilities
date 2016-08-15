@@ -9,33 +9,33 @@
 import UIKit
 
 extension PlaceholderConfigurable where Self:UITextView {
-    private var xConstraint: NSLayoutConstraint? {
-        let constraint = constraints
+    private func xConstraint() -> NSLayoutConstraint {
+        let constraint: NSLayoutConstraint = constraints
             .filter({ (constraint: NSLayoutConstraint) -> Bool in
                 return constraint.firstAttribute == .Left &&
                     constraint.secondAttribute == .Left &&
                     (constraint.firstItem === self || constraint.secondItem === self)
             })
             .first ?? placeholderLabel.leftAnchor.constraintEqualToAnchor(leftAnchor)
-        constraint?.active = true
+        constraint.active = true
 
         return constraint
     }
 
-    private var yConstraint: NSLayoutConstraint? {
-        let constraint = constraints
+    private func yConstraint() -> NSLayoutConstraint {
+        let constraint: NSLayoutConstraint = constraints
             .filter({ (constraint: NSLayoutConstraint) -> Bool in
                 return constraint.firstAttribute == .Top &&
                     constraint.secondAttribute == .Top &&
                     (constraint.firstItem === self || constraint.secondItem === self)
             }).first ?? placeholderLabel.topAnchor.constraintEqualToAnchor(topAnchor)
-        constraint?.active = true
+        constraint.active = true
 
         return constraint
     }
 
     var placeholderConstraints: OriginConstraints {
-        return (xConstraint, yConstraint)
+        return (xConstraint(), yConstraint())
     }
 
     var placeholderPosition: CGPoint {
@@ -63,6 +63,16 @@ extension HeightAutoAdjustable where Self:UITextView {
                        y: contentSize.height - CGRectGetHeight(self.bounds) + verticalInset)
     }
 
+    var intrinsicContentHeight: CGFloat {
+        let height = sizeThatFits(CGSize(width: bounds.width, height: CGFloat.max)).height
+        guard let font = font else {
+            return height
+        }
+
+        let minimum = textContainerInset.top + self.textContainerInset.bottom + font.lineHeight
+        return max(height, minimum)
+    }
+    
     // Attempts to find the apporpriate constraint and creates one if needed.
     func heightConstraint() -> NSLayoutConstraint {
         let constraint: NSLayoutConstraint = constraints
@@ -80,16 +90,6 @@ extension HeightAutoAdjustable where Self:UITextView {
         }
 
         return constraint
-    }
-
-    var intrinsicContentHeight: CGFloat {
-        let height = sizeThatFits(CGSize(width: CGRectGetWidth(bounds), height: CGFloat.max)).height
-        guard let font = font else {
-            return height
-        }
-
-        let minimum = textContainerInset.top + self.textContainerInset.bottom + font.lineHeight
-        return max(height, minimum)
     }
 
     func adjustHeight(animated: Bool) {
