@@ -33,6 +33,16 @@
       ]
     },
     {
+      "name": "Views",
+      "source_files": [
+        "Pod/Classes/Views/Protocols/*.swift",
+        "Pod/Classes/Views/Textview/*.swift"
+      ],
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "Keyboard",
       "source_files": "Pod/Classes/Keyboard/*.swift",
       "frameworks": [
@@ -62,6 +72,9 @@
 
         ],
         "Swiftilities/Forms": [
+
+        ],
+        "Swiftilities/Views": [
 
         ],
         "Swiftilities/Keyboard": [

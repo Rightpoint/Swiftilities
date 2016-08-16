@@ -8,22 +8,24 @@ PODS:
     - Swiftilities/Logging
     - Swiftilities/Math
     - Swiftilities/RootViewController
+    - Swiftilities/Views
   - Swiftilities/Deselection (0.2.1)
   - Swiftilities/Forms (0.2.1)
   - Swiftilities/Keyboard (0.2.1)
   - Swiftilities/Logging (0.2.1)
   - Swiftilities/Math (0.2.1)
   - Swiftilities/RootViewController (0.2.1)
+  - Swiftilities/Views (0.2.1)
 
 DEPENDENCIES:
   - Swiftilities (from `../`)
 
 EXTERNAL SOURCES:
   Swiftilities:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: fa9cab2d2e04ae29d2120091c8d85cf7bca30926
+  Swiftilities: 64418b23112025c5fdc34605f350f743ce889abb
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
