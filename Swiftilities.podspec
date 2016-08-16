@@ -33,6 +33,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # Views
+
+  s.subspec "Views" do |ss|
+    ss.source_files = ["Pod/Classes/Views/Protocols/*.swift", "Pod/Classes/Views/Textview/*.swift"]
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Keyboard
 
   s.subspec "Keyboard" do |ss|
@@ -65,6 +72,7 @@ Pod::Spec.new do |s|
   s.subspec "All" do |ss|
     ss.dependency 'Swiftilities/Deselection'
     ss.dependency 'Swiftilities/Forms'
+    ss.dependency 'Swiftilities/Views'
     ss.dependency 'Swiftilities/Keyboard'
     ss.dependency 'Swiftilities/Logging'
     ss.dependency 'Swiftilities/Math'
