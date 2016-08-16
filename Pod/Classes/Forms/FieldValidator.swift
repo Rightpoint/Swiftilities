@@ -27,10 +27,13 @@ protocol FieldValidationRule {
     func validate(fieldName: String, inputString: String) -> ErrorType?
 }
 
+typealias CustomRule = (fieldName: String, input: String) -> ErrorType?
+
 enum ValidationRule: FieldValidationRule {
     case NonEmpty
     case MinLength(length: Int)
     case ValidEmail
+    case Custom(rule: CustomRule)
     
     func validate(fieldName: String, inputString: String) -> ErrorType? {
         switch self {
@@ -40,6 +43,8 @@ enum ValidationRule: FieldValidationRule {
             return errorWithFieldName(fieldName)
         case ValidEmail where !inputString.isValidEmail:
             return errorWithFieldName(fieldName)
+        case Custom(let rule):
+            return rule(fieldName: fieldName, input: inputString)
         default: return nil
         }
     }
@@ -55,6 +60,7 @@ extension ValidationRule {
         case NonEmpty
         case MinLength
         case ValidEmail
+        case Custom
     }
     
     var errorCode: Code {
@@ -62,6 +68,7 @@ extension ValidationRule {
         case NonEmpty: return .NonEmpty
         case MinLength(_): return .MinLength
         case ValidEmail: return .ValidEmail
+        case Custom(_): return .Custom
         }
     }
     
@@ -86,6 +93,8 @@ private extension ValidationRule {
                 localizedString("%@ is not valid", fieldName.localizedCapitalizedString),
                 localizedString("Please enter a valid %@.", fieldName.localizedLowercaseString)
             )
+        case Custom:
+            fatalError("The error should be provided by the custom rule.")
         }
     }
     
