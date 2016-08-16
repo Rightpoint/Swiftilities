@@ -16,12 +16,12 @@ To run the example project, clone the repo, and run `pod install` from the Examp
     	ss.frameworks   = ["<Any Required Modules>"]
     end 
     ```
-4. Apend a `ss.dependency` to `s.subsec` within the podspec file with the following format: 
+4. Apend an `ss.dependency` to `s.subsec` within the podspec file with the following format: 
 
     ```ruby
     ss.dependency 'Swiftilities/<Your Subsepc Name>'
     ```
-    
+
 5. Navigate to the example project directory and run `bundle exec pod update`
 
 ## Requirements
