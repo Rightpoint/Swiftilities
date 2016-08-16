@@ -62,6 +62,3 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods (~> 1.0)
-
-BUNDLED WITH
-   1.12.3
