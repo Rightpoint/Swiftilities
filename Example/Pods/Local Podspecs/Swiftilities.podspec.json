@@ -56,6 +56,13 @@
       ]
     },
     {
+      "name": "FormattedTextField",
+      "source_files": "Pod/Classes/FormattedTextField/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Deselection": [
@@ -74,6 +81,9 @@
 
         ],
         "Swiftilities/RootViewController": [
+
+        ],
+        "Swiftilities/FormattedTextField": [
 
         ]
       }

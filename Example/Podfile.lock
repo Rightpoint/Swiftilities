@@ -3,12 +3,14 @@ PODS:
     - Swiftilities/All (= 0.3.0)
   - Swiftilities/All (0.3.0):
     - Swiftilities/Deselection
+    - Swiftilities/FormattedTextField
     - Swiftilities/Forms
     - Swiftilities/Keyboard
     - Swiftilities/Logging
     - Swiftilities/Math
     - Swiftilities/RootViewController
   - Swiftilities/Deselection (0.3.0)
+  - Swiftilities/FormattedTextField (0.3.0)
   - Swiftilities/Forms (0.3.0)
   - Swiftilities/Keyboard (0.3.0)
   - Swiftilities/Logging (0.3.0)
@@ -23,7 +25,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: c330837a86867b9813eb323b55520dc2d3659ae2
+  Swiftilities: ba7a0d11e08cce8bef97e073f6b3db1050e0cf5e
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
