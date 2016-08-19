@@ -66,6 +66,13 @@
       ]
     },
     {
+      "name": "Pagination",
+      "source_files": "Pod/Classes/Pagination/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Deselection": [
@@ -87,6 +94,9 @@
 
         ],
         "Swiftilities/RootViewController": [
+
+        ],
+        "Swiftilities/Pagination": [
 
         ]
       }

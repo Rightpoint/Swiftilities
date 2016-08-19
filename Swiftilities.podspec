@@ -67,6 +67,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # Pagination
+ 
+  s.subspec "Pagination" do |ss|
+    ss.source_files = "Pod/Classes/Pagination/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Catch All
 
   s.subspec "All" do |ss|
@@ -77,6 +84,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Logging'
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/RootViewController'
-  end
+    ss.dependency 'Swiftilities/Pagination'
+   end
 
 end
