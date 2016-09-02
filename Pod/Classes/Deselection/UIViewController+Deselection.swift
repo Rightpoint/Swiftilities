@@ -42,9 +42,9 @@ public extension UIViewController {
         let selectedIndexPaths = tableView?.indexPathsForSelectedRows ?? []
 
         if let coordinator = transitionCoordinator() {
-            coordinator.animateAlongsideTransitionInView(parentViewController?.view, animation: { context in
                 selectedIndexPaths.forEach {
                     tableView?.deselectRowAtIndexPath($0, animated: context.isAnimated())
+            coordinator.animateAlongsideTransition({ context in
                 }
                 }, completion: { context in
                     if context.isCancelled() {
@@ -71,9 +71,9 @@ public extension UIViewController {
         let selectedIndexPaths = collectionView?.indexPathsForSelectedItems() ?? []
 
         if let coordinator = transitionCoordinator() {
-            coordinator.animateAlongsideTransitionInView(parentViewController?.view, animation: { context in
                 selectedIndexPaths.forEach {
                     collectionView?.deselectItemAtIndexPath($0, animated: context.isAnimated())
+            coordinator.animateAlongsideTransition({ context in
                 }
                 }, completion: { context in
                     if context.isCancelled() {
