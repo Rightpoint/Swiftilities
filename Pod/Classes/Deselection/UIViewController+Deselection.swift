@@ -42,21 +42,21 @@ public extension UIViewController {
         let selectedIndexPaths = tableView?.indexPathsForSelectedRows ?? []
 
         if let coordinator = transitionCoordinator() {
-                selectedIndexPaths.forEach {
-                    tableView?.deselectRowAtIndexPath($0, animated: context.isAnimated())
             coordinator.animateAlongsideTransition({ context in
+                for indexPath in selectedIndexPaths {
+                    tableView?.deselectRowAtIndexPath(indexPath, animated: context.isAnimated())
                 }
                 }, completion: { context in
                     if context.isCancelled() {
-                        selectedIndexPaths.forEach {
-                            tableView?.selectRowAtIndexPath($0, animated: false, scrollPosition: .None)
+                        for indexPath in selectedIndexPaths {
+                            tableView?.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .None)
                         }
                     }
             })
         }
         else {
-            selectedIndexPaths.forEach {
-                tableView?.deselectRowAtIndexPath($0, animated: false)
+            for indexPath in selectedIndexPaths {
+                tableView?.deselectRowAtIndexPath(indexPath, animated: false)
             }
         }
     }
@@ -71,21 +71,21 @@ public extension UIViewController {
         let selectedIndexPaths = collectionView?.indexPathsForSelectedItems() ?? []
 
         if let coordinator = transitionCoordinator() {
-                selectedIndexPaths.forEach {
-                    collectionView?.deselectItemAtIndexPath($0, animated: context.isAnimated())
             coordinator.animateAlongsideTransition({ context in
+                for indexPath in selectedIndexPaths {
+                    collectionView?.deselectItemAtIndexPath(indexPath, animated: context.isAnimated())
                 }
                 }, completion: { context in
                     if context.isCancelled() {
-                        selectedIndexPaths.forEach {
-                            collectionView?.selectItemAtIndexPath($0, animated: false, scrollPosition: .None)
+                        for indexPath in selectedIndexPaths {
+                            collectionView?.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: .None)
                         }
                     }
             })
         }
         else {
-            selectedIndexPaths.forEach {
-                collectionView?.deselectItemAtIndexPath($0, animated: false)
+            for indexPath in selectedIndexPaths {
+                collectionView?.deselectItemAtIndexPath(indexPath, animated: false)
             }
         }
     }
