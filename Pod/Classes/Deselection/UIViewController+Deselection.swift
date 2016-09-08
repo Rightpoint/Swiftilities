@@ -30,6 +30,12 @@
 
 import UIKit
 
+#if swift(>=3.0)
+    private typealias IndexPathType = IndexPath
+#else
+    private typealias IndexPathType = NSIndexPath
+#endif
+
 public extension UIViewController {
 
     ///  Smoothly deselect selected rows in a table view during an animated
@@ -38,27 +44,59 @@ public extension UIViewController {
     ///  controller's `viewWillAppear(_:)` method.
     ///
     ///  - parameter tableView: The table view in which to perform deselection/reselection.
-    func rz_smoothlyDeselectRows(tableView tableView: UITableView?) {
+    func rz_smoothlyDeselectRows(tableView: UITableView?) {
         let selectedIndexPaths = tableView?.indexPathsForSelectedRows ?? []
 
-        if let coordinator = transitionCoordinator() {
-            coordinator.animateAlongsideTransitionInView(parentViewController?.view, animation: { context in
-                selectedIndexPaths.forEach {
-                    tableView?.deselectRowAtIndexPath($0, animated: context.isAnimated())
-                }
-                }, completion: { context in
-                    if context.isCancelled() {
-                        selectedIndexPaths.forEach {
-                            tableView?.selectRowAtIndexPath($0, animated: false, scrollPosition: .None)
-                        }
-                    }
-            })
-        }
-        else {
-            selectedIndexPaths.forEach {
-                tableView?.deselectRowAtIndexPath($0, animated: false)
+        let deselectAll: ([IndexPathType], Bool) -> Void = { (selectedIndexPaths, animated) in
+            for indexPath in selectedIndexPaths {
+                #if swift(>=3.0)
+                    tableView?.deselectRow(at: indexPath, animated: animated)
+                #else
+                    tableView?.deselectRowAtIndexPath(indexPath, animated: animated)
+                #endif
             }
         }
+
+        let animation = { (context: UIViewControllerTransitionCoordinatorContext) in
+            #if swift(>=3.0)
+                deselectAll(selectedIndexPaths, context.isAnimated)
+            #else
+                deselectAll(selectedIndexPaths, context.isAnimated())
+            #endif
+        }
+
+        let completion = { (context: UIViewControllerTransitionCoordinatorContext) in
+            #if swift(>=3.0)
+                if context.isCancelled {
+                    for indexPath in selectedIndexPaths {
+                        tableView?.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+                    }
+                }
+            #else
+                if context.isCancelled() {
+                    for indexPath in selectedIndexPaths {
+                        tableView?.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: .None)
+                    }
+                }
+            #endif
+        }
+
+        #if swift(>=3.0)
+            if let coordinator = transitionCoordinator {
+            coordinator.animateAlongsideTransition(in: parent?.view, animation: animation, completion: completion)
+            }
+            else {
+            deselectAll(selectedIndexPaths, false)
+            }
+        #else
+            if let coordinator = transitionCoordinator() {
+                coordinator.animateAlongsideTransitionInView(parentViewController?.view, animation: animation, completion: completion)
+
+            }
+            else {
+                deselectAll(selectedIndexPaths, false)
+            }
+        #endif
     }
 
     ///  Smoothly deselect selected items in a collection view during an animated
@@ -67,27 +105,63 @@ public extension UIViewController {
     ///  controller's `viewWillAppear(_:)` method.
     ///
     ///  - parameter collectionView: The table view in which to perform deselection/reselection.
-    func rz_smoothlyDeselectItems(collectionView collectionView: UICollectionView?) {
-        let selectedIndexPaths = collectionView?.indexPathsForSelectedItems() ?? []
+    func rz_smoothlyDeselectItems(collectionView: UICollectionView?) {
+        #if swift(>=3.0)
+            let selectedIndexPaths = collectionView?.indexPathsForSelectedItems ?? []
+        #else
+            let selectedIndexPaths = collectionView?.indexPathsForSelectedItems() ?? []
+        #endif
 
-        if let coordinator = transitionCoordinator() {
-            coordinator.animateAlongsideTransitionInView(parentViewController?.view, animation: { context in
-                selectedIndexPaths.forEach {
-                    collectionView?.deselectItemAtIndexPath($0, animated: context.isAnimated())
-                }
-                }, completion: { context in
-                    if context.isCancelled() {
-                        selectedIndexPaths.forEach {
-                            collectionView?.selectItemAtIndexPath($0, animated: false, scrollPosition: .None)
-                        }
-                    }
-            })
-        }
-        else {
-            selectedIndexPaths.forEach {
-                collectionView?.deselectItemAtIndexPath($0, animated: false)
+        let deselectAll: ([IndexPathType], Bool) -> Void = { (selectedIndexPaths, animated) in
+            for indexPath in selectedIndexPaths {
+                #if swift(>=3.0)
+                    collectionView?.deselectItem(at: indexPath, animated: animated)
+                #else
+                    collectionView?.deselectItemAtIndexPath(indexPath, animated: animated)
+                #endif
             }
         }
+        let animation = { (context: UIViewControllerTransitionCoordinatorContext) in
+            #if swift(>=3.0)
+                deselectAll(selectedIndexPaths, context.isAnimated)
+            #else
+                deselectAll(selectedIndexPaths, context.isAnimated())
+            #endif
+
+        }
+
+        let completion = { (context: UIViewControllerTransitionCoordinatorContext) in
+            #if swift(>=3.0)
+                if context.isCancelled {
+                    for indexPath in selectedIndexPaths {
+                        collectionView?.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition())
+                    }
+                }
+
+            #else
+                if context.isCancelled() {
+                    for indexPath in selectedIndexPaths {
+                        collectionView?.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition())
+                    }
+                }
+            #endif
+        }
+
+        #if swift(>=3.0)
+            if let coordinator = transitionCoordinator {
+                coordinator.animateAlongsideTransition(in: parent?.view, animation: animation, completion: completion)
+            }
+            else {
+                deselectAll(selectedIndexPaths, false)
+            }
+        #else
+            if let coordinator = transitionCoordinator() {
+                coordinator.animateAlongsideTransitionInView(parentViewController?.view, animation: animation, completion: completion)
+            }
+            else {
+                deselectAll(selectedIndexPaths, false)
+            }
+        #endif
     }
     
 }
