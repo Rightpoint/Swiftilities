@@ -7,26 +7,7 @@
 //
 // Copyright 2016 Raizlabs and other contributors
 // http://raizlabs.com/
-//
-// Permission is hereby granted, free of charge, to any person obtaining
-// a copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do so, subject to
-// the following conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
+
 
 import UIKit
 
@@ -35,13 +16,19 @@ import UIKit
  */
 public extension UIView {
 
-    fileprivate class KeyboardLayoutGuide : UILayoutGuide {}
+    private class KeyboardLayoutGuide : UILayoutGuide {}
 
     /// A layout guide for the keyboard
     var keyboardLayoutGuide: UILayoutGuide? {
+        #if swift(>=3.0)
         if let existingIdx = layoutGuides.index(where: { $0 is KeyboardLayoutGuide }) {
             return layoutGuides[existingIdx]
         }
+        #else
+            if let existingIdx = layoutGuides.indexOf({ $0 is KeyboardLayoutGuide }) {
+                return layoutGuides[existingIdx]
+            }
+        #endif
         return nil
     }
 
@@ -59,27 +46,49 @@ public extension UIView {
         let guide = KeyboardLayoutGuide()
         addLayoutGuide(guide)
 
-        guide.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        guide.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        guide.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        #if swift(>=3.0)
+            guide.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+            guide.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+            guide.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
 
-        let topConstraint = guide.topAnchor.constraint(equalTo: bottomAnchor)
-        topConstraint.isActive = true
+            let topConstraint = guide.topAnchor.constraint(equalTo: bottomAnchor)
+            topConstraint.isActive = true
 
-        Keyboard.addFrameObserver(guide) { [weak self] keyboardFrame in
-            if let sself = self , sself.window != nil {
-                var frameInWindow = sself.frame
+            Keyboard.addFrameObserver(guide) { [weak self] keyboardFrame in
+                if let sself = self , sself.window != nil {
+                    var frameInWindow = sself.frame
 
-                if let superview = sself.superview {
-                    frameInWindow = superview.convert(sself.frame, to: nil)
+                    if let superview = sself.superview {
+                        frameInWindow = superview.convert(sself.frame, to: nil)
+                    }
+
+                    topConstraint.constant = min(0.0, -(frameInWindow.maxY - keyboardFrame.minY))
+
+                    sself.layoutIfNeeded()
                 }
-
-                topConstraint.constant = min(0.0, -(frameInWindow.maxY - keyboardFrame.minY))
-
-                sself.layoutIfNeeded()
             }
-        }
-        
+        #else
+            guide.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
+            guide.rightAnchor.constraintEqualToAnchor(rightAnchor).active = true
+            guide.bottomAnchor.constraintEqualToAnchor(bottomAnchor).active = true
+
+            let topConstraint = guide.topAnchor.constraintEqualToAnchor(bottomAnchor)
+            topConstraint.active = true
+
+            Keyboard.addFrameObserver(guide) { [weak self] keyboardFrame in
+                if let sself = self where sself.window != nil {
+                    var frameInWindow = sself.frame
+
+                    if let superview = sself.superview {
+                        frameInWindow = superview.convertRect(sself.frame, toView: nil)
+                    }
+
+                    topConstraint.constant = min(0.0, -(frameInWindow.maxY - keyboardFrame.minY))
+                    
+                    sself.layoutIfNeeded()
+                }
+            }
+        #endif
         return guide
     }
 
