@@ -9,10 +9,18 @@
 import UIKit
 
 #if swift(>=3.0)
+
     open class TailoredSwiftTextView: PlaceholderTextView, HeightAutoAdjustable {
         open var animationDelegate: TextViewAnimationDelegate?
         open var animateHeightChange: Bool = true
         open var heightPriority: UILayoutPriority = UILayoutPriorityDefaultHigh
+
+        override open var text: String! {
+            didSet {
+                layoutIfNeeded()
+                updateAppearance()
+            }
+        }
 
         override public init(frame: CGRect, textContainer: NSTextContainer?) {
             super.init(frame: frame, textContainer: textContainer)
@@ -30,13 +38,26 @@ import UIKit
                 adjustPlaceholder()
             }
         }
+
+        private func updateAppearance() {
+            adjustHeight()
+            adjustPlaceholder()
+        }
     }
+
 #else
 
     public class TailoredSwiftTextView: PlaceholderTextView, HeightAutoAdjustable {
         public var animationDelegate: TextViewAnimationDelegate?
         public var animateHeightChange: Bool = true
         public var heightPriority: UILayoutPriority = UILayoutPriorityDefaultHigh
+
+        override public var text: String! {
+            didSet {
+                layoutIfNeeded()
+                updateAppearance()
+            }
+        }
 
         override public init(frame: CGRect, textContainer: NSTextContainer?) {
             super.init(frame: frame, textContainer: textContainer)
@@ -50,9 +71,13 @@ import UIKit
 
         override func textDidChange(notification: NSNotification) {
             if notification.object === self {
-                adjustHeight()
-                adjustPlaceholder()
+                updateAppearance()
             }
+        }
+
+        private func updateAppearance() {
+            adjustHeight()
+            adjustPlaceholder()
         }
     }
 
