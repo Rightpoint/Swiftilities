@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 
         // Logger
         
-        Log.logLevel = .Error
+        Log.logLevel = .error
         Log.error("Test log")
     }
 
