@@ -10,29 +10,39 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 3. Add a subspec to the Swiftilities.podspec following this pattern:
     ```ruby
     # <Your Subsepc Name>
-    
-    s.subspec "<Your Subsepc Name>" do |ss|
-    	ss.source_files = "Pod/Classes/<Your Subsepc Name>/*.swift"
+
+    s.subspec "<Your Subspec Name>" do |ss|
+    	ss.source_files = "Pod/Classes/<Your Subspec Name>/*.swift"
     	ss.frameworks   = ["<Any Required Modules>"]
-    end 
+    end
     ```
-4. Apend an `ss.dependency` to `s.subsec` within the podspec file with the following format: 
+4. Apend an `ss.dependency` to `s.subsec` within the podspec file with the following format:
 
     ```ruby
-    ss.dependency 'Swiftilities/<Your Subsepc Name>'
+    ss.dependency 'Swiftilities/<Your Subspec Name>'
     ```
 
-5. Navigate to the example project directory and run `bundle exec pod update`
+5. Navigate to the example project directory and run `pod update`
 
 ## Requirements
 
 ## Installation
 
 Swiftilities is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it, simply add the following lines to your Podfile:
 
 ```ruby
 pod "Swiftilities"
+
+## Swiftilities by default uses 3.0, if you need to use a lower version of swift
+## Add this to the bottom of your Podfile
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '2.3'
+    end
+  end
+end
 ```
 
 ## Author
