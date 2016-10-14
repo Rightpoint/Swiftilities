@@ -25,7 +25,11 @@ final class Keyboard {
     #else
         private(set) static var frame: CGRect = .zero
         private static var notificationObserver: NSObjectProtocol?
-        private static let frameObservers = NSMapTable.weakToStrongObjects()
+        #if swift(>=2.3)
+            private static let frameObservers = NSMapTable.weakToStrongObjectsMapTable()
+        #else
+            private static let frameObservers = NSMapTable.weakToStrongObjects()
+        #endif
     #endif
 
     #if swift(>=3.0)
