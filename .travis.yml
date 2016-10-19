@@ -22,13 +22,6 @@ script:
       -destination "${XCODE_DESTINATION}"
       CODE_SIGNING_REQUIRED=NO
       CODE_SIGN_IDENTITY=""
-  - TOOLCHAINS=com.apple.dt.toolchain.Swift_2_3 xcodebuild ${XCODE_ACTION}
-      -project Swiftilities.xcodeproj
-      -scheme ${XCODE_SCHEME}
-      -sdk ${XCODE_SDK}
-      -destination "${XCODE_DESTINATION}"
-      CODE_SIGNING_REQUIRED=NO
-      CODE_SIGN_IDENTITY=""
   - bundle exec pod lib lint
 
 notifications:
