@@ -24,7 +24,7 @@ open class TailoredSwiftTextView: PlaceholderTextView, HeightAutoAdjustable {
     }
 
     override func textDidChange(_ notification: Notification) {
-        if let object = notification.object as? AnyObject, object === self {
+        if let object = notification.object as AnyObject?, object === self {
             adjustHeight()
             adjustPlaceholder()
         }

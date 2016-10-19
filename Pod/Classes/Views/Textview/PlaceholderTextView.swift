@@ -77,7 +77,7 @@ open class PlaceholderTextView: UITextView, PlaceholderConfigurable {
     }
 
     func textDidChange(_ notification: Notification) {
-        if let object = notification.object as? AnyObject, object === self {
+        if let object = notification.object as AnyObject?, object === self {
             adjustPlaceholder()
         }
     }
