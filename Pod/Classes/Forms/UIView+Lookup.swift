@@ -16,7 +16,7 @@ extension UIView {
     /// - parameter includeNonInteractable: Return views that do not have user interaction enabled. The default is false.
     ///
     /// - returns: An array of views, of type T, sorted by y position.
-    public func lookupSortedViews<T: UIView>(_ includeHidden: Bool = false, includeNonInteractable: Bool = false) -> [T] {
+    @nonobjc final public func lookupSortedViews<T: UIView>(_ includeHidden: Bool = false, includeNonInteractable: Bool = false) -> [T] {
         if let textField = self as? T {
             if (isHidden == false || (includeHidden && isHidden == true)) &&
                 (isUserInteractionEnabled == true || includeNonInteractable && isUserInteractionEnabled == false) {
@@ -36,7 +36,7 @@ extension UIView {
         return views
     }
 
-    public func lookupParentView<T: UIView>() -> T? {
+    @nonobjc final public func lookupParentView<T: UIView>() -> T? {
         var parent: UIView? = superview
         while parent != nil && parent as? T == nil {
             parent = parent?.superview

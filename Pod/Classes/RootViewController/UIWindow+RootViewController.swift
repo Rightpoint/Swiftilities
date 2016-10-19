@@ -43,7 +43,7 @@ public extension UIWindow {
      - parameter animated:       Whether or not to animate the transition, animation is a cross-fade
      - parameter completion:     Completion block to be invoked after the transition finishes
      */
-    func setRootViewController(_ viewController: UIViewController, animated: Bool, completion: @escaping () -> Void = {}) {
+    @nonobjc func setRootViewController(_ viewController: UIViewController, animated: Bool, completion: @escaping () -> Void = {}) {
         if animated {
 
             UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { () -> Void in

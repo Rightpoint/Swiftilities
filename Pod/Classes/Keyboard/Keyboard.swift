@@ -74,7 +74,6 @@ final class Keyboard {
 }
 
 extension UIViewAnimationCurve {
-    
     func animationOption() -> UIViewAnimationOptions {
         switch self {
         case .easeInOut: return UIViewAnimationOptions()
@@ -89,7 +88,6 @@ extension UIViewAnimationCurve {
 // MARK: - Private
 
 private extension Keyboard {
-
     static func setupObservers() {
         notificationObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: .main) { notification -> Void in
             guard let frameValue: NSValue  = (notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
