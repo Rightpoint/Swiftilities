@@ -9,41 +9,41 @@
 import UIKit
 
 
-public class PlaceholderTextView: UITextView, PlaceholderConfigurable {
+open class PlaceholderTextView: UITextView, PlaceholderConfigurable {
 
     let placeholderLabel: UILabel = {
         let placeholderLabel = UILabel()
         placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-        placeholderLabel.textColor = .lightGrayColor()
-        placeholderLabel.font = UIFont.systemFontOfSize(UIFont.systemFontSize())
+        placeholderLabel.textColor = .lightGray
+        placeholderLabel.font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         return placeholderLabel
     }()
 
-    public var placeholder: String? = nil {
+    open var placeholder: String? = nil {
         didSet {
             placeholderLabel.text = placeholder
         }
     }
 
-    public var attributedPlaceholder: NSAttributedString? = nil {
+    open var attributedPlaceholder: NSAttributedString? = nil {
         didSet {
             placeholderLabel.attributedText = attributedPlaceholder
         }
     }
 
-    public var placeholderTextColor: UIColor? = .lightGrayColor() {
+    open var placeholderTextColor: UIColor? = .lightGray {
         didSet {
             placeholderLabel.textColor = placeholderTextColor
         }
     }
 
-    override public var textContainerInset: UIEdgeInsets {
+    override open var textContainerInset: UIEdgeInsets {
         didSet {
             adjustPlaceholder()
         }
     }
 
-    override public var text: String! {
+    override open var text: String! {
         didSet {
             adjustPlaceholder()
         }
@@ -60,24 +60,24 @@ public class PlaceholderTextView: UITextView, PlaceholderConfigurable {
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UITextViewTextDidChangeNotification,
+        NotificationCenter.default.removeObserver(self,
+                                                            name: NSNotification.Name.UITextViewTextDidChange,
                                                             object: nil)
     }
 
-    private func configureTextView() {
+    fileprivate func configureTextView() {
         translatesAutoresizingMaskIntoConstraints = false
-        font = UIFont.systemFontOfSize(UIFont.systemFontSize())
+        font = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         addSubview(placeholderLabel)
         adjustPlaceholder()
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
                                                          selector: #selector(textDidChange),
-                                                         name:UITextViewTextDidChangeNotification,
+                                                         name:NSNotification.Name.UITextViewTextDidChange,
                                                          object: nil)
     }
 
-    func textDidChange(notification: NSNotification) {
-        if notification.object === self {
+    func textDidChange(_ notification: Notification) {
+        if let object = notification.object as? AnyObject, object === self {
             adjustPlaceholder()
         }
     }
