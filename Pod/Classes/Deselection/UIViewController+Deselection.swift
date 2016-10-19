@@ -61,7 +61,7 @@ public extension UIViewController {
     ///  transition is canceled. Call this method from inside your view
     ///  controller's `viewWillAppear(_:)` method.
     ///
-    ///  - parameter tableView: The de/selectable view in which to perform deselection/reselection.
+    ///  - parameter deselectable: The (de)selectable view in which to perform deselection/reselection.
     func smoothlyDeselectItems(_ deselectable: SmoothlyDeselectableItems?) {
         let selectedIndexPaths = deselectable?.indexPathsForSelectedItems ?? []
 
