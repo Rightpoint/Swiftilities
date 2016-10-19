@@ -37,19 +37,19 @@ public protocol SmoothlyDeselectableItems {
 }
 
 extension UITableView: SmoothlyDeselectableItems {
-    public var indexPathsForSelectedItems: [IndexPath]? { return indexPathsForSelectedRows }
+    @nonobjc public var indexPathsForSelectedItems: [IndexPath]? { return indexPathsForSelectedRows }
 
-    public func selectItem(at indexPath: IndexPath?, animated: Bool) {
+    @nonobjc public func selectItem(at indexPath: IndexPath?, animated: Bool) {
         selectRow(at: indexPath, animated: animated, scrollPosition: .none)
     }
 
-    public func deselectItem(at indexPath: IndexPath, animated: Bool) {
+    @nonobjc public func deselectItem(at indexPath: IndexPath, animated: Bool) {
         deselectRow(at: indexPath, animated: animated)
     }
 }
 
 extension UICollectionView: SmoothlyDeselectableItems {
-    public func selectItem(at indexPath: IndexPath?, animated: Bool) {
+    @nonobjc public func selectItem(at indexPath: IndexPath?, animated: Bool) {
         selectItem(at: indexPath, animated: animated, scrollPosition: UICollectionViewScrollPosition())
     }
 }
@@ -62,7 +62,7 @@ public extension UIViewController {
     ///  controller's `viewWillAppear(_:)` method.
     ///
     ///  - parameter tableView: The de/selectable view in which to perform deselection/reselection.
-    @nonobjc func smoothlyDeselectItems(_ deselectable: SmoothlyDeselectableItems?) {
+    func smoothlyDeselectItems(_ deselectable: SmoothlyDeselectableItems?) {
         let selectedIndexPaths = deselectable?.indexPathsForSelectedItems ?? []
 
         if let coordinator = transitionCoordinator {
