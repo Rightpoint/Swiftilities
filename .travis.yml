@@ -8,7 +8,7 @@ env:
   - LC_CTYPE=en_US.UTF-8
     XCODE_SDK=iphonesimulator
     XCODE_ACTION="build-for-testing test-without-building"
-    XCODE_SCHEME=Swiftilities-iOS
+    XCODE_SCHEME=Swiftilities-Example
     XCODE_DESTINATION="name=iPhone 6s"
 
 before_install:
