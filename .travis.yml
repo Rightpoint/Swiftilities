@@ -16,7 +16,7 @@ before_install:
 
 script:
   - xcodebuild ${XCODE_ACTION}
-      -project Swiftilities.xcodeproj
+      -project Example/Swiftilities.xcodeproj
       -scheme ${XCODE_SCHEME}
       -sdk ${XCODE_SDK}
       -destination "${XCODE_DESTINATION}"
