@@ -35,11 +35,11 @@ import UIKit
  */
 public extension UIView {
 
-    private class KeyboardLayoutGuide : UILayoutGuide {}
+    fileprivate class KeyboardLayoutGuide : UILayoutGuide {}
 
     /// A layout guide for the keyboard
     var keyboardLayoutGuide: UILayoutGuide? {
-        if let existingIdx = layoutGuides.indexOf({ $0 is KeyboardLayoutGuide }) {
+        if let existingIdx = layoutGuides.index(where: { $0 is KeyboardLayoutGuide }) {
             return layoutGuides[existingIdx]
         }
         return nil
@@ -59,19 +59,19 @@ public extension UIView {
         let guide = KeyboardLayoutGuide()
         addLayoutGuide(guide)
 
-        guide.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
-        guide.rightAnchor.constraintEqualToAnchor(rightAnchor).active = true
-        guide.bottomAnchor.constraintEqualToAnchor(bottomAnchor).active = true
+        guide.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        guide.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        guide.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
 
-        let topConstraint = guide.topAnchor.constraintEqualToAnchor(bottomAnchor)
-        topConstraint.active = true
+        let topConstraint = guide.topAnchor.constraint(equalTo: bottomAnchor)
+        topConstraint.isActive = true
 
         Keyboard.addFrameObserver(guide) { [weak self] keyboardFrame in
-            if let sself = self where sself.window != nil {
+            if let sself = self , sself.window != nil {
                 var frameInWindow = sself.frame
 
                 if let superview = sself.superview {
-                    frameInWindow = superview.convertRect(sself.frame, toView: nil)
+                    frameInWindow = superview.convert(sself.frame, to: nil)
                 }
 
                 topConstraint.constant = min(0.0, -(frameInWindow.maxY - keyboardFrame.minY))
