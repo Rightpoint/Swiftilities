@@ -12,7 +12,7 @@ matrix:
       env:
         - XCODE_ACTION="clean test"
           XCODE_TOOLCHAIN="swift"
-          XCODE_DESTINATION="platform=\"iOS Simulator\",id=\"237D7619-4A4E-4624-8925-67A42A8A690A\""
+          XCODE_DESTINATION="platform=iOS Simulator,id=237D7619-4A4E-4624-8925-67A42A8A690A"
     - osx_image: xcode8
       env:
         - JOB=CARTHAGE
@@ -27,7 +27,7 @@ script:
     -toolchain ${XCODE_TOOLCHAIN}
     -workspace Example/Swiftilities.xcworkspace
     -scheme Swiftilities-Example
-    -destination ${XCODE_DESTINATION}
+    -destination "${XCODE_DESTINATION}"
 
 
 deploy:
