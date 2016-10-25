@@ -1,15 +1,30 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
+env:
+  global:
+    - LC_CTYPE=en_US.UTF-8
 
+os: osx
 language: objective-c
-osx_image: xcode8
-xcode_workspace: Example/Swiftilities.xcworkspace
-xcode_scheme: Swiftilities-Example
-xcode_sdk: iphonesimulator10.0
-
-after_success:
-  - pod trunk push Swiftilities
+matrix:
+  exclude:
+    - os: osx
+  include:
+    env:
+      - XCODE_ACTION="clean test"
+        XCODE_TOOLCHAIN="swift"
+        XCODE_DESTINATION="platform=iOS Simulator,name=iPhone 6,OS=10.0"
+      script:
+        - xcodebuild ${XCODE_ACTION}
+          -toolchain ${XCODE_TOOLCHAIN}
+          -workspace Example/Swiftilities.xcworkspace
+          -scheme Swiftilities-Example
+          -destination ${XCODE_DESTINATION}
+    env:
+      - JOB=CARTHAGE
+      script:
+        - brew update 1> /dev/null 2> /dev/null
+        - brew outdated carthage || brew upgrade carthage
+        - carthage build --no-skip-current
+        - test -d Carthage/Build/iOS/Swiftilities.framework || exit 1
 
 deploy:
   provider: script
