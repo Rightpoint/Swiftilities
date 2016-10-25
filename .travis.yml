@@ -8,23 +8,27 @@ matrix:
   exclude:
     - os: osx
   include:
-    env:
-      - XCODE_ACTION="clean test"
-        XCODE_TOOLCHAIN="swift"
-        XCODE_DESTINATION="platform=iOS Simulator,name=iPhone 6,OS=10.0"
-      script:
-        - xcodebuild ${XCODE_ACTION}
-          -toolchain ${XCODE_TOOLCHAIN}
-          -workspace Example/Swiftilities.xcworkspace
-          -scheme Swiftilities-Example
-          -destination ${XCODE_DESTINATION}
-    env:
-      - JOB=CARTHAGE
+    - osx_image: xcode8
+      env:
+        - XCODE_ACTION="clean test"
+          XCODE_TOOLCHAIN="swift"
+          XCODE_DESTINATION="platform=iOS Simulator,name=iPhone 6,OS=10.0"
+    - osx_image: xcode8
+      env:
+        - JOB=CARTHAGE
       script:
         - brew update 1> /dev/null 2> /dev/null
         - brew outdated carthage || brew upgrade carthage
         - carthage build --no-skip-current
         - test -d Carthage/Build/iOS/Swiftilities.framework || exit 1
+
+script:
+  - xcodebuild ${XCODE_ACTION}
+    -toolchain ${XCODE_TOOLCHAIN}
+    -workspace Example/Swiftilities.xcworkspace
+    -scheme Swiftilities-Example
+    -destination ${XCODE_DESTINATION}
+
 
 deploy:
   provider: script
