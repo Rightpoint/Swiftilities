@@ -12,7 +12,7 @@ matrix:
       env:
         - XCODE_ACTION="clean test"
           XCODE_TOOLCHAIN="swift"
-          XCODE_DESTINATION="id=237D7619-4A4E-4624-8925-67A42A8A690A,platform=iOS Simulator"
+          XCODE_DESTINATION="platform=\"iOS Simulator\",id=\"237D7619-4A4E-4624-8925-67A42A8A690A\""
     - osx_image: xcode8
       env:
         - JOB=CARTHAGE
