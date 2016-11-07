@@ -8,10 +8,24 @@
 
 import UIKit
 
-public class TailoredSwiftTextView: PlaceholderTextView, HeightAutoAdjustable {
-    public var animationDelegate: TextViewAnimationDelegate?
-    public var animateHeightChange: Bool = true
-    public var heightPriority: UILayoutPriority = UILayoutPriorityDefaultHigh
+open class TailoredSwiftTextView: PlaceholderTextView, HeightAutoAdjustable {
+    open var animationDelegate: TextViewAnimationDelegate?
+    open var animateHeightChange: Bool = true
+    open var heightPriority: UILayoutPriority = UILayoutPriorityDefaultHigh
+
+    override open var text: String! {
+        didSet {
+            layoutIfNeeded()
+            updateAppearance()
+        }
+    }
+
+    override open var attributedText: NSAttributedString! {
+        didSet {
+            layoutIfNeeded()
+            updateAppearance()
+        }
+    }
 
     override public init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
@@ -23,10 +37,14 @@ public class TailoredSwiftTextView: PlaceholderTextView, HeightAutoAdjustable {
         adjustHeight()
     }
 
-    override func textDidChange(notification: NSNotification) {
-        if notification.object === self {
-            adjustHeight()
-            adjustPlaceholder()
+    override func textDidChange(_ notification: Notification) {
+        if let object = notification.object as AnyObject?, object === self {
+            updateAppearance()
         }
+    }
+
+    private func updateAppearance() {
+        adjustHeight()
+        adjustPlaceholder()
     }
 }

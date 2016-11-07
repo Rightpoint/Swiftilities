@@ -16,27 +16,27 @@ extension UIView {
     /// - parameter includeNonInteractable: Return views that do not have user interaction enabled. The default is false.
     ///
     /// - returns: An array of views, of type T, sorted by y position.
-    final public func rz_sortedSubviews<T: UIView>(ofType type: T.Type, includeHidden: Bool = false, includeNonInteractable: Bool = false) -> [T] {
-        if let view = self as? T {
-            if (hidden == false || (includeHidden && hidden == true)) &&
-                (userInteractionEnabled == true || includeNonInteractable && userInteractionEnabled == false) {
-                return [view]
+    @nonobjc final public func lookupSortedViews<T: UIView>(_ includeHidden: Bool = false, includeNonInteractable: Bool = false) -> [T] {
+        if let textField = self as? T {
+            if (isHidden == false || (includeHidden && isHidden == true)) &&
+                (isUserInteractionEnabled == true || includeNonInteractable && isUserInteractionEnabled == false) {
+                return [textField]
             }
         }
         var views: [T] = Array()
         for subview in subviews {
-            let results = subview.rz_sortedSubviews(ofType: T.self, includeHidden: includeHidden, includeNonInteractable: includeNonInteractable)
-            views.appendContentsOf(results)
+            let results: [T] = subview.lookupSortedViews(includeHidden, includeNonInteractable: includeNonInteractable)
+            views.append(contentsOf: results)
         }
-        views.sortInPlace { (view, otherView) -> Bool in
-            let center = convertPoint(view.center, fromView: view.superview)
-            let otherCenter = convertPoint(otherView.center, fromView: otherView.superview)
+        views.sort { (textField, otherTextField) -> Bool in
+            let center = convert(textField.center, from: textField.superview)
+            let otherCenter = convert(otherTextField.center, from: otherTextField.superview)
             return center.y < otherCenter.y
         }
         return views
     }
 
-    final public func rz_superview<T: UIView>(ofType type: T.Type) -> T? {
+    @nonobjc final public func lookupParentView<T: UIView>() -> T? {
         var parent: UIView? = superview
         while parent != nil && parent as? T == nil {
             parent = parent?.superview

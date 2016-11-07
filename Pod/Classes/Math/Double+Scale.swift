@@ -38,13 +38,13 @@ public extension Double {
 
      - returns: The input number, scaled from the `from` range to the `to` range.
      */
-    func scale(from from: ClosedInterval<Double>, to: ClosedInterval<Double>, clamp: Bool = false) -> Double {
+    func scale(from: ClosedRange<Double>, to: ClosedRange<Double>, clamp: Bool = false) -> Double {
         guard from != to else {
             return self // short circuit the math if they're equal
         }
-        var result = ((self - from.start) / (from.end - from.start)) * (to.end - to.start) + to.start
+        var result = ((self - from.lowerBound) / (from.upperBound - from.lowerBound)) * (to.upperBound - to.lowerBound) + to.lowerBound
         if clamp {
-            result = max(min(result, to.end), to.start)
+            result = max(min(result, to.upperBound), to.lowerBound)
         }
         return result
     }

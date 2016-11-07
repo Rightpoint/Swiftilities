@@ -30,6 +30,30 @@
 
 import UIKit
 
+public protocol SmoothlyDeselectableItems {
+    var indexPathsForSelectedItems: [IndexPath]? { get }
+    func selectItem(at indexPath: IndexPath?, animated: Bool)
+    func deselectItem(at indexPath: IndexPath, animated: Bool)
+}
+
+extension UITableView: SmoothlyDeselectableItems {
+    @nonobjc public var indexPathsForSelectedItems: [IndexPath]? { return indexPathsForSelectedRows }
+
+    @nonobjc public func selectItem(at indexPath: IndexPath?, animated: Bool) {
+        selectRow(at: indexPath, animated: animated, scrollPosition: .none)
+    }
+
+    @nonobjc public func deselectItem(at indexPath: IndexPath, animated: Bool) {
+        deselectRow(at: indexPath, animated: animated)
+    }
+}
+
+extension UICollectionView: SmoothlyDeselectableItems {
+    @nonobjc public func selectItem(at indexPath: IndexPath?, animated: Bool) {
+        selectItem(at: indexPath, animated: animated, scrollPosition: UICollectionViewScrollPosition())
+    }
+}
+
 public extension UIViewController {
 
     ///  Smoothly deselect selected rows in a table view during an animated
@@ -37,57 +61,27 @@ public extension UIViewController {
     ///  transition is canceled. Call this method from inside your view
     ///  controller's `viewWillAppear(_:)` method.
     ///
-    ///  - parameter tableView: The table view in which to perform deselection/reselection.
-    func rz_smoothlyDeselectRows(tableView tableView: UITableView?) {
-        let selectedIndexPaths = tableView?.indexPathsForSelectedRows ?? []
+    ///  - parameter deselectable: The (de)selectable view in which to perform deselection/reselection.
+    func smoothlyDeselectItems(_ deselectable: SmoothlyDeselectableItems?) {
+        let selectedIndexPaths = deselectable?.indexPathsForSelectedItems ?? []
 
-        if let coordinator = transitionCoordinator() {
-            coordinator.animateAlongsideTransitionInView(parentViewController?.view, animation: { context in
+        if let coordinator = transitionCoordinator {
+            coordinator.animateAlongsideTransition(in: parent?.view, animation: { context in
                 selectedIndexPaths.forEach {
-                    tableView?.deselectRowAtIndexPath($0, animated: context.isAnimated())
+                    deselectable?.deselectItem(at: $0, animated: context.isAnimated)
                 }
                 }, completion: { context in
-                    if context.isCancelled() {
+                    if context.isCancelled {
                         selectedIndexPaths.forEach {
-                            tableView?.selectRowAtIndexPath($0, animated: false, scrollPosition: .None)
+                            deselectable?.selectItem(at: $0, animated: false)
                         }
                     }
             })
         }
         else {
             selectedIndexPaths.forEach {
-                tableView?.deselectRowAtIndexPath($0, animated: false)
+                deselectable?.deselectItem(at: $0, animated: false)
             }
         }
     }
-
-    ///  Smoothly deselect selected items in a collection view during an animated
-    /// transition, and intelligently reselect those items if the interactive
-    /// transition is canceled. Call this method from inside your view
-    ///  controller's `viewWillAppear(_:)` method.
-    ///
-    ///  - parameter collectionView: The table view in which to perform deselection/reselection.
-    func rz_smoothlyDeselectItems(collectionView collectionView: UICollectionView?) {
-        let selectedIndexPaths = collectionView?.indexPathsForSelectedItems() ?? []
-
-        if let coordinator = transitionCoordinator() {
-            coordinator.animateAlongsideTransitionInView(parentViewController?.view, animation: { context in
-                selectedIndexPaths.forEach {
-                    collectionView?.deselectItemAtIndexPath($0, animated: context.isAnimated())
-                }
-                }, completion: { context in
-                    if context.isCancelled() {
-                        selectedIndexPaths.forEach {
-                            collectionView?.selectItemAtIndexPath($0, animated: false, scrollPosition: .None)
-                        }
-                    }
-            })
-        }
-        else {
-            selectedIndexPaths.forEach {
-                collectionView?.deselectItemAtIndexPath($0, animated: false)
-            }
-        }
-    }
-    
 }
