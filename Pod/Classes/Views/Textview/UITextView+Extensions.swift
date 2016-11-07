@@ -9,27 +9,27 @@
 import UIKit
 
 extension PlaceholderConfigurable where Self:UITextView {
-    private func xConstraint() -> NSLayoutConstraint {
+    fileprivate func xConstraint() -> NSLayoutConstraint {
         let constraint: NSLayoutConstraint = constraints
             .filter({ (constraint: NSLayoutConstraint) -> Bool in
-                return constraint.firstAttribute == .Left &&
-                    constraint.secondAttribute == .Left &&
+                return constraint.firstAttribute == .left &&
+                    constraint.secondAttribute == .left &&
                     (constraint.firstItem === self || constraint.secondItem === self)
             })
-            .first ?? placeholderLabel.leftAnchor.constraintEqualToAnchor(leftAnchor)
-        constraint.active = true
+            .first ?? placeholderLabel.leftAnchor.constraint(equalTo: leftAnchor)
+        constraint.isActive = true
 
         return constraint
     }
 
-    private func yConstraint() -> NSLayoutConstraint {
+    fileprivate func yConstraint() -> NSLayoutConstraint {
         let constraint: NSLayoutConstraint = constraints
             .filter({ (constraint: NSLayoutConstraint) -> Bool in
-                return constraint.firstAttribute == .Top &&
-                    constraint.secondAttribute == .Top &&
+                return constraint.firstAttribute == .top &&
+                    constraint.secondAttribute == .top &&
                     (constraint.firstItem === self || constraint.secondItem === self)
-            }).first ?? placeholderLabel.topAnchor.constraintEqualToAnchor(topAnchor)
-        constraint.active = true
+            }).first ?? placeholderLabel.topAnchor.constraint(equalTo: topAnchor)
+        constraint.isActive = true
 
         return constraint
     }
@@ -44,7 +44,7 @@ extension PlaceholderConfigurable where Self:UITextView {
     }
 
     func adjustPlaceholder() {
-        placeholderLabel.hidden = text.characters.count > 0
+        placeholderLabel.isHidden = text.characters.count > 0
 
         let position = placeholderPosition
         placeholderConstraints.x?.constant = position.x
@@ -53,14 +53,14 @@ extension PlaceholderConfigurable where Self:UITextView {
 }
 
 extension HeightAutoAdjustable where Self:UITextView {
-    private var bottomOffset: CGPoint {
+    fileprivate var bottomOffset: CGPoint {
         let verticalInset =  abs(textContainerInset.top - textContainerInset.bottom)
         return CGPoint(x: 0.0,
-                       y: contentSize.height - CGRectGetHeight(self.bounds) + verticalInset)
+                       y: contentSize.height - self.bounds.height + verticalInset)
     }
 
     var intrinsicContentHeight: CGFloat {
-        let height = sizeThatFits(CGSize(width: bounds.width, height: CGFloat.max)).height
+        let height = sizeThatFits(CGSize(width: bounds.width, height: CGFloat.greatestFiniteMagnitude)).height
         guard let font = font else {
             return height
         }
@@ -73,15 +73,15 @@ extension HeightAutoAdjustable where Self:UITextView {
     func heightConstraint() -> NSLayoutConstraint {
         let constraint: NSLayoutConstraint = constraints
             .filter({ (constraint: NSLayoutConstraint) -> Bool in
-                return constraint.firstAttribute == .Height &&
+                return constraint.firstAttribute == .height &&
                     constraint.firstItem === self &&
-                    constraint.active &&
+                    constraint.isActive &&
                     constraint.multiplier == 1.0
-            }).first ?? heightAnchor.constraintEqualToConstant(intrinsicContentHeight)
+            }).first ?? heightAnchor.constraint(equalToConstant: intrinsicContentHeight)
 
-        if !constraint.active {
+        if !constraint.isActive {
             constraint.priority = heightPriority
-            constraint.active = true
+            constraint.isActive = true
             setNeedsLayout()
         }
 
@@ -96,13 +96,13 @@ extension HeightAutoAdjustable where Self:UITextView {
         setNeedsLayout()
         
         let animated = animationDelegate?.shouldAnimateHeightChange(self) ?? false
-        guard let container = animationDelegate?.containerToLayout(forTextView: self) where animated else {
+        guard let container = animationDelegate?.containerToLayout(forTextView: self) , animated else {
             scrollToBottom(animated)
             return
         }
         
         let duration = animationDelegate?.animationDuration(self) ?? 0.1
-        UIView.animateWithDuration(duration, animations: {
+        UIView.animate(withDuration: duration, animations: {
             container.layoutIfNeeded()
             if self.bottomOffset.y < (self.font?.lineHeight ?? 0.0) {
                 self.scrollToBottom(animated)
@@ -110,7 +110,7 @@ extension HeightAutoAdjustable where Self:UITextView {
         })
     }
 
-    func scrollToBottom(animated: Bool) {
+    func scrollToBottom(_ animated: Bool) {
         setContentOffset(bottomOffset, animated: animated)
     }
 }

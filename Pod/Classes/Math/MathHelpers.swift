@@ -40,8 +40,8 @@ public struct MathHelpers {
 
      - returns: the clamped value
      */
-    static func clamp<T: Comparable>(value: T, to: ClosedInterval<T>) -> T {
-        return clamp(value, min: to.start, max: to.end)
+    static func clamp<T: Comparable>(_ value: T, to: ClosedRange<T>) -> T {
+        return clamp(value, min: to.lowerBound, max: to.upperBound)
     }
 
     /**
@@ -53,7 +53,7 @@ public struct MathHelpers {
 
      - returns: the clamped value
      */
-    static func clamp<T: Comparable>(value: T, min lower: T, max upper: T) -> T {
+    static func clamp<T: Comparable>(_ value: T, min lower: T, max upper: T) -> T {
         return min(max(value, lower), upper)
     }
 

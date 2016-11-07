@@ -35,12 +35,12 @@ import UIKit
  */
 final class Keyboard {
 
-    typealias FrameChangeHandler = CGRect -> Void
+    typealias FrameChangeHandler = (CGRect) -> Void
 
-    private(set) static var frame: CGRect = .zero
+    fileprivate(set) static var frame: CGRect = .zero
 
-    private static var notificationObserver: NSObjectProtocol?
-    private static let frameObservers = NSMapTable.weakToStrongObjectsMapTable()
+    fileprivate static var notificationObserver: NSObjectProtocol?
+    fileprivate static let frameObservers = NSMapTable<AnyObject, AnyObject>.weakToStrongObjects()
 
     /**
      Add a keyboard frame observer with associated handler. Perform view changes in the handler to have them tied to the animation
@@ -50,7 +50,7 @@ final class Keyboard {
      - parameter animated: Whether or not to animate changes in the handler block alongside the keyboard frame changes.
      - parameter handler:  A block in which to perform view changes.
      */
-    static func addFrameObserver(observer: AnyObject, withAnimations animated: Bool = true, handler: FrameChangeHandler) {
+    static func addFrameObserver(_ observer: AnyObject, withAnimations animated: Bool = true, handler: FrameChangeHandler) {
         frameObservers.setObject(KeyboardHandler(handler: handler, animated: animated), forKey: observer)
 
         if notificationObserver == nil {
@@ -63,8 +63,8 @@ final class Keyboard {
      
      - parameter observer: The object being observed to remove.
      */
-    static func removeFrameObserver(observer: AnyObject) {
-        frameObservers.removeObjectForKey(observer)
+    static func removeFrameObserver(_ observer: AnyObject) {
+        frameObservers.removeObject(forKey: observer)
 
         if frameObservers.count == 0 {
             teardownObservers()
@@ -74,13 +74,12 @@ final class Keyboard {
 }
 
 extension UIViewAnimationCurve {
-    
     func animationOption() -> UIViewAnimationOptions {
         switch self {
-        case .EaseInOut: return .CurveEaseInOut
-        case .EaseIn:    return .CurveEaseIn
-        case .EaseOut:   return .CurveEaseOut
-        case .Linear:    return .CurveLinear
+        case .easeInOut: return UIViewAnimationOptions()
+        case .easeIn:    return .curveEaseIn
+        case .easeOut:   return .curveEaseOut
+        case .linear:    return .curveLinear
         }
     }
     
@@ -89,24 +88,23 @@ extension UIViewAnimationCurve {
 // MARK: - Private
 
 private extension Keyboard {
-
     static func setupObservers() {
-        notificationObserver = NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillChangeFrameNotification, object: nil, queue: .mainQueue()) { notification -> Void in
-            guard let frameValue: NSValue  = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+        notificationObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: .main) { notification -> Void in
+            guard let frameValue: NSValue  = (notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
                 return
             }
-            frame = frameValue.CGRectValue()
+            frame = frameValue.cgRectValue
 
             let handlers = frameObservers.objectEnumerator()
 
             while let handler = handlers?.nextObject() as? KeyboardHandler<FrameChangeHandler> {
-                if let durationValue = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber where handler.animated {
+                if let durationValue = (notification as NSNotification).userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber , handler.animated {
 
-                    let curveValue = (notification.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.integerValue
+                    let curveValue = ((notification as NSNotification).userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue
                     let curve = UIViewAnimationCurve(rawValue: curveValue ?? 0)
-                    let animationOption = curve?.animationOption() ?? .CurveEaseInOut
+                    let animationOption = curve?.animationOption() ?? UIViewAnimationOptions()
 
-                    UIView.animateWithDuration(durationValue.doubleValue, delay: 0.0, options: animationOption, animations: {
+                    UIView.animate(withDuration: durationValue.doubleValue, delay: 0.0, options: animationOption, animations: {
                         handler.handler(frame)
                     }, completion: nil)
                 }
@@ -119,7 +117,7 @@ private extension Keyboard {
 
     static func teardownObservers() {
         if let notificationObserver = notificationObserver {
-            NSNotificationCenter.defaultCenter().removeObserver(notificationObserver)
+            NotificationCenter.default.removeObserver(notificationObserver)
             self.notificationObserver = nil
         }
     }
