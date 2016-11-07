@@ -22,8 +22,11 @@ matrix:
         - carthage build --no-skip-current
         - test -d Carthage/Build/iOS/Swiftilities.framework || exit 1
 
+before_script:
+  - killall "Simulator" || echo "No matching processes belonging to you were found"
+
 script:
-  - xcodebuild ${XCODE_ACTION}
+  - travis_retry xcodebuild ${XCODE_ACTION}
     -toolchain ${XCODE_TOOLCHAIN}
     -workspace Example/Swiftilities.xcworkspace
     -scheme Swiftilities-Example
