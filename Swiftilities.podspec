@@ -67,6 +67,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # FormattedTextField
+
+  s.subspec "FormattedTextField" do |ss|
+    ss.source_files = "Pod/Classes/FormattedTextField/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Catch All
 
   s.subspec "All" do |ss|
@@ -77,6 +84,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Logging'
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/RootViewController'
+    ss.dependency 'Swiftilities/FormattedTextField'
   end
 
 end
