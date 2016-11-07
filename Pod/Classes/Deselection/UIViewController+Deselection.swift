@@ -62,7 +62,7 @@ public extension UIViewController {
     ///  controller's `viewWillAppear(_:)` method.
     ///
     ///  - parameter deselectable: The (de)selectable view in which to perform deselection/reselection.
-    func smoothlyDeselectItems(_ deselectable: SmoothlyDeselectableItems?) {
+    @nonobjc func smoothlyDeselectItems(_ deselectable: SmoothlyDeselectableItems?) {
         let selectedIndexPaths = deselectable?.indexPathsForSelectedItems ?? []
 
         if let coordinator = transitionCoordinator {
