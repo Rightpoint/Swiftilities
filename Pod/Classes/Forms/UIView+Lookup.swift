@@ -16,21 +16,22 @@ extension UIView {
     /// - parameter includeNonInteractable: Return views that do not have user interaction enabled. The default is false.
     ///
     /// - returns: An array of views, of type T, sorted by y position.
-    @nonobjc final public func lookupSortedViews<T: UIView>(_ includeHidden: Bool = false, includeNonInteractable: Bool = false) -> [T] {
-        if let textField = self as? T {
-            if (isHidden == false || (includeHidden && isHidden == true)) &&
-                (isUserInteractionEnabled == true || includeNonInteractable && isUserInteractionEnabled == false) {
-                return [textField]
+    @nonobjc final public func lookupSortedViews<T: UIView>(includeHidden: Bool = false, includeNonInteractable: Bool = false) -> [T] {
+        if let view = self as? T {
+            if isHidden.equals(false, shouldTest: !includeHidden) &&
+                isUserInteractionEnabled.equals(true, shouldTest: !includeNonInteractable) {
+                return [view]
             }
         }
         var views: [T] = Array()
         for subview in subviews {
-            let results: [T] = subview.lookupSortedViews(includeHidden, includeNonInteractable: includeNonInteractable)
+            let results: [T] = subview.lookupSortedViews(includeHidden: includeHidden,
+                                                         includeNonInteractable: includeNonInteractable)
             views.append(contentsOf: results)
         }
-        views.sort { (textField, otherTextField) -> Bool in
-            let center = convert(textField.center, from: textField.superview)
-            let otherCenter = convert(otherTextField.center, from: otherTextField.superview)
+        views.sort { (view, otherView) -> Bool in
+            let center = convert(view.center, from: view.superview)
+            let otherCenter = convert(otherView.center, from: otherView.superview)
             return center.y < otherCenter.y
         }
         return views
@@ -43,4 +44,15 @@ extension UIView {
         }
         return parent as? T
     }
+}
+
+private extension Bool {
+
+    func equals(_ value: Bool, shouldTest: Bool) -> Bool {
+        guard shouldTest else {
+            return true
+        }
+        return self == value
+    }
+    
 }
