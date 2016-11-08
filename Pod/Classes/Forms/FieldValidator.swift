@@ -8,106 +8,129 @@
 
 import Foundation
 
-struct FieldValidator {
+public enum ValidationError: Error {
+
+    case failed(field: String, value: String, validationErrors: [Error])
+
+    public var field: String{
+        let field: String
+        switch self {
+        case .failed(field: let failedField, value: _, validationErrors: _):
+            field = failedField
+        }
+        return field
+    }
+
+    public var value: String {
+        let value: String
+        switch self {
+        case .failed(field: _, value: let failedValue, validationErrors: _):
+            value = failedValue
+        }
+        return value
+    }
+
+    public var validationErrors: [Error] {
+        let validationErrors: [Error]
+        switch self {
+        case .failed(field: _, value: _, validationErrors: let failedErrors):
+            validationErrors = failedErrors
+        }
+        return validationErrors
+    }
+
+    public var localizedDescription: String {
+        let errorList = validationErrors.map({ $0.localizedDescription }).joined(separator: "\n")
+        let format = NSLocalizedString("\"%@\" failed validation for field \"%@\" with the errors:\n%@", comment: "")
+        return String.localizedStringWithFormat(format, value, field, errorList)
+    }
+
+}
+
+public struct FieldValidator {
+
     let fieldName: String
     let rules: [FieldValidationRule]
 
-    func validate(inputString: String) -> Error? {
+    func validate(_ value: String) throws {
+        var errors = [Error]()
         for rule in rules {
-            if let error = rule.validate(fieldName: fieldName, inputString: inputString) {
-                return error
+            do {
+                try rule.validate(value)
+            }
+            catch {
+                errors.append(error)
             }
         }
-
-        return nil
-    }
-}
-
-protocol FieldValidationRule {
-    func validate(fieldName: String, inputString: String) -> Error?
-}
-
-typealias CustomRule = (_: String, _: String) -> Error?
-
-enum ValidationRule: FieldValidationRule {
-    case nonEmpty
-    case minLength(length: Int)
-    case validEmail
-    case custom(rule: CustomRule)
-
-    func validate(fieldName: String, inputString: String) -> Error? {
-        switch self {
-        case .nonEmpty where inputString.characters.count == 0:
-            return error(with: fieldName)
-        case .minLength(let length) where inputString.characters.count < length:
-            return error(with: fieldName)
-        case .validEmail where !inputString.isValidEmail:
-            return error(with: fieldName)
-        case .custom(let rule):
-            return rule(fieldName, inputString)
-        default: return nil
+        guard errors.isEmpty else {
+            throw ValidationError.failed(field: fieldName, value: value, validationErrors: errors)
         }
     }
 
 }
 
-extension ValidationRule {
+public protocol FieldValidationRule {
 
-    static let domain = "com.raizlabs.FieldValidationError"
+    func validate(_ value: String) throws
 
-    enum Code: Int {
-        case Generic
-        case NonEmpty
-        case MinLength
-        case ValidEmail
-        case Custom
-    }
+}
 
-    var errorCode: Code {
-        switch self {
-        case .nonEmpty: return .NonEmpty
-        case .minLength(_): return .MinLength
-        case .validEmail: return .ValidEmail
-        case .custom(_): return .Custom
+public struct NonEmptyValidator: FieldValidationRule {
+
+    public func validate(_ value: String) throws {
+        if value.isEmpty {
+            throw RuleErrors.shouldNotBeEmpty
         }
     }
 
 }
 
-private extension ValidationRule {
+public struct LengthValidator: FieldValidationRule {
 
-    func error(with fieldName: String) -> Error {
-        switch self {
-        case .nonEmpty:
-            return error(
-                description: localizedString(key: "%@ is required", fieldName.localizedCapitalized),
-                recovery: localizedString(key: "Please enter a valid %@.", fieldName.localizedCapitalized)
-            )
-        case .minLength(let length):
-            return error(
-                description: localizedString(key: "%@ is too short", fieldName.localizedCapitalized),
-                recovery: localizedString(key: "%@ must be at least %d characters in length.", fieldName.localizedCapitalized, length)
-            )
-        case .validEmail:
-            return error(
-                description: localizedString(key: "%@ is not valid", fieldName.localizedCapitalized),
-                recovery: localizedString(key: "Please enter a valid %@.", fieldName.localizedCapitalized)
-            )
-        case .custom:
-            fatalError("The error should be provided by the custom rule.")
+    public enum LengthRule {
+        case lessThanOrEqual(Int), greaterThanOrEqual(Int), betweenOrEqual(minimum: Int, maximum: Int)
+    }
+
+    public var rule: LengthRule
+
+    public init(rule: LengthRule) {
+        self.rule = rule
+    }
+
+    public func validate(_ value: String) throws {
+        let allowedMin: Int?
+        let allowedMax: Int?
+        switch rule {
+        case .lessThanOrEqual(let maximum):
+            allowedMax = maximum
+            allowedMin = nil
+        case .greaterThanOrEqual(let minimum):
+            allowedMax = nil
+            allowedMin = minimum
+        case .betweenOrEqual(minimum: let minimum, maximum: let maximum):
+            allowedMax = maximum
+            allowedMin = minimum
+        }
+        if let maximum = allowedMax {
+            guard value.characters.count <= maximum else {
+                throw RuleErrors.aboveMaxmimumLength(maximum)
+            }
+        }
+        if let minimum = allowedMin {
+            guard value.characters.count >= minimum else {
+                throw RuleErrors.belowMinimumLength(minimum)
+            }
         }
     }
 
-    func error(description: String, recovery: String) -> Error {
-        return NSError(domain: ValidationRule.domain, code: errorCode.rawValue, userInfo: [
-            NSLocalizedDescriptionKey: description,
-            NSLocalizedRecoverySuggestionErrorKey: recovery
-            ])
-    }
+}
 
-    func localizedString(key: String, _ args: CVarArg...) -> String {
-        let format = NSLocalizedString(key, comment: "")
-        return String(format: format, arguments: args)
+public struct EmailValidatior: FieldValidationRule {
+
+    public func validate(_ value: String) throws {
+        guard value.isValidEmail else {
+            throw RuleErrors.invalidEmail
+        }
     }
 
 }
@@ -119,6 +142,34 @@ private extension String {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
+    }
+    
+}
+
+public enum RuleErrors: Error {
+
+    case shouldNotBeEmpty
+    case belowMinimumLength(Int)
+    case aboveMaxmimumLength(Int)
+    case invalidEmail
+
+    public var localizedDescription: String {
+        switch self {
+        case .invalidEmail:
+            return NSLocalizedString("input was not a valid email",
+                                     comment: "Field validation error for invalid email")
+        case .shouldNotBeEmpty:
+            return NSLocalizedString("required input was empty",
+                                     comment: "Field validation error for empty required field")
+        case .aboveMaxmimumLength(let length):
+            let format = NSLocalizedString("Field was above maxmium length of %d",
+                                           comment: "Field validation error for a field over the maximum allowed length")
+            return String.localizedStringWithFormat(format, length)
+        case .belowMinimumLength(let length):
+            let format = NSLocalizedString("Field was below the minimum length of %d",
+                                           comment: "Field validation error for a field under the minimum allowed length")
+            return String.localizedStringWithFormat(format, length)
+        }
     }
 
 }
