@@ -1,5 +1,12 @@
 # Swiftilities
 
+
+[![Build Status](https://travis-ci.org/Raizlabs/Swiftilities.svg?branch=develop)](https://travis-ci.org/Raizlabs/Swiftilities)
+[![Version](https://img.shields.io/cocoapods/v/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/BonMot)
+[![License](https://img.shields.io/cocoapods/l/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/BonMot)
+[![Platform](https://img.shields.io/cocoapods/p/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/BonMot)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -10,13 +17,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 3. Add a subspec to the Swiftilities.podspec following this pattern:
     ```ruby
     # <Your Subsepc Name>
-    
+
     s.subspec "<Your Subsepc Name>" do |ss|
     	ss.source_files = "Pod/Classes/<Your Subsepc Name>/*.swift"
     	ss.frameworks   = ["<Any Required Modules>"]
-    end 
+    end
     ```
-4. Apend an `ss.dependency` to `s.subsec` within the podspec file with the following format: 
+4. Apend an `ss.dependency` to `s.subsec` within the podspec file with the following format:
 
     ```ruby
     ss.dependency 'Swiftilities/<Your Subsepc Name>'
