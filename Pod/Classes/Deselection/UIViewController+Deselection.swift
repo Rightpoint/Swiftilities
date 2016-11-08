@@ -66,21 +66,21 @@ public extension UIViewController {
         let selectedIndexPaths = deselectable?.indexPathsForSelectedItems ?? []
 
         if let coordinator = transitionCoordinator {
-            coordinator.animateAlongsideTransition(in: parent?.view, animation: { context in
-                selectedIndexPaths.forEach {
-                    deselectable?.deselectItem(at: $0, animated: context.isAnimated)
+            coordinator.animate(alongsideTransition: { context in
+                for indexPath in selectedIndexPaths {
+                    deselectable?.deselectItem(at: indexPath, animated: context.isAnimated)
                 }
-                }, completion: { context in
-                    if context.isCancelled {
-                        selectedIndexPaths.forEach {
-                            deselectable?.selectItem(at: $0, animated: false)
-                        }
+            }) { context in
+                if context.isCancelled {
+                    selectedIndexPaths.forEach {
+                        deselectable?.selectItem(at: $0, animated: false)
                     }
-            })
+                }
+            }
         }
         else {
-            selectedIndexPaths.forEach {
-                deselectable?.deselectItem(at: $0, animated: false)
+            for indexPath in selectedIndexPaths {
+                deselectable?.deselectItem(at: indexPath, animated: false)
             }
         }
     }
