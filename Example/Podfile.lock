@@ -1,21 +1,23 @@
 PODS:
-  - Swiftilities (0.2.1):
-    - Swiftilities/All (= 0.2.1)
-  - Swiftilities/All (0.2.1):
+  - Swiftilities (0.4.0):
+    - Swiftilities/All (= 0.4.0)
+  - Swiftilities/All (0.4.0):
     - Swiftilities/Deselection
+    - Swiftilities/FormattedTextField
     - Swiftilities/Forms
     - Swiftilities/Keyboard
     - Swiftilities/Logging
     - Swiftilities/Math
     - Swiftilities/RootViewController
     - Swiftilities/Views
-  - Swiftilities/Deselection (0.2.1)
-  - Swiftilities/Forms (0.2.1)
-  - Swiftilities/Keyboard (0.2.1)
-  - Swiftilities/Logging (0.2.1)
-  - Swiftilities/Math (0.2.1)
-  - Swiftilities/RootViewController (0.2.1)
-  - Swiftilities/Views (0.2.1)
+  - Swiftilities/Deselection (0.4.0)
+  - Swiftilities/FormattedTextField (0.4.0)
+  - Swiftilities/Forms (0.4.0)
+  - Swiftilities/Keyboard (0.4.0)
+  - Swiftilities/Logging (0.4.0)
+  - Swiftilities/Math (0.4.0)
+  - Swiftilities/RootViewController (0.4.0)
+  - Swiftilities/Views (0.4.0)
 
 DEPENDENCIES:
   - Swiftilities (from `../`)
@@ -25,8 +27,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: 64418b23112025c5fdc34605f350f743ce889abb
+  Swiftilities: ac22ad82bf88651badffde7a20316089a6b67453
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.1

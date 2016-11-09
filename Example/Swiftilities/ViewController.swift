@@ -11,13 +11,26 @@ import Swiftilities
 
 class ViewController: UIViewController {
 
+    @IBOutlet var allCapsTextField: FormattedTextField!
+    @IBOutlet var onlyNumbersTextField: FormattedTextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Logger
-        
+
         Log.logLevel = .error
         Log.error("Test log")
+
+        allCapsTextField.formatter = { string in
+            return string?.uppercased()
+        }
+
+        let nonNumeric = NSCharacterSet.decimalDigits.inverted
+
+        onlyNumbersTextField.formatter = { string in
+            return string?.components(separatedBy: nonNumeric).joined(separator: "")
+        }
     }
 
     override func didReceiveMemoryWarning() {

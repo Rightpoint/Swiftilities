@@ -1,6 +1,6 @@
 {
   "name": "Swiftilities",
-  "version": "0.2.1",
+  "version": "0.4.0",
   "summary": "A collection of useful Swift utilities.",
   "description": "A collection of useful Swift utilities. All components and\nextensions found in this library are consise enough on their own\nso as to not warrant their own project.",
   "homepage": "https://github.com/raizlabs/Swiftilities",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/raizlabs/Swiftilities.git",
-    "tag": "0.2.1"
+    "tag": "0.4.0"
   },
   "platforms": {
     "ios": "9.0"
@@ -66,6 +66,13 @@
       ]
     },
     {
+      "name": "FormattedTextField",
+      "source_files": "Pod/Classes/FormattedTextField/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Deselection": [
@@ -87,6 +94,9 @@
 
         ],
         "Swiftilities/RootViewController": [
+
+        ],
+        "Swiftilities/FormattedTextField": [
 
         ]
       }
