@@ -6,6 +6,8 @@ branches:
   only:
     - develop
     - master
+    # Matching n.n.n with allowed postfix for release branches
+    - /[\d+\.\d+\.\d+.*]
 
 os: osx
 language: objective-c
