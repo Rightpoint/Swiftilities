@@ -1,0 +1,21 @@
+machine:
+  xcode:
+    version: "8.1"
+
+dependencies:
+  pre:
+    - brew update 1> /dev/null 2> /dev/null
+    - brew outdated carthage || brew upgrade carthage
+test:
+  override:
+    - ./scripts/iOS.sh
+  post:
+    - carthage build --no-skip-current
+    - test -d Carthage/Build/iOS/Swiftilities.framework || exit 1
+    - bundle exec pod lib lint
+
+deployment:
+  release:
+    tag: /^\d+\.\d+\.\d+.*/
+    commands:
+      - pod trunk push

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "32A325731C0BAE8A53A351FB7736A6B6"
+               BlueprintIdentifier = "5776205E46583EBCE09D65E2C15E64FF"
                BuildableName = "Swiftilities.framework"
                BlueprintName = "Swiftilities"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BuildableName = "Swiftilities_Tests.xctest"
+               BlueprintName = "Swiftilities_Tests"
+               ReferencedContainer = "container:../Swiftilities.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5776205E46583EBCE09D65E2C15E64FF"
+            BuildableName = "Swiftilities.framework"
+            BlueprintName = "Swiftilities"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "32A325731C0BAE8A53A351FB7736A6B6"
+            BlueprintIdentifier = "5776205E46583EBCE09D65E2C15E64FF"
             BuildableName = "Swiftilities.framework"
             BlueprintName = "Swiftilities"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,6 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5776205E46583EBCE09D65E2C15E64FF"
+            BuildableName = "Swiftilities.framework"
+            BlueprintName = "Swiftilities"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
