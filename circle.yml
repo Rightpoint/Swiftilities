@@ -10,12 +10,11 @@ test:
   override:
     - ./scripts/iOS.sh
   post:
-    - carthage build --no-skip-current
-    - test -d Carthage/Build/iOS/Swiftilities.framework || exit 1
+    - carthage build --no-skip-current && test -d Carthage/Build/iOS/Swiftilities.framework || exit 1
     - bundle exec pod lib lint
 
 deployment:
   release:
-    tag: /^d+(\.d+)*(-.*)*/
+    tag: /^\d+(\.d+)*(-.*)*/
     commands:
       - bundle exec pod trunk push
