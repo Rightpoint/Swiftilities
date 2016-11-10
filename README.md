@@ -1,7 +1,7 @@
 # Swiftilities
 
 
-[![Build Status](https://travis-ci.org/Raizlabs/Swiftilities.svg?branch=develop)](https://travis-ci.org/Raizlabs/Swiftilities)
+[![CircleCI](https://circleci.com/gh/Raizlabs/Swiftilities/tree/develop.svg?style=svg)](https://circleci.com/gh/Raizlabs/Swiftilities/tree/develop)
 [![Version](https://img.shields.io/cocoapods/v/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/BonMot)
 [![License](https://img.shields.io/cocoapods/l/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/BonMot)
 [![Platform](https://img.shields.io/cocoapods/p/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/BonMot)
