@@ -2,4 +2,5 @@
 
 source ~/.rvm/scripts/rvm
 rvm use default
-pod trunk push
+bundle install --jobs=3 --retry=3 --deployment
+bundle exec pod trunk push
