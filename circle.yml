@@ -18,4 +18,4 @@ deployment:
   release:
     tag: /^\d+\.\d+\.\d+.*/
     commands:
-      - pod trunk push
+      - bundle exec pod trunk push
