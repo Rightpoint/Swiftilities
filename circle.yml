@@ -16,6 +16,6 @@ test:
 
 deployment:
   release:
-    tag: /^\d+\.\d+\.\d+.*/
+    tag: /^d+(\.d+)*(-.*)*/
     commands:
       - bundle exec pod trunk push
