@@ -45,6 +45,17 @@ public extension UIView {
         return nil
     }
 
+    var transitionCoordinator: UIViewControllerTransitionCoordinator? {
+        var responder: UIResponder? = next
+        while responder != nil {
+            if let coordinator = (responder as? UIViewController)?.transitionCoordinator {
+                return coordinator
+            }
+            responder = responder?.next
+        }
+        return nil
+    }
+
     /**
      Add and configure a keyboard layout guide.
      
@@ -76,7 +87,16 @@ public extension UIView {
 
                 topConstraint.constant = min(0.0, -(frameInWindow.maxY - keyboardFrame.minY))
 
-                sself.layoutIfNeeded()
+                if let coordinator = sself.transitionCoordinator {
+                    coordinator.animate(alongsideTransition: { _ in
+                        UIView.performWithoutAnimation {
+                            sself.layoutIfNeeded()
+                        }
+                    }, completion: nil)
+                }
+                else {
+                    sself.layoutIfNeeded()
+                }
             }
         }
         

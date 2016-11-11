@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		04CD173B1AB7C4F6286F8FA1 /* Pods_Swiftilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849AC9425E95C2FF6F694A7F /* Pods_Swiftilities_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* TextFormattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* TextFormattingViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		72A1F9111DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A1F9101DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift */; };
 		CD32DE751CEA1ECA00FC0C7E /* MathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD32DE731CEA1EC600FC0C7E /* MathTests.swift */; };
 		DE5A450412725B332FEFDD30 /* Pods_Swiftilities_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F294762325B4901AA48D27B1 /* Pods_Swiftilities_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -34,12 +35,13 @@
 		607FACD01AFB9204008FA782 /* Swiftilities_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftilities_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* TextFormattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormattingViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Swiftilities_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swiftilities_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72A1F9101DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidanceViewController.swift; sourceTree = "<group>"; };
 		7396494F9BA8221A6823B9D4 /* Pods-Swiftilities_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		849AC9425E95C2FF6F694A7F /* Pods_Swiftilities_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftilities_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8627BD5B9862F25C77AEF3CC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -114,11 +116,12 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				72A1F9101DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				607FACD71AFB9204008FA782 /* TextFormattingViewController.swift */,
 			);
 			name = "Example for Swiftilities";
 			path = Swiftilities;
@@ -211,7 +214,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = CocoaPods;
+				ORGANIZATIONNAME = Raizlabs;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -361,7 +364,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				72A1F9111DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift in Sources */,
+				607FACD81AFB9204008FA782 /* TextFormattingViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
