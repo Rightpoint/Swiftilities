@@ -48,8 +48,8 @@ public extension UIView {
     var transitionCoordinator: UIViewControllerTransitionCoordinator? {
         var responder: UIResponder? = next
         while responder != nil {
-            if let context = (responder as? UIViewController)?.transitionCoordinator {
-                return context
+            if let coordinator = (responder as? UIViewController)?.transitionCoordinator {
+                return coordinator
             }
             responder = responder?.next
         }
@@ -87,7 +87,7 @@ public extension UIView {
 
                 topConstraint.constant = min(0.0, -(frameInWindow.maxY - keyboardFrame.minY))
 
-                if let coordinator = self?.transitionCoordinator {
+                if let coordinator = sself.transitionCoordinator {
                     coordinator.animate(alongsideTransition: { _ in
                         UIView.performWithoutAnimation {
                             sself.layoutIfNeeded()
