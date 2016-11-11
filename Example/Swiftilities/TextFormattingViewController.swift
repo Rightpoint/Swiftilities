@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TextFormattingViewController.swift
 //  Swiftilities
 //
 //  Created by Nicholas Bonatsakis on 02/05/2016.
@@ -9,7 +9,7 @@
 import UIKit
 import Swiftilities
 
-class ViewController: UIViewController {
+class TextFormattingViewController: UIViewController {
 
     @IBOutlet var allCapsTextField: FormattedTextField!
     @IBOutlet var onlyNumbersTextField: FormattedTextField!
@@ -31,11 +31,6 @@ class ViewController: UIViewController {
         onlyNumbersTextField.formatter = { string in
             return string?.components(separatedBy: nonNumeric).joined(separator: "")
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
