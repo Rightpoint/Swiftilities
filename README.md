@@ -1,10 +1,11 @@
 # Swiftilities
 
 
-[![CircleCI](https://circleci.com/gh/Raizlabs/Swiftilities/tree/develop.svg?style=svg)](https://circleci.com/gh/Raizlabs/Swiftilities/tree/develop)
-[![Version](https://img.shields.io/cocoapods/v/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/BonMot)
-[![License](https://img.shields.io/cocoapods/l/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/BonMot)
-[![Platform](https://img.shields.io/cocoapods/p/Swiftilities.svg?style=flat)](http://cocoapods.org/pods/BonMot)
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org)
+[![CircleCI](https://img.shields.io/circleci/project/github/Raizlabs/Swiftilities.svg)](https://circleci.com/gh/Raizlabs/Swiftilities/tree/develop)
+[![Version](https://img.shields.io/cocoapods/v/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
+[![License](https://img.shields.io/cocoapods/l/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
+[![Platform](https://img.shields.io/cocoapods/p/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Usage
