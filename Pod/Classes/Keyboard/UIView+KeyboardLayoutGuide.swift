@@ -38,14 +38,14 @@ public extension UIView {
     fileprivate class KeyboardLayoutGuide : UILayoutGuide {}
 
     /// A layout guide for the keyboard
-    var keyboardLayoutGuide: UILayoutGuide? {
+    @nonobjc var keyboardLayoutGuide: UILayoutGuide? {
         if let existingIdx = layoutGuides.index(where: { $0 is KeyboardLayoutGuide }) {
             return layoutGuides[existingIdx]
         }
         return nil
     }
 
-    var transitionCoordinator: UIViewControllerTransitionCoordinator? {
+    @nonobjc var transitionCoordinator: UIViewControllerTransitionCoordinator? {
         var responder: UIResponder? = next
         while responder != nil {
             if let coordinator = (responder as? UIViewController)?.transitionCoordinator {
@@ -61,7 +61,7 @@ public extension UIView {
      
      - returns: A new keyboard layout guide or existing if previously invoked on this view
      */
-    func addKeyboardLayoutGuide() -> UILayoutGuide {
+    @nonobjc func addKeyboardLayoutGuide() -> UILayoutGuide {
         // Return the existing keyboard layout guide if one has already been added
         if let existingGuide = keyboardLayoutGuide {
             return existingGuide
@@ -106,7 +106,7 @@ public extension UIView {
     /**
      Remove the keyboard layout guide. NOTE: you do not need to invoke this method, it is purely optional.
      */
-    func removeKeyboardLayoutGuide() {
+    @nonobjc func removeKeyboardLayoutGuide() {
         if let keyboardLayoutGuide = keyboardLayoutGuide {
             Keyboard.removeFrameObserver(keyboardLayoutGuide)
             removeLayoutGuide(keyboardLayoutGuide)
