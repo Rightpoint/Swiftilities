@@ -33,7 +33,7 @@ import UIKit
 /**
  *  A set of abstractions around the keyboard.
  */
-open class Keyboard {
+public class Keyboard {
 
     typealias FrameChangeHandler = (CGRect) -> Void
 
@@ -50,7 +50,7 @@ open class Keyboard {
      - parameter animated: Whether or not to animate changes in the handler block alongside the keyboard frame changes.
      - parameter handler:  A block in which to perform view changes.
      */
-    open static func addFrameObserver(_ observer: AnyObject, withAnimations animated: Bool = true, handler: FrameChangeHandler) {
+    public static func addFrameObserver(_ observer: AnyObject, withAnimations animated: Bool = true, handler: FrameChangeHandler) {
         frameObservers.setObject(KeyboardHandler(handler: handler, animated: animated), forKey: observer)
 
         if notificationObserver == nil {
@@ -63,7 +63,7 @@ open class Keyboard {
      
      - parameter observer: The object being observed to remove.
      */
-    open static func removeFrameObserver(_ observer: AnyObject) {
+    public static func removeFrameObserver(_ observer: AnyObject) {
         frameObservers.removeObject(forKey: observer)
 
         if frameObservers.count == 0 {
