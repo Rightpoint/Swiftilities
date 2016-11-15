@@ -75,9 +75,6 @@ open class Log {
     /// The log level, defaults to .Off
     open static var logLevel: Level = .off
     
-    /// If true, prints text in color in accordance with the Xcode log color plug-in.
-    open static var printColoredText: Bool = false
-
     /// If true, prints emojis to signify log type, defaults to off
     open static var useEmoji: Bool = false
 
