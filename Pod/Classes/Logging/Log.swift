@@ -34,7 +34,7 @@ import Foundation
 /**
 *  A simple log that outputs to the console via ```print()````
 */
-open class Log {
+public class Log {
     
     // MARK: Configuration
     
@@ -73,10 +73,10 @@ open class Log {
     }
 
     /// The log level, defaults to .Off
-    open static var logLevel: Level = .off
+    public static var logLevel: Level = .off
     
     /// If true, prints emojis to signify log type, defaults to off
-    open static var useEmoji: Bool = false
+    public static var useEmoji: Bool = false
 
     // MARK: Private
 
@@ -100,23 +100,23 @@ open class Log {
 
     // MARK: Log Methods
     
-    open static func error<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+    public static func error<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
         log(object, level:.error, fileName, functionName, line)
     }
 
-    open static func warn<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+    public static func warn<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
         log(object, level:.warn, fileName, functionName, line)
     }
 
-    open static func info<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+    public static func info<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
         log(object, level:.info, fileName, functionName, line)
     }
 
-    open static func debug<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+    public static func debug<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
         log(object, level:.debug, fileName, functionName, line)
     }
 
-    open static func verbose<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+    public static func verbose<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
         log(object, level:.verbose, fileName, functionName, line)
     }
 }
