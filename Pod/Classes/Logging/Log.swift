@@ -33,8 +33,6 @@ import Foundation
 
 /**
 *  A simple log that outputs to the console via ```print()````
-*  Includes support for XcodeColors (can also install using alcatraz)
-*  https://github.com/robbiehanson/XcodeColors
 */
 open class Log {
     
@@ -51,7 +49,7 @@ open class Log {
         case error
         case off
         
-        func name() -> String {
+        var name: String {
             switch(self) {
             case .verbose: return "Verbose"
             case .debug: return "Debug"
@@ -61,59 +59,64 @@ open class Log {
             case .off: return "Disabled"
             }
         }
-    }
-    
-    /// The log level, defaults to .Off
-    open static var logLevel: Level = .off
-    
-    /// If true, prints text in color in accordance with the Xcode log color plug-in.
-    open static var printColoredText: Bool = false
 
-    
-    // MARK: Private
-    
-    fileprivate struct Cmd {
-        static let esc = "\u{001b}["
-        static let resetFG = esc + "fg;"
-        static let resetBG = esc + "bg;"
-        static let reset = esc + ";"
-    }
-    
-    fileprivate struct Color {
-        static let red = Cmd.esc + "fg240,0,0;"
-        static let yellow = Cmd.esc + "fg200,200,0;"
-        static let green = Cmd.esc + "fg0,150,0;"
-    }
-    
-    fileprivate static func log<T>(_ object: T, level: Level, color: String, _ fileName: String, _ functionName: String, _ line: Int) {
-        if logLevel.rawValue <= level.rawValue {
-            let logColor = Log.printColoredText ? color : ""
-            let components:[String] = fileName.components(separatedBy: "/")
-            let objectName = components.last ?? "Unknown Object"
-            print( logColor + "\(Date())|\(level.name().uppercased())|\(objectName) \(functionName) line \(line): " + Cmd.reset + "\(object)")
+        var emoji: String {
+            switch(self) {
+            case .verbose: return "📖"
+            case .debug: return "🐝"
+            case .info: return "✏️"
+            case .warn: return "⚠️"
+            case .error: return "⁉️"
+            case .off: return ""
+            }
         }
     }
+
+    /// The log level, defaults to .Off
+    public static var logLevel: Level = .off
     
+    /// If true, prints emojis to signify log type, defaults to off
+    public static var useEmoji: Bool = false
+
+    // MARK: Private
+
+    /// Date formatter for log
+    fileprivate static let dateformatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "Y-MM-dd H:m:ss.SSSS"
+        return df
+    }()
+
+    /// Generic log method
+    fileprivate static func log<T>(_ object: @autoclosure () -> T, level: Log.Level, _ fileName: String, _ functionName: String, _ line: Int) {
+        if logLevel.rawValue <= level.rawValue {
+            let date = Log.dateformatter.string(from: Date())
+            let components: [String] = fileName.components(separatedBy: "/")
+            let objectName = components.last ?? "Unknown Object"
+            let levelString = Log.useEmoji ? level.emoji : "|" + level.name.uppercased() + "|"
+            print("\(levelString)\(date) \(objectName) \(functionName) line \(line):\n\(object())\n")
+        }
+    }
+
     // MARK: Log Methods
     
-    static open func error<T>(_ object: T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
-        log(object, level:.error, color: Color.red, fileName, functionName, line)
+    public static func error<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+        log(object, level:.error, fileName, functionName, line)
     }
 
-    open static func warn<T>(_ object: T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
-        log(object, level:.warn, color: Color.yellow, fileName, functionName, line)
+    public static func warn<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+        log(object, level:.warn, fileName, functionName, line)
     }
 
-    open static func info<T>(_ object: T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
-        log(object, level:.info, color: Color.green, fileName, functionName, line)
+    public static func info<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+        log(object, level:.info, fileName, functionName, line)
     }
 
-    open static func debug<T>(_ object: T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
-        log(object, level:.debug, color: Color.green, fileName, functionName, line)
+    public static func debug<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+        log(object, level:.debug, fileName, functionName, line)
     }
 
-    open static func verbose<T>(_ object: T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
-        log(object, level:.verbose, color: Color.green, fileName, functionName, line)
+    public static func verbose<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+        log(object, level:.verbose, fileName, functionName, line)
     }
-
 }
