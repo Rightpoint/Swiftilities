@@ -49,7 +49,7 @@ open class Log {
         case error
         case off
         
-        var name: String = {
+        func name() -> String {
             switch(self) {
             case .verbose: return "Verbose"
             case .debug: return "Debug"
@@ -60,7 +60,7 @@ open class Log {
             }
         }
 
-        var emoji: String {
+        func emoji() -> String {
             switch(self) {
             case .verbose: return "📖"
             case .debug: return "🐝"
@@ -94,17 +94,6 @@ open class Log {
             let components: [String] = fileName.components(separatedBy: "/")
             let objectName = components.last ?? "Unknown Object"
             let levelString = Log.useEmoji ? level.emoji() : "|" + level.name().uppercased() + "|"
-            print("\(levelString)\(date) \(objectName) \(functionName) line \(line):\n\(object())\n")
-        }
-    }
-
-    /// Generic log method
-    fileprivate static func log<T>(_ object: @autoclosure () -> T, level: Log.Level, _ fileName: String, _ functionName: String, _ line: Int) {
-        if logLevel.rawValue <= level.rawValue {
-            let date = Log.dateformatter.string(from: Date())
-            let components: [String] = fileName.components(separatedBy: "/")
-            let objectName = components.last ?? "Unknown Object"
-            let levelString = Log.useEmoji ? level.emoji : "|" + level.name.uppercased() + "|"
             print("\(levelString)\(date) \(objectName) \(functionName) line \(line):\n\(object())\n")
         }
     }
