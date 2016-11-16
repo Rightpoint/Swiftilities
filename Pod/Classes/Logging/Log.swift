@@ -49,7 +49,7 @@ open class Log {
         case error
         case off
         
-        func name() -> String {
+        var name: String {
             switch(self) {
             case .verbose: return "Verbose"
             case .debug: return "Debug"
@@ -60,7 +60,7 @@ open class Log {
             }
         }
 
-        func emoji() -> String {
+        var emoji: String {
             switch(self) {
             case .verbose: return "📖"
             case .debug: return "🐝"
@@ -93,7 +93,7 @@ open class Log {
             let date = Log.dateformatter.string(from: Date())
             let components: [String] = fileName.components(separatedBy: "/")
             let objectName = components.last ?? "Unknown Object"
-            let levelString = Log.useEmoji ? level.emoji() : "|" + level.name().uppercased() + "|"
+            let levelString = Log.useEmoji ? level.emoji : "|" + level.name.uppercased() + "|"
             print("\(levelString)\(date) \(objectName) \(functionName) line \(line):\n\(object())\n")
         }
     }
