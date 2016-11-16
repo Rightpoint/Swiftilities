@@ -34,7 +34,7 @@ import Foundation
 /**
 *  A simple log that outputs to the console via ```print()````
 */
-public class Log {
+open class Log {
     
     // MARK: Configuration
     
