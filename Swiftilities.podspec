@@ -74,6 +74,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # TintedButton
+
+  s.subspec "TintedButton" do |ss|
+    ss.source_files = "Pod/Classes/TintedButton/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Catch All
 
   s.subspec "All" do |ss|
@@ -85,6 +92,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/RootViewController'
     ss.dependency 'Swiftilities/FormattedTextField'
+    ss.dependency 'Swiftilities/TintedButton'
   end
 
 end
