@@ -29,6 +29,95 @@
 
 import UIKit
 
-class TintedButton: UIButton {
+/// A button that looks and behaves like the default "Get" button in iTunes
+/// To fully replacate the effect in views built in interface builder, the button type needs to be set to "custom"
+open class TintedButton: UIButton {
 
+    @IBInspectable open var rz_backgroundColor: UIColor = UIColor.clear {
+        didSet {
+            setupBackground()
+        }
+    }
+
+    @IBInspectable open var rz_tintColor: UIColor? = nil {
+        didSet {
+            setupTint()
+        }
+    }
+
+    @IBInspectable open var rz_cornerRadius: CGFloat = 4 {
+        didSet {
+            setupBorder()
+        }
+    }
+
+    @IBInspectable open var rz_borderThickness: CGFloat = 1 {
+        didSet {
+            setupBorder()
+        }
+    }
+
+    open override var isHighlighted: Bool {
+        didSet {
+            toggleBackground()
+        }
+    }
+
+    public init(backgroundColor: UIColor, tintColor: UIColor, cornerRadius: CGFloat = 4.0) {
+        super.init(frame: CGRect.zero)
+        self.rz_backgroundColor = backgroundColor
+        self.rz_tintColor = tintColor
+        self.rz_cornerRadius = cornerRadius
+        setupBackground()
+        setupTint()
+    }
+
+
+    public required init?(coder aDecoder: NSCoder) {
+        if let color = aDecoder.decodeObject(forKey: #keyPath(rz_backgroundColor)) as? UIColor {
+            self.rz_backgroundColor = color
+        }
+        if let color = aDecoder.decodeObject(forKey: #keyPath(tintColor)) as? UIColor {
+            self.rz_tintColor = color
+        }
+        super.init(coder: aDecoder)
+        setupBackground()
+        setupTint()
+    }
+
+    open override func encode(with aCoder: NSCoder) {
+        super.encode(with: aCoder)
+        aCoder.encode(rz_backgroundColor, forKey: #keyPath(rz_backgroundColor))
+        aCoder.encode(rz_tintColor, forKey: #keyPath(rz_tintColor))
+    }
+
+}
+
+private extension TintedButton {
+
+    func setupBackground() {
+        setTitleColor(rz_backgroundColor, for: .highlighted)
+        toggleBackground()
+    }
+
+    func toggleBackground() {
+        if isHighlighted {
+            backgroundColor = rz_tintColor
+        }
+        else {
+            backgroundColor = rz_backgroundColor
+        }
+    }
+
+    func setupTint() {
+        setTitleColor(rz_tintColor, for: .normal)
+        layer.borderColor = self.rz_tintColor?.cgColor
+        toggleBackground()
+        setupBorder()
+    }
+
+    func setupBorder() {
+        layer.borderWidth = rz_borderThickness
+        layer.cornerRadius = rz_cornerRadius
+    }
 }
