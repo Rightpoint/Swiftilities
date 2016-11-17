@@ -12,12 +12,12 @@ import Swiftilities
 class TintedButtonsViewController: UIViewController {
 
     @IBOutlet weak var buttonStack: UIStackView!
-    var mutatedButton = TintedButton(backgroundColor: .red, tintColor: .red)
+    var mutatedButton = TintedButton(fillColor: .red, textColor: .red)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let newButton = TintedButton(backgroundColor: .black, tintColor: .lightGray)
+        let newButton = TintedButton(fillColor: .black, textColor: .lightGray)
         newButton.setTitle("Button 5", for: .normal)
         mutatedButton.setTitle("Button 6", for: .normal)
         buttonStack.addArrangedSubview(newButton)
@@ -26,10 +26,10 @@ class TintedButtonsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        mutatedButton.rz_borderThickness = 3
-        mutatedButton.rz_cornerRadius = 6
-        mutatedButton.rz_backgroundColor = .lightGray
-        mutatedButton.rz_tintColor = .darkText
+        mutatedButton.buttonBorderWidth = 3
+        mutatedButton.buttonCornerRadius = 6
+        mutatedButton.fillColor = .lightGray
+        mutatedButton.textColor = .darkText
     }
 
 }

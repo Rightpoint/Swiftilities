@@ -33,25 +33,25 @@ import UIKit
 /// To fully replacate the effect in views built in interface builder, the button type needs to be set to "custom"
 open class TintedButton: UIButton {
 
-    @IBInspectable open var rz_backgroundColor: UIColor = UIColor.clear {
+    @IBInspectable open var fillColor: UIColor = UIColor.clear {
         didSet {
             setupBackground()
         }
     }
 
-    @IBInspectable open var rz_tintColor: UIColor? = nil {
+    @IBInspectable open var textColor: UIColor? = nil {
         didSet {
             setupTint()
         }
     }
 
-    @IBInspectable open var rz_cornerRadius: CGFloat = 4 {
+    @IBInspectable open var buttonCornerRadius: CGFloat = 4 {
         didSet {
             setupBorder()
         }
     }
 
-    @IBInspectable open var rz_borderThickness: CGFloat = 1 {
+    @IBInspectable open var buttonBorderWidth: CGFloat = 1 {
         didSet {
             setupBorder()
         }
@@ -63,22 +63,23 @@ open class TintedButton: UIButton {
         }
     }
 
-    public init(backgroundColor: UIColor, tintColor: UIColor, cornerRadius: CGFloat = 4.0) {
+    public init(fillColor: UIColor, textColor: UIColor, buttonCornerRadius: CGFloat = 4.0, buttonBorderWidth: CGFloat = 1.0) {
         super.init(frame: CGRect.zero)
-        self.rz_backgroundColor = backgroundColor
-        self.rz_tintColor = tintColor
-        self.rz_cornerRadius = cornerRadius
+        self.fillColor = fillColor
+        self.textColor = textColor
+        self.buttonCornerRadius = buttonCornerRadius
+        self.buttonBorderWidth = buttonBorderWidth
         setupBackground()
         setupTint()
     }
 
 
     public required init?(coder aDecoder: NSCoder) {
-        if let color = aDecoder.decodeObject(forKey: #keyPath(rz_backgroundColor)) as? UIColor {
-            self.rz_backgroundColor = color
+        if let color = aDecoder.decodeObject(forKey: #keyPath(fillColor)) as? UIColor {
+            self.fillColor = color
         }
         if let color = aDecoder.decodeObject(forKey: #keyPath(tintColor)) as? UIColor {
-            self.rz_tintColor = color
+            self.textColor = color
         }
         super.init(coder: aDecoder)
         setupBackground()
@@ -87,8 +88,8 @@ open class TintedButton: UIButton {
 
     open override func encode(with aCoder: NSCoder) {
         super.encode(with: aCoder)
-        aCoder.encode(rz_backgroundColor, forKey: #keyPath(rz_backgroundColor))
-        aCoder.encode(rz_tintColor, forKey: #keyPath(rz_tintColor))
+        aCoder.encode(fillColor, forKey: #keyPath(fillColor))
+        aCoder.encode(textColor, forKey: #keyPath(textColor))
     }
 
 }
@@ -96,28 +97,28 @@ open class TintedButton: UIButton {
 private extension TintedButton {
 
     func setupBackground() {
-        setTitleColor(rz_backgroundColor, for: .highlighted)
+        setTitleColor(fillColor, for: .highlighted)
         toggleBackground()
     }
 
     func toggleBackground() {
         if isHighlighted {
-            backgroundColor = rz_tintColor
+            backgroundColor = textColor
         }
         else {
-            backgroundColor = rz_backgroundColor
+            backgroundColor = fillColor
         }
     }
 
     func setupTint() {
-        setTitleColor(rz_tintColor, for: .normal)
-        layer.borderColor = self.rz_tintColor?.cgColor
+        setTitleColor(textColor, for: .normal)
+        layer.borderColor = self.textColor?.cgColor
         toggleBackground()
         setupBorder()
     }
 
     func setupBorder() {
-        layer.borderWidth = rz_borderThickness
-        layer.cornerRadius = rz_cornerRadius
+        layer.borderWidth = buttonBorderWidth
+        layer.cornerRadius = buttonCornerRadius
     }
 }
