@@ -80,6 +80,13 @@
       ]
     },
     {
+      "name": "TintedButton",
+      "source_files": "Pod/Classes/TintedButton/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Deselection": [
@@ -107,6 +114,9 @@
 
         ],
         "Swiftilities/FormattedTextField": [
+
+        ],
+        "Swiftilities/TintedButton": [
 
         ]
       }

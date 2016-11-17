@@ -1,0 +1,35 @@
+//
+//  TintedButtonsViewController.swift
+//  Swiftilities
+//
+//  Created by Michael Skiba on 11/17/16.
+//  Copyright © 2016 Raizlabs. All rights reserved.
+//
+
+import UIKit
+import Swiftilities
+
+class TintedButtonsViewController: UIViewController {
+
+    @IBOutlet weak var buttonStack: UIStackView!
+    var mutatedButton = TintedButton(fillColor: .red, textColor: .red)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let newButton = TintedButton(fillColor: .black, textColor: .lightGray)
+        newButton.setTitle("Button 5", for: .normal)
+        mutatedButton.setTitle("Button 6", for: .normal)
+        buttonStack.addArrangedSubview(newButton)
+        buttonStack.addArrangedSubview(mutatedButton)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mutatedButton.buttonBorderWidth = 3
+        mutatedButton.buttonCornerRadius = 6
+        mutatedButton.fillColor = .lightGray
+        mutatedButton.textColor = .darkText
+    }
+
+}
