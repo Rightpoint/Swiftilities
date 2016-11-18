@@ -88,6 +88,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # HairlineView
+
+  s.subspec "HairlineView" do |ss|
+    ss.source_files = "Pod/Classes/HairlineView/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Catch All
 
   s.subspec "All" do |ss|
@@ -101,6 +108,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/AccessibilityHelpers'
     ss.dependency 'Swiftilities/FormattedTextField'
     ss.dependency 'Swiftilities/TintedButton'
+    ss.dependency 'Swiftilities/HairlineView'
   end
 
 end
