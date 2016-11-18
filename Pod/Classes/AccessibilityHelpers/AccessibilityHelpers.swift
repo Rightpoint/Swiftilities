@@ -15,7 +15,7 @@ public class Accessibility: NSObject {
 
     public static let shared = Accessibility()
 
-    public var announceCompletion: AccessibilityAnnounceCompletion?
+    private var announceCompletionQueue: [AccessibilityAnnounceCompletion?] = []
 
     public override init() {
         super.init()
@@ -38,16 +38,19 @@ public class Accessibility: NSObject {
      - parameter text:       The text to be spoken.
      - parameter completion: A block to be invoked when the announcement has completed.
      */
-    public func announce(_ text: String, completion: AccessibilityAnnounceCompletion? = nil) {
-        announceCompletion = completion
+    public func announce(_ text: String, completion: AccessibilityAnnounceCompletion? = nil ) {
+        announceCompletionQueue.append(completion)
         UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, text)
     }
 
     public func handleAnnounceDidFinish(_ notification: NSNotification) {
         if let userInfo = notification.userInfo {
-            announceCompletion?(userInfo[UIAccessibilityAnnouncementKeyStringValue] as? String,
-                                userInfo[UIAccessibilityAnnouncementKeyWasSuccessful] as? Bool)
-            announceCompletion = nil
+            guard !announceCompletionQueue.isEmpty else {
+                return
+            }
+            let completion = announceCompletionQueue.removeFirst()
+            completion?(userInfo[UIAccessibilityAnnouncementKeyStringValue] as? String,
+                        userInfo[UIAccessibilityAnnouncementKeyWasSuccessful] as? Bool)
         }
     }
 
