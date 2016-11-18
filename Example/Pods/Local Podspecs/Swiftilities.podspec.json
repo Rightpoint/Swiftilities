@@ -87,6 +87,13 @@
       ]
     },
     {
+      "name": "ColorHelpers",
+      "source_files": "Pod/Classes/ColorHelpers/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Deselection": [
@@ -117,6 +124,9 @@
 
         ],
         "Swiftilities/HairlineView": [
+
+        ],
+        "Swiftilities/ColorHelpers": [
 
         ]
       }
