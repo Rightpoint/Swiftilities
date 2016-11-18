@@ -8,7 +8,7 @@
 
 import UIKit
 
-public typealias AccessibilityAnnounceCompletion = (_ anncouncedString: String?, _ success: Bool?) -> ()
+public typealias AccessibilityAnnounceCompletion = (_ anncouncedString: String?, _ success: Bool) -> ()
 
 /// A set of handy UIAccessibility helpers
 public class Accessibility: NSObject {
@@ -50,7 +50,7 @@ public class Accessibility: NSObject {
             }
             let completion = announceCompletionQueue.removeFirst()
             completion?(userInfo[UIAccessibilityAnnouncementKeyStringValue] as? String,
-                        userInfo[UIAccessibilityAnnouncementKeyWasSuccessful] as? Bool)
+                        (userInfo[UIAccessibilityAnnouncementKeyWasSuccessful] as? Bool ?? false))
         }
     }
 
