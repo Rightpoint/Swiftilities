@@ -5,6 +5,7 @@ PODS:
     - Swiftilities/Deselection
     - Swiftilities/FormattedTextField
     - Swiftilities/Forms
+    - Swiftilities/HairlineView
     - Swiftilities/Keyboard
     - Swiftilities/Logging
     - Swiftilities/Math
@@ -14,6 +15,7 @@ PODS:
   - Swiftilities/Deselection (0.5.0)
   - Swiftilities/FormattedTextField (0.5.0)
   - Swiftilities/Forms (0.5.0)
+  - Swiftilities/HairlineView (0.5.0)
   - Swiftilities/Keyboard (0.5.0)
   - Swiftilities/Logging (0.5.0)
   - Swiftilities/Math (0.5.0)
@@ -29,7 +31,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: b4ac5eeae75df9a8b4581d8fd08b37cb83a8c654
+  Swiftilities: 0347edb39bda7a6100cdb813ab494a725f153972
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 

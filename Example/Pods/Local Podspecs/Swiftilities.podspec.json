@@ -80,6 +80,13 @@
       ]
     },
     {
+      "name": "HairlineView",
+      "source_files": "Pod/Classes/HairlineView/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Deselection": [
@@ -107,6 +114,9 @@
 
         ],
         "Swiftilities/TintedButton": [
+
+        ],
+        "Swiftilities/HairlineView": [
 
         ]
       }
