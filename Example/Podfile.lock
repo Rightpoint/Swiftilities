@@ -10,6 +10,7 @@ PODS:
     - Swiftilities/Logging
     - Swiftilities/Math
     - Swiftilities/RootViewController
+    - Swiftilities/StackViewHelpers
     - Swiftilities/TintedButton
     - Swiftilities/Views
   - Swiftilities/Deselection (0.5.0)
@@ -20,6 +21,7 @@ PODS:
   - Swiftilities/Logging (0.5.0)
   - Swiftilities/Math (0.5.0)
   - Swiftilities/RootViewController (0.5.0)
+  - Swiftilities/StackViewHelpers (0.5.0)
   - Swiftilities/TintedButton (0.5.0)
   - Swiftilities/Views (0.5.0)
 
@@ -28,10 +30,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Swiftilities:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  Swiftilities: 0347edb39bda7a6100cdb813ab494a725f153972
+  Swiftilities: ae06d22db8607772e573ab67c4300c8422f0017c
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 

@@ -87,6 +87,13 @@
       ]
     },
     {
+      "name": "StackViewHelpers",
+      "source_files": "Pod/Classes/StackViewHelpers/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Deselection": [
@@ -117,6 +124,9 @@
 
         ],
         "Swiftilities/HairlineView": [
+
+        ],
+        "Swiftilities/StackViewHelpers": [
 
         ]
       }
