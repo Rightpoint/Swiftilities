@@ -10,6 +10,7 @@ PODS:
     - Swiftilities/Forms
     - Swiftilities/HairlineView
     - Swiftilities/Keyboard
+    - Swiftilities/LicenseFormatter
     - Swiftilities/Logging
     - Swiftilities/Math
     - Swiftilities/RootViewController
@@ -22,6 +23,7 @@ PODS:
   - Swiftilities/Forms (0.6.0)
   - Swiftilities/HairlineView (0.6.0)
   - Swiftilities/Keyboard (0.6.0)
+  - Swiftilities/LicenseFormatter (0.6.0)
   - Swiftilities/Logging (0.6.0)
   - Swiftilities/Math (0.6.0)
   - Swiftilities/RootViewController (0.6.0)
@@ -34,10 +36,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Swiftilities:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: e371ea6ccce6200c41d1dca2afb33e9931f63aa8
+  Swiftilities: 9c4ff43a127480af267d13eedb7e4b236a0e6eae
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 

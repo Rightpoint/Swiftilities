@@ -16,6 +16,7 @@
 		727301D31DDE3ADB0083596B /* TintedButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727301D21DDE3ADB0083596B /* TintedButtonsViewController.swift */; };
 		72A1F9111DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A1F9101DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift */; };
 		CD32DE751CEA1ECA00FC0C7E /* MathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD32DE731CEA1EC600FC0C7E /* MathTests.swift */; };
+		CDF471541DDFB2EB00D4D5A2 /* LicenseFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF471521DDFB20100D4D5A2 /* LicenseFormatterTests.swift */; };
 		DE5A450412725B332FEFDD30 /* Pods_Swiftilities_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F294762325B4901AA48D27B1 /* Pods_Swiftilities_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		924C5184A5C0F6DB0F5D4FBA /* Pods-Swiftilities_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		976D290FB4A827B6C10F7501 /* Pods-Swiftilities_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CD32DE731CEA1EC600FC0C7E /* MathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathTests.swift; sourceTree = "<group>"; };
+		CDF471521DDFB20100D4D5A2 /* LicenseFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseFormatterTests.swift; sourceTree = "<group>"; };
 		F294762325B4901AA48D27B1 /* Pods_Swiftilities_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftilities_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				CD32DE731CEA1EC600FC0C7E /* MathTests.swift */,
+				CDF471521DDFB20100D4D5A2 /* LicenseFormatterTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -378,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF471541DDFB2EB00D4D5A2 /* LicenseFormatterTests.swift in Sources */,
 				CD32DE751CEA1ECA00FC0C7E /* MathTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
