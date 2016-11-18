@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="-710"/>
+            <point key="canvasLocation" x="1228" y="-1167"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g5c-2V-96b">
@@ -99,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TGz-NW-V1v">
-                                <rect key="frame" x="16" y="74" width="343" height="119"/>
+                                <rect key="frame" x="16" y="74" width="343" height="162"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xta-GV-UYS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
@@ -125,6 +125,14 @@
                                             <segue destination="5xN-tI-rjf" kind="show" id="asZ-jB-Hno"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eR-w6-YvW">
+                                        <rect key="frame" x="0.0" y="129" width="343" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Hairline View"/>
+                                        <connections>
+                                            <segue destination="WXH-YT-Tdo" kind="show" id="Js9-oH-GyK"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -141,6 +149,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8R-Q5-fHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="450" y="-550"/>
+        </scene>
+        <!--Hairline Views-->
+        <scene sceneID="9nk-qn-q0m">
+            <objects>
+                <viewController id="WXH-YT-Tdo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4CA-ef-bAb"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ng-4L-pad"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dgw-FP-ipG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOr-Uc-BpP" customClass="HairlineView" customModule="Swiftilities">
+                                <rect key="frame" x="16" y="72" width="343" height="5"/>
+                                <color key="backgroundColor" red="0.81926965709999999" green="0.10840666290000001" blue="0.1414571553" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" placeholder="YES" id="rHz-FO-22T"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USe-OL-3AN" customClass="HairlineView" customModule="Swiftilities">
+                                <rect key="frame" x="16" y="82" width="5" height="564"/>
+                                <color key="backgroundColor" red="0.81926965709999999" green="0.10840666290000001" blue="0.1414571553" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="5" placeholder="YES" id="TIA-qb-0cg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="hairlineColor">
+                                        <color key="value" red="0.12754884359999999" green="0.46265947819999997" blue="0.78231418129999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="thickness">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="axis">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Je-yQ-tgh" customClass="HairlineView" customModule="Swiftilities">
+                                <rect key="frame" x="16" y="654" width="343" height="5"/>
+                                <color key="backgroundColor" red="0.81926965709999999" green="0.10840666290000001" blue="0.1414571553" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" placeholder="YES" id="yY1-6k-4C9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="axis">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="hairlineColor">
+                                        <color key="value" red="0.81926965709999999" green="0.10840666290000001" blue="0.1414571553" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="thickness">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NOr-Uc-BpP" firstAttribute="top" secondItem="4CA-ef-bAb" secondAttribute="bottom" constant="8" id="80t-OG-wH5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NOr-Uc-BpP" secondAttribute="trailing" id="Bya-O1-OTn"/>
+                            <constraint firstItem="NOr-Uc-BpP" firstAttribute="leading" secondItem="Dgw-FP-ipG" secondAttribute="leadingMargin" id="Kc6-vN-yxH"/>
+                            <constraint firstItem="USe-OL-3AN" firstAttribute="top" secondItem="NOr-Uc-BpP" secondAttribute="bottom" constant="5" id="SZo-x6-7rd"/>
+                            <constraint firstItem="3Je-yQ-tgh" firstAttribute="leading" secondItem="Dgw-FP-ipG" secondAttribute="leadingMargin" id="Sz1-Ak-rr3"/>
+                            <constraint firstItem="USe-OL-3AN" firstAttribute="leading" secondItem="Dgw-FP-ipG" secondAttribute="leadingMargin" id="TEP-wq-Tye"/>
+                            <constraint firstItem="3Je-yQ-tgh" firstAttribute="top" secondItem="USe-OL-3AN" secondAttribute="bottom" constant="8" id="anW-gk-30N"/>
+                            <constraint firstItem="3Je-yQ-tgh" firstAttribute="trailing" secondItem="Dgw-FP-ipG" secondAttribute="trailingMargin" id="iHH-Kc-oWv"/>
+                            <constraint firstItem="3ng-4L-pad" firstAttribute="top" secondItem="3Je-yQ-tgh" secondAttribute="bottom" constant="8" id="rtL-GM-kGF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hairline Views" id="9fO-iE-lka"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feD-yd-NlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471.19999999999999" y="272.11394302848578"/>
         </scene>
         <!--Tinted Button-->
         <scene sceneID="BAM-28-fjN">
@@ -243,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zG-6Q-AVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="449" y="193"/>
+            <point key="canvasLocation" x="1228" y="211"/>
         </scene>
         <!--Keyboard Avoidance-->
         <scene sceneID="aCR-PS-sHw">
@@ -288,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFK-71-eDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="-38"/>
+            <point key="canvasLocation" x="1228" y="-530"/>
         </scene>
     </scenes>
 </document>
