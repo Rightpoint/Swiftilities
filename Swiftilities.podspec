@@ -95,6 +95,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # HairlineView
+
+  s.subspec "ColorHelpers" do |ss|
+    ss.source_files = "Pod/Classes/ColorHelpers/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Catch All
 
   s.subspec "All" do |ss|
@@ -109,6 +116,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/FormattedTextField'
     ss.dependency 'Swiftilities/TintedButton'
     ss.dependency 'Swiftilities/HairlineView'
+    ss.dependency 'Swiftilities/ColorHelpers'
   end
 
 end
