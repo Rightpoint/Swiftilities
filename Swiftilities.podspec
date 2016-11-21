@@ -80,6 +80,13 @@ Pod::Spec.new do |s|
     ss.source_files = "Pod/Classes/FormattedTextField/*.swift"
     ss.frameworks   = ["UIKit"]
   end
+  
+  # LicenseFormatter
+
+  s.subspec "LicenseFormatter" do |ss|
+    ss.source_files = "Pod/Classes/LicenseFormatter/*.swift"
+    ss.frameworks   = "Foundation"
+  end
 
   # TintedButton
 
@@ -125,6 +132,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/HairlineView'
     ss.dependency 'Swiftilities/StackViewHelpers'
     ss.dependency 'Swiftilities/ColorHelpers'
+    ss.dependency 'Swiftilities/LicenseFormatter'
   end
 
 end

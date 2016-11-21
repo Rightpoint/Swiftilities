@@ -80,6 +80,11 @@
       ]
     },
     {
+      "name": "LicenseFormatter",
+      "source_files": "Pod/Classes/LicenseFormatter/*.swift",
+      "frameworks": "Foundation"
+    },
+    {
       "name": "TintedButton",
       "source_files": "Pod/Classes/TintedButton/*.swift",
       "frameworks": [
@@ -147,6 +152,9 @@
 
         ],
         "Swiftilities/ColorHelpers": [
+
+        ],
+        "Swiftilities/LicenseFormatter": [
 
         ]
       }
