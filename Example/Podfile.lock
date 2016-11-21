@@ -2,8 +2,12 @@ PODS:
   - Swiftilities (0.6.0):
     - Swiftilities/All (= 0.6.0)
   - Swiftilities/AccessibilityHelpers (0.6.0)
+  - Swiftilities/Acknowledgements (0.6.0):
+    - Swiftilities/Deselection
+    - Swiftilities/LicenseFormatter
   - Swiftilities/All (0.6.0):
     - Swiftilities/AccessibilityHelpers
+    - Swiftilities/Acknowledgements
     - Swiftilities/ColorHelpers
     - Swiftilities/Deselection
     - Swiftilities/FormattedTextField
@@ -39,7 +43,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: 9c4ff43a127480af267d13eedb7e4b236a0e6eae
+  Swiftilities: d7625309c6cbfc7701f8cb052554622ebe8f6542
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
