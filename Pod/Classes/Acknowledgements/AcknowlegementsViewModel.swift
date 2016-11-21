@@ -39,7 +39,7 @@ public extension AcknowledgementsViewModel {
         acknowledgements = try AcknowledgementsViewModel.parseAcknowledgements(from: dictionary)
     }
 
-    public init(pListURL pListURL: URL) throws {
+    public init(pListURL: URL) throws {
         let dictionary = try AcknowledgementsViewModel.loadPlist(at: pListURL)
         title = try AcknowledgementsViewModel.parseTitle(from: dictionary)
         acknowledgements = try AcknowledgementsViewModel.parseAcknowledgements(from: dictionary)

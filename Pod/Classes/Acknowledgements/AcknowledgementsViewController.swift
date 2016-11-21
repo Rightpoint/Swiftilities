@@ -10,6 +10,8 @@ import UIKit
 
 open class AcknowledgementsViewController: UITableViewController {
 
+    fileprivate static let reuseID = "entryCell"
+
     public enum LocalizedStrings {
         public static let acknowlegementsTitle = NSLocalizedString("Acknowlegments", comment: "Default title for the Acknowlegements view controller from Swiftilities")
     }
@@ -57,12 +59,8 @@ open class AcknowledgementsViewController: UITableViewController {
         super.viewWillAppear(animated)
         self.smoothlyDeselectItems(tableView)
     }
-}
 
-// MARK: - Table view data source
-public extension AcknowledgementsViewController {
-
-    fileprivate static let reuseID = "entryCell"
+    // MARK: - Table view data source
 
     override open func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.acknowledgements.isEmpty ? 0 : 1
@@ -82,10 +80,8 @@ public extension AcknowledgementsViewController {
         return cell
     }
 
-}
-// MARK: Table view delegate
-public extension AcknowledgementsViewController {
 
+    // MARK: Table view delegate
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let entry = viewModel.acknowledgements[indexPath.row]
         let acknowledgementVC = AcknowledgementViewController(viewModel: entry,
