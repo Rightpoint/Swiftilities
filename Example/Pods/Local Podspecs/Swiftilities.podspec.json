@@ -66,6 +66,13 @@
       ]
     },
     {
+      "name": "AccessibilityHelpers",
+      "source_files": "Pod/Classes/AccessibilityHelpers/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "FormattedTextField",
       "source_files": "Pod/Classes/FormattedTextField/*.swift",
       "frameworks": [
@@ -94,6 +101,13 @@
       ]
     },
     {
+      "name": "ColorHelpers",
+      "source_files": "Pod/Classes/ColorHelpers/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "All",
       "dependencies": {
         "Swiftilities/Deselection": [
@@ -117,6 +131,9 @@
         "Swiftilities/RootViewController": [
 
         ],
+        "Swiftilities/AccessibilityHelpers": [
+
+        ],
         "Swiftilities/FormattedTextField": [
 
         ],
@@ -127,6 +144,9 @@
 
         ],
         "Swiftilities/StackViewHelpers": [
+
+        ],
+        "Swiftilities/ColorHelpers": [
 
         ]
       }
