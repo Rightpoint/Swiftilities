@@ -38,10 +38,13 @@ open class AcknowledgementViewController: UIViewController {
         return textView
     }()
 
-    convenience init(viewModel: AcknowledgementViewModel, licenseFormatter: @escaping (String) -> NSAttributedString) {
+    convenience init(viewModel: AcknowledgementViewModel, licenseFormatter: @escaping (String) -> NSAttributedString, viewBackgroundColor: UIColor?) {
         self.init()
         self.licenseFormatter = licenseFormatter
         self.viewModel = viewModel
+        if let backgroundColor = viewBackgroundColor {
+            textView.backgroundColor = backgroundColor
+        }
     }
 
     open override func loadView() {

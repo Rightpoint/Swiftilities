@@ -25,22 +25,13 @@ class MainScreenViewController: UIViewController {
     @IBAction func showAcknowlegements(_ sender: Any) {
         do {
             let viewModel = try AcknowledgementsViewModel(pListNamed: "Pods-Swiftilities_Example-acknowledgements")
-            let viewController = AcknowledgementsViewController(viewModel: viewModel)
+            let veryLightGray = UIColor(hex: 0xEEEEEE, alpha: 1.0)
+            let viewController = AcknowledgementsViewController(viewModel: viewModel, licenseViewBackgroundColor: veryLightGray)
             navigationController?.pushViewController(viewController, animated: true)
         }
         catch {
             fatalError("Failed to load acknowledgements")
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

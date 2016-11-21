@@ -24,7 +24,7 @@ public struct AcknowledgementsViewModel {
     }
 
     public var title: String
-    public var entries: [AcknowledgementViewModel]
+    public var acknowledgements: [AcknowledgementViewModel]
 
 }
 
@@ -36,13 +36,13 @@ public extension AcknowledgementsViewModel {
         }
         let dictionary = try AcknowledgementsViewModel.loadPlist(at: url)
         title = try AcknowledgementsViewModel.parseTitle(from: dictionary)
-        entries = try AcknowledgementsViewModel.parseAcknowledgements(from: dictionary)
+        acknowledgements = try AcknowledgementsViewModel.parseAcknowledgements(from: dictionary)
     }
 
     public init(pListURL pListURL: URL) throws {
         let dictionary = try AcknowledgementsViewModel.loadPlist(at: pListURL)
         title = try AcknowledgementsViewModel.parseTitle(from: dictionary)
-        entries = try AcknowledgementsViewModel.parseAcknowledgements(from: dictionary)
+        acknowledgements = try AcknowledgementsViewModel.parseAcknowledgements(from: dictionary)
     }
 
 }

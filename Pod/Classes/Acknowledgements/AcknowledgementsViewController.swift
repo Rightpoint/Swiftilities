@@ -14,24 +14,42 @@ open class AcknowledgementsViewController: UITableViewController {
         public static let acknowlegementsTitle = NSLocalizedString("Acknowlegments", comment: "Default title for the Acknowlegements view controller from Swiftilities")
     }
 
-    var viewModel: AcknowledgementsViewModel = AcknowledgementsViewModel(title: "", entries: []) {
+    open var viewModel: AcknowledgementsViewModel = AcknowledgementsViewModel(title: "", acknowledgements: []) {
         didSet {
             tableView.reloadData()
         }
     }
 
-    var licenseFormatter: (String) -> NSAttributedString = AcknowledgementViewController.defaultLicenseFormatter
+    open var licenseFormatter: (String) -> NSAttributedString = AcknowledgementViewController.defaultLicenseFormatter
 
-    public convenience init(title: String = LocalizedStrings.acknowlegementsTitle,
-                            viewModel: AcknowledgementsViewModel, licenseFormatter: @escaping (String) -> NSAttributedString = AcknowledgementViewController.defaultLicenseFormatter) {
+    open var licenseViewBackgroundColor: UIColor?
+
+    open var cellBackgroundColor: UIColor? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
+    open var registeredCellClass: UITableViewCell.Type = UITableViewCell.self {
+        didSet{
+            updateCellRegistration()
+        }
+    }
+
+    public  convenience init(title: String = LocalizedStrings.acknowlegementsTitle,
+                             viewModel: AcknowledgementsViewModel, licenseViewBackgroundColor: UIColor? = nil, cellBackgroundColor: UIColor? = nil, registeredCellClass: UITableViewCell.Type = UITableViewCell.self, licenseFormatter: @escaping (String) -> NSAttributedString = AcknowledgementViewController.defaultLicenseFormatter) {
         self.init(style: .plain)
         self.navigationItem.title = title
         self.viewModel = viewModel
         self.licenseFormatter = licenseFormatter
+        self.licenseViewBackgroundColor = licenseViewBackgroundColor
+        self.registeredCellClass = registeredCellClass
+        self.cellBackgroundColor = cellBackgroundColor
     }
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        updateCellRegistration()
         tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 
@@ -41,40 +59,48 @@ open class AcknowledgementsViewController: UITableViewController {
     }
 }
 
-extension AcknowledgementsViewController {
+// MARK: - Table view data source
+public extension AcknowledgementsViewController {
 
-    // MARK: - Table view data source
+    fileprivate static let reuseID = "entryCell"
 
     override open func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.entries.isEmpty ? 0 : 1
+        return viewModel.acknowledgements.isEmpty ? 0 : 1
     }
 
     override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.entries.count
+        return viewModel.acknowledgements.count
     }
 
     override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reuseID = "entryCell"
-        let cell: UITableViewCell
-        if let existingCell = tableView.dequeueReusableCell(withIdentifier: reuseID) {
-            cell = existingCell
-        } else {
-            cell = UITableViewCell(style: .default, reuseIdentifier: reuseID)
-            cell.accessoryType = .disclosureIndicator
+        let cell = tableView.dequeueReusableCell(withIdentifier: AcknowledgementsViewController.reuseID, for: indexPath)
+        cell.accessoryType = .disclosureIndicator
+        if let backgroundColor = cellBackgroundColor {
+            cell.backgroundColor = backgroundColor
         }
-
-        cell.textLabel?.text = viewModel.entries[indexPath.row].title
-
+        cell.textLabel?.text = viewModel.acknowledgements[indexPath.row].title
         return cell
     }
 
-    // MARK: Table view delegate
+}
+// MARK: Table view delegate
+public extension AcknowledgementsViewController {
 
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let entry = viewModel.entries[indexPath.row]
+        let entry = viewModel.acknowledgements[indexPath.row]
         let acknowledgementVC = AcknowledgementViewController(viewModel: entry,
-                                                              licenseFormatter: licenseFormatter)
+                                                              licenseFormatter: licenseFormatter,
+                                                              viewBackgroundColor: licenseViewBackgroundColor)
         navigationController?.pushViewController(acknowledgementVC, animated: true)
     }
-    
+
+}
+
+private extension AcknowledgementsViewController {
+
+    func updateCellRegistration() {
+        tableView.register(self.registeredCellClass, forCellReuseIdentifier: AcknowledgementsViewController.reuseID)
+        tableView.reloadData()
+    }
+
 }
