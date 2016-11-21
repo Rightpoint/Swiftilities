@@ -66,6 +66,13 @@
       ]
     },
     {
+      "name": "AccessibilityHelpers",
+      "source_files": "Pod/Classes/AccessibilityHelpers/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "FormattedTextField",
       "source_files": "Pod/Classes/FormattedTextField/*.swift",
       "frameworks": [
@@ -108,6 +115,9 @@
 
         ],
         "Swiftilities/RootViewController": [
+
+        ],
+        "Swiftilities/AccessibilityHelpers": [
 
         ],
         "Swiftilities/FormattedTextField": [

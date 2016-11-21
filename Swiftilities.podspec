@@ -67,6 +67,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # AccessibilityHelpers
+
+  s.subspec "AccessibilityHelpers" do |ss|
+    ss.source_files = "Pod/Classes/AccessibilityHelpers/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # FormattedTextField
 
   s.subspec "FormattedTextField" do |ss|
@@ -98,6 +105,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Logging'
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/RootViewController'
+    ss.dependency 'Swiftilities/AccessibilityHelpers'
     ss.dependency 'Swiftilities/FormattedTextField'
     ss.dependency 'Swiftilities/TintedButton'
     ss.dependency 'Swiftilities/HairlineView'
