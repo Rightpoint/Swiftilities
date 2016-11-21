@@ -18,7 +18,7 @@ class TintedButtonsViewController: UIViewController {
         super.viewDidLoad()
 
         let black = UIColor(hex: 0x000000)
-        let lightBlue = UIColor(hex: 0x5555FF)
+        let lightBlue = UIColor(rgba: 0x5555FFFF)
         let newButton = TintedButton(fillColor: black, textColor: lightBlue)
         newButton.setTitle("Button 5", for: .normal)
         mutatedButton.setTitle("Button 6", for: .normal)
