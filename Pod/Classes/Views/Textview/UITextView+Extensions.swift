@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension PlaceholderConfigurable where Self:UITextView {
+extension PlaceholderConfigurable where Self: UITextView {
     fileprivate func xConstraint() -> NSLayoutConstraint {
         let constraint: NSLayoutConstraint = constraints
             .filter({ (constraint: NSLayoutConstraint) -> Bool in
@@ -52,7 +52,7 @@ extension PlaceholderConfigurable where Self:UITextView {
     }
 }
 
-extension HeightAutoAdjustable where Self:UITextView {
+extension HeightAutoAdjustable where Self: UITextView {
     fileprivate var bottomOffset: CGPoint {
         let verticalInset =  abs(textContainerInset.top - textContainerInset.bottom)
         return CGPoint(x: 0.0,

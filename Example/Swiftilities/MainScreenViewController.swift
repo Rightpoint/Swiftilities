@@ -24,7 +24,7 @@ class MainScreenViewController: UIViewController {
     
     @IBAction func showAcknowlegements(_ sender: Any) {
         do {
-            let viewModel = try AcknowledgementsViewModel(pListNamed: "Pods-Swiftilities_Example-acknowledgements")
+            let viewModel = try AcknowledgementsViewModel(plistNamed: "Pods-Swiftilities_Example-acknowledgements")
             let veryLightGray = UIColor(hex: 0xEEEEEE, alpha: 1.0)
             let viewController = AcknowledgementsViewController(viewModel: viewModel, licenseViewBackgroundColor: veryLightGray)
             navigationController?.pushViewController(viewController, animated: true)

@@ -33,13 +33,17 @@ open class AcknowledgementsViewController: UITableViewController {
     }
 
     open var registeredCellClass: UITableViewCell.Type = UITableViewCell.self {
-        didSet{
+        didSet {
             updateCellRegistration()
         }
     }
 
-    public  convenience init(title: String = LocalizedStrings.acknowlegementsTitle,
-                             viewModel: AcknowledgementsViewModel, licenseViewBackgroundColor: UIColor? = nil, cellBackgroundColor: UIColor? = nil, registeredCellClass: UITableViewCell.Type = UITableViewCell.self, licenseFormatter: @escaping (String) -> NSAttributedString = AcknowledgementViewController.defaultLicenseFormatter) {
+    public convenience init(title: String = LocalizedStrings.acknowlegementsTitle,
+                             viewModel: AcknowledgementsViewModel,
+                             licenseViewBackgroundColor: UIColor? = nil,
+                             cellBackgroundColor: UIColor? = nil,
+                             registeredCellClass: UITableViewCell.Type = UITableViewCell.self,
+                             licenseFormatter: @escaping (String) -> NSAttributedString = AcknowledgementViewController.defaultLicenseFormatter) {
         self.init(style: .plain)
         self.navigationItem.title = title
         self.viewModel = viewModel

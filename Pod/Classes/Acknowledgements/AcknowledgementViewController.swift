@@ -16,8 +16,10 @@ open class AcknowledgementViewController: UIViewController {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.hyphenationFactor = 1
             paragraphStyle.paragraphSpacing = font.pointSize / 2
-            let attributes: [String:Any] = [NSFontAttributeName: font,
-                                            NSParagraphStyleAttributeName: paragraphStyle]
+            let attributes: [String: Any] = [
+                NSFontAttributeName: font,
+                NSParagraphStyleAttributeName: paragraphStyle,
+                ]
             return NSAttributedString(string: string, attributes: attributes)
     }
 
@@ -58,15 +60,11 @@ open class AcknowledgementViewController: UIViewController {
         configureLayout()
     }
 
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-
     open override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         textView.setContentOffset(CGPoint(x: 0, y: -topLayoutGuide.length), animated: false)
     }
+
 }
 
 private extension AcknowledgementViewController {

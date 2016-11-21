@@ -30,17 +30,17 @@ public struct AcknowledgementsViewModel {
 
 public extension AcknowledgementsViewModel {
 
-    public init(pListNamed pListName: String = "Acknowledgements", in bundle: Bundle = Bundle.main) throws {
-        guard let url = bundle.url(forResource: pListName, withExtension: "plist") else {
-            throw AcknowledgementsError.missingPlistNamed(pListName)
+    public init(plistNamed plistName: String = "Acknowledgements", in bundle: Bundle = Bundle.main) throws {
+        guard let url = bundle.url(forResource: plistName, withExtension: "plist") else {
+            throw AcknowledgementsError.missingPlistNamed(plistName)
         }
         let dictionary = try AcknowledgementsViewModel.loadPlist(at: url)
         title = try AcknowledgementsViewModel.parseTitle(from: dictionary)
         acknowledgements = try AcknowledgementsViewModel.parseAcknowledgements(from: dictionary)
     }
 
-    public init(pListURL: URL) throws {
-        let dictionary = try AcknowledgementsViewModel.loadPlist(at: pListURL)
+    public init(plistURL: URL) throws {
+        let dictionary = try AcknowledgementsViewModel.loadPlist(at: plistURL)
         title = try AcknowledgementsViewModel.parseTitle(from: dictionary)
         acknowledgements = try AcknowledgementsViewModel.parseAcknowledgements(from: dictionary)
     }
