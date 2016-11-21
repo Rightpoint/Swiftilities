@@ -1,8 +1,8 @@
 PODS:
-  - Swiftilities (0.5.0):
-    - Swiftilities/All (= 0.5.0)
-  - Swiftilities/AccessibilityHelpers (0.5.0)
-  - Swiftilities/All (0.5.0):
+  - Swiftilities (0.6.0):
+    - Swiftilities/All (= 0.6.0)
+  - Swiftilities/AccessibilityHelpers (0.6.0)
+  - Swiftilities/All (0.6.0):
     - Swiftilities/AccessibilityHelpers
     - Swiftilities/ColorHelpers
     - Swiftilities/Deselection
@@ -16,18 +16,18 @@ PODS:
     - Swiftilities/StackViewHelpers
     - Swiftilities/TintedButton
     - Swiftilities/Views
-  - Swiftilities/ColorHelpers (0.5.0)
-  - Swiftilities/Deselection (0.5.0)
-  - Swiftilities/FormattedTextField (0.5.0)
-  - Swiftilities/Forms (0.5.0)
-  - Swiftilities/HairlineView (0.5.0)
-  - Swiftilities/Keyboard (0.5.0)
-  - Swiftilities/Logging (0.5.0)
-  - Swiftilities/Math (0.5.0)
-  - Swiftilities/RootViewController (0.5.0)
-  - Swiftilities/StackViewHelpers (0.5.0)
-  - Swiftilities/TintedButton (0.5.0)
-  - Swiftilities/Views (0.5.0)
+  - Swiftilities/ColorHelpers (0.6.0)
+  - Swiftilities/Deselection (0.6.0)
+  - Swiftilities/FormattedTextField (0.6.0)
+  - Swiftilities/Forms (0.6.0)
+  - Swiftilities/HairlineView (0.6.0)
+  - Swiftilities/Keyboard (0.6.0)
+  - Swiftilities/Logging (0.6.0)
+  - Swiftilities/Math (0.6.0)
+  - Swiftilities/RootViewController (0.6.0)
+  - Swiftilities/StackViewHelpers (0.6.0)
+  - Swiftilities/TintedButton (0.6.0)
+  - Swiftilities/Views (0.6.0)
 
 DEPENDENCIES:
   - Swiftilities (from `../`)
@@ -37,7 +37,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Swiftilities: 951af6b2c7be876e33d87b54fed629df2b1ef140
+  Swiftilities: e371ea6ccce6200c41d1dca2afb33e9931f63aa8
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
