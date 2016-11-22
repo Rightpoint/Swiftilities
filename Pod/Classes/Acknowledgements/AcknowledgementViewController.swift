@@ -10,17 +10,16 @@ import UIKit
 
 open class AcknowledgementViewController: UIViewController {
 
-    public static let defaultLicenseFormatter: (String) -> NSAttributedString
-        = { string in
-            let font = UIFont.preferredFont(forTextStyle: .body)
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.hyphenationFactor = 1
-            paragraphStyle.paragraphSpacing = font.pointSize / 2
-            let attributes: [String: Any] = [
-                NSFontAttributeName: font,
-                NSParagraphStyleAttributeName: paragraphStyle,
-                ]
-            return NSAttributedString(string: string, attributes: attributes)
+    public static let defaultLicenseFormatter: (String) -> NSAttributedString = { string in
+        let font = UIFont.preferredFont(forTextStyle: .body)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.hyphenationFactor = 1
+        paragraphStyle.paragraphSpacing = font.pointSize / 2
+        let attributes: [String: Any] = [
+            NSFontAttributeName: font,
+            NSParagraphStyleAttributeName: paragraphStyle,
+            ]
+        return NSAttributedString(string: string, attributes: attributes)
     }
 
     public var viewModel = AcknowledgementViewModel(title: "", license: "") {
@@ -31,38 +30,35 @@ open class AcknowledgementViewController: UIViewController {
 
     public var licenseFormatter: (String) -> NSAttributedString = defaultLicenseFormatter
 
-    public let textView: UITextView = {
-
-        let textView = UITextView()
-        textView.isEditable = false
-        textView.alwaysBounceVertical = true
-
-        return textView
+    public let labelView: UILabel = {
+        let labelView = UILabel()
+        labelView.numberOfLines = 0
+        return labelView
     }()
 
-    convenience init(viewModel: AcknowledgementViewModel, licenseFormatter: @escaping (String) -> NSAttributedString, viewBackgroundColor: UIColor?) {
-        self.init()
+    public required init(viewModel: AcknowledgementViewModel, licenseFormatter: @escaping (String) -> NSAttributedString, viewBackgroundColor: UIColor?) {
+        super.init(nibName: nil, bundle: nil)
         self.licenseFormatter = licenseFormatter
         self.viewModel = viewModel
         if let backgroundColor = viewBackgroundColor {
-            textView.backgroundColor = backgroundColor
+            view.backgroundColor = backgroundColor
         }
     }
 
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     open override func loadView() {
-        view = UIView()
-        view.addSubview(textView)
+        view = UIScrollView()
+        view.backgroundColor = .white
+        view.addSubview(labelView)
+        configureLayout()
     }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
         updateWithViewModel()
-        configureLayout()
-    }
-
-    open override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        textView.setContentOffset(CGPoint(x: 0, y: -topLayoutGuide.length), animated: false)
     }
 
 }
@@ -70,17 +66,18 @@ open class AcknowledgementViewController: UIViewController {
 private extension AcknowledgementViewController {
 
     func configureLayout() {
-        textView.translatesAutoresizingMaskIntoConstraints = false
+        labelView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            textView.topAnchor.constraint(equalTo: view.topAnchor),
-            textView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            textView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            labelView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor),
+            labelView.topAnchor.constraint(equalTo: view.topAnchor),
+            labelView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            labelView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            labelView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
             ])
     }
 
     func updateWithViewModel() {
         navigationItem.title = viewModel.title
-        textView.attributedText = licenseFormatter(viewModel.license)
+        labelView.attributedText = licenseFormatter(viewModel.license)
     }
 }

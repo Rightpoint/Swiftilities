@@ -1,5 +1,5 @@
 //
-//  AcknowledgementsViewModel.swift
+//  AcknowledgementsListViewModel.swift
 //  Swiftilities
 //
 //  Created by Michael Skiba on 11/21/16.
@@ -14,7 +14,7 @@ private struct AcknowlegmentConstants {
     static let settingsKeyFooterText = "FooterText"
 }
 
-public struct AcknowledgementsViewModel {
+public struct AcknowledgementsListViewModel {
 
     public enum AcknowledgementsError: Error {
         case missingPlistNamed(String)
@@ -28,26 +28,26 @@ public struct AcknowledgementsViewModel {
 
 }
 
-public extension AcknowledgementsViewModel {
+public extension AcknowledgementsListViewModel {
 
     public init(plistNamed plistName: String = "Acknowledgements", in bundle: Bundle = Bundle.main) throws {
         guard let url = bundle.url(forResource: plistName, withExtension: "plist") else {
             throw AcknowledgementsError.missingPlistNamed(plistName)
         }
-        let dictionary = try AcknowledgementsViewModel.loadPlist(at: url)
-        title = try AcknowledgementsViewModel.parseTitle(from: dictionary)
-        acknowledgements = try AcknowledgementsViewModel.parseAcknowledgements(from: dictionary)
+        let dictionary = try AcknowledgementsListViewModel.loadPlist(at: url)
+        title = try AcknowledgementsListViewModel.parseTitle(from: dictionary)
+        acknowledgements = try AcknowledgementsListViewModel.parseAcknowledgements(from: dictionary)
     }
 
     public init(plistURL: URL) throws {
-        let dictionary = try AcknowledgementsViewModel.loadPlist(at: plistURL)
-        title = try AcknowledgementsViewModel.parseTitle(from: dictionary)
-        acknowledgements = try AcknowledgementsViewModel.parseAcknowledgements(from: dictionary)
+        let dictionary = try AcknowledgementsListViewModel.loadPlist(at: plistURL)
+        title = try AcknowledgementsListViewModel.parseTitle(from: dictionary)
+        acknowledgements = try AcknowledgementsListViewModel.parseAcknowledgements(from: dictionary)
     }
 
 }
 
-private extension AcknowledgementsViewModel {
+private extension AcknowledgementsListViewModel {
 
     static func loadPlist(at url: URL) throws -> [String: Any] {
         guard let dictionary = NSDictionary(contentsOf: url) as? [String: Any] else {

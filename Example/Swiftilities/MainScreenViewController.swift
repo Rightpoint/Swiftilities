@@ -24,14 +24,37 @@ class MainScreenViewController: UIViewController {
     
     @IBAction func showAcknowlegements(_ sender: Any) {
         do {
-            let viewModel = try AcknowledgementsViewModel(plistNamed: "Pods-Swiftilities_Example-acknowledgements")
-            let veryLightGray = UIColor(hex: 0xEEEEEE, alpha: 1.0)
-            let viewController = AcknowledgementsViewController(viewModel: viewModel, licenseViewBackgroundColor: veryLightGray)
+            let viewModel = try AcknowledgementsListViewModel(plistNamed: "Pods-Swiftilities_Example-acknowledgements")
+            let viewController = LightGrayAcknowledgementsListViewController(viewModel: viewModel)
+            viewController.childViewControllerClass = LightGrayAcknowlegement.self
             navigationController?.pushViewController(viewController, animated: true)
         }
         catch {
             fatalError("Failed to load acknowledgements")
         }
+    }
+
+}
+
+private class LightGrayAcknowledgementsListViewController: AcknowledgementsListViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor(rgba: 0xDDDDDDFF)
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        cell.backgroundColor = UIColor(rgba: 0xDDDDDDFF)
+        return cell
+    }
+}
+
+private class LightGrayAcknowlegement: AcknowledgementViewController {
+
+    override func loadView() {
+        super.loadView()
+        view.backgroundColor = UIColor(rgba: 0xDDDDDDFF)
     }
 
 }
