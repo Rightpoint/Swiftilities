@@ -1,6 +1,6 @@
 {
   "name": "Swiftilities",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "summary": "A collection of useful Swift utilities.",
   "description": "A collection of useful Swift utilities. All components and\nextensions found in this library are consise enough on their own\nso as to not warrant their own project.",
   "homepage": "https://github.com/raizlabs/Swiftilities",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/raizlabs/Swiftilities.git",
-    "tag": "0.6.0"
+    "tag": "0.7.0"
   },
   "platforms": {
     "ios": "9.0"
