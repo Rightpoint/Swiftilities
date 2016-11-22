@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 open class PlaceholderTextView: UITextView, PlaceholderConfigurable {
 
     let placeholderLabel: UILabel = {

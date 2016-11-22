@@ -35,7 +35,6 @@ import UIKit
  */
 public extension UIWindow {
 
-
     /**
      Set the rootViewController on this UIWindow instance.
      
@@ -56,7 +55,8 @@ public extension UIWindow {
             }, completion: { (finished) -> Void in
                 completion()
             })
-        } else {
+        }
+        else {
             self.rootViewController = viewController
         }
     }

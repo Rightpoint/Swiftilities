@@ -35,7 +35,7 @@ import UIKit
  */
 public extension UIView {
 
-    fileprivate class KeyboardLayoutGuide : UILayoutGuide {}
+    fileprivate class KeyboardLayoutGuide: UILayoutGuide {}
 
     /// A layout guide for the keyboard
     @nonobjc var keyboardLayoutGuide: UILayoutGuide? {
@@ -99,7 +99,7 @@ public extension UIView {
                 }
             }
         }
-        
+
         return guide
     }
 

@@ -30,27 +30,26 @@
 
 import Foundation
 
-
 /**
 *  A simple log that outputs to the console via ```print()````
 */
 open class Log {
-    
+
     // MARK: Configuration
-    
+
     /**
      Represents a level of detail to be logged.
      */
-    public enum Level : Int {
+    public enum Level: Int {
         case verbose
         case debug
         case info
         case warn
         case error
         case off
-        
+
         var name: String {
-            switch(self) {
+            switch self {
             case .verbose: return "Verbose"
             case .debug: return "Debug"
             case .info: return "Info"
@@ -61,7 +60,7 @@ open class Log {
         }
 
         var emoji: String {
-            switch(self) {
+            switch self {
             case .verbose: return "📖"
             case .debug: return "🐝"
             case .info: return "✏️"
@@ -74,7 +73,7 @@ open class Log {
 
     /// The log level, defaults to .Off
     public static var logLevel: Level = .off
-    
+
     /// If true, prints emojis to signify log type, defaults to off
     public static var useEmoji: Bool = false
 
@@ -99,7 +98,7 @@ open class Log {
     }
 
     // MARK: Log Methods
-    
+
     public static func error<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
         log(object, level:.error, fileName, functionName, line)
     }

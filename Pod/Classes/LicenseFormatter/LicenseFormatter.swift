@@ -26,7 +26,8 @@ internal extension String {
         do {
             let regex = try NSRegularExpression(pattern: lineBreakRegexString, options: [])
             output = regex.stringByReplacingMatches(in: self, options: [], range: NSRange(location: 0, length: characters.count), withTemplate: "\n\n$1")
-        } catch(let error) {
+        }
+        catch(let error) {
             preconditionFailure("Invalid regular expression string: '\(lineBreakRegexString)', error: \(error)")
         }
 
@@ -45,7 +46,8 @@ internal extension String {
         do {
             let regex = try NSRegularExpression(pattern: lineBreakRegexString, options: [])
             output = regex.stringByReplacingMatches(in: self, options: [], range: NSRange(location: 0, length: characters.count), withTemplate: " ")
-        } catch(let error) {
+        }
+        catch(let error) {
             preconditionFailure("Invalid regular expression string: '\(lineBreakRegexString)', error: \(error)")
         }
 
@@ -59,10 +61,11 @@ internal extension String {
         do {
             let regex = try NSRegularExpression(pattern: doubleNewlineRegexString, options: [])
             output = regex.stringByReplacingMatches(in: self, options: [], range: NSRange(location: 0, length: characters.count), withTemplate: "$1")
-        } catch(let error) {
+        }
+        catch(let error) {
             preconditionFailure("Invalid regular expression string: '\(doubleNewlineRegexString)', error: \(error)")
         }
-        
+
         return output
     }
 

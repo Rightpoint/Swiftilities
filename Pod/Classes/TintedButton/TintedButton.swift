@@ -73,7 +73,6 @@ open class TintedButton: UIButton {
         setupTint()
     }
 
-
     public required init?(coder aDecoder: NSCoder) {
         if let color = aDecoder.decodeObject(forKey: #keyPath(fillColor)) as? UIColor {
             self.fillColor = color
