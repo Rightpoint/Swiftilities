@@ -82,7 +82,7 @@ extension UIViewAnimationCurve {
         case .linear:    return .curveLinear
         }
     }
-    
+
 }
 
 // MARK: - Private

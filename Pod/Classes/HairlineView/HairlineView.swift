@@ -132,6 +132,5 @@ open class HairlineView: UIView {
     open override func contentCompressionResistancePriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority {
         return contentHuggingPriority(for: axis)
     }
-    
-    
+
 }

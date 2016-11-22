@@ -74,7 +74,6 @@ open class AcknowledgementsListViewController: UITableViewController {
         return cell
     }
 
-
     // MARK: Table view delegate
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let entry = viewModel.acknowledgements[indexPath.row]
@@ -85,4 +84,3 @@ open class AcknowledgementsListViewController: UITableViewController {
     }
 
 }
-

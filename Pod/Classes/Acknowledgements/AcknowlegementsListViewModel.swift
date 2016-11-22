@@ -74,7 +74,7 @@ private extension AcknowledgementsListViewModel {
         let acknowledgements = specifiers.suffix(from: 1).dropLast().flatMap(AcknowledgementViewModel.init(dictionary:))
         return acknowledgements
     }
-    
+
 }
 
 public struct AcknowledgementViewModel {

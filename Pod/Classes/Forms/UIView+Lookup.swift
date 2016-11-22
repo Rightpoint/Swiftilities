@@ -54,5 +54,5 @@ private extension Bool {
         }
         return self == value
     }
-    
+
 }

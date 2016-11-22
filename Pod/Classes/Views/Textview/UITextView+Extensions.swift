@@ -68,7 +68,7 @@ extension HeightAutoAdjustable where Self: UITextView {
         let minimum = textContainerInset.top + self.textContainerInset.bottom + font.lineHeight
         return max(height, minimum)
     }
-    
+
     // Attempts to find the apporpriate constraint and creates one if needed.
     func heightConstraint() -> NSLayoutConstraint {
         let constraint: NSLayoutConstraint = constraints
@@ -94,13 +94,13 @@ extension HeightAutoAdjustable where Self: UITextView {
         heightConstraint().constant = height
 
         setNeedsLayout()
-        
+
         let animated = animationDelegate?.shouldAnimateHeightChange(self) ?? false
         guard let container = animationDelegate?.containerToLayout(forTextView: self) , animated else {
             scrollToBottom(animated)
             return
         }
-        
+
         let duration = animationDelegate?.animationDuration(self) ?? 0.1
         UIView.animate(withDuration: duration, animations: {
             container.layoutIfNeeded()

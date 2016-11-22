@@ -81,5 +81,5 @@ private extension FormattedTextField {
             restoreTextField(to: oldState)
         }
     }
-    
+
 }

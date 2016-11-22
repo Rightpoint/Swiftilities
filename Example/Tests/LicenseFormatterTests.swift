@@ -73,5 +73,5 @@ class StringTest: XCTestCase {
 
         XCTAssertEqual(testString, controlString)
     }
-    
+
 }

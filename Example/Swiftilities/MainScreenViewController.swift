@@ -21,11 +21,11 @@ class MainScreenViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func showAcknowlegements(_ sender: Any) {
         do {
             let viewModel = try AcknowledgementsListViewModel(plistNamed: "Pods-Swiftilities_Example-acknowledgements")
-            let viewController = LightGrayAcknowledgementsListViewController(viewModel: viewModel)
+            let viewController = LightGrayListViewController(viewModel: viewModel)
             viewController.childViewControllerClass = LightGrayAcknowlegement.self
             navigationController?.pushViewController(viewController, animated: true)
         }
@@ -36,7 +36,7 @@ class MainScreenViewController: UIViewController {
 
 }
 
-private class LightGrayAcknowledgementsListViewController: AcknowledgementsListViewController {
+private class LightGrayListViewController: AcknowledgementsListViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

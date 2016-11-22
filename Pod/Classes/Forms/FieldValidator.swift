@@ -12,7 +12,7 @@ public enum ValidationError: Error {
 
     case failed(field: String, value: String, validationErrors: [Error])
 
-    public var field: String{
+    public var field: String {
         let field: String
         switch self {
         case .failed(field: let failedField, value: _, validationErrors: _):
@@ -143,7 +143,7 @@ private extension String {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
-    
+
 }
 
 public enum RuleErrors: Error {

@@ -83,5 +83,5 @@ public extension UITableView {
         }
         Accessibility.shared.layoutChanged(in: cell)
     }
-    
+
 }
