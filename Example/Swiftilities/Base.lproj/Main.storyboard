@@ -89,7 +89,7 @@
         <!--Swiftilities-->
         <scene sceneID="yY4-Mj-Huh">
             <objects>
-                <viewController id="awA-To-3aY" sceneMemberID="viewController">
+                <viewController id="awA-To-3aY" customClass="MainScreenViewController" customModule="Swiftilities_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oa5-pe-ldZ"/>
                         <viewControllerLayoutGuide type="bottom" id="g9A-CS-hLS"/>
@@ -99,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TGz-NW-V1v">
-                                <rect key="frame" x="16" y="74" width="343" height="162"/>
+                                <rect key="frame" x="16" y="74" width="343" height="205"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xta-GV-UYS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
@@ -131,6 +131,14 @@
                                         <state key="normal" title="Hairline View"/>
                                         <connections>
                                             <segue destination="WXH-YT-Tdo" kind="show" id="Js9-oH-GyK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFa-aa-tca">
+                                        <rect key="frame" x="0.0" y="172" width="343" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Acknowledgements"/>
+                                        <connections>
+                                            <action selector="showAcknowlegements:" destination="awA-To-3aY" eventType="touchUpInside" id="Z8Y-X9-lvW"/>
                                         </connections>
                                     </button>
                                 </subviews>

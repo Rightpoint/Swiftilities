@@ -85,6 +85,21 @@
       "frameworks": "Foundation"
     },
     {
+      "name": "Acknowledgements",
+      "dependencies": {
+        "Swiftilities/LicenseFormatter": [
+
+        ],
+        "Swiftilities/Deselection": [
+
+        ]
+      },
+      "source_files": "Pod/Classes/Acknowledgements/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "TintedButton",
       "source_files": "Pod/Classes/TintedButton/*.swift",
       "frameworks": [
@@ -155,6 +170,9 @@
 
         ],
         "Swiftilities/LicenseFormatter": [
+
+        ],
+        "Swiftilities/Acknowledgements": [
 
         ]
       }
