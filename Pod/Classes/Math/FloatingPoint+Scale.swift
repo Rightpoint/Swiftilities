@@ -37,7 +37,7 @@ public extension FloatingPoint {
     ///   - destination: The range to map the number to.
     ///   - clamp: Whether the result should be clamped to the `to` range.
     /// - Returns: The input number, scaled from the `from` range to the `to` range.
-    func scale(from source: ClosedRange<Self>, to destination: ClosedRange<Self>, clamp: Bool = false) -> Self {
+    func scaled(from source: ClosedRange<Self>, to destination: ClosedRange<Self>, clamp: Bool = false) -> Self {
         guard source != destination else {
             return self // short circuit the math if they're equal
         }
