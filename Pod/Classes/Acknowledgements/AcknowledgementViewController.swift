@@ -71,7 +71,7 @@ private extension AcknowledgementViewController {
         labelView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             labelView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor),
-            labelView.topAnchor.constraint(equalTo: view.topAnchor),
+            labelView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16.0),
             labelView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             labelView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
             labelView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
