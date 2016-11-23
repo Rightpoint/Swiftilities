@@ -3,7 +3,7 @@ import Swiftilities
 
 class Tests: XCTestCase {
 
-    func testDoubleScale() {
+    func testFloatingPointScale() {
 
         let epsilon = 0.00001
 
@@ -12,6 +12,7 @@ class Tests: XCTestCase {
 
         XCTAssertEqualWithAccuracy(10.0.scale(from: 0.0...1.0, to: 0.0...10.0, clamp: false), 100.0, accuracy: epsilon)
         XCTAssertEqualWithAccuracy(10.0.scale(from: 0.0...1.0, to: 0.0...10.0, clamp: true), 10.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(10.scale(from: 0.0...1.0, to: 0.0...10.0, clamp: false), 100.0, accuracy: epsilon)
 
         XCTAssertEqualWithAccuracy(0.25.scale(from: 0.0...1.0, to: -100.0...100.0), -50.0, accuracy: epsilon)
 

@@ -30,31 +30,24 @@
 
 import Foundation
 
-public struct MathHelpers {
+public extension SignedNumber {
 
-    /**
-     Clamp a value to a ClosedInterval
-
-     - parameter value: the value to be clamped
-     - parameter to:    a ClosedInterval whose start and end specify the clamp's minimum and maximum
-
-     - returns: the clamped value
-     */
-    static func clamp<T: Comparable>(_ value: T, to: ClosedRange<T>) -> T {
-        return clamp(value, min: to.lowerBound, max: to.upperBound)
+    /// Clamp a value to a `ClosedInterval`.
+    ///
+    /// - Parameter to: a `ClosedInterval` whose start and end specify the clamp's minimum and maximum.
+    /// - Returns: the clamped value.
+    func clamped(to: ClosedRange<Self>) -> Self {
+        return clamped(min: to.lowerBound, max: to.upperBound)
     }
 
-    /**
-     Clamp a value to a minimum and maximum value.
-
-     - parameter value: the value to be clamped
-     - parameter min: the minimum value allowed
-     - parameter max: the maximzum value allowed
-
-     - returns: the clamped value
-     */
-    static func clamp<T: Comparable>(_ value: T, min lower: T, max upper: T) -> T {
-        return min(max(value, lower), upper)
+    /// Clamp a value to a minimum and maximum value.
+    ///
+    /// - Parameters:
+    ///   - lower: the minimum value allowed.
+    ///   - upper: the maximum value allowed.
+    /// - Returns: the clamped value.
+    func clamped(min lower: Self, max upper: Self) -> Self {
+        return min(max(self, lower), upper)
     }
 
 }
