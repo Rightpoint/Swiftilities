@@ -3,7 +3,7 @@
 //  Swiftilities
 //
 //  Created by Rob Visentin on 8/9/16.
-//  Copyright (c) 2016 Raizlabs. All rights reserved.
+//  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
 import UIKit

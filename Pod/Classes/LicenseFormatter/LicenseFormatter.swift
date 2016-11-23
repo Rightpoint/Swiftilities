@@ -3,7 +3,7 @@
 //  Swiftilities
 //
 //  Created by Zev Eisenberg on 11/18/16.
-//  Copyright © 2016 Raizlabs Inc. All rights reserved.
+//  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
 import Foundation
