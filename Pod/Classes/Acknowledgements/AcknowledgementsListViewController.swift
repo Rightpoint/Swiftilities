@@ -15,7 +15,7 @@ open class AcknowledgementsListViewController: UITableViewController {
     public var childViewControllerClass: AcknowledgementViewController.Type = AcknowledgementViewController.self
 
     public enum LocalizedStrings {
-        public static let acknowlegementsTitle = NSLocalizedString("Acknowlegments", comment: "Default title for the Acknowlegements view controller from Swiftilities")
+        public static let acknowlegementsTitle = NSLocalizedString("Acknowledgements", comment: "Default title for the Acknowlegements view controller from Swiftilities")
     }
 
     open var viewModel: AcknowledgementsListViewModel = AcknowledgementsListViewModel(title: "", acknowledgements: []) {
