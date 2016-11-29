@@ -6,7 +6,6 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
-
 import Foundation
 
 open class HairlineView: UIView {
