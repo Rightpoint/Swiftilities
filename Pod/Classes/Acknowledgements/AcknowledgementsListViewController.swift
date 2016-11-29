@@ -3,7 +3,7 @@
 //  Swiftilities
 //
 //  Created by Michael Skiba on 11/21/16.
-//  Copyright © 2016 Raizlabs Inc. All rights reserved.
+//  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +15,7 @@ open class AcknowledgementsListViewController: UITableViewController {
     public var childViewControllerClass: AcknowledgementViewController.Type = AcknowledgementViewController.self
 
     public enum LocalizedStrings {
-        public static let acknowlegementsTitle = NSLocalizedString("Acknowlegments", comment: "Default title for the Acknowlegements view controller from Swiftilities")
+        public static let acknowlegementsTitle = NSLocalizedString("Acknowledgements", comment: "Default title for the Acknowlegements view controller from Swiftilities")
     }
 
     open var viewModel: AcknowledgementsListViewModel = AcknowledgementsListViewModel(title: "", acknowledgements: []) {

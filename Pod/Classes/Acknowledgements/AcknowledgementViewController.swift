@@ -1,9 +1,9 @@
 //
 //  AcknowledgementViewController.swift
-//  Pods
+//  Swiftilities
 //
 //  Created by Michael Skiba on 11/21/16.
-//
+//  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
 import UIKit

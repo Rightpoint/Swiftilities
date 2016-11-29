@@ -1,9 +1,9 @@
 //
 //  Protocols.swift
-//  Pods
+//  Swiftilities
 //
 //  Created by Derek Ostrander on 6/8/16.
-//
+//  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
 import UIKit
