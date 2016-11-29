@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension SignedNumber {
+public extension Comparable {
 
     /// Clamp a value to a `ClosedInterval`.
     ///
