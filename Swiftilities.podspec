@@ -26,6 +26,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # DeviceSize
+
+  s.subspec "DeviceSize" do |ss|
+    ss.source_files = "Pod/Classes/DeviceSize/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Forms
 
   s.subspec "Forms" do |ss|
@@ -129,6 +136,7 @@ Pod::Spec.new do |s|
 
   s.subspec "All" do |ss|
     ss.dependency 'Swiftilities/Deselection'
+    ss.dependency 'Swiftilities/DeviceSize'
     ss.dependency 'Swiftilities/Forms'
     ss.dependency 'Swiftilities/Views'
     ss.dependency 'Swiftilities/Keyboard'
