@@ -17,17 +17,17 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 2. Add the new files to the directory created in step 1
 3. Add a subspec to the Swiftilities.podspec following this pattern:
     ```ruby
-    # <Your Subsepc Name>
+    # <Your Subspec Name>
 
-    s.subspec "<Your Subsepc Name>" do |ss|
-    	ss.source_files = "Pod/Classes/<Your Subsepc Name>/*.swift"
+    s.subspec "<Your Subspec Name>" do |ss|
+    	ss.source_files = "Pod/Classes/<Your Subspec Name>/*.swift"
     	ss.frameworks   = ["<Any Required Modules>"]
     end
     ```
-4. Apend an `ss.dependency` to `s.subsec` within the podspec file with the following format:
+4. Append an `ss.dependency` to `s.subspec` within the podspec file with the following format:
 
     ```ruby
-    ss.dependency 'Swiftilities/<Your Subsepc Name>'
+    ss.dependency 'Swiftilities/<Your Subspec Name>'
     ```
 
 5. Navigate to the example project directory and run `bundle exec pod update`
