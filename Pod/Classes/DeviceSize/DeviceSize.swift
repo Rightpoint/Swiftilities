@@ -4,6 +4,8 @@
 //
 //  Created by Rob Cadwallader on 11/1/16.
 //
+//  Tools for adjusting values given the current screen size.
+//
 
 import Foundation
 import UIKit
@@ -13,12 +15,15 @@ public enum Axis: Int {
     case y
 }
 
+/**
+ Represents the screen size of a device
+ */
 public enum DeviceSize: Hashable {
 
-    case small
-    case medium
-    case large
-    case plus
+    case small // e.g. Original iPhone -> iPhone 4s
+    case medium // e.g. iPhone 5, iPod Touch 5th and 6th gen
+    case large // e.g. iPhone 6, iPhone 7
+    case plus // e.g. iPhone 6 Plus, iPhone 7 Plus
     case other(CGSize)
 
     init(size: CGSize) {
@@ -36,8 +41,20 @@ public enum DeviceSize: Hashable {
         }
     }
 
+    /**
+     Screen size of the current device as reported by UIScreen
+     */
     public static var current: DeviceSize = DeviceSize(size: UIScreen.main.bounds.size)
 
+    /**
+     Conditionally return a value given the current device screen size. For example:
+
+     let result = DeviceSize.adjust(25, for: [.small: 50, .large: 100])
+     print(result) // Prints 100 when DeviceSize.current == .large
+
+     - parameter default: Value that will be returned if DeviceSize.current is not a key in overrides.
+     - parameter overrides: A dictionary specifying the values to return for specific DeviceSizes.
+     */
     public static func adjust<ValueType>(_ default: ValueType, for overrides: [DeviceSize: ValueType]) -> ValueType {
         return overrides[DeviceSize.current] ?? `default`
     }
