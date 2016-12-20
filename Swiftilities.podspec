@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Swiftilities"
-  s.version          = "0.7.0"
+  s.version          = "0.8.0"
   s.summary          = "A collection of useful Swift utilities."
 
   s.description      = <<-DESC
@@ -19,6 +19,29 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'All'
 
+  # AccessibilityHelpers
+
+  s.subspec "AccessibilityHelpers" do |ss|
+    ss.source_files = "Pod/Classes/AccessibilityHelpers/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
+  # Acknowledgements
+
+  s.subspec "Acknowledgements" do |ss|
+    ss.dependency 'Swiftilities/LicenseFormatter'
+    ss.dependency 'Swiftilities/Deselection'
+    ss.source_files = "Pod/Classes/Acknowledgements/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
+  # ColorHelpers
+
+  s.subspec "ColorHelpers" do |ss|
+    ss.source_files = "Pod/Classes/ColorHelpers/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Deselection
 
   s.subspec "Deselection" do |ss|
@@ -33,6 +56,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # FormattedTextField
+
+  s.subspec "FormattedTextField" do |ss|
+    ss.source_files = "Pod/Classes/FormattedTextField/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Forms
 
   s.subspec "Forms" do |ss|
@@ -40,10 +70,10 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
-  # Views
+  # HairlineView
 
-  s.subspec "Views" do |ss|
-    ss.source_files = ["Pod/Classes/Views/Protocols/*.swift", "Pod/Classes/Views/Textview/*.swift"]
+  s.subspec "HairlineView" do |ss|
+    ss.source_files = "Pod/Classes/HairlineView/*.swift"
     ss.frameworks   = ["UIKit"]
   end
 
@@ -52,6 +82,13 @@ Pod::Spec.new do |s|
   s.subspec "Keyboard" do |ss|
     ss.source_files = "Pod/Classes/Keyboard/*.swift"
     ss.frameworks   = ["UIKit"]
+  end
+
+  # LicenseFormatter
+
+  s.subspec "LicenseFormatter" do |ss|
+    ss.source_files = "Pod/Classes/LicenseFormatter/*.swift"
+    ss.frameworks   = "Foundation"
   end
 
   # Logging
@@ -74,33 +111,10 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
-  # AccessibilityHelpers
+  # StackViewHelpers
 
-  s.subspec "AccessibilityHelpers" do |ss|
-    ss.source_files = "Pod/Classes/AccessibilityHelpers/*.swift"
-    ss.frameworks   = ["UIKit"]
-  end
-
-  # FormattedTextField
-
-  s.subspec "FormattedTextField" do |ss|
-    ss.source_files = "Pod/Classes/FormattedTextField/*.swift"
-    ss.frameworks   = ["UIKit"]
-  end
-
-  # LicenseFormatter
-
-  s.subspec "LicenseFormatter" do |ss|
-    ss.source_files = "Pod/Classes/LicenseFormatter/*.swift"
-    ss.frameworks   = "Foundation"
-  end
-
-  # Acknowledgements
-
-  s.subspec "Acknowledgements" do |ss|
-    ss.dependency 'Swiftilities/LicenseFormatter'
-    ss.dependency 'Swiftilities/Deselection'
-    ss.source_files = "Pod/Classes/Acknowledgements/*.swift"
+  s.subspec "StackViewHelpers" do |ss|
+    ss.source_files = "Pod/Classes/StackViewHelpers/*.swift"
     ss.frameworks   = ["UIKit"]
   end
 
@@ -111,46 +125,32 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
-  # HairlineView
+  # Views
 
-  s.subspec "HairlineView" do |ss|
-    ss.source_files = "Pod/Classes/HairlineView/*.swift"
-    ss.frameworks   = ["UIKit"]
-  end
-
-  # StackHelpers
-
-  s.subspec "StackViewHelpers" do |ss|
-    ss.source_files = "Pod/Classes/StackViewHelpers/*.swift"
-    ss.frameworks   = ["UIKit"]
-  end
-
-  # ColorHelpers
-
-  s.subspec "ColorHelpers" do |ss|
-    ss.source_files = "Pod/Classes/ColorHelpers/*.swift"
+  s.subspec "Views" do |ss|
+    ss.source_files = ["Pod/Classes/Views/Protocols/*.swift", "Pod/Classes/Views/Textview/*.swift"]
     ss.frameworks   = ["UIKit"]
   end
 
   # Catch All
 
   s.subspec "All" do |ss|
+    ss.dependency 'Swiftilities/AccessibilityHelpers'
+    ss.dependency 'Swiftilities/Acknowledgements'
+    ss.dependency 'Swiftilities/ColorHelpers'
     ss.dependency 'Swiftilities/Deselection'
     ss.dependency 'Swiftilities/DeviceSize'
+    ss.dependency 'Swiftilities/FormattedTextField'
     ss.dependency 'Swiftilities/Forms'
-    ss.dependency 'Swiftilities/Views'
+    ss.dependency 'Swiftilities/HairlineView'
     ss.dependency 'Swiftilities/Keyboard'
+    ss.dependency 'Swiftilities/LicenseFormatter'
     ss.dependency 'Swiftilities/Logging'
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/RootViewController'
-    ss.dependency 'Swiftilities/AccessibilityHelpers'
-    ss.dependency 'Swiftilities/FormattedTextField'
-    ss.dependency 'Swiftilities/TintedButton'
-    ss.dependency 'Swiftilities/HairlineView'
     ss.dependency 'Swiftilities/StackViewHelpers'
-    ss.dependency 'Swiftilities/ColorHelpers'
-    ss.dependency 'Swiftilities/LicenseFormatter'
-    ss.dependency 'Swiftilities/Acknowledgements'
+    ss.dependency 'Swiftilities/TintedButton'
+    ss.dependency 'Swiftilities/Views'
   end
 
 end
