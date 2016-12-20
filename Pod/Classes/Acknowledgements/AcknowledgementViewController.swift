@@ -50,7 +50,9 @@ open class AcknowledgementViewController: UIViewController {
     }
 
     open override func loadView() {
-        view = UIScrollView()
+        let scrollView = UIScrollView()
+        scrollView.alwaysBounceVertical = true
+        view = scrollView
         view.backgroundColor = .white
         view.addSubview(labelView)
         configureLayout()
