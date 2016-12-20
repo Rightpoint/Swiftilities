@@ -1,15 +1,16 @@
 PODS:
-  - Swiftilities (0.7.0):
-    - Swiftilities/All (= 0.7.0)
-  - Swiftilities/AccessibilityHelpers (0.7.0)
-  - Swiftilities/Acknowledgements (0.7.0):
+  - Swiftilities (0.8.0):
+    - Swiftilities/All (= 0.8.0)
+  - Swiftilities/AccessibilityHelpers (0.8.0)
+  - Swiftilities/Acknowledgements (0.8.0):
     - Swiftilities/Deselection
     - Swiftilities/LicenseFormatter
-  - Swiftilities/All (0.7.0):
+  - Swiftilities/All (0.8.0):
     - Swiftilities/AccessibilityHelpers
     - Swiftilities/Acknowledgements
     - Swiftilities/ColorHelpers
     - Swiftilities/Deselection
+    - Swiftilities/DeviceSize
     - Swiftilities/FormattedTextField
     - Swiftilities/Forms
     - Swiftilities/HairlineView
@@ -21,29 +22,30 @@ PODS:
     - Swiftilities/StackViewHelpers
     - Swiftilities/TintedButton
     - Swiftilities/Views
-  - Swiftilities/ColorHelpers (0.7.0)
-  - Swiftilities/Deselection (0.7.0)
-  - Swiftilities/FormattedTextField (0.7.0)
-  - Swiftilities/Forms (0.7.0)
-  - Swiftilities/HairlineView (0.7.0)
-  - Swiftilities/Keyboard (0.7.0)
-  - Swiftilities/LicenseFormatter (0.7.0)
-  - Swiftilities/Logging (0.7.0)
-  - Swiftilities/Math (0.7.0)
-  - Swiftilities/RootViewController (0.7.0)
-  - Swiftilities/StackViewHelpers (0.7.0)
-  - Swiftilities/TintedButton (0.7.0)
-  - Swiftilities/Views (0.7.0)
+  - Swiftilities/ColorHelpers (0.8.0)
+  - Swiftilities/Deselection (0.8.0)
+  - Swiftilities/DeviceSize (0.8.0)
+  - Swiftilities/FormattedTextField (0.8.0)
+  - Swiftilities/Forms (0.8.0)
+  - Swiftilities/HairlineView (0.8.0)
+  - Swiftilities/Keyboard (0.8.0)
+  - Swiftilities/LicenseFormatter (0.8.0)
+  - Swiftilities/Logging (0.8.0)
+  - Swiftilities/Math (0.8.0)
+  - Swiftilities/RootViewController (0.8.0)
+  - Swiftilities/StackViewHelpers (0.8.0)
+  - Swiftilities/TintedButton (0.8.0)
+  - Swiftilities/Views (0.8.0)
 
 DEPENDENCIES:
   - Swiftilities (from `../`)
 
 EXTERNAL SOURCES:
   Swiftilities:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  Swiftilities: 30796c448088e31ea92409ff4cb0e9abfe67ceba
+  Swiftilities: 8c24f1822dfe9b78aa76957096b0af3dc0a7c2c6
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
