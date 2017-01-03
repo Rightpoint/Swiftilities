@@ -1,5 +1,4 @@
 disabled_rules:
-  - comma
   - cyclomatic_complexity
   - file_length
   - function_body_length
@@ -8,15 +7,9 @@ disabled_rules:
   - nesting
   - todo
   - type_body_length
-  - variable_name
-  - valid_docs
 
-type_name:
-  min_length: 2
-
-variable_name:
-    excluded:
-        - URL
+trailing_comma:
+  mandatory_comma: true
 
 statement_position:
   statement_mode: uncuddled_else

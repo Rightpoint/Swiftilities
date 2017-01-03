@@ -30,7 +30,7 @@ public extension UIWindow {
                 self.rootViewController = viewController
 
                 UIView.setAnimationsEnabled(oldState)
-            }, completion: { (finished) -> Void in
+            }, completion: { _ -> Void in
                 completion()
             })
         }

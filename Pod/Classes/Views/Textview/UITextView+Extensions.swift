@@ -96,7 +96,7 @@ extension HeightAutoAdjustable where Self: UITextView {
         setNeedsLayout()
 
         let animated = animationDelegate?.shouldAnimateHeightChange(self) ?? false
-        guard let container = animationDelegate?.containerToLayout(forTextView: self) , animated else {
+        guard let container = animationDelegate?.containerToLayout(forTextView: self), animated else {
             scrollToBottom(animated)
             return
         }

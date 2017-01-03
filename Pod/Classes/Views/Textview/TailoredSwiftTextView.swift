@@ -9,7 +9,7 @@
 import UIKit
 
 open class TailoredSwiftTextView: PlaceholderTextView, HeightAutoAdjustable {
-    open var animationDelegate: TextViewAnimationDelegate?
+    open weak var animationDelegate: TextViewAnimationDelegate?
     open var animateHeightChange: Bool = true
     open var heightPriority: UILayoutPriority = UILayoutPriorityDefaultHigh
 

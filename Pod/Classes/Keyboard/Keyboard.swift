@@ -76,7 +76,7 @@ private extension Keyboard {
             let handlers = frameObservers.objectEnumerator()
 
             while let handler = handlers?.nextObject() as? KeyboardHandler<FrameChangeHandler> {
-                if let durationValue = (notification as NSNotification).userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber , handler.animated {
+                if let durationValue = (notification as NSNotification).userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber, handler.animated {
 
                     let curveValue = ((notification as NSNotification).userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue
                     let curve = UIViewAnimationCurve(rawValue: curveValue ?? 0)
