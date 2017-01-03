@@ -28,6 +28,10 @@ open class AcknowledgementViewController: UIViewController {
         }
     }
 
+    public var scrollView: UIScrollView! {
+        return view as? UIScrollView
+    }
+
     public var licenseFormatter: (String) -> NSAttributedString = defaultLicenseFormatter
 
     public let labelView: UILabel = {
@@ -50,7 +54,7 @@ open class AcknowledgementViewController: UIViewController {
     }
 
     open override func loadView() {
-        let scrollView = UIScrollView()
+        let scrollView = VerticalScrollView()
         scrollView.alwaysBounceVertical = true
         view = scrollView
         view.backgroundColor = .white
@@ -67,19 +71,50 @@ open class AcknowledgementViewController: UIViewController {
 
 private extension AcknowledgementViewController {
 
+    enum LayoutConstants {
+        static let defaultInset = UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14)
+    }
+
     func configureLayout() {
+        scrollView.contentInset = LayoutConstants.defaultInset
         labelView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            labelView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor),
-            labelView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16.0),
+            labelView.topAnchor.constraint(equalTo: view.topAnchor),
             labelView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            labelView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            labelView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            labelView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            labelView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             ])
     }
 
     func updateWithViewModel() {
         navigationItem.title = viewModel.title
         labelView.attributedText = licenseFormatter(viewModel.license)
+    }
+}
+
+private class VerticalScrollView: UIScrollView {
+
+    private var subviewWidthConstraints: [NSLayoutConstraint] = []
+
+    override var contentInset: UIEdgeInsets {
+        didSet {
+            updateContentInset()
+        }
+    }
+
+    override func didAddSubview(_ subview: UIView) {
+        super.didAddSubview(subview)
+        updateContentInset()
+    }
+
+    func updateContentInset() {
+        NSLayoutConstraint.deactivate(subviewWidthConstraints)
+        let newConstraints: [NSLayoutConstraint] = subviews.map { subView in
+            let constriant = subView.widthAnchor.constraint(equalTo: widthAnchor,
+                                                            constant: -(contentInset.left + contentInset.right))
+            constriant.priority = UILayoutPriorityDefaultHigh
+            return constriant
+        }
+        NSLayoutConstraint.activate(newConstraints)
     }
 }
