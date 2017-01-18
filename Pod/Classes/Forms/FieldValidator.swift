@@ -10,8 +10,8 @@ import Foundation
 
 public struct ValidationError: Error {
 
-    let field: String
-    let value: String
+    public let field: String
+    public let value: String
     public let validationErrors: [Error]
 
     public var localizedDescription: String {
