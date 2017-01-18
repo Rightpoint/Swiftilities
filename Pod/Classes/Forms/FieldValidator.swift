@@ -70,7 +70,7 @@ public struct NonEmptyValidator: FieldValidationRule {
 
 public struct LengthValidator: FieldValidationRule {
 
-    public init() {
+    @available(*, unavailable) public init() {
         fatalError("LengthValidator must be initialized wiht init(rule:).")
     }
 
