@@ -8,6 +8,11 @@ disabled_rules:
   - todo
   - type_body_length
 
+opt_in_rules:
+  - vertical_whitespace
+  - operator_usage_whitespace
+  - class_delegate_protocol
+
 trailing_comma:
   mandatory_comma: true
 

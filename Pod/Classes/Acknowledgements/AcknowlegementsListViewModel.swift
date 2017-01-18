@@ -71,7 +71,7 @@ private extension AcknowledgementsListViewModel {
             return []
         }
         // First and last elements in the settings bundle are not needed (title and empty row).
-        let acknowledgements = specifiers[1..<specifiers.count-1].flatMap(AcknowledgementViewModel.init(dictionary:)).sorted {
+        let acknowledgements = specifiers[1..<specifiers.count - 1].flatMap(AcknowledgementViewModel.init(dictionary:)).sorted {
           return $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedAscending
         }
 

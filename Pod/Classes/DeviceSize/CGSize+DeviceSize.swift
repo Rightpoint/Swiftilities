@@ -27,8 +27,8 @@ public extension CGSize {
             return self
         }
 
-        let xRatio: CGFloat = self.width/xDimension
-        let yRatio: CGFloat = self.height/yDimension
+        let xRatio: CGFloat = self.width / xDimension
+        let yRatio: CGFloat = self.height / yDimension
 
         return CGSize(width: (DeviceSize.current.dimensions.width * xRatio), height: (DeviceSize.current.dimensions.height * yRatio))
     }
