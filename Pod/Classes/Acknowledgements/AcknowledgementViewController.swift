@@ -115,6 +115,7 @@ private class VerticalScrollView: UIScrollView {
             constriant.priority = UILayoutPriorityDefaultHigh
             return constriant
         }
+        subviewWidthConstraints = newConstraints
         NSLayoutConstraint.activate(newConstraints)
     }
 }
