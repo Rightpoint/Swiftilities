@@ -56,7 +56,7 @@ public extension UIView {
         topConstraint.isActive = true
 
         Keyboard.addFrameObserver(guide) { [weak self] keyboardFrame in
-            if let sself = self , sself.window != nil {
+            if let sself = self, sself.window != nil {
                 var frameInWindow = sself.frame
 
                 if let superview = sself.superview {

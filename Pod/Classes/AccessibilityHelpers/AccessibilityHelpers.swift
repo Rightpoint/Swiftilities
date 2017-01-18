@@ -8,7 +8,7 @@
 
 import UIKit
 
-public typealias AccessibilityAnnounceCompletion = (_ anncouncedString: String?, _ success: Bool) -> ()
+public typealias AccessibilityAnnounceCompletion = (_ anncouncedString: String?, _ success: Bool) -> Void
 
 /// A set of handy UIAccessibility helpers
 public class Accessibility: NSObject {

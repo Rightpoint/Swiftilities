@@ -68,7 +68,7 @@ extension UIViewAnimationCurve {
 private extension Keyboard {
     static func setupObservers() {
         notificationObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: .main) { notification -> Void in
-            guard let frameValue: NSValue  = (notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+            guard let frameValue: NSValue = (notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
                 return
             }
             frame = frameValue.cgRectValue
@@ -76,7 +76,7 @@ private extension Keyboard {
             let handlers = frameObservers.objectEnumerator()
 
             while let handler = handlers?.nextObject() as? KeyboardHandler<FrameChangeHandler> {
-                if let durationValue = (notification as NSNotification).userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber , handler.animated {
+                if let durationValue = (notification as NSNotification).userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber, handler.animated {
 
                     let curveValue = ((notification as NSNotification).userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue
                     let curve = UIViewAnimationCurve(rawValue: curveValue ?? 0)

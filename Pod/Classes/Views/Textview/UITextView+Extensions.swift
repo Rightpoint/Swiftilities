@@ -54,7 +54,7 @@ extension PlaceholderConfigurable where Self: UITextView {
 
 extension HeightAutoAdjustable where Self: UITextView {
     fileprivate var bottomOffset: CGPoint {
-        let verticalInset =  abs(textContainerInset.top - textContainerInset.bottom)
+        let verticalInset = abs(textContainerInset.top - textContainerInset.bottom)
         return CGPoint(x: 0.0,
                        y: contentSize.height - self.bounds.height + verticalInset)
     }
@@ -96,7 +96,7 @@ extension HeightAutoAdjustable where Self: UITextView {
         setNeedsLayout()
 
         let animated = animationDelegate?.shouldAnimateHeightChange(self) ?? false
-        guard let container = animationDelegate?.containerToLayout(forTextView: self) , animated else {
+        guard let container = animationDelegate?.containerToLayout(forTextView: self), animated else {
             scrollToBottom(animated)
             return
         }

@@ -1,5 +1,4 @@
 disabled_rules:
-  - comma
   - cyclomatic_complexity
   - file_length
   - function_body_length
@@ -8,18 +7,20 @@ disabled_rules:
   - nesting
   - todo
   - type_body_length
-  - variable_name
-  - valid_docs
 
-type_name:
-  min_length: 2
+opt_in_rules:
+  - vertical_whitespace
+  - operator_usage_whitespace
+  - class_delegate_protocol
 
-variable_name:
-    excluded:
-        - URL
+trailing_comma:
+  mandatory_comma: true
 
 statement_position:
   statement_mode: uncuddled_else
 
 excluded:
   - Pods
+
+swiftlint_version:
+  - 0.16.0

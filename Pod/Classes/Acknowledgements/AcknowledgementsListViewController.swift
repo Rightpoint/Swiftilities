@@ -35,8 +35,8 @@ open class AcknowledgementsListViewController: UITableViewController {
     }
 
     public convenience init(title: String = LocalizedStrings.acknowlegementsTitle,
-                             viewModel: AcknowledgementsListViewModel,
-                             licenseFormatter: @escaping (String) -> NSAttributedString = AcknowledgementViewController.defaultLicenseFormatter) {
+                            viewModel: AcknowledgementsListViewModel,
+                            licenseFormatter: @escaping (String) -> NSAttributedString = AcknowledgementViewController.defaultLicenseFormatter) {
         self.init(style: .plain)
         self.navigationItem.title = title
         self.viewModel = viewModel

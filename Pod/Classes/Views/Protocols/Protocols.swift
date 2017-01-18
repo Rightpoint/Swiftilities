@@ -18,7 +18,7 @@ protocol PlaceholderConfigurable {
     func adjustPlaceholder()
 }
 
-public protocol TextViewAnimationDelegate {
+public protocol TextViewAnimationDelegate: class {
     /// Whether or not the given UITextView should animate its height changes.
     /// - Parameter textView: The UITextView that should or should not have the changes to its height animated.
     /// - Returns: Whether or not changes to the height of the UITextView will be animated.

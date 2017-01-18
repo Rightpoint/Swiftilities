@@ -10,12 +10,12 @@ import Foundation
 
 public extension Comparable {
 
-    /// Clamp a value to a `ClosedInterval`.
+    /// Clamp a value to a `ClosedRange`.
     ///
-    /// - Parameter to: a `ClosedInterval` whose start and end specify the clamp's minimum and maximum.
+    /// - Parameter to: a `ClosedRange` whose start and end specify the clamp's minimum and maximum.
     /// - Returns: the clamped value.
-    func clamped(to: ClosedRange<Self>) -> Self {
-        return clamped(min: to.lowerBound, max: to.upperBound)
+    func clamped(to range: ClosedRange<Self>) -> Self {
+        return clamped(min: range.lowerBound, max: range.upperBound)
     }
 
     /// Clamp a value to a minimum and maximum value.
