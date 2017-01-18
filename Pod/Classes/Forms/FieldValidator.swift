@@ -8,38 +8,14 @@
 
 import Foundation
 
-public enum ValidationError: Error {
+public struct ValidationError: Error {
 
-    case failed(field: String, value: String, validationErrors: [Error])
-
-    public var field: String {
-        let field: String
-        switch self {
-        case .failed(field: let failedField, value: _, validationErrors: _):
-            field = failedField
-        }
-        return field
-    }
-
-    public var value: String {
-        let value: String
-        switch self {
-        case .failed(field: _, value: let failedValue, validationErrors: _):
-            value = failedValue
-        }
-        return value
-    }
-
-    public var validationErrors: [Error] {
-        let validationErrors: [Error]
-        switch self {
-        case .failed(field: _, value: _, validationErrors: let failedErrors):
-            validationErrors = failedErrors
-        }
-        return validationErrors
-    }
+    let field: String
+    let value: String
+    public let validationErrors: [Error]
 
     public var localizedDescription: String {
+        print(validationErrors.first!.localizedDescription)
         let errorList = validationErrors.map({ $0.localizedDescription }).joined(separator: "\n")
         let format = NSLocalizedString("\"%@\" failed validation for field \"%@\" with the errors:\n%@", comment: "")
         return String.localizedStringWithFormat(format, value, field, errorList)
@@ -52,7 +28,12 @@ public struct FieldValidator {
     let fieldName: String
     let rules: [FieldValidationRule]
 
-    func validate(_ value: String) throws {
+    public init(fieldName: String, rules: [FieldValidationRule]) {
+        self.fieldName = fieldName
+        self.rules = rules
+    }
+
+    public func validate(_ value: String) throws {
         var errors = [Error]()
         for rule in rules {
             do {
@@ -63,7 +44,7 @@ public struct FieldValidator {
             }
         }
         guard errors.isEmpty else {
-            throw ValidationError.failed(field: fieldName, value: value, validationErrors: errors)
+            throw ValidationError(field: fieldName, value: value, validationErrors: errors)
         }
     }
 
@@ -72,20 +53,27 @@ public struct FieldValidator {
 public protocol FieldValidationRule {
 
     func validate(_ value: String) throws
+    init()
 
 }
 
 public struct NonEmptyValidator: FieldValidationRule {
 
+    public init() { }
+
     public func validate(_ value: String) throws {
         if value.isEmpty {
-            throw RuleErrors.shouldNotBeEmpty
+            throw RuleError.empty
         }
     }
 
 }
 
 public struct LengthValidator: FieldValidationRule {
+
+    public init() {
+        fatalError("LengthValidator must be initialized wiht init(rule:).")
+    }
 
     public enum LengthRule {
         case lessThanOrEqual(Int), greaterThanOrEqual(Int), betweenOrEqual(minimum: Int, maximum: Int)
@@ -113,23 +101,25 @@ public struct LengthValidator: FieldValidationRule {
         }
         if let maximum = allowedMax {
             guard value.characters.count <= maximum else {
-                throw RuleErrors.aboveMaxmimumLength(maximum)
+                throw RuleError.aboveMaxmimumLength(maximum)
             }
         }
         if let minimum = allowedMin {
             guard value.characters.count >= minimum else {
-                throw RuleErrors.belowMinimumLength(minimum)
+                throw RuleError.belowMinimumLength(minimum)
             }
         }
     }
 
 }
 
-public struct EmailValidatior: FieldValidationRule {
+public struct EmailValidator: FieldValidationRule {
+
+    public init() { }
 
     public func validate(_ value: String) throws {
         guard value.isValidEmail else {
-            throw RuleErrors.invalidEmail
+            throw RuleError.invalidEmail
         }
     }
 
@@ -146,27 +136,27 @@ private extension String {
 
 }
 
-public enum RuleErrors: Error {
+public enum RuleError: LocalizedError {
 
-    case shouldNotBeEmpty
+    case empty
     case belowMinimumLength(Int)
     case aboveMaxmimumLength(Int)
     case invalidEmail
 
-    public var localizedDescription: String {
+    public var errorDescription: String? {
         switch self {
         case .invalidEmail:
             return NSLocalizedString("input was not a valid email",
                                      comment: "Field validation error for invalid email")
-        case .shouldNotBeEmpty:
+        case .empty:
             return NSLocalizedString("required input was empty",
                                      comment: "Field validation error for empty required field")
         case .aboveMaxmimumLength(let length):
-            let format = NSLocalizedString("Field was above maxmium length of %d",
+            let format = NSLocalizedString("field was above the maxmium length of %d",
                                            comment: "Field validation error for a field over the maximum allowed length")
             return String.localizedStringWithFormat(format, length)
         case .belowMinimumLength(let length):
-            let format = NSLocalizedString("Field was below the minimum length of %d",
+            let format = NSLocalizedString("field was below the minimum length of %d",
                                            comment: "Field validation error for a field under the minimum allowed length")
             return String.localizedStringWithFormat(format, length)
         }
