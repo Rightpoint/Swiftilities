@@ -15,7 +15,6 @@ public struct ValidationError: Error {
     public let validationErrors: [Error]
 
     public var localizedDescription: String {
-        print(validationErrors.first!.localizedDescription)
         let errorList = validationErrors.map({ $0.localizedDescription }).joined(separator: "\n")
         let format = NSLocalizedString("\"%@\" failed validation for field \"%@\" with the errors:\n%@", comment: "")
         return String.localizedStringWithFormat(format, value, field, errorList)
