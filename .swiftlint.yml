@@ -21,3 +21,6 @@ statement_position:
 
 excluded:
   - Pods
+
+swiftlint_version:
+  - 0.16.0
