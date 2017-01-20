@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class FormattedTextField: UITextField {
+open class FormattedTextField: UITextField {
 
     public typealias Formatter = (String?) -> String?
 
@@ -27,7 +27,7 @@ public class FormattedTextField: UITextField {
         }
     }
 
-    public override var text: String? {
+    open override var text: String? {
         didSet {
             if let formatter = formatter {
                 super.text = formatter(text)
