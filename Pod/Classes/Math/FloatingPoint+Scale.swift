@@ -19,7 +19,11 @@ public extension FloatingPoint {
         guard source != destination else {
             return self // short circuit the math if they're equal
         }
-        var result = ((self - source.lowerBound) / (source.upperBound - source.lowerBound)) * (destination.upperBound - destination.lowerBound) + destination.lowerBound
+        // these are broken up to speed up compile time
+        let selfMinusLower = self - source.lowerBound
+        let sourceUpperMinusLower = source.upperBound - source.lowerBound
+        let destinationUpperMinusLower = destination.upperBound - destination.lowerBound
+        var result = (selfMinusLower / sourceUpperMinusLower) * destinationUpperMinusLower + destination.lowerBound
         if clamp {
             result = result.clamped(to: destination)
         }
