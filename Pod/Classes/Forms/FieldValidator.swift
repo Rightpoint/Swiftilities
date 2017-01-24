@@ -112,6 +112,29 @@ public struct LengthValidator: FieldValidationRule {
 
 }
 
+public struct DiscreteLengthValidator: FieldValidationRule {
+    public var allowedLengths: [Int]
+
+    @available(*, unavailable) public init() {
+        fatalError("DiscreteLengthValidator must be initialized with init(allowedLengths:) or init(allowedLength:).")
+    }
+
+    public init(allowedLength: Int) {
+        self.allowedLengths = [allowedLength]
+    }
+
+    public init(allowedLengths: [Int]) {
+        self.allowedLengths = allowedLengths
+    }
+
+    public func validate(_ value: String) throws {
+        let length = value.characters.count
+        if !allowedLengths.contains(length) {
+            throw RuleError.invalidLength(allowedLengths)
+        }
+    }
+}
+
 public struct EmailValidator: FieldValidationRule {
 
     public init() { }
@@ -141,6 +164,7 @@ public enum RuleError: LocalizedError {
     case belowMinimumLength(Int)
     case aboveMaxmimumLength(Int)
     case invalidEmail
+    case invalidLength([Int])
 
     public var errorDescription: String? {
         switch self {
@@ -158,6 +182,11 @@ public enum RuleError: LocalizedError {
             let format = NSLocalizedString("field was below the minimum length of %d",
                                            comment: "Field validation error for a field under the minimum allowed length")
             return String.localizedStringWithFormat(format, length)
+        case .invalidLength(let allowedLengths):
+            let format = NSLocalizedString("field was not one of the accepted lengths: %@",
+                                           comment: "Field validation error for a field failing to match discrete lengths")
+            return String.localizedStringWithFormat(format, allowedLengths.description)
+
         }
     }
 
