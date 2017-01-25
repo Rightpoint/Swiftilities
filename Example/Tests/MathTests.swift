@@ -1,7 +1,7 @@
 import XCTest
 import Swiftilities
 
-class Tests: XCTestCase {
+class MathTests: XCTestCase {
 
     let epsilon = 0.00001
 
