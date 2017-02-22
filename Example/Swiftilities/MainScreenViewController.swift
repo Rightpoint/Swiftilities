@@ -34,6 +34,22 @@ class MainScreenViewController: UIViewController {
         }
     }
 
+    @IBAction func demonstrateRootViewControllerCycling(_ sender: Any) {
+        let v1 = UIViewController()
+        v1.view.backgroundColor = .red
+        let v2 = UIViewController()
+        v2.view.backgroundColor = .blue
+        guard let v3 = storyboard?.instantiateInitialViewController(),
+            let window = UIApplication.shared.keyWindow else {
+            return
+        }
+        present(v1, animated: true) {
+            window.setRootViewController(v2, animated: true) {
+                window.setRootViewController(v3, animated: true)
+            }
+        }
+    }
+
 }
 
 private class LightGrayListViewController: AcknowledgementsListViewController {
