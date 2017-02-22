@@ -1,11 +1,11 @@
 PODS:
-  - Swiftilities (0.9.0):
-    - Swiftilities/All (= 0.9.0)
-  - Swiftilities/AccessibilityHelpers (0.9.0)
-  - Swiftilities/Acknowledgements (0.9.0):
+  - Swiftilities (0.10.0):
+    - Swiftilities/All (= 0.10.0)
+  - Swiftilities/AccessibilityHelpers (0.10.0)
+  - Swiftilities/Acknowledgements (0.10.0):
     - Swiftilities/Deselection
     - Swiftilities/LicenseFormatter
-  - Swiftilities/All (0.9.0):
+  - Swiftilities/All (0.10.0):
     - Swiftilities/AccessibilityHelpers
     - Swiftilities/Acknowledgements
     - Swiftilities/ColorHelpers
@@ -23,21 +23,21 @@ PODS:
     - Swiftilities/StackViewHelpers
     - Swiftilities/TintedButton
     - Swiftilities/Views
-  - Swiftilities/ColorHelpers (0.9.0)
-  - Swiftilities/Deselection (0.9.0)
-  - Swiftilities/DeviceSize (0.9.0)
-  - Swiftilities/FormattedTextField (0.9.0)
-  - Swiftilities/Forms (0.9.0)
-  - Swiftilities/HairlineView (0.9.0)
-  - Swiftilities/Keyboard (0.9.0)
-  - Swiftilities/LicenseFormatter (0.9.0)
-  - Swiftilities/Lifecycle (0.9.0)
-  - Swiftilities/Logging (0.9.0)
-  - Swiftilities/Math (0.9.0)
-  - Swiftilities/RootViewController (0.9.0)
-  - Swiftilities/StackViewHelpers (0.9.0)
-  - Swiftilities/TintedButton (0.9.0)
-  - Swiftilities/Views (0.9.0)
+  - Swiftilities/ColorHelpers (0.10.0)
+  - Swiftilities/Deselection (0.10.0)
+  - Swiftilities/DeviceSize (0.10.0)
+  - Swiftilities/FormattedTextField (0.10.0)
+  - Swiftilities/Forms (0.10.0)
+  - Swiftilities/HairlineView (0.10.0)
+  - Swiftilities/Keyboard (0.10.0)
+  - Swiftilities/LicenseFormatter (0.10.0)
+  - Swiftilities/Lifecycle (0.10.0)
+  - Swiftilities/Logging (0.10.0)
+  - Swiftilities/Math (0.10.0)
+  - Swiftilities/RootViewController (0.10.0)
+  - Swiftilities/StackViewHelpers (0.10.0)
+  - Swiftilities/TintedButton (0.10.0)
+  - Swiftilities/Views (0.10.0)
 
 DEPENDENCIES:
   - Swiftilities (from `../`)
@@ -47,8 +47,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Swiftilities: c86c1b89485bd81f5b998a5b124dc0dda6604961
+  Swiftilities: 7d21568ca54acdf0dadd5a6e927d28b7676dfa12
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
