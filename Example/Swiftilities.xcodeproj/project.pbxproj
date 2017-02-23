@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		04CD173B1AB7C4F6286F8FA1 /* Pods_Swiftilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849AC9425E95C2FF6F694A7F /* Pods_Swiftilities_Example.framework */; };
-		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* TextFormattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* TextFormattingViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
-		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		727301D31DDE3ADB0083596B /* TintedButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727301D21DDE3ADB0083596B /* TintedButtonsViewController.swift */; };
-		72A1F9111DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A1F9101DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift */; };
-		72D32B7E1DE3710300D43933 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D32B7D1DE3710300D43933 /* MainScreenViewController.swift */; };
+		722099011E5F46EE0098229D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722098FF1E5F46EE0098229D /* Main.storyboard */; };
+		722099061E5F470D0098229D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722099031E5F470D0098229D /* LaunchScreen.xib */; };
+		722099071E5F470D0098229D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722099051E5F470D0098229D /* Images.xcassets */; };
+		7220990A1E5F471F0098229D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722099091E5F471F0098229D /* AppDelegate.swift */; };
+		722099131E5F47690098229D /* KeyboardAvoidanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220990C1E5F47690098229D /* KeyboardAvoidanceViewController.swift */; };
+		722099141E5F47690098229D /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220990E1E5F47690098229D /* MainScreenViewController.swift */; };
+		722099151E5F47690098229D /* TextFormattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722099101E5F47690098229D /* TextFormattingViewController.swift */; };
+		722099161E5F47690098229D /* TintedButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722099121E5F47690098229D /* TintedButtonsViewController.swift */; };
+		722099191E5F47980098229D /* LifecycleDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722099181E5F47980098229D /* LifecycleDemoViewController.swift */; };
+		7220991B1E5F48090098229D /* LifecycleConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */; };
 		72D32B801DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */; };
 		72E281A71E5DDE59000D0C9D /* RootViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */; };
 		CD32DE751CEA1ECA00FC0C7E /* MathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD32DE731CEA1EC600FC0C7E /* MathTests.swift */; };
@@ -40,16 +42,18 @@
 		563BE12C99CEF6CB9AB591A4 /* Swiftilities.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Swiftilities.podspec; path = ../Swiftilities.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Swiftilities_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftilities_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* TextFormattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormattingViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Swiftilities_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swiftilities_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		727301D21DDE3ADB0083596B /* TintedButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintedButtonsViewController.swift; sourceTree = "<group>"; };
-		72A1F9101DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidanceViewController.swift; sourceTree = "<group>"; };
-		72D32B7D1DE3710300D43933 /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		722099001E5F46EE0098229D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		722099041E5F470D0098229D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		722099051E5F470D0098229D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		722099091E5F471F0098229D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7220990C1E5F47690098229D /* KeyboardAvoidanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidanceViewController.swift; sourceTree = "<group>"; };
+		7220990E1E5F47690098229D /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		722099101E5F47690098229D /* TextFormattingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFormattingViewController.swift; sourceTree = "<group>"; };
+		722099121E5F47690098229D /* TintedButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintedButtonsViewController.swift; sourceTree = "<group>"; };
+		722099181E5F47980098229D /* LifecycleDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleDemoViewController.swift; sourceTree = "<group>"; };
+		7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleConsoleViewController.swift; sourceTree = "<group>"; };
 		72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Pods-Swiftilities_Example-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerTests.swift; sourceTree = "<group>"; };
 		7396494F9BA8221A6823B9D4 /* Pods-Swiftilities_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,15 +131,10 @@
 		607FACD21AFB9204008FA782 /* Example for Swiftilities */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				72A1F9101DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				722099081E5F471F0098229D /* App Delegate */,
+				722099021E5F470D0098229D /* Assets */,
+				722098FE1E5F46EE0098229D /* Views */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				607FACD71AFB9204008FA782 /* TextFormattingViewController.swift */,
-				727301D21DDE3ADB0083596B /* TintedButtonsViewController.swift */,
-				72D32B7D1DE3710300D43933 /* MainScreenViewController.swift */,
 			);
 			name = "Example for Swiftilities";
 			path = Swiftilities;
@@ -178,6 +177,77 @@
 				8627BD5B9862F25C77AEF3CC /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		722098FE1E5F46EE0098229D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				722099171E5F47830098229D /* Lifecycle */,
+				7220990B1E5F47690098229D /* Keyboard Avoidance */,
+				7220990D1E5F47690098229D /* Main */,
+				7220990F1E5F47690098229D /* Text Formatting */,
+				722099111E5F47690098229D /* Tinted Buttons */,
+				722098FF1E5F46EE0098229D /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		722099021E5F470D0098229D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				722099031E5F470D0098229D /* LaunchScreen.xib */,
+				722099051E5F470D0098229D /* Images.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		722099081E5F471F0098229D /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				722099091E5F471F0098229D /* AppDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		7220990B1E5F47690098229D /* Keyboard Avoidance */ = {
+			isa = PBXGroup;
+			children = (
+				7220990C1E5F47690098229D /* KeyboardAvoidanceViewController.swift */,
+			);
+			path = "Keyboard Avoidance";
+			sourceTree = "<group>";
+		};
+		7220990D1E5F47690098229D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7220990E1E5F47690098229D /* MainScreenViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7220990F1E5F47690098229D /* Text Formatting */ = {
+			isa = PBXGroup;
+			children = (
+				722099101E5F47690098229D /* TextFormattingViewController.swift */,
+			);
+			path = "Text Formatting";
+			sourceTree = "<group>";
+		};
+		722099111E5F47690098229D /* Tinted Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				722099121E5F47690098229D /* TintedButtonsViewController.swift */,
+			);
+			path = "Tinted Buttons";
+			sourceTree = "<group>";
+		};
+		722099171E5F47830098229D /* Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				722099181E5F47980098229D /* LifecycleDemoViewController.swift */,
+				7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */,
+			);
+			path = Lifecycle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +340,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				72D32B801DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist in Resources */,
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				722099071E5F470D0098229D /* Images.xcassets in Resources */,
+				722099061E5F470D0098229D /* LaunchScreen.xib in Resources */,
+				722099011E5F46EE0098229D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,11 +467,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72D32B7E1DE3710300D43933 /* MainScreenViewController.swift in Sources */,
-				72A1F9111DD61BFB003C95D3 /* KeyboardAvoidanceViewController.swift in Sources */,
-				607FACD81AFB9204008FA782 /* TextFormattingViewController.swift in Sources */,
-				727301D31DDE3ADB0083596B /* TintedButtonsViewController.swift in Sources */,
-				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				722099151E5F47690098229D /* TextFormattingViewController.swift in Sources */,
+				7220991B1E5F48090098229D /* LifecycleConsoleViewController.swift in Sources */,
+				722099131E5F47690098229D /* KeyboardAvoidanceViewController.swift in Sources */,
+				7220990A1E5F471F0098229D /* AppDelegate.swift in Sources */,
+				722099141E5F47690098229D /* MainScreenViewController.swift in Sources */,
+				722099191E5F47980098229D /* LifecycleDemoViewController.swift in Sources */,
+				722099161E5F47690098229D /* TintedButtonsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,18 +499,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
+		722098FF1E5F46EE0098229D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
+				722099001E5F46EE0098229D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
+		722099031E5F470D0098229D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
+				722099041E5F470D0098229D /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
