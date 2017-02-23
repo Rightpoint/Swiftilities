@@ -91,6 +91,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = "Foundation"
   end
 
+  # Lifecycle
+
+  s.subspec "Lifecycle" do |ss|
+    ss.source_files = ["Pod/Classes/Lifecycle/*.swift"]
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Logging
 
   s.subspec "Logging" do |ss|
@@ -145,6 +152,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/HairlineView'
     ss.dependency 'Swiftilities/Keyboard'
     ss.dependency 'Swiftilities/LicenseFormatter'
+    ss.dependency 'Swiftilities/Lifecycle'
     ss.dependency 'Swiftilities/Logging'
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/RootViewController'
