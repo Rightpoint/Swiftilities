@@ -44,7 +44,7 @@ public struct DefaultBehaviors {
                 let imp = unsafeBitCast(originalIMP, to: ViewDidLoadIMP.self)
                 imp(receiver, selector)
             }
-            DefaultBehaviors.injectBehaviors(behaviors, into: receiver, ignoring: ignored)
+            DefaultBehaviors.inject(behaviors: behaviors, into: receiver, ignoring: ignored)
         }
 
         let swizzledIMP = imp_implementationWithBlock(unsafeBitCast(swizzledIMPBlock, to: AnyObject.self))
@@ -52,17 +52,17 @@ public struct DefaultBehaviors {
 
     }
 
-    private static func injectBehaviors(_ behaviors: [ViewControllerLifecycleBehavior],
-                                        into viewController: UIViewController,
-                                        ignoring ignoredClasses: [UIViewController.Type]) {
+    private static func inject(behaviors: [ViewControllerLifecycleBehavior],
+                               into viewController: UIViewController,
+                               ignoring ignoredClasses: [UIViewController.Type]) {
         for type in ignoredClasses + forcedIgnoredClasses {
             guard !viewController.isKind(of: type) else {
                 return
             }
         }
         // Prevents swizzing view controllers that are not subclassed from UIKit
-        let uiKitBundle = Bundle.init(for: UIViewController.self)
-        let receiverBundle = Bundle.init(for: type(of: viewController))
+        let uiKitBundle = Bundle(for: UIViewController.self)
+        let receiverBundle = Bundle(for: type(of: viewController))
         guard uiKitBundle != receiverBundle else {
             return
         }
