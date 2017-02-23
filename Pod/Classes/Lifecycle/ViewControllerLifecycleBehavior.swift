@@ -44,5 +44,5 @@ public extension ViewControllerLifecycleBehavior {
     public func beforeLayingOutSubviews(_ viewController: UIViewController) {}
 
     public func afterLayingOutSubviews(_ viewController: UIViewController) {}
-    
+
 }
