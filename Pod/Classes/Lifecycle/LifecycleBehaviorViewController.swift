@@ -91,8 +91,8 @@ final class LifecycleBehaviorViewController: UIViewController {
 
 private extension LifecycleBehaviorViewController {
 
-    typealias BehaviorApplication = @noescape (_ behavior: ViewControllerLifecycleBehavior,
-                                               _ viewController: UIViewController) -> Void
+    typealias BehaviorApplication = (_ behavior: ViewControllerLifecycleBehavior,
+                                     _ viewController: UIViewController) -> Void
 
     func applyBehaviors(body: BehaviorApplication) {
         guard let parentViewController = parent else { return }
