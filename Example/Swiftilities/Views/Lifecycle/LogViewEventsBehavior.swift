@@ -17,10 +17,6 @@ struct LogViewEventsBehavior: ViewControllerLifecycleBehavior {
         }
     }
 
-    public func afterLoading(_ viewController: UIViewController) {
-        logEvent("After loading", in: viewController)
-    }
-
     public func beforeAppearing(_ viewController: UIViewController, animated: Bool) {
         logEvent("Before appearing", in: viewController)
     }

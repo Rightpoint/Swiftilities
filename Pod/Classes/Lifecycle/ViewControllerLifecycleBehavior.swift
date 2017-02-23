@@ -13,8 +13,6 @@ import UIKit
 
 public protocol ViewControllerLifecycleBehavior {
 
-    func afterLoading(_ viewController: UIViewController)
-
     func beforeAppearing(_ viewController: UIViewController, animated: Bool)
 
     func afterAppearing(_ viewController: UIViewController, animated: Bool)
@@ -30,8 +28,6 @@ public protocol ViewControllerLifecycleBehavior {
 }
 
 public extension ViewControllerLifecycleBehavior {
-
-    public func afterLoading(_ viewController: UIViewController) {}
 
     public func beforeAppearing(_ viewController: UIViewController, animated: Bool) {}
 

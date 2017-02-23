@@ -33,10 +33,6 @@ final class LifecycleBehaviorViewController: UIViewController {
         super.viewDidLoad()
 
         view.isHidden = true
-
-        applyBehaviors { behavior, viewController in
-            behavior.afterLoading(viewController)
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
