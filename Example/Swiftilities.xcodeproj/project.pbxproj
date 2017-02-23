@@ -19,6 +19,7 @@
 		722099191E5F47980098229D /* LifecycleDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722099181E5F47980098229D /* LifecycleDemoViewController.swift */; };
 		7220991B1E5F48090098229D /* LifecycleConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */; };
 		7220991D1E5F4C970098229D /* LogViewEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991C1E5F4C970098229D /* LogViewEventsBehavior.swift */; };
+		722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */; };
 		72D32B801DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */; };
 		72E281A71E5DDE59000D0C9D /* RootViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */; };
 		CD32DE751CEA1ECA00FC0C7E /* MathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD32DE731CEA1EC600FC0C7E /* MathTests.swift */; };
@@ -56,6 +57,7 @@
 		722099181E5F47980098229D /* LifecycleDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleDemoViewController.swift; sourceTree = "<group>"; };
 		7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleConsoleViewController.swift; sourceTree = "<group>"; };
 		7220991C1E5F4C970098229D /* LogViewEventsBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewEventsBehavior.swift; sourceTree = "<group>"; };
+		7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogAppearanceBehavior.swift; sourceTree = "<group>"; };
 		72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Pods-Swiftilities_Example-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerTests.swift; sourceTree = "<group>"; };
 		7396494F9BA8221A6823B9D4 /* Pods-Swiftilities_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				722099181E5F47980098229D /* LifecycleDemoViewController.swift */,
 				7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */,
 				7220991C1E5F4C970098229D /* LogViewEventsBehavior.swift */,
+				7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */,
 			);
 			path = Lifecycle;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				722099151E5F47690098229D /* TextFormattingViewController.swift in Sources */,
 				7220991B1E5F48090098229D /* LifecycleConsoleViewController.swift in Sources */,
 				722099131E5F47690098229D /* KeyboardAvoidanceViewController.swift in Sources */,
+				722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */,
 				7220990A1E5F471F0098229D /* AppDelegate.swift in Sources */,
 				722099141E5F47690098229D /* MainScreenViewController.swift in Sources */,
 				722099191E5F47980098229D /* LifecycleDemoViewController.swift in Sources */,

@@ -18,10 +18,6 @@ class LifecycleConsoleViewController: UIViewController {
 
     @IBOutlet weak var lifecycleLogTextView: UITextView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     @IBAction func presentLifecycleController(_ sender: Any) {
         let demoViewController = LifecycleDemoViewController()
         demoViewController.lifecycleDelegate = self
