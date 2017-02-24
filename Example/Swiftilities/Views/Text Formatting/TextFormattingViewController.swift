@@ -17,11 +17,6 @@ class TextFormattingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Logger
-
-        Log.logLevel = .error
-        Log.error("Test log")
-
         allCapsTextField.formatter = { string in
             return string?.uppercased()
         }

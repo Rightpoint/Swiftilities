@@ -10,6 +10,52 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Lifecycle Behaviors-->
+        <scene sceneID="Xsr-eT-Tb9">
+            <objects>
+                <viewController title="Lifecycle Behaviors" automaticallyAdjustsScrollViewInsets="NO" id="dS0-7O-UqT" customClass="LifecycleConsoleViewController" customModule="Swiftilities_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XBT-Cr-zV1"/>
+                        <viewControllerLayoutGuide type="bottom" id="DJv-kE-9ee"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1rE-ln-GoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdl-IS-gDo">
+                                <rect key="frame" x="16" y="28" width="343" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Present Controller"/>
+                                <connections>
+                                    <action selector="presentLifecycleController:" destination="dS0-7O-UqT" eventType="touchUpInside" id="1pA-PE-LIh"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSS-bw-VTi">
+                                <rect key="frame" x="16" y="69" width="343" height="590"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qSS-bw-VTi" firstAttribute="top" secondItem="cdl-IS-gDo" secondAttribute="bottom" constant="8" id="2dt-qg-t4w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cdl-IS-gDo" secondAttribute="trailing" id="7Se-Vx-tUS"/>
+                            <constraint firstItem="qSS-bw-VTi" firstAttribute="leading" secondItem="1rE-ln-GoJ" secondAttribute="leadingMargin" id="HUb-XO-PGc"/>
+                            <constraint firstItem="cdl-IS-gDo" firstAttribute="leading" secondItem="1rE-ln-GoJ" secondAttribute="leadingMargin" id="Wgg-tX-MYb"/>
+                            <constraint firstItem="DJv-kE-9ee" firstAttribute="top" secondItem="qSS-bw-VTi" secondAttribute="bottom" constant="8" id="bQZ-lU-iPF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qSS-bw-VTi" secondAttribute="trailing" id="bc5-zK-DeJ"/>
+                            <constraint firstItem="cdl-IS-gDo" firstAttribute="top" secondItem="XBT-Cr-zV1" secondAttribute="bottom" constant="8" id="yql-kW-wQz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lifecycleLogTextView" destination="qSS-bw-VTi" id="ZxR-ss-Lag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EBg-zB-p8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1228" y="-1853"/>
+        </scene>
         <!--Text Formatting-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -99,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TGz-NW-V1v">
-                                <rect key="frame" x="16" y="74" width="343" height="248"/>
+                                <rect key="frame" x="16" y="74" width="343" height="291"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xta-GV-UYS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
@@ -147,6 +193,14 @@
                                         <state key="normal" title="Root View Controller Cycling"/>
                                         <connections>
                                             <action selector="demonstrateRootViewControllerCycling:" destination="awA-To-3aY" eventType="touchUpInside" id="65s-y4-Tf4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nk3-qX-hyA">
+                                        <rect key="frame" x="0.0" y="258" width="343" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Lifecycle Behaviors"/>
+                                        <connections>
+                                            <segue destination="dS0-7O-UqT" kind="show" id="ven-S6-U18"/>
                                         </connections>
                                     </button>
                                 </subviews>
