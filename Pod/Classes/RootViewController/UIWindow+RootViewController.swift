@@ -21,21 +21,31 @@ public extension UIWindow {
      - parameter completion:     Completion block to be invoked after the transition finishes
      */
     @nonobjc func setRootViewController(_ viewController: UIViewController, animated: Bool, completion: @escaping () -> Void = {}) {
-        if animated {
-
-            UIView.transition(with: self, duration: 0.3, options: .transitionCrossDissolve, animations: { () -> Void in
-                let oldState = UIView.areAnimationsEnabled
-                UIView.setAnimationsEnabled(false)
-
+        let previousRootViewController = rootViewController
+        let updateViewController = {
+            // Disabling animation prevents layout and visual issues during the transition
+            UIView.performWithoutAnimation {
                 self.rootViewController = viewController
-
-                UIView.setAnimationsEnabled(oldState)
-            }, completion: { _ -> Void in
-                completion()
-            })
+            }
+        }
+        let removePreviousAndExecuteCompletion = { (_: Bool) in
+            // If a view controller is currently presented, it must be dismissed as a separate step
+            // than the swapping of the root VC of the window.
+            // Failure to do this appears to result in a retain cycle in the orphaned VC stack.
+            previousRootViewController?.dismiss(animated: false, completion: nil)
+            previousRootViewController?.view.removeFromSuperview()
+            completion()
+        }
+        if animated && previousRootViewController != nil {
+            UIView.transition(with: self,
+                              duration: 0.3,
+                              options: .transitionCrossDissolve,
+                              animations: updateViewController,
+                              completion: removePreviousAndExecuteCompletion)
         }
         else {
-            self.rootViewController = viewController
+            updateViewController()
+            removePreviousAndExecuteCompletion(true)
         }
     }
 }
