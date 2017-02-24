@@ -1,9 +1,9 @@
 //
 //  DefaultBehaviors.swift
-//  Pods
+//  Swiftilities
 //
 //  Created by Michael Skiba on 2/23/17.
-//
+//  Copyright© 2016 Raizlabs
 //
 
 import Foundation
