@@ -19,6 +19,13 @@
   "default_subspecs": "All",
   "subspecs": [
     {
+      "name": "AboutView",
+      "source_files": "Pod/Classes/AboutView/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "AccessibilityHelpers",
       "source_files": "Pod/Classes/AccessibilityHelpers/*.swift",
       "frameworks": [
@@ -146,6 +153,9 @@
     {
       "name": "All",
       "dependencies": {
+        "Swiftilities/AboutView": [
+
+        ],
         "Swiftilities/AccessibilityHelpers": [
 
         ],
