@@ -123,7 +123,8 @@
       "name": "RootViewController",
       "source_files": "Pod/Classes/RootViewController/*.swift",
       "frameworks": [
-        "UIKit"
+        "UIKit",
+        "MessageUI"
       ]
     },
     {

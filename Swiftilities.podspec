@@ -122,7 +122,7 @@ Pod::Spec.new do |s|
 
   s.subspec "RootViewController" do |ss|
     ss.source_files = "Pod/Classes/RootViewController/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.frameworks   = ["UIKit", "MessageUI"]
   end
 
   # StackViewHelpers

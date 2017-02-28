@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdl-IS-gDo">
-                                <rect key="frame" x="16" y="28" width="343" height="33"/>
+                                <rect key="frame" x="16" y="72" width="343" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Present Controller"/>
                                 <connections>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSS-bw-VTi">
-                                <rect key="frame" x="16" y="69" width="343" height="590"/>
+                                <rect key="frame" x="16" y="113" width="343" height="546"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -145,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TGz-NW-V1v">
-                                <rect key="frame" x="16" y="74" width="343" height="291"/>
+                                <rect key="frame" x="16" y="74" width="343" height="334"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xta-GV-UYS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
@@ -203,6 +203,14 @@
                                             <segue destination="dS0-7O-UqT" kind="show" id="ven-S6-U18"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAI-RE-wkg">
+                                        <rect key="frame" x="0.0" y="301" width="343" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="About View"/>
+                                        <connections>
+                                            <segue destination="CWp-Vg-yp5" kind="show" id="hwe-c6-O0p"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -219,6 +227,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v8R-Q5-fHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="450" y="-550"/>
+        </scene>
+        <!--About View-->
+        <scene sceneID="Xow-Ku-s9k">
+            <objects>
+                <viewController title="About View" id="CWp-Vg-yp5" customClass="AboutViewController" customModule="Swiftilities_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Woz-cT-4v1"/>
+                        <viewControllerLayoutGuide type="bottom" id="m28-ce-yk5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DIO-8G-1eK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="apx-mM-B5p">
+                                <rect key="frame" x="16" y="64" width="343" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ih-DG-yEo">
+                                        <rect key="frame" x="117" y="0.0" width="109" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Compose Mail"/>
+                                        <connections>
+                                            <action selector="showMailComposer:" destination="CWp-Vg-yp5" eventType="touchUpInside" id="1E7-kb-XRe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x6-L3-jzZ">
+                                        <rect key="frame" x="131.5" y="33" width="80" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Share App"/>
+                                        <connections>
+                                            <action selector="showShareApp:" destination="CWp-Vg-yp5" eventType="touchUpInside" id="NQE-ln-6LK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="apx-mM-B5p" secondAttribute="trailing" id="89u-Q5-Nzg"/>
+                            <constraint firstItem="apx-mM-B5p" firstAttribute="top" secondItem="Woz-cT-4v1" secondAttribute="bottom" id="8Xh-jn-eDZ"/>
+                            <constraint firstItem="apx-mM-B5p" firstAttribute="leading" secondItem="DIO-8G-1eK" secondAttribute="leadingMargin" id="Mwy-UN-qVg"/>
+                            <constraint firstItem="m28-ce-yk5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="apx-mM-B5p" secondAttribute="bottom" id="d7r-6j-8NP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionStack" destination="apx-mM-B5p" id="ZUD-37-miJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D2K-tu-1rP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-345" y="272"/>
         </scene>
         <!--Hairline Views-->
         <scene sceneID="9nk-qn-q0m">
