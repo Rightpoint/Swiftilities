@@ -1,12 +1,12 @@
 PODS:
-  - Swiftilities (0.10.0):
-    - Swiftilities/All (= 0.10.0)
-  - Swiftilities/AboutView (0.10.0)
-  - Swiftilities/AccessibilityHelpers (0.10.0)
-  - Swiftilities/Acknowledgements (0.10.0):
+  - Swiftilities (0.11.0):
+    - Swiftilities/All (= 0.11.0)
+  - Swiftilities/AboutView (0.11.0)
+  - Swiftilities/AccessibilityHelpers (0.11.0)
+  - Swiftilities/Acknowledgements (0.11.0):
     - Swiftilities/Deselection
     - Swiftilities/LicenseFormatter
-  - Swiftilities/All (0.10.0):
+  - Swiftilities/All (0.11.0):
     - Swiftilities/AboutView
     - Swiftilities/AccessibilityHelpers
     - Swiftilities/Acknowledgements
@@ -25,31 +25,31 @@ PODS:
     - Swiftilities/StackViewHelpers
     - Swiftilities/TintedButton
     - Swiftilities/Views
-  - Swiftilities/ColorHelpers (0.10.0)
-  - Swiftilities/Deselection (0.10.0)
-  - Swiftilities/DeviceSize (0.10.0)
-  - Swiftilities/FormattedTextField (0.10.0)
-  - Swiftilities/Forms (0.10.0)
-  - Swiftilities/HairlineView (0.10.0)
-  - Swiftilities/Keyboard (0.10.0)
-  - Swiftilities/LicenseFormatter (0.10.0)
-  - Swiftilities/Lifecycle (0.10.0)
-  - Swiftilities/Logging (0.10.0)
-  - Swiftilities/Math (0.10.0)
-  - Swiftilities/RootViewController (0.10.0)
-  - Swiftilities/StackViewHelpers (0.10.0)
-  - Swiftilities/TintedButton (0.10.0)
-  - Swiftilities/Views (0.10.0)
+  - Swiftilities/ColorHelpers (0.11.0)
+  - Swiftilities/Deselection (0.11.0)
+  - Swiftilities/DeviceSize (0.11.0)
+  - Swiftilities/FormattedTextField (0.11.0)
+  - Swiftilities/Forms (0.11.0)
+  - Swiftilities/HairlineView (0.11.0)
+  - Swiftilities/Keyboard (0.11.0)
+  - Swiftilities/LicenseFormatter (0.11.0)
+  - Swiftilities/Lifecycle (0.11.0)
+  - Swiftilities/Logging (0.11.0)
+  - Swiftilities/Math (0.11.0)
+  - Swiftilities/RootViewController (0.11.0)
+  - Swiftilities/StackViewHelpers (0.11.0)
+  - Swiftilities/TintedButton (0.11.0)
+  - Swiftilities/Views (0.11.0)
 
 DEPENDENCIES:
   - Swiftilities (from `../`)
 
 EXTERNAL SOURCES:
   Swiftilities:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: 31335d264f0b731848958da04e5acf7f3e69b804
+  Swiftilities: d6b1bbe3bce896f3c2307c577c496be1a2bbdb52
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
