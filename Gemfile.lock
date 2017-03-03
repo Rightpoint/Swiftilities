@@ -54,7 +54,7 @@ GEM
     netrc (0.7.8)
     rouge (1.11.1)
     ruby-macho (0.2.6)
-    thread_safe (0.3.5)
+    thread_safe (0.3.6)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     xcodeproj (1.4.2)
@@ -70,7 +70,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cocoapods (~> 1.1)
+  cocoapods (~> 1.2)
   xcpretty
 
 BUNDLED WITH

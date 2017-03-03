@@ -19,6 +19,13 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'All'
 
+  # About
+
+  s.subspec "AboutView" do |ss|
+    ss.source_files = "Pod/Classes/AboutView/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # AccessibilityHelpers
 
   s.subspec "AccessibilityHelpers" do |ss|
@@ -115,7 +122,7 @@ Pod::Spec.new do |s|
 
   s.subspec "RootViewController" do |ss|
     ss.source_files = "Pod/Classes/RootViewController/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.frameworks   = ["UIKit", "MessageUI"]
   end
 
   # StackViewHelpers
@@ -142,6 +149,7 @@ Pod::Spec.new do |s|
   # Catch All
 
   s.subspec "All" do |ss|
+    ss.dependency 'Swiftilities/AboutView'
     ss.dependency 'Swiftilities/AccessibilityHelpers'
     ss.dependency 'Swiftilities/Acknowledgements'
     ss.dependency 'Swiftilities/ColorHelpers'
