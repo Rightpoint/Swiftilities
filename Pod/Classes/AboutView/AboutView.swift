@@ -33,7 +33,6 @@ open class AboutView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-
     /// Overriden to make sure that the layout guides are in place before the constraints are set up
     open override func updateConstraints() {
         super.updateConstraints()

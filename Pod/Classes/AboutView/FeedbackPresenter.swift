@@ -70,7 +70,6 @@ public extension FeedbackPresenter where Self: UIViewController {
         present(mailViewController, animated: true, completion: nil)
     }
 
-
     /// Present a share sheet with a string and URL from a UIView that is not a UIBarButtonItem
     ///
     /// - Parameters:
@@ -85,7 +84,6 @@ public extension FeedbackPresenter where Self: UIViewController {
         activityViewController.popoverPresentationController?.sourceRect = frame ?? anchorView.frame
         present(activityViewController, animated: true, completion: nil)
     }
-
 
     /// Present a share sheet with a string and URL from a UIBarButtonItem
     ///
