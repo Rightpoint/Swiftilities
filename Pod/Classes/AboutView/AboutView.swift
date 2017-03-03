@@ -21,9 +21,14 @@ open class AboutView: UIView {
     ///
     /// - Parameters:
     ///   - image: The image to display
+    ///   - imageAccessibilityLabel: The text equivalent of the image, for users of VoiceOver
+    ///                              and other assistive technologies.
     ///   - frame: The initial frame of the view
-    public init(image: UIImage, frame: CGRect = CGRect()) {
-        self.imageView = UIImageView(image: image)
+    public init(image: UIImage, imageAccessibilityLabel: String? = nil, frame: CGRect = CGRect()) {
+        imageView = UIImageView(image: image)
+        imageView.accessibilityLabel = imageAccessibilityLabel
+        imageView.isAccessibilityElement = (imageAccessibilityLabel != nil)
+        imageView.accessibilityTraits = UIAccessibilityTraitNone
         label = UILabel()
         super.init(frame: frame)
         prepareView()
@@ -67,6 +72,7 @@ private extension AboutView {
         label.textColor = UIColor(red: 0.5, green: 0.5, blue: 0.51, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 15)
         label.text = "\(AppInfo.version) (\(AppInfo.buildNumber))"
+        label.accessibilityLabel = String(format: NSLocalizedString("Version %@ build %@", comment: "Accessibility version of app version and build number label"), AppInfo.accessibleVersion, AppInfo.buildNumber)
         label.translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(imageView)

@@ -15,7 +15,7 @@ class AboutViewController: UIViewController, FeedbackPresenter {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let aboutView = AboutView(image: #imageLiteral(resourceName: "logo-built-by-RZ"))
+        let aboutView = AboutView(image: #imageLiteral(resourceName: "logo-built-by-RZ"), imageAccessibilityLabel: "Designed and developed by Raizlabs")
         actionStack.addArrangedSubview(aboutView)
     }
 

@@ -28,6 +28,16 @@ enum AppInfo {
         return bundleVersion ?? unknownKeyString
     }
 
+    static var accessibleVersion: String {
+        if UIAccessibilityIsVoiceOverRunning() {
+            let separator = NSLocalizedString(" point ", comment: "The spelled out version of the “point” in version numbers, like 2 point 0 point 1, with spaces on either side")
+            return version.components(separatedBy: ".").joined(separator: separator)
+        }
+        else {
+            return version
+        }
+    }
+
     static var buildNumber: String {
         let bundleVersionKey = kCFBundleVersionKey as String
         let bundleBuild = Bundle.main.object(forInfoDictionaryKey: bundleVersionKey) as? String
