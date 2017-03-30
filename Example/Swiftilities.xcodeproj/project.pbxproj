@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04CD173B1AB7C4F6286F8FA1 /* Pods_Swiftilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849AC9425E95C2FF6F694A7F /* Pods_Swiftilities_Example.framework */; };
+		2340A5B91E8CC29A00572417 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */; };
+		2340A5BD1E8CC67A00572417 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5BA1E8CC3B500572417 /* TestModel.xcdatamodeld */; };
 		722099011E5F46EE0098229D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722098FF1E5F46EE0098229D /* Main.storyboard */; };
 		722099061E5F470D0098229D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722099031E5F470D0098229D /* LaunchScreen.xib */; };
 		722099071E5F470D0098229D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722099051E5F470D0098229D /* Images.xcassets */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
+		2340A5BB1E8CC3B500572417 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		3ED95507725D28046957F181 /* Pods-Swiftilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5524B820B7943401CC253A04 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		563BE12C99CEF6CB9AB591A4 /* Swiftilities.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Swiftilities.podspec; path = ../Swiftilities.podspec; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 				CD74F57D1E2FC4D3005E59FF /* ValidatorTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */,
+				2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEA1AFB9204008FA782 /* Info.plist */,
+				2340A5BA1E8CC3B500572417 /* TestModel.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -503,6 +509,8 @@
 			files = (
 				CD74F57E1E2FC4D3005E59FF /* ValidatorTests.swift in Sources */,
 				CDF471541DDFB2EB00D4D5A2 /* LicenseFormatterTests.swift in Sources */,
+				2340A5B91E8CC29A00572417 /* CoreDataStackTests.swift in Sources */,
+				2340A5BD1E8CC67A00572417 /* TestModel.xcdatamodeld in Sources */,
 				72E281A71E5DDE59000D0C9D /* RootViewControllerTests.swift in Sources */,
 				CD32DE751CEA1ECA00FC0C7E /* MathTests.swift in Sources */,
 			);
@@ -716,6 +724,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2340A5BA1E8CC3B500572417 /* TestModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2340A5BB1E8CC3B500572417 /* TestModel.xcdatamodel */,
+			);
+			currentVersion = 2340A5BB1E8CC3B500572417 /* TestModel.xcdatamodel */;
+			name = TestModel.xcdatamodeld;
+			path = ../Swiftilities/SupportingFiles/TestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }
