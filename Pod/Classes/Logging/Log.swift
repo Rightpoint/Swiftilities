@@ -60,8 +60,9 @@ open class Log {
     /// messages along to your crash reporter, analytics service, etc.
     /// - warning: Be mindful of private user data that might end up in
     ///            your log statements! Use log levels appropriately
-    /// to keep private data out of logs that are sent over the Internet.
-    public static var handler: ((String) -> Void)?
+    ///            to keep private data out of logs that are sent over
+    ///            the Internet.
+    public static var handler: ((Level, String) -> Void)?
 
     // MARK: Private
 
@@ -81,7 +82,7 @@ open class Log {
             let levelString = Log.useEmoji ? level.emoji : "|" + level.name.uppercased() + "|"
             let logString = "\(levelString)\(date) \(objectName) \(functionName) line \(line):\n\(object())"
             print(logString + "\n")
-            handler?(logString)
+            handler?(level, logString)
         }
     }
 

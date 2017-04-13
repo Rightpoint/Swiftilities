@@ -13,9 +13,9 @@ class LogTests: XCTestCase {
 
     func testLogHandler() {
 
-        var loggedStrings: [String] = []
-        Log.handler = { string in
-            loggedStrings.append(string)
+        var loggedStrings: [(level: Log.Level, string: String)] = []
+        Log.handler = { (level, string) in
+            loggedStrings.append((level: level, string: string))
         }
 
         Log.logLevel = .warn
@@ -26,7 +26,8 @@ class LogTests: XCTestCase {
         // Log messages include the date, which is not conducive to testing,
         // so we just check the end of the logged string.
         XCTAssertEqual(loggedStrings.count, 1)
-        XCTAssertTrue(loggedStrings[0].hasSuffix("Don't ignore me!"))
+        XCTAssertEqual(loggedStrings[0].level, .error)
+        XCTAssertTrue(loggedStrings[0].string.hasSuffix("Don't ignore me!"))
     }
 
 }
