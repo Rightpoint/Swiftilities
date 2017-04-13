@@ -6,8 +6,8 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
-import XCTest
 @testable import Swiftilities
+import XCTest
 
 class StringTest: XCTestCase {
 

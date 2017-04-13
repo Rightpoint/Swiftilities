@@ -6,8 +6,8 @@
 //  Copyright (c) 2016 Nicholas Bonatsakis. All rights reserved.
 //
 
-import UIKit
 import Swiftilities
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

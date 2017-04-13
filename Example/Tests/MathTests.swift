@@ -1,5 +1,5 @@
-import XCTest
 import Swiftilities
+import XCTest
 
 class MathTests: XCTestCase {
 

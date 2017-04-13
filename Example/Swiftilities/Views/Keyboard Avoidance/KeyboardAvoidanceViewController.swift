@@ -6,8 +6,8 @@
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
-import UIKit
 import Swiftilities
+import UIKit
 
 class KeyboardAvoidanceViewController: UIViewController {
 
