@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import UIKit
 import ObjectiveC.runtime
+import UIKit
 
 public struct DefaultBehaviors {
 
