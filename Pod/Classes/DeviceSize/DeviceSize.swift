@@ -10,10 +10,12 @@
 import Foundation
 import UIKit
 
+//swiftlint:disable identifier_name
 public enum Axis: Int {
     case x
     case y
 }
+//swiftlint:enable identifier_name
 
 /**
  Represents the screen size of a device

@@ -5,9 +5,9 @@
 //  Created by Michael Skiba on 2/28/17.
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
-import UIKit
 
 import MessageUI
+import UIKit
 
 private class AboutMailViewController: MFMailComposeViewController {
 
