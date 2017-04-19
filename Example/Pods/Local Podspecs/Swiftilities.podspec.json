@@ -143,6 +143,13 @@
       ]
     },
     {
+      "name": "TableViewHelpers",
+      "source_files": "Pod/Classes/TableViewHelpers/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "TintedButton",
       "source_files": "Pod/Classes/TintedButton/*.swift",
       "frameworks": [
@@ -210,6 +217,9 @@
 
         ],
         "Swiftilities/StackViewHelpers": [
+
+        ],
+        "Swiftilities/TableViewHelpers": [
 
         ],
         "Swiftilities/TintedButton": [

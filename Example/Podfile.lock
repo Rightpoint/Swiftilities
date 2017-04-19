@@ -24,6 +24,7 @@ PODS:
     - Swiftilities/Math
     - Swiftilities/RootViewController
     - Swiftilities/StackViewHelpers
+    - Swiftilities/TableViewHelpers
     - Swiftilities/TintedButton
     - Swiftilities/Views
   - Swiftilities/ColorHelpers (0.12.0)
@@ -40,6 +41,7 @@ PODS:
   - Swiftilities/Math (0.12.0)
   - Swiftilities/RootViewController (0.12.0)
   - Swiftilities/StackViewHelpers (0.12.0)
+  - Swiftilities/TableViewHelpers (0.12.0)
   - Swiftilities/TintedButton (0.12.0)
   - Swiftilities/Views (0.12.0)
 
@@ -51,7 +53,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: d89831318057ba209787b747617df51c51f9dca3
+  Swiftilities: a79a2955d497e9e864904487e2532df2ed78176b
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
