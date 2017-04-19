@@ -26,6 +26,7 @@
 		72F94C761E65F67200C6DC13 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F94C751E65F67200C6DC13 /* AboutViewController.swift */; };
 		CD32DE751CEA1ECA00FC0C7E /* MathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD32DE731CEA1EC600FC0C7E /* MathTests.swift */; };
 		CD74F57E1E2FC4D3005E59FF /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD74F57D1E2FC4D3005E59FF /* ValidatorTests.swift */; };
+		CDF3429E1EA02B5100E6328B /* LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3429D1EA02B5100E6328B /* LogTests.swift */; };
 		CDF471541DDFB2EB00D4D5A2 /* LicenseFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF471521DDFB20100D4D5A2 /* LicenseFormatterTests.swift */; };
 		DE5A450412725B332FEFDD30 /* Pods_Swiftilities_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F294762325B4901AA48D27B1 /* Pods_Swiftilities_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		976D290FB4A827B6C10F7501 /* Pods-Swiftilities_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CD32DE731CEA1EC600FC0C7E /* MathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathTests.swift; sourceTree = "<group>"; };
 		CD74F57D1E2FC4D3005E59FF /* ValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
+		CDF3429D1EA02B5100E6328B /* LogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTests.swift; sourceTree = "<group>"; };
 		CDF471521DDFB20100D4D5A2 /* LicenseFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseFormatterTests.swift; sourceTree = "<group>"; };
 		F294762325B4901AA48D27B1 /* Pods_Swiftilities_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftilities_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */,
 				239362671E6E17EC005AEA5D /* RingBufferTests.swift */,
+				CDF3429D1EA02B5100E6328B /* LogTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				CD74F57E1E2FC4D3005E59FF /* ValidatorTests.swift in Sources */,
 				CDF471541DDFB2EB00D4D5A2 /* LicenseFormatterTests.swift in Sources */,
 				72E281A71E5DDE59000D0C9D /* RootViewControllerTests.swift in Sources */,
+				CDF3429E1EA02B5100E6328B /* LogTests.swift in Sources */,
 				CD32DE751CEA1ECA00FC0C7E /* MathTests.swift in Sources */,
 				239362681E6E17EC005AEA5D /* RingBufferTests.swift in Sources */,
 			);

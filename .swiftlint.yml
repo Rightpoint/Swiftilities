@@ -12,6 +12,7 @@ opt_in_rules:
   - vertical_whitespace
   - operator_usage_whitespace
   - class_delegate_protocol
+  - sorted_imports
 
 trailing_comma:
   mandatory_comma: true
@@ -23,4 +24,4 @@ excluded:
   - Pods
 
 swiftlint_version:
-  - 0.16.0
+  - 0.18.1

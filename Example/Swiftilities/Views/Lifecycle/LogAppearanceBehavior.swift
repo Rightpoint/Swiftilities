@@ -6,8 +6,8 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
-import UIKit
 import Swiftilities
+import UIKit
 
 struct LogAppearanceBehavior: ViewControllerLifecycleBehavior {
 
