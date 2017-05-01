@@ -15,7 +15,7 @@ public extension UIWindow {
 
     /**
      Set the rootViewController on this UIWindow instance.
-     
+
      - parameter viewController: The view controller to set
      - parameter animated:       Whether or not to animate the transition, animation is a cross-fade
      - parameter completion:     Completion block to be invoked after the transition finishes
