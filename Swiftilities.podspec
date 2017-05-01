@@ -49,6 +49,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # DataStructures
+
+  s.subspec "DataStructures" do |ss|
+    ss.source_files = "Pod/Classes/DataStructures/*.swift"
+    ss.frameworks   = "Foundation"
+  end
+
   # Deselection
 
   s.subspec "Deselection" do |ss|
@@ -153,6 +160,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/AccessibilityHelpers'
     ss.dependency 'Swiftilities/Acknowledgements'
     ss.dependency 'Swiftilities/ColorHelpers'
+    ss.dependency 'Swiftilities/DataStructures'
     ss.dependency 'Swiftilities/Deselection'
     ss.dependency 'Swiftilities/DeviceSize'
     ss.dependency 'Swiftilities/FormattedTextField'
