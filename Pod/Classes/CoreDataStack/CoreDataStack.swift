@@ -106,7 +106,7 @@ public class CoreDataStack {
     /// on the main queue.
     ///
     /// NOTE: if the description specifies `shouldAddStoreAsynchronously` as `true` the provided
-    /// block is called asynchronously on the main queue. This differs from the implementation of 
+    /// block is called asynchronously on the main queue. This differs from the implementation of
     /// NSPersistentContainer
     public func loadPersistentStores(
         completionHandler block: @escaping (PersistentStoreDescription, Error?) -> Void) {
@@ -189,14 +189,13 @@ public class CoreDataStack {
         backgroundQueue.sync {
             let context = newBackgroundContext()
             context.performAndWait {
-                var err: Error? = nil
+                let err: Error? = nil
                 do {
                     block(context)
                     try context.saveContextTree()
                 }
-                catch let e {
-                    err = e
-                    print("error in perform on background ctxt: \(err)")
+                catch {
+                    print("error in perform on background ctxt: \(error)")
                 }
                 if let completion = completion {
                     DispatchQueue.main.async {
