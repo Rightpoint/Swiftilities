@@ -36,7 +36,7 @@ public extension UIView {
 
     /**
      Add and configure a keyboard layout guide.
-     
+
      - returns: A new keyboard layout guide or existing if previously invoked on this view
      */
     @nonobjc func addKeyboardLayoutGuide() -> UILayoutGuide {

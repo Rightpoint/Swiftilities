@@ -34,10 +34,10 @@ public extension FeedbackPresenter where Self: UIViewController {
     /// Presents a self-dismissing MFMailComposeViewController view controller pre-populated with app version
     /// and device info
     ///
-    /// MFMailComposeViewController does not support the full set of customizations that can be applied to other 
+    /// MFMailComposeViewController does not support the full set of customizations that can be applied to other
     /// UINavigationControllers. If you use appearance proxies directly on UINavigationController you may need to reset
-    /// some of the configurations that you use before presenting the mail compose view controller. An alternative 
-    /// option is to subclass UINavigationController for all of the customized view controllers in you app any use the 
+    /// some of the configurations that you use before presenting the mail compose view controller. An alternative
+    /// option is to subclass UINavigationController for all of the customized view controllers in you app any use the
     /// UIAppearance proxy on the subclass so that none of the custom styling crosses over mail compose and other system
     /// navigation controllers.
     ///
@@ -76,7 +76,7 @@ public extension FeedbackPresenter where Self: UIViewController {
     ///   - shareText: The text to share
     ///   - shareURL: The URL to share
     ///   - anchorView: The view to anchor the presented view to on the iPad
-    ///   - frame: The frame to anchor the presented view to on the iPad, if the value is nil it will default to the 
+    ///   - frame: The frame to anchor the presented view to on the iPad, if the value is nil it will default to the
     ///            frame of the anchor view
     public func presentShareApp(shareText: NSString, shareURL: URL, presentedFrom anchorView: UIView, with frame: CGRect? = nil) {
         let activityViewController = UIActivityViewController(activityItems: [shareText, shareURL], applicationActivities: nil)
