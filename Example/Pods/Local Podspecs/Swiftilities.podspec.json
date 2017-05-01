@@ -55,6 +55,14 @@
       ]
     },
     {
+      "name": "CoreDataStack",
+      "source_files": "Pod/Classes/CoreDataStack/*.swift",
+      "frameworks": [
+        "Foundation",
+        "CoreData"
+      ]
+    },
+    {
       "name": "Deselection",
       "source_files": "Pod/Classes/Deselection/*.swift",
       "frameworks": [
@@ -164,6 +172,9 @@
 
         ],
         "Swiftilities/ColorHelpers": [
+
+        ],
+        "Swiftilities/CoreDataStack": [
 
         ],
         "Swiftilities/Deselection": [

@@ -11,6 +11,7 @@ PODS:
     - Swiftilities/AccessibilityHelpers
     - Swiftilities/Acknowledgements
     - Swiftilities/ColorHelpers
+    - Swiftilities/CoreDataStack
     - Swiftilities/Deselection
     - Swiftilities/DeviceSize
     - Swiftilities/FormattedTextField
@@ -26,6 +27,7 @@ PODS:
     - Swiftilities/TintedButton
     - Swiftilities/Views
   - Swiftilities/ColorHelpers (0.11.0)
+  - Swiftilities/CoreDataStack (0.11.0)
   - Swiftilities/Deselection (0.11.0)
   - Swiftilities/DeviceSize (0.11.0)
   - Swiftilities/FormattedTextField (0.11.0)
@@ -46,10 +48,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Swiftilities:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  Swiftilities: d6b1bbe3bce896f3c2307c577c496be1a2bbdb52
+  Swiftilities: 6f00b9b51d8533b41f155ef985527793ee7bec6c
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
