@@ -6,15 +6,15 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 /// A replacement for the NSPersistent​Store​Description class from iOS 10
 public struct PersistentStoreDescription {
     public var url: URL?
     public let type: String
     public var isReadOnly: Bool = false
-    public var configuration: String? = nil
+    public var configuration: String?
     public private(set) var options: [String : NSObject] = [:]
     public var shouldAddStoreAsynchronously: Bool = false
 
@@ -141,7 +141,7 @@ public class CoreDataStack {
     }
 
     public func newBackgroundContext() -> NSManagedObjectContext {
-        let context =  NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         context.parent = rootSavingContext
         return context
     }
@@ -246,7 +246,7 @@ public class CoreDataStack {
         aggregateIds.append(contentsOf: deletedIds)
 
         NSManagedObjectContext
-            .mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey : aggregateIds],
+            .mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: aggregateIds],
                           into: [viewContext, rootSavingContext])
     }
 
@@ -291,11 +291,11 @@ extension CoreDataStack {
     }
 
     public enum DataError: Error, CustomStringConvertible {
-        case ManagedObjectModelMissing(name: String)
+        case managedObjectModelMissing(name: String)
 
         public var description: String {
             switch self {
-            case .ManagedObjectModelMissing(let name):
+            case .managedObjectModelMissing(let name):
                 return "unable to load or locate managed object model with name: \(name)"
             }
         }
