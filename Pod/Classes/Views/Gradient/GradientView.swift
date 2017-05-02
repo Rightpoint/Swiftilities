@@ -52,6 +52,37 @@ public class GradientView: UIView {
         return layer
     }
 
+    /// Passthrough to the underlying `CAGradientLayer` `colors`.
+    var colors: [UIColor] {
+        get {
+            guard let colors = gradientLayer.colors as? [CGColor] else {
+                return []
+            }
+            return colors.map({ UIColor(cgColor: $0) })
+        }
+        set {
+            gradientLayer.colors = newValue.map({ $0.cgColor })
+        }
+    }
+
+    /// Passthrough to the underlying `CAGradientLayer` `locations`.
+    var locations: [Double]? {
+        get {
+            return gradientLayer.locations as? [Double]
+        }
+        set {
+            gradientLayer.locations = newValue as [NSNumber]?
+        }
+    }
+
+    /// Translated to the underlying `CAGradientLayer` `startPoint` and `endPoint`.
+    var direction: Direction = .leftToRight {
+        didSet {
+            gradientLayer.startPoint = direction.start
+            gradientLayer.endPoint = direction.end
+        }
+    }
+
     /// Create a new instance.
     ///
     /// - Parameters:
@@ -60,39 +91,19 @@ public class GradientView: UIView {
     ///   - locations: An optional list of gradient stops. If none are provided, the default behavior is to arrange the colors evenly.
     public init(direction: Direction, colors: [UIColor], locations: [Double]? = nil) {
         super.init(frame: .zero)
-        set(direction: direction)
-        set(colors: colors)
-        if let locations = locations {
-            set(locations: locations)
+        defer {
+            self.direction = direction
         }
+        self.colors = colors
+        self.locations = locations
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        set(direction: .leftToRight)
-        set(colors: [.white, .black])
-    }
-
-    /// Updates the direction for the backing gradient layer.
-    ///
-    /// - Parameter direction: The new direction.
-    public func set(direction: Direction) {
-        gradientLayer.startPoint = direction.start
-        gradientLayer.endPoint = direction.end
-    }
-
-    /// Updates the colors for the backing gradient layer.
-    ///
-    /// - Parameter colors: The new colors.
-    public func set(colors: [UIColor]) {
-        gradientLayer.colors = colors.map({$0.cgColor})
-    }
-
-    /// Updates the locations for the backing gradient layer.
-    ///
-    /// - Parameter locations: The new colors.
-    public func set(locations: [Double]) {
-        gradientLayer.locations = locations as [NSNumber]?
+        defer {
+            self.direction = .leftToRight
+        }
+        self.colors = [.white, .black]
     }
 
 }
