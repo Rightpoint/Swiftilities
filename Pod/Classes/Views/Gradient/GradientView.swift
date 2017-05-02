@@ -13,26 +13,26 @@ public class GradientView: UIView {
 
     /// The direction of the gradient
     ///
-    /// - horizontal: Horizontal direction.
-    /// - vertical: Vertical direction.
+    /// - leftToRight: Horizontal direction.
+    /// - topToBottom: Vertical direction.
     /// - custom: Provide start and end CGPoint to specify a custom direction.
     public enum Direction {
-        case horizontal
-        case vertical
+        case leftToRight
+        case topToBottom
         case custom(start: CGPoint, end: CGPoint)
 
         var start: CGPoint {
             switch self {
-            case .horizontal: return CGPoint(x: 0, y: 0.5)
-            case .vertical: return CGPoint(x: 0.5, y: 0)
+            case .leftToRight: return CGPoint(x: 0, y: 0.5)
+            case .topToBottom: return CGPoint(x: 0.5, y: 0)
             case .custom(let start, _): return start
             }
         }
 
         var end: CGPoint {
             switch self {
-            case .horizontal: return CGPoint(x: 1, y: 0.5)
-            case .vertical: return CGPoint(x: 0.5, y: 1)
+            case .leftToRight: return CGPoint(x: 1, y: 0.5)
+            case .topToBottom: return CGPoint(x: 0.5, y: 1)
             case .custom(_, let end): return end
             }
         }
@@ -42,32 +42,57 @@ public class GradientView: UIView {
         return CAGradientLayer.self
     }
 
-    /// The underlying CAGradientLayer
+    /// The underlying CAGradientLayer. Accessing this property directly can be useful
+    /// for situations that aren't covered via this wrapper class, in particular animating
+    /// any changes to the gradient.
     public var gradientLayer: CAGradientLayer {
-        if let layer = self.layer as? CAGradientLayer {
-            return layer
-        }
-        else {
+        guard let layer = self.layer as? CAGradientLayer else {
             fatalError("Backing layer must be a CAGradientLayer")
         }
+        return layer
     }
 
     /// Create a new instance.
     ///
     /// - Parameters:
     ///   - direction: The direction in which the gradient will be rendered.
-    ///   - colors: An array of UIColor instances to be included in the gradient.
-    ///   - locations: An optional list of gradient stops. If none is provided, the default behavior is to arrange the colors equally along the axis.
+    ///   - colors: An array of colors to be included in the gradient.
+    ///   - locations: An optional list of gradient stops. If none are provided, the default behavior is to arrange the colors evenly.
     public init(direction: Direction, colors: [UIColor], locations: [Double]? = nil) {
         super.init(frame: .zero)
-        gradientLayer.colors = colors.map({$0.cgColor})
-        gradientLayer.locations = locations as [NSNumber]?
+        set(direction: direction)
+        set(colors: colors)
+        if let locations = locations {
+            set(locations: locations)
+        }
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        set(direction: .leftToRight)
+        set(colors: [.white, .black])
+    }
+
+    /// Updates the direction for the backing gradient layer.
+    ///
+    /// - Parameter direction: The new direction.
+    public func set(direction: Direction) {
         gradientLayer.startPoint = direction.start
         gradientLayer.endPoint = direction.end
     }
 
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    /// Updates the colors for the backing gradient layer.
+    ///
+    /// - Parameter colors: The new colors.
+    public func set(colors: [UIColor]) {
+        gradientLayer.colors = colors.map({$0.cgColor})
+    }
+
+    /// Updates the locations for the backing gradient layer.
+    ///
+    /// - Parameter locations: The new colors.
+    public func set(locations: [Double]) {
+        gradientLayer.locations = locations as [NSNumber]?
     }
 
 }

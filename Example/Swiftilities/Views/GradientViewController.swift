@@ -17,14 +17,13 @@ class GradientViewController: UIViewController {
         super.viewDidLoad()
 
         let gradients = [
-            GradientView(direction: .horizontal, colors: [.red, .white, .blue]),
-            GradientView(direction: .vertical, colors: [.green, .black, .orange]),
+            GradientView(direction: .leftToRight, colors: [.red, .white, .blue]),
+            GradientView(direction: .topToBottom, colors: [.green, .black, .orange]),
             GradientView(
                 direction: .custom(start: CGPoint(x: 0, y: 0), end: CGPoint(x: 1, y: 1)),
                 colors: [.blue, .orange, .purple]
             ),
-            GradientView(direction: .vertical, colors: [.purple, .black], locations: [0.9, 1.0])
-
+            GradientView(direction: .topToBottom, colors: [.purple, .black], locations: [0.9, 1.0])
         ]
 
         gradients.forEach { view in
@@ -36,7 +35,6 @@ class GradientViewController: UIViewController {
             view.layer.masksToBounds = true
             view.layer.cornerRadius = 6.0
         }
-
     }
 
 }
