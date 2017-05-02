@@ -11,6 +11,13 @@ import UIKit
 /// A basic view that wraps CAGradientLayer
 public class GradientView: UIView {
 
+    private struct Constants {
+        static let leftToRightStart = CGPoint(x: 0, y: 0.5)
+        static let leftToRightEnd   = CGPoint(x: 1, y: 0.5)
+        static let topToBottomStart = CGPoint(x: 0.5, y: 0)
+        static let topToBottomEnd   = CGPoint(x: 0.5, y: 1)
+    }
+
     /// The direction of the gradient
     ///
     /// - leftToRight: Horizontal direction.
@@ -21,18 +28,26 @@ public class GradientView: UIView {
         case topToBottom
         case custom(start: CGPoint, end: CGPoint)
 
+        init(gradientLayer: CAGradientLayer) {
+            switch (gradientLayer.startPoint, gradientLayer.endPoint) {
+            case (Constants.leftToRightStart, Constants.leftToRightEnd): self = .leftToRight
+            case (Constants.topToBottomStart, Constants.topToBottomEnd): self = .topToBottom
+            default: self = .custom(start: gradientLayer.startPoint, end: gradientLayer.endPoint)
+            }
+        }
+
         var start: CGPoint {
             switch self {
-            case .leftToRight: return CGPoint(x: 0, y: 0.5)
-            case .topToBottom: return CGPoint(x: 0.5, y: 0)
+            case .leftToRight: return Constants.leftToRightStart
+            case .topToBottom: return Constants.topToBottomStart
             case .custom(let start, _): return start
             }
         }
 
         var end: CGPoint {
             switch self {
-            case .leftToRight: return CGPoint(x: 1, y: 0.5)
-            case .topToBottom: return CGPoint(x: 0.5, y: 1)
+            case .leftToRight: return Constants.leftToRightEnd
+            case .topToBottom: return Constants.topToBottomEnd
             case .custom(_, let end): return end
             }
         }
@@ -75,11 +90,14 @@ public class GradientView: UIView {
         }
     }
 
-    /// Translated to the underlying `CAGradientLayer` `startPoint` and `endPoint`.
-    var direction: Direction = .leftToRight {
-        didSet {
-            gradientLayer.startPoint = direction.start
-            gradientLayer.endPoint = direction.end
+    /// Passthrough to underlying `CAGradientLayer` `startPoint` and `endPoint`.
+    var direction: Direction {
+        get {
+            return Direction(gradientLayer: gradientLayer)
+        }
+        set {
+            gradientLayer.startPoint = newValue.start
+            gradientLayer.endPoint = newValue.end
         }
     }
 
@@ -91,18 +109,14 @@ public class GradientView: UIView {
     ///   - locations: An optional list of gradient stops. If none are provided, the default behavior is to arrange the colors evenly.
     public init(direction: Direction, colors: [UIColor], locations: [Double]? = nil) {
         super.init(frame: .zero)
-        defer {
-            self.direction = direction
-        }
+        self.direction = direction
         self.colors = colors
         self.locations = locations
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        defer {
-            self.direction = .leftToRight
-        }
+        self.direction = .leftToRight
         self.colors = [.white, .black]
     }
 
