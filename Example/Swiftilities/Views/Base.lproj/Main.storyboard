@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9CH-13-TfJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9CH-13-TfJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -145,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TGz-NW-V1v">
-                                <rect key="frame" x="16" y="74" width="343" height="334"/>
+                                <rect key="frame" x="16" y="74" width="343" height="377"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xta-GV-UYS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
@@ -209,6 +209,14 @@
                                         <state key="normal" title="About View"/>
                                         <connections>
                                             <segue destination="CWp-Vg-yp5" kind="show" id="hwe-c6-O0p"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLS-1r-OYc" userLabel="Gradient View">
+                                        <rect key="frame" x="0.0" y="344" width="343" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Gradient View"/>
+                                        <connections>
+                                            <segue destination="wwE-xZ-TmU" kind="show" id="t5H-RG-zHO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -443,7 +451,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="myJ-dc-KJ8" secondAttribute="trailing" id="Ok8-UX-4s9"/>
                             <constraint firstItem="myJ-dc-KJ8" firstAttribute="leading" secondItem="vLy-kl-rKM" secondAttribute="leadingMargin" id="Tfc-Nv-hQG"/>
-                            <constraint firstItem="akk-zg-GHY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="myJ-dc-KJ8" secondAttribute="bottom" constant="10" id="iAG-TZ-njP"/>
+                            <constraint firstItem="akk-zg-GHY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="myJ-dc-KJ8" secondAttribute="bottom" constant="10" placeholder="YES" id="iAG-TZ-njP"/>
                             <constraint firstItem="myJ-dc-KJ8" firstAttribute="top" secondItem="OOM-kH-ATK" secondAttribute="bottom" constant="10" id="oYa-ZH-x1V"/>
                         </constraints>
                     </view>
@@ -500,6 +508,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFK-71-eDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1228" y="-530"/>
+        </scene>
+        <!--Gradient View-->
+        <scene sceneID="Ynz-tG-Uit">
+            <objects>
+                <viewController title="Gradient View" id="wwE-xZ-TmU" customClass="GradientViewController" customModule="Swiftilities_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1o8-YB-DSl"/>
+                        <viewControllerLayoutGuide type="bottom" id="nGH-8u-Jpu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6hu-pk-vlr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UgF-vi-zdM">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UgF-vi-zdM" firstAttribute="top" secondItem="1o8-YB-DSl" secondAttribute="bottom" id="Bti-yF-Xb8"/>
+                            <constraint firstItem="nGH-8u-Jpu" firstAttribute="top" secondItem="UgF-vi-zdM" secondAttribute="bottom" placeholder="YES" id="gd3-bm-9oI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UgF-vi-zdM" secondAttribute="trailing" id="qmP-R4-fwd"/>
+                            <constraint firstItem="UgF-vi-zdM" firstAttribute="leading" secondItem="6hu-pk-vlr" secondAttribute="leadingMargin" id="uWV-Nm-z7h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="UgF-vi-zdM" id="F8x-Mu-ghD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cy7-bA-B8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258.39999999999998" y="-1236.4317841079462"/>
         </scene>
     </scenes>
 </document>

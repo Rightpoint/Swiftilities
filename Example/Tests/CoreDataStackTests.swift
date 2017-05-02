@@ -6,9 +6,9 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
-import XCTest
 import CoreData
 import Swiftilities
+import XCTest
 
 fileprivate let modelName: String = "TestModel"
 

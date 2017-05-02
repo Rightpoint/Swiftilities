@@ -149,7 +149,7 @@ Pod::Spec.new do |s|
   # Views
 
   s.subspec "Views" do |ss|
-    ss.source_files = ["Pod/Classes/Views/Protocols/*.swift", "Pod/Classes/Views/Textview/*.swift"]
+    ss.source_files = ["Pod/Classes/Views/**/*.swift"]
     ss.frameworks   = ["UIKit"]
   end
 
