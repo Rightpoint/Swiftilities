@@ -6,8 +6,8 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
-import UIKit
 import Swiftilities
+import UIKit
 
 class GradientViewController: UIViewController {
 
@@ -23,7 +23,7 @@ class GradientViewController: UIViewController {
                 direction: .custom(start: CGPoint(x: 0, y: 0), end: CGPoint(x: 1, y: 1)),
                 colors: [.blue, .orange, .purple]
             ),
-            GradientView(direction: .topToBottom, colors: [.purple, .black], locations: [0.9, 1.0])
+            GradientView(direction: .topToBottom, colors: [.purple, .black], locations: [0.9, 1.0]),
         ]
 
         gradients.forEach { view in
