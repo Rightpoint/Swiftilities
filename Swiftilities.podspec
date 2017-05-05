@@ -138,6 +138,13 @@ Pod::Spec.new do |s|
     ss.source_files = "Pod/Classes/StackViewHelpers/*.swift"
     ss.frameworks   = ["UIKit"]
   end
+  
+  # TableViewHelpers
+
+  s.subspec "TableViewHelpers" do |ss|
+    ss.source_files = "Pod/Classes/TableViewHelpers/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
 
   # TintedButton
 
@@ -173,6 +180,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/RootViewController'
     ss.dependency 'Swiftilities/StackViewHelpers'
+    ss.dependency 'Swiftilities/TableViewHelpers'
     ss.dependency 'Swiftilities/TintedButton'
     ss.dependency 'Swiftilities/Views'
   end

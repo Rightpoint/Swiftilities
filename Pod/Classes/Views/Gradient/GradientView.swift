@@ -13,9 +13,9 @@ public class GradientView: UIView {
 
     private struct Constants {
         static let leftToRightStart = CGPoint(x: 0, y: 0.5)
-        static let leftToRightEnd   = CGPoint(x: 1, y: 0.5)
+        static let leftToRightEnd = CGPoint(x: 1, y: 0.5)
         static let topToBottomStart = CGPoint(x: 0.5, y: 0)
-        static let topToBottomEnd   = CGPoint(x: 0.5, y: 1)
+        static let topToBottomEnd = CGPoint(x: 0.5, y: 1)
     }
 
     /// The direction of the gradient
