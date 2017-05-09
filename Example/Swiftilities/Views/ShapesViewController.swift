@@ -37,6 +37,13 @@ class ShapesViewController: UIViewController {
                 .fillColor(.clear),
                          .lineWidth(5),
                          .strokeColor(.green)
+            ),
+            Shapes.image(for: .rectangle(cornerRadius: 8),
+                         size: CGSize(width: 300, height: 64),
+                         attributes:
+                .fillColor(.lightGray),
+                         .lineWidth(2),
+                         .strokeColor(.blue)
             )
         ]
 

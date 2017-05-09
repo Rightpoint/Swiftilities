@@ -26,8 +26,33 @@ public class Shapes {
 
     }
 
+    fileprivate static let shared = Shapes()
+
+
+    fileprivate let imageCache: NSCache<AnyObject, UIImage> = {
+        let cache = NSCache<AnyObject, UIImage>()
+        cache.name = "com.raizlabs.Swiftilities.Shapes.ImageCache"
+        return cache
+    }()
 
     public static func image(for shape: Shape, size: CGSize, attributes: Attribute...) -> UIImage {
+        return Shapes.shared.image(for: shape, size: size, attributes: attributes)
+    }
+
+    public static func layer(for shape: Shape, size: CGSize, attributes: Attribute...) -> CAShapeLayer {
+        return Shapes.shared.layer(for: shape, size: size, attributes: attributes)
+    }
+
+}
+
+extension Shapes {
+
+    func image(for shape: Shape, size: CGSize, attributes: [Attribute]) -> UIImage {
+        let cacheKey = imageCacheKey(for: shape, size: size, attributes: attributes) as AnyObject
+        if let existingImage = imageCache.object(forKey: cacheKey) {
+            return existingImage
+        }
+
         var image: UIImage?
 
         if #available(iOS 10.0, *) {
@@ -45,16 +70,17 @@ public class Shapes {
             UIGraphicsEndImageContext()
         }
 
+        if let newImage = image {
+            imageCache.setObject(newImage, forKey: cacheKey)
+        }
+
         return image ?? UIImage()
     }
 
-    public static func layer(for shape: Shape, size: CGSize, attributes: Attribute...) -> CAShapeLayer {
+    func layer(for shape: Shape, size: CGSize, attributes: [Attribute]) -> CAShapeLayer {
         return shape.shapeLayer(for: size, attributes: attributes)
     }
 
-}
-
-extension Shapes {
 
     static func draw(_ shape: Shape, size: CGSize, attributes: [Attribute], context: CGContext) {
         let path = shape.path(for: size)
@@ -142,6 +168,59 @@ extension Shapes.Attribute {
             context.setLineWidth(width * 2) // Double line width to account for shape clipping
 
         }
+    }
+
+}
+
+// MARK: Image Cache
+
+extension Shapes.Shape: CustomStringConvertible {
+
+    public var description: String {
+        switch self {
+        case .rectangle(let cornerRadius):
+            return "rectangle(radius=\(cornerRadius))"
+        case .circle:
+            return "circle"
+        case .pill:
+            return "pill"
+        }
+        
+    }
+
+}
+
+extension Shapes.Attribute: CustomStringConvertible {
+
+    public var description: String {
+        switch self {
+        case .fillColor(let fill):
+            return "fillColor=\(String(describing: fill))"
+        case .strokeColor(let stroke):
+            return "strokeColor=\(String(describing: stroke))"
+        case .lineWidth(let width):
+            return "lineWidth=\(width)"
+        }
+    }
+}
+
+extension Shapes {
+
+    func imageCacheKey(for shape: Shape, size: CGSize, attributes: [Attribute]) -> String {
+        let keyDelimiter = "|"
+
+        var key: String =
+                String(describing: shape) +
+                keyDelimiter +
+                "size=\(String(describing: size))"
+
+        attributes.map({ String(describing: $0) })
+        .sorted()
+        .forEach { (attr) in
+            key += (keyDelimiter + attr)
+        }
+
+        return key
     }
 
 }
