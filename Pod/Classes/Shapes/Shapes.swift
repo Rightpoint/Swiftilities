@@ -1,5 +1,5 @@
 //
-//  GradientView.swift
+//  Shapes.swift
 //  Swiftilities
 //
 //  Created by Nick Bonatsakis on 5/1/17.
@@ -45,7 +45,9 @@ public class Shapes {
 
 }
 
-extension Shapes {
+// MARK: Internal
+
+private extension Shapes {
 
     func image(for shape: Shape, size: CGSize, attributes: [Attribute]) -> UIImage {
         let cacheKey = imageCacheKey(for: shape, size: size, attributes: attributes) as AnyObject
@@ -95,7 +97,9 @@ extension Shapes {
 
 }
 
-extension Shapes.Shape {
+// MARK: Rendering
+
+private extension Shapes.Shape {
 
     func shapeLayer(for size: CGSize, attributes: [Shapes.Attribute]) -> CAShapeLayer {
         let maskLayer = CAShapeLayer()
@@ -144,7 +148,7 @@ extension Shapes.Shape {
 
 }
 
-extension Shapes.Attribute {
+private extension Shapes.Attribute {
 
     func apply(to layer: CAShapeLayer) {
         switch self {
@@ -185,7 +189,6 @@ extension Shapes.Shape: CustomStringConvertible {
         case .pill:
             return "pill"
         }
-        
     }
 
 }
@@ -204,7 +207,7 @@ extension Shapes.Attribute: CustomStringConvertible {
     }
 }
 
-extension Shapes {
+private extension Shapes {
 
     func imageCacheKey(for shape: Shape, size: CGSize, attributes: [Attribute]) -> String {
         let keyDelimiter = "|"
