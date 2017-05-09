@@ -132,6 +132,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit", "MessageUI"]
   end
 
+  # Shapes
+
+  s.subspec "Shapes" do |ss|
+    ss.source_files = "Pod/Classes/Shapes/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # StackViewHelpers
 
   s.subspec "StackViewHelpers" do |ss|
@@ -179,6 +186,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Logging'
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/RootViewController'
+    ss.dependency 'Swiftilities/Shapes'
     ss.dependency 'Swiftilities/StackViewHelpers'
     ss.dependency 'Swiftilities/TableViewHelpers'
     ss.dependency 'Swiftilities/TintedButton'

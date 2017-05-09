@@ -145,7 +145,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TGz-NW-V1v">
-                                <rect key="frame" x="16" y="74" width="343" height="377"/>
+                                <rect key="frame" x="16" y="74" width="343" height="420"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xta-GV-UYS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
@@ -217,6 +217,14 @@
                                         <state key="normal" title="Gradient View"/>
                                         <connections>
                                             <segue destination="wwE-xZ-TmU" kind="show" id="t5H-RG-zHO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxv-wa-G3K" userLabel="Shapes View">
+                                        <rect key="frame" x="0.0" y="387" width="343" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Shapes"/>
+                                        <connections>
+                                            <segue destination="mgH-lf-JKR" kind="show" id="gIP-R6-bw9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -538,6 +546,38 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cy7-bA-B8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258.39999999999998" y="-1236.4317841079462"/>
+        </scene>
+        <!--Shapes View-->
+        <scene sceneID="Xcg-WS-bAx">
+            <objects>
+                <viewController title="Shapes" id="mgH-lf-JKR" userLabel="Shapes View" customClass="ShapesViewController" customModule="Swiftilities_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Re-ZJ-hZp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hyd-8j-Dii"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EIF-FR-hdf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aLg-fG-xov">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hyd-8j-Dii" firstAttribute="top" secondItem="aLg-fG-xov" secondAttribute="bottom" placeholder="YES" id="9fj-jA-cqr"/>
+                            <constraint firstItem="aLg-fG-xov" firstAttribute="leading" secondItem="EIF-FR-hdf" secondAttribute="leadingMargin" id="VdZ-5l-xSD"/>
+                            <constraint firstItem="aLg-fG-xov" firstAttribute="top" secondItem="0Re-ZJ-hZp" secondAttribute="bottom" id="axw-k4-Rw7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aLg-fG-xov" secondAttribute="trailing" id="w2r-FU-IKO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="aLg-fG-xov" id="8xx-v0-2LU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66u-Bs-MIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-258.39999999999998" y="-1236.4317841079462"/>
         </scene>

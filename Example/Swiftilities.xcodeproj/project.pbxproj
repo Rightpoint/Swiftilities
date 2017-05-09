@@ -22,6 +22,7 @@
 		7220991B1E5F48090098229D /* LifecycleConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */; };
 		7220991D1E5F4C970098229D /* LogViewEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991C1E5F4C970098229D /* LogViewEventsBehavior.swift */; };
 		722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */; };
+		7249582D1EC202C700A415B6 /* ShapesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249582C1EC202C700A415B6 /* ShapesViewController.swift */; };
 		726F86F31EB7CAC50075A1F3 /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F86F21EB7CAC50075A1F3 /* GradientViewController.swift */; };
 		72D32B801DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */; };
 		72E281A71E5DDE59000D0C9D /* RootViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */; };
@@ -66,6 +67,7 @@
 		7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleConsoleViewController.swift; sourceTree = "<group>"; };
 		7220991C1E5F4C970098229D /* LogViewEventsBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewEventsBehavior.swift; sourceTree = "<group>"; };
 		7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogAppearanceBehavior.swift; sourceTree = "<group>"; };
+		7249582C1EC202C700A415B6 /* ShapesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapesViewController.swift; sourceTree = "<group>"; };
 		726F86F21EB7CAC50075A1F3 /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Pods-Swiftilities_Example-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerTests.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		722098FE1E5F46EE0098229D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7249582B1EC2028B00A415B6 /* Shapes */,
 				726F86F11EB7CA930075A1F3 /* Graidient View */,
 				72F94C741E65F67200C6DC13 /* About View */,
 				722099171E5F47830098229D /* Lifecycle */,
@@ -272,6 +275,14 @@
 				7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */,
 			);
 			path = Lifecycle;
+			sourceTree = "<group>";
+		};
+		7249582B1EC2028B00A415B6 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				7249582C1EC202C700A415B6 /* ShapesViewController.swift */,
+			);
+			name = Shapes;
 			sourceTree = "<group>";
 		};
 		726F86F11EB7CA930075A1F3 /* Graidient View */ = {
@@ -511,6 +522,7 @@
 				726F86F31EB7CAC50075A1F3 /* GradientViewController.swift in Sources */,
 				722099151E5F47690098229D /* TextFormattingViewController.swift in Sources */,
 				72F94C761E65F67200C6DC13 /* AboutViewController.swift in Sources */,
+				7249582D1EC202C700A415B6 /* ShapesViewController.swift in Sources */,
 				7220991B1E5F48090098229D /* LifecycleConsoleViewController.swift in Sources */,
 				722099131E5F47690098229D /* KeyboardAvoidanceViewController.swift in Sources */,
 				722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */,
