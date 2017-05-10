@@ -48,6 +48,18 @@
       ]
     },
     {
+      "name": "BetterButton",
+      "source_files": "Pod/Classes/BetterButton/*.swift",
+      "dependencies": {
+        "Swiftilities/Shapes": [
+
+        ]
+      },
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "ColorHelpers",
       "source_files": "Pod/Classes/ColorHelpers/*.swift",
       "frameworks": [
@@ -182,6 +194,9 @@
 
         ],
         "Swiftilities/Acknowledgements": [
+
+        ],
+        "Swiftilities/BetterButton": [
 
         ],
         "Swiftilities/ColorHelpers": [

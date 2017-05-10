@@ -10,6 +10,7 @@ PODS:
     - Swiftilities/AboutView
     - Swiftilities/AccessibilityHelpers
     - Swiftilities/Acknowledgements
+    - Swiftilities/BetterButton
     - Swiftilities/ColorHelpers
     - Swiftilities/CoreDataStack
     - Swiftilities/Deselection
@@ -28,6 +29,8 @@ PODS:
     - Swiftilities/TableViewHelpers
     - Swiftilities/TintedButton
     - Swiftilities/Views
+  - Swiftilities/BetterButton (0.13.0):
+    - Swiftilities/Shapes
   - Swiftilities/ColorHelpers (0.13.0)
   - Swiftilities/CoreDataStack (0.13.0)
   - Swiftilities/Deselection (0.13.0)
@@ -55,7 +58,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: f5aa93f7942c5276d7ae553e5c2891d7d8868bdc
+  Swiftilities: 2e7fa1ed3c438c7b0ee9d1535bec1176809d47c4
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 

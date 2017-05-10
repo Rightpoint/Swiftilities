@@ -42,6 +42,14 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # BetterButton
+  
+  s.subspec "BetterButton" do |ss|
+    ss.source_files = "Pod/Classes/BetterButton/*.swift"
+    ss.dependency 'Swiftilities/Shapes'
+	ss.frameworks   = ["UIKit"]
+  end
+
   # ColorHelpers
 
   s.subspec "ColorHelpers" do |ss|
@@ -173,6 +181,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/AboutView'
     ss.dependency 'Swiftilities/AccessibilityHelpers'
     ss.dependency 'Swiftilities/Acknowledgements'
+    ss.dependency 'Swiftilities/BetterButton'
     ss.dependency 'Swiftilities/ColorHelpers'
     ss.dependency 'Swiftilities/CoreDataStack'
     ss.dependency 'Swiftilities/Deselection'
