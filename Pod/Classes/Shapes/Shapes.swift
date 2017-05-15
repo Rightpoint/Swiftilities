@@ -35,6 +35,10 @@ public class Shapes {
         return cache
     }()
 
+    public static func image(for shape: Shape, size: CGSize, attributes: [Attribute]) -> UIImage {
+        return Shapes.shared.image(for: shape, size: size, attributes: attributes)
+    }
+
     public static func image(for shape: Shape, size: CGSize, attributes: Attribute...) -> UIImage {
         return Shapes.shared.image(for: shape, size: size, attributes: attributes)
     }
@@ -90,6 +94,7 @@ private extension Shapes {
         context.addPath(path.cgPath)
         context.clip()
 
+        context.setLineWidth(0.0)
         attributes.forEach({ $0.apply(to: context) })
         context.addPath(path.cgPath)
         context.drawPath(using: .fillStroke)
