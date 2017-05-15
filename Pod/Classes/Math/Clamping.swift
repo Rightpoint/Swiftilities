@@ -6,15 +6,13 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
-import Foundation
-
 public extension Comparable {
 
     /// Clamp a value to a `ClosedRange`.
     ///
     /// - Parameter to: a `ClosedRange` whose start and end specify the clamp's minimum and maximum.
     /// - Returns: the clamped value.
-    func clamped(to range: ClosedRange<Self>) -> Self {
+    func clamped<T: AnyClosedRange>(to range: T) -> Self where T.Bound == Self {
         return clamped(min: range.lowerBound, max: range.upperBound)
     }
 

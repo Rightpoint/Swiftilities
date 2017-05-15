@@ -15,15 +15,12 @@ public extension FloatingPoint {
     ///   - destination: The range to map the number to.
     ///   - clamp: Whether the result should be clamped to the `to` range.
     /// - Returns: The input number, scaled from the `from` range to the `to` range.
-    func scaled(from source: ClosedRange<Self>, to destination: ClosedRange<Self>, clamp: Bool = false) -> Self {
-        guard source != destination else {
-            return self // short circuit the math if they're equal
-        }
+    public func scaled<T: AnyClosedRange, U: AnyClosedRange>(from source: T, to destination: U, clamp: Bool = false) -> Self where T.Bound == Self, U.Bound == Self {
         // these are broken up to speed up compile time
-        let selfMinusLower = self - source.lowerBound
-        let sourceUpperMinusLower = source.upperBound - source.lowerBound
-        let destinationUpperMinusLower = destination.upperBound - destination.lowerBound
-        var result = (selfMinusLower / sourceUpperMinusLower) * destinationUpperMinusLower + destination.lowerBound
+        let selfMinusLower = self - source.start
+        let sourceUpperMinusLower = source.end - source.start
+        let destinationUpperMinusLower = destination.end - destination.start
+        var result = (selfMinusLower / sourceUpperMinusLower) * destinationUpperMinusLower + destination.start
         if clamp {
             result = result.clamped(to: destination)
         }
