@@ -53,6 +53,9 @@
       "dependencies": {
         "Swiftilities/Shapes": [
 
+        ],
+        "Swiftilities/ImageHelpers": [
+
         ]
       },
       "frameworks": [
@@ -105,6 +108,13 @@
     {
       "name": "HairlineView",
       "source_files": "Pod/Classes/HairlineView/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
+      "name": "ImageHelpers",
+      "source_files": "Pod/Classes/ImageHelpers/*.swift",
       "frameworks": [
         "UIKit"
       ]
@@ -218,6 +228,9 @@
 
         ],
         "Swiftilities/HairlineView": [
+
+        ],
+        "Swiftilities/ImageHelpers": [
 
         ],
         "Swiftilities/Keyboard": [

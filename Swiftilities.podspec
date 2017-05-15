@@ -47,6 +47,7 @@ Pod::Spec.new do |s|
   s.subspec "BetterButton" do |ss|
     ss.source_files = "Pod/Classes/BetterButton/*.swift"
     ss.dependency 'Swiftilities/Shapes'
+	ss.dependency 'Swiftilities/ImageHelpers'
 	ss.frameworks   = ["UIKit"]
   end
 
@@ -96,6 +97,11 @@ Pod::Spec.new do |s|
 
   s.subspec "HairlineView" do |ss|
     ss.source_files = "Pod/Classes/HairlineView/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+  
+  s.subspec "ImageHelpers" do |ss|
+    ss.source_files = "Pod/Classes/ImageHelpers/*.swift"
     ss.frameworks   = ["UIKit"]
   end
 
@@ -189,6 +195,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/FormattedTextField'
     ss.dependency 'Swiftilities/Forms'
     ss.dependency 'Swiftilities/HairlineView'
+	ss.dependency 'Swiftilities/ImageHelpers'
     ss.dependency 'Swiftilities/Keyboard'
     ss.dependency 'Swiftilities/LicenseFormatter'
     ss.dependency 'Swiftilities/Lifecycle'

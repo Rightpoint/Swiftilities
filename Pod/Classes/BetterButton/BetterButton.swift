@@ -125,6 +125,20 @@ public class BetterButton: UIButton {
         super.layoutSubviews()
         render()
     }
+
+    public var iconImage: UIImage? {
+        didSet {
+            if let image = iconImage {
+                let styleAttributes = style.attributes
+                let normalImage = image.tintedImage(color: styleAttributes.foregroundColor)
+                let highlightedImage = image.tintedImage(color: styleAttributes.highlightedForegroundColor)
+                self.setImage(normalImage, for: .normal)
+                self.setImage(highlightedImage, for: .highlighted)
+                self.setImage(highlightedImage, for: .selected)
+            }
+        }
+    }
+
 }
 
 private extension BetterButton {
@@ -149,7 +163,6 @@ private extension BetterButton {
         self.setBackgroundImage(highlightedBackgroundImage, for: .highlighted)
         self.setBackgroundImage(highlightedBackgroundImage, for: .selected)
     }
-
 }
 
 private extension BetterButton.Style {
@@ -236,4 +249,3 @@ extension BetterButton.StyleAttributes {
     }
 
 }
-

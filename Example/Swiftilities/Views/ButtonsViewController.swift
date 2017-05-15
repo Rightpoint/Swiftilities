@@ -40,9 +40,12 @@ class ButtonsViewController: UIViewController {
         getButton.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .horizontal)
         getButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         stackView.addArrangedSubview(getButton)
-//        rectButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
-//        rectButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
 
+        let circleOutlineInvert = BetterButton(shape: .circle, style: .outlineInvert(backgroundColor: .white, foregroundColor: .red))
+        circleOutlineInvert.iconImage = #imageLiteral(resourceName: "icn-twitter")
+        stackView.addArrangedSubview(circleOutlineInvert)
+        circleOutlineInvert.widthAnchor.constraint(equalToConstant: 74).isActive = true
+        circleOutlineInvert.heightAnchor.constraint(equalToConstant: 74).isActive = true
     }
 
 }
