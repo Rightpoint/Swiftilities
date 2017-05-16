@@ -1,5 +1,5 @@
 //
-//  MathHelpers.swift
+//  Clamping.swift
 //  Swiftilities
 //
 //  Created by John Stricker on 5/3/16.
