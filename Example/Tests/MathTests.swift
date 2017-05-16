@@ -9,9 +9,9 @@ class MathTests: XCTestCase {
         XCTAssertEqualWithAccuracy(1.0.scaled(from: 0.0...1.0, to: 0.0...1.0), 1.0, accuracy: epsilon)
         XCTAssertEqualWithAccuracy(0.5.scaled(from: 0.0...1.0, to: 0.0...100.0), 50.0, accuracy: epsilon)
 
-        XCTAssertEqualWithAccuracy(10.0.scaled(from: 0.0...1.0, to: 0.0...10.0, clamp: false), 100.0, accuracy: epsilon)
-        XCTAssertEqualWithAccuracy(10.0.scaled(from: 0.0...1.0, to: 0.0...10.0, clamp: true), 10.0, accuracy: epsilon)
-        XCTAssertEqualWithAccuracy(10.scaled(from: 0.0...1.0, to: 0.0...10.0, clamp: false), 100.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(10.0.scaled(from: 0.0...1.0, to: 0.0...10.0, clamped: false), 100.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(10.0.scaled(from: 0.0...1.0, to: 0.0...10.0, clamped: true), 10.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(10.scaled(from: 0.0...1.0, to: 0.0...10.0, clamped: false), 100.0, accuracy: epsilon)
 
         XCTAssertEqualWithAccuracy(0.25.scaled(from: 0.0...1.0, to: -100.0...100.0), -50.0, accuracy: epsilon)
 
@@ -22,30 +22,29 @@ class MathTests: XCTestCase {
 
         // Negating remap(10)
         XCTAssertEqualWithAccuracy(-10.0.scaled(from: -50.0...0.0, to: 0.0...1.0), -1.2, accuracy: epsilon)
-        XCTAssertEqualWithAccuracy(-10.0.scaled(from: -50.0...0.0, to: 0.0...1.0, clamp: true), -1.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(-10.0.scaled(from: -50.0...0.0, to: 0.0...1.0, clamped: true), -1.0, accuracy: epsilon)
     }
 
     func testFloatingPointReverseScale() {
-        XCTAssertEqualWithAccuracy(1.0.scaled(from: 0.0...1.0, to: (0.0...1.0).reversed), 0.0, accuracy: epsilon)
-        XCTAssertEqualWithAccuracy(0.5.scaled(from: 0.0...1.0, to: (0.0...100.0).reversed), 50.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(1.0.scaled(from: 0.0...1.0, to: 0.0...1.0, reversed: true), 0.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(0.5.scaled(from: 0.0...1.0, to: 0.0...100.0, reversed: true), 50.0, accuracy: epsilon)
 
-        XCTAssertEqualWithAccuracy(10.0.scaled(from: 0.0...1.0, to: (0.0...10.0).reversed, clamp: false), -90.0, accuracy: epsilon)
-        XCTAssertEqualWithAccuracy(10.0.scaled(from: 0.0...1.0, to: (0.0...10.0).reversed, clamp: true), 0.0, accuracy: epsilon)
-        XCTAssertEqualWithAccuracy(10.scaled(from: 0.0...1.0, to: (0.0...10.0).reversed, clamp: false), -90.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(10.0.scaled(from: 0.0...1.0, to: 0.0...10.0, clamped: false, reversed: true), -90.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(10.0.scaled(from: 0.0...1.0, to: 0.0...10.0, clamped: true, reversed: true), 0.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(10.scaled(from: 0.0...1.0, to: 0.0...10.0, clamped: false, reversed: true), -90.0, accuracy: epsilon)
 
-        XCTAssertEqualWithAccuracy(0.25.scaled(from: 0.0...1.0, to: (-100.0...100.0).reversed), 50.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(0.25.scaled(from: 0.0...1.0, to: -100.0...100.0, reversed: true), 50.0, accuracy: epsilon)
 
-        XCTAssertEqualWithAccuracy(0.25.scaled(from: (0.0...1.0).reversed, to: (0.0...1.0).reversed), 0.25, accuracy: epsilon)
-        XCTAssertEqualWithAccuracy(0.25.scaled(from: (0.0...1.0).reversed, to: 0.0...1.0), 0.75, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(0.25.scaled(from: 0.0...1.0, to: 0.0...1.0, reversed: true), 0.75, accuracy: epsilon)
 
         // Difference between using and not using parentheses with negation.
 
         // remap(-10)
-        XCTAssertEqualWithAccuracy((-10.0).scaled(from: -50.0...0.0, to: (0.0...1.0).reversed), 0.2, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy((-10.0).scaled(from: -50.0...0.0, to: 0.0...1.0, reversed: true), 0.2, accuracy: epsilon)
 
         // Negating remap(10)
-        XCTAssertEqualWithAccuracy(-10.0.scaled(from: -50.0...0.0, to: (0.0...1.0).reversed), 0.2, accuracy: epsilon)
-        XCTAssertEqualWithAccuracy(-10.0.scaled(from: -50.0...0.0, to: (0.0...1.0).reversed, clamp: true), 0.0, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(-10.0.scaled(from: -50.0...0.0, to: 0.0...1.0, reversed: true), 0.2, accuracy: epsilon)
+        XCTAssertEqualWithAccuracy(-10.0.scaled(from: -50.0...0.0, to: 0.0...1.0, clamped: true, reversed: true), 0.0, accuracy: epsilon)
     }
 
     func testClamping() {
