@@ -15,7 +15,7 @@ public extension FloatingPoint {
     ///   - destination: The range to map the number to.
     ///   - clamped: Whether the result should be clamped to the `to` range. Defaults to `false`.
     ///   - reversed: whether the output mapping should be revserd, such that
-    ///               as the intput increases, the output decreases. Defaults to `false`.
+    ///               as the input increases, the output decreases. Defaults to `false`.
     /// - Returns: The input number, scaled from the `from` range to the `to` range.
     public func scaled(from source: ClosedRange<Self>, to destination: ClosedRange<Self>, clamped: Bool = false, reversed: Bool = false) -> Self {
 
