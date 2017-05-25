@@ -114,21 +114,6 @@ public class BetterButton: UIButton {
 
     public let style: Style
 
-    public init(shape: Shape, style: Style) {
-        self.shape = shape
-        self.style = style
-        super.init(frame: .zero)
-    }
-
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        render()
-    }
-
     public var iconImage: UIImage? {
         didSet {
             if let image = iconImage {
@@ -142,6 +127,66 @@ public class BetterButton: UIButton {
         }
     }
 
+    public var isLoading: Bool = false {
+        didSet {
+            if isLoading {
+                activityIndicator.startAnimating()
+            }
+            else {
+                activityIndicator.stopAnimating()
+            }
+
+            self.isUserInteractionEnabled = !isLoading
+            self.imageView?.isHidden = isLoading
+            self.titleLabel?.isHidden = isLoading
+        }
+    }
+
+    fileprivate let activityIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        view.hidesWhenStopped = true
+        return view
+    }()
+
+    public init(shape: Shape, style: Style) {
+        self.shape = shape
+        self.style = style
+        super.init(frame: .zero)
+
+        addSubview(activityIndicator)
+    }
+
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
+        self.bringSubview(toFront: activityIndicator)
+        self.imageView?.isHidden = isLoading
+        self.titleLabel?.isHidden = isLoading
+    }
+
+    override public var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set {
+            super.frame = newValue
+            render()
+        }
+    }
+
+    override public var bounds: CGRect {
+        get {
+            return super.bounds
+        }
+        set {
+            super.bounds = newValue
+            render()
+        }
+    }
 }
 
 private extension BetterButton {
@@ -165,6 +210,8 @@ private extension BetterButton {
         )
         self.setBackgroundImage(highlightedBackgroundImage, for: .highlighted)
         self.setBackgroundImage(highlightedBackgroundImage, for: .selected)
+
+        activityIndicator.color = styleAttributes.foregroundColor
     }
 }
 

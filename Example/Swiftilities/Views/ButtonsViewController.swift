@@ -21,6 +21,7 @@ class ButtonsViewController: UIViewController {
         stackView.addArrangedSubview(rectButton)
         rectButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
         rectButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        rectButton.addTarget(self, action: #selector(toggleLoading), for: .touchUpInside)
 
         let pillOutline = BetterButton(shape: .pill, style: .outlineOnly(backgroundColor: .clear, foregroundColor: .black))
         pillOutline.setTitle("Pill (Outline-Only)", for: .normal)
@@ -33,6 +34,7 @@ class ButtonsViewController: UIViewController {
         stackView.addArrangedSubview(pillOutlineInvert)
         pillOutlineInvert.widthAnchor.constraint(equalToConstant: 300).isActive = true
         pillOutlineInvert.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        pillOutlineInvert.addTarget(self, action: #selector(toggleLoading), for: .touchUpInside)
 
         let getButton = BetterButton(shape: .rectangle(cornerRadius: 0), style: .outlineInvert(backgroundColor: .white, foregroundColor: .blue))
         getButton.setTitle("GET", for: .normal)
@@ -46,6 +48,13 @@ class ButtonsViewController: UIViewController {
         stackView.addArrangedSubview(circleOutlineInvert)
         circleOutlineInvert.widthAnchor.constraint(equalToConstant: 74).isActive = true
         circleOutlineInvert.heightAnchor.constraint(equalToConstant: 74).isActive = true
+        circleOutlineInvert.addTarget(self, action: #selector(toggleLoading), for: .touchUpInside)
     }
 
+    func toggleLoading(button: BetterButton) {
+        button.isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            button.isLoading = false
+        }
+    }
 }
