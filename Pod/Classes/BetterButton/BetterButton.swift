@@ -10,14 +10,23 @@ import UIKit
 
 fileprivate struct StyleConstants {
 
+    /// The threshold used to decide if highlight state should darken or lighten.
     static let highlightLightenDarkenThreshold: CGFloat = 0.10
+    /// The darken highlight percentage.
     static let defaultHighlightDarkenAdjust: CGFloat = 0.10
+    /// The lighten highlight percentage.
     static let defaultHighlightLightenAdjust: CGFloat = 0.25
 
 }
 
+/// A "better" version of `UIButton` that supports various button styles and shapes.
 public class BetterButton: UIButton {
 
+    /// The shape of the button.
+    ///
+    /// - rectangle: A rectangle with specified corner radius.
+    /// - circle: A circle with radius based on the bounds of the button.
+    /// - pill: A pill with end caps based on the bounds of the button.
     public enum Shape {
 
         case rectangle(cornerRadius: CGFloat)
@@ -26,6 +35,12 @@ public class BetterButton: UIButton {
 
     }
 
+    /// The style of the button. Impacts visual look and highlight behavior.
+    ///
+    /// - solid: A solid color button. Highlight state darkens or lightens background and content.
+    /// - outlineOnly: A stroke-outlined button. Highlight lightens or darkens outline and content.
+    /// - outlineInvert: Similar to `outlineOnly`, but onhighlight, inverts background and foreground (like App Store "GET" button).
+    /// - custom: Entirely customized by passing an instance of `StyleAttributes`
     public enum Style {
 
         case solid(backgroundColor: UIColor, foregroundColor: UIColor)
@@ -35,9 +50,14 @@ public class BetterButton: UIButton {
 
     }
 
+    /// Attributes used to style the button.
     public struct StyleAttributes {
 
-        enum HighlightAdjustMode {
+        /// Defines the highlight behavior for a button.
+        ///
+        /// - darken: Darken by a percentage.
+        /// - lighten: Lighten by a percentage.
+        public enum HighlightAdjustMode {
             case darken(by: CGFloat?)
             case lighten(by: CGFloat?)
 
@@ -110,10 +130,17 @@ public class BetterButton: UIButton {
 
     }
 
+    // Properties
+
+    /// The button shape.
     public let shape: Shape
 
+    /// The button style.
     public let style: Style
 
+    /// Use this property to set an image rather than using `setImage:forState`.
+    /// The image will be re-rendered and the button configured appropriately to
+    /// satisfy the provided style.
     public var iconImage: UIImage? {
         didSet {
             if let image = iconImage {
@@ -127,6 +154,8 @@ public class BetterButton: UIButton {
         }
     }
 
+    /// Setting this property to `true` will replace the button content with an
+    /// activity indicator and disable user interaction. Set to `false` to restore initial button state/behavior.
     public var isLoading: Bool = false {
         didSet {
             if isLoading {
@@ -148,6 +177,11 @@ public class BetterButton: UIButton {
         return view
     }()
 
+    /// Create a new instance.
+    ///
+    /// - Parameters:
+    ///   - shape: The desired button shape.
+    ///   - style: The desired button style.
     public init(shape: Shape, style: Style) {
         self.shape = shape
         self.style = style
@@ -157,7 +191,7 @@ public class BetterButton: UIButton {
     }
 
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("BetterButton does not yet support the use of Interface Builder.")
     }
 
     public override func layoutSubviews() {
@@ -189,6 +223,8 @@ public class BetterButton: UIButton {
     }
 }
 
+// MARK: Rendering
+
 private extension BetterButton {
 
     func render() {
@@ -214,6 +250,8 @@ private extension BetterButton {
         activityIndicator.color = styleAttributes.foregroundColor
     }
 }
+
+// MARK: Styling
 
 private extension BetterButton.Style {
 
