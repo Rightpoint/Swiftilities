@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate struct StyleConstants {
+private struct StyleConstants {
 
     /// The threshold used to decide if highlight state should darken or lighten.
     static let highlightLightenDarkenThreshold: CGFloat = 0.10
@@ -171,6 +171,7 @@ public class BetterButton: UIButton {
         }
     }
 
+    // TODO: Investigate allowing content to remain, with offset spinner.
     fileprivate let activityIndicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(activityIndicatorStyle: .white)
         view.hidesWhenStopped = true
