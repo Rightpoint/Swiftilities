@@ -24,5 +24,5 @@ DefaultBehaviors(behaviors: [behavior]).inject()
 
 # Included Behaviors
 
-- [Nav Bar Hairline Fade](www.google.com)
-- [Nav Bar Title Transition](www.google.com)
+- [Nav Bar Hairline Fade](https://github.com/Raizlabs/Swiftilities/tree/feature/heyltsjay/behaviors/Pod/Classes/Lifecycle/Behaviors/Nav-Bar-Hairline-Fade)
+- [Nav Bar Title Transition](https://github.com/Raizlabs/Swiftilities/tree/feature/heyltsjay/behaviors/Pod/Classes/Lifecycle/Behaviors/Nav-Bar-Title-Transition)
