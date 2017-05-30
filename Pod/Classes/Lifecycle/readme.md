@@ -1,6 +1,6 @@
 # View Controller Lifecycle Behaviors
 
-This is a colleciton of handy [View Controller Lifecycle Behaviors](http://irace.me/lifecycle-behaviors), useful for formalizing reusable bits of common lifecycle-dependent functionality. 
+This is a collection of handy [View Controller Lifecycle Behaviors](http://irace.me/lifecycle-behaviors), useful for formalizing reusable bits of common lifecycle-dependent functionality. 
 
 ## Included Behaviors
 
