@@ -18,7 +18,6 @@ class NavBarTitleTransitionDemoViewController: UIViewController {
         navigationItem.title = "Title Transition"
         titleLabel.text = "Title Transition"
         view.backgroundColor = .lightGray
-        navigationController?.navigationBar.isTranslucent = false
 
         let behavior = NavTitleTransitionBehavior(scrollView: scrollView, titleView: titleLabel)
         addBehaviors([behavior])
