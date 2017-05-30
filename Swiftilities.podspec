@@ -48,6 +48,7 @@ Pod::Spec.new do |s|
     ss.source_files = "Pod/Classes/BetterButton/*.swift"
     ss.dependency 'Swiftilities/Shapes'
 	ss.dependency 'Swiftilities/ImageHelpers'
+	ss.dependency 'Swiftilities/ColorHelpers'
 	ss.frameworks   = ["UIKit"]
   end
 
