@@ -5,11 +5,11 @@ This behavior manages the interactivity between a title, anywhere in a `UIScroll
 This behavior is accomplished by leveraging the `UINavigationBar().titleVerticalPositionAdjustment`, allowing the title to play nicely with other `UINavigationItem`s, (since it is using the normal `navigationItem.title`.)
 
 ## Usage
-```
+```swift
 override func viewDidLoad() {
   super.viewDidLoad()
-  navigationItem.setTitle("My Title")
-  let behavior = NavTitleTransitionBehavior(scrollView: scrollSubview, titleView: titleLabelSubview)
+  navigationItem.setTitle("Title Transition")
+  let behavior = NavTitleTransitionBehavior(scrollView: scrollView, titleView: titleLabel)
   addBehaviors([behavior])
 }
 ```
