@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0050C1C21ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050C1C11ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift */; };
+		0050C1C41ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050C1C31ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift */; };
 		04CD173B1AB7C4F6286F8FA1 /* Pods_Swiftilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849AC9425E95C2FF6F694A7F /* Pods_Swiftilities_Example.framework */; };
 		2340A5B91E8CC29A00572417 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */; };
 		2340A5BD1E8CC67A00572417 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5BA1E8CC3B500572417 /* TestModel.xcdatamodeld */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0050C1C11ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarTitleTransitionDemoViewController.swift; sourceTree = "<group>"; };
+		0050C1C31ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarHairlineFadeDemoViewController.swift; sourceTree = "<group>"; };
 		2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
 		2340A5BB1E8CC3B500572417 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		3ED95507725D28046957F181 /* Pods-Swiftilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 				7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */,
 				7220991C1E5F4C970098229D /* LogViewEventsBehavior.swift */,
 				7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */,
+				0050C1C11ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift */,
+				0050C1C31ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift */,
 			);
 			path = Lifecycle;
 			sourceTree = "<group>";
@@ -515,9 +521,11 @@
 				722099131E5F47690098229D /* KeyboardAvoidanceViewController.swift in Sources */,
 				722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */,
 				7220990A1E5F471F0098229D /* AppDelegate.swift in Sources */,
+				0050C1C41ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift in Sources */,
 				722099141E5F47690098229D /* MainScreenViewController.swift in Sources */,
 				722099191E5F47980098229D /* LifecycleDemoViewController.swift in Sources */,
 				722099161E5F47690098229D /* TintedButtonsViewController.swift in Sources */,
+				0050C1C21ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
