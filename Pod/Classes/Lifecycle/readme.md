@@ -10,7 +10,7 @@ This is a collection of handy [View Controller Lifecycle Behaviors](http://irace
 
 # Usage
 
-Behaviors are implmented by consuming `ViewController`s simply by leveraging the category method `addBehaviors(_ behaviors: [ViewControllerLifecycleBehavior]` in `viewDidLoad`: 
+Behaviors are implemented by consuming `ViewController`s simply by leveraging the category method `addBehaviors(_ behaviors: [ViewControllerLifecycleBehavior]` in `viewDidLoad`: 
 ```
 override func viewDidLoad() {
     super.viewDidLoad()
