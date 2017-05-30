@@ -35,5 +35,3 @@ class LifecycleBehaviorsListViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
-
-
