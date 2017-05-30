@@ -120,7 +120,7 @@
         ]
       },
       "source_files": [
-        "Pod/Classes/Lifecycle/**/*.swift"
+        "Pod/Classes/Lifecycle/Behaviors/**/*.swift"
       ],
       "frameworks": [
         "UIKit"

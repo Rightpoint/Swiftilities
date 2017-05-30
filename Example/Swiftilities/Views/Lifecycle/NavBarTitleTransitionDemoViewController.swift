@@ -15,6 +15,7 @@ class NavBarTitleTransitionDemoViewController: UIViewController {
     let contentView = UIView()
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         navigationItem.title = "Title Transition"
         titleLabel.text = "Title Transition"
         view.backgroundColor = .lightGray

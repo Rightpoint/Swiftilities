@@ -15,6 +15,7 @@ final class NavBarHairlineFadeDemoViewController: UIViewController {
     let contentView = UIView()
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         navigationItem.title = "Nav Bar Hairline Fade"
         titleLabel.text = "Scroll View"
         view.backgroundColor = .white
