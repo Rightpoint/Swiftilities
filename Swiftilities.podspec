@@ -42,6 +42,16 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # BetterButton
+  
+  s.subspec "BetterButton" do |ss|
+    ss.source_files = "Pod/Classes/BetterButton/*.swift"
+    ss.dependency 'Swiftilities/Shapes'
+	ss.dependency 'Swiftilities/ImageHelpers'
+	ss.dependency 'Swiftilities/ColorHelpers'
+	ss.frameworks   = ["UIKit"]
+  end
+
   # ColorHelpers
 
   s.subspec "ColorHelpers" do |ss|
@@ -90,6 +100,11 @@ Pod::Spec.new do |s|
     ss.source_files = "Pod/Classes/HairlineView/*.swift"
     ss.frameworks   = ["UIKit"]
   end
+  
+  s.subspec "ImageHelpers" do |ss|
+    ss.source_files = "Pod/Classes/ImageHelpers/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
 
   # Keyboard
 
@@ -134,6 +149,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit", "MessageUI"]
   end
 
+  # Shapes
+
+  s.subspec "Shapes" do |ss|
+    ss.source_files = "Pod/Classes/Shapes/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # StackViewHelpers
 
   s.subspec "StackViewHelpers" do |ss|
@@ -168,6 +190,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/AboutView'
     ss.dependency 'Swiftilities/AccessibilityHelpers'
     ss.dependency 'Swiftilities/Acknowledgements'
+    ss.dependency 'Swiftilities/BetterButton'
     ss.dependency 'Swiftilities/ColorHelpers'
     ss.dependency 'Swiftilities/CoreDataStack'
     ss.dependency 'Swiftilities/Deselection'
@@ -175,12 +198,14 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/FormattedTextField'
     ss.dependency 'Swiftilities/Forms'
     ss.dependency 'Swiftilities/HairlineView'
+	ss.dependency 'Swiftilities/ImageHelpers'
     ss.dependency 'Swiftilities/Keyboard'
     ss.dependency 'Swiftilities/LicenseFormatter'
     ss.dependency 'Swiftilities/Lifecycle'
     ss.dependency 'Swiftilities/Logging'
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/RootViewController'
+    ss.dependency 'Swiftilities/Shapes'
     ss.dependency 'Swiftilities/StackViewHelpers'
     ss.dependency 'Swiftilities/TableViewHelpers'
     ss.dependency 'Swiftilities/TintedButton'

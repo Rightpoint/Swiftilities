@@ -48,6 +48,24 @@
       ]
     },
     {
+      "name": "BetterButton",
+      "source_files": "Pod/Classes/BetterButton/*.swift",
+      "dependencies": {
+        "Swiftilities/Shapes": [
+
+        ],
+        "Swiftilities/ImageHelpers": [
+
+        ],
+        "Swiftilities/ColorHelpers": [
+
+        ]
+      },
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "ColorHelpers",
       "source_files": "Pod/Classes/ColorHelpers/*.swift",
       "frameworks": [
@@ -93,6 +111,13 @@
     {
       "name": "HairlineView",
       "source_files": "Pod/Classes/HairlineView/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
+      "name": "ImageHelpers",
+      "source_files": "Pod/Classes/ImageHelpers/*.swift",
       "frameworks": [
         "UIKit"
       ]
@@ -144,6 +169,13 @@
       ]
     },
     {
+      "name": "Shapes",
+      "source_files": "Pod/Classes/Shapes/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "StackViewHelpers",
       "source_files": "Pod/Classes/StackViewHelpers/*.swift",
       "frameworks": [
@@ -185,6 +217,9 @@
         "Swiftilities/Acknowledgements": [
 
         ],
+        "Swiftilities/BetterButton": [
+
+        ],
         "Swiftilities/ColorHelpers": [
 
         ],
@@ -206,6 +241,9 @@
         "Swiftilities/HairlineView": [
 
         ],
+        "Swiftilities/ImageHelpers": [
+
+        ],
         "Swiftilities/Keyboard": [
 
         ],
@@ -222,6 +260,9 @@
 
         ],
         "Swiftilities/RootViewController": [
+
+        ],
+        "Swiftilities/Shapes": [
 
         ],
         "Swiftilities/StackViewHelpers": [
