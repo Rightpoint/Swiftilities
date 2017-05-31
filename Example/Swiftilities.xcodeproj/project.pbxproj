@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0050C1C21ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050C1C11ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift */; };
+		0050C1C41ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050C1C31ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift */; };
+		0050C1C61EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050C1C51EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift */; };
 		04CD173B1AB7C4F6286F8FA1 /* Pods_Swiftilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849AC9425E95C2FF6F694A7F /* Pods_Swiftilities_Example.framework */; };
 		2340A5B91E8CC29A00572417 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */; };
 		2340A5BD1E8CC67A00572417 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5BA1E8CC3B500572417 /* TestModel.xcdatamodeld */; };
@@ -18,9 +21,6 @@
 		722099141E5F47690098229D /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220990E1E5F47690098229D /* MainScreenViewController.swift */; };
 		722099151E5F47690098229D /* TextFormattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722099101E5F47690098229D /* TextFormattingViewController.swift */; };
 		722099161E5F47690098229D /* TintedButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722099121E5F47690098229D /* TintedButtonsViewController.swift */; };
-		722099191E5F47980098229D /* LifecycleDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722099181E5F47980098229D /* LifecycleDemoViewController.swift */; };
-		7220991B1E5F48090098229D /* LifecycleConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */; };
-		7220991D1E5F4C970098229D /* LogViewEventsBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991C1E5F4C970098229D /* LogViewEventsBehavior.swift */; };
 		722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */; };
 		726F86F31EB7CAC50075A1F3 /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F86F21EB7CAC50075A1F3 /* GradientViewController.swift */; };
 		72D32B801DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */; };
@@ -45,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0050C1C11ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarTitleTransitionDemoViewController.swift; sourceTree = "<group>"; };
+		0050C1C31ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarHairlineFadeDemoViewController.swift; sourceTree = "<group>"; };
+		0050C1C51EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleBehaviorsListViewController.swift; sourceTree = "<group>"; };
 		2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
 		2340A5BB1E8CC3B500572417 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		3ED95507725D28046957F181 /* Pods-Swiftilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,9 +65,6 @@
 		7220990E1E5F47690098229D /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		722099101E5F47690098229D /* TextFormattingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFormattingViewController.swift; sourceTree = "<group>"; };
 		722099121E5F47690098229D /* TintedButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintedButtonsViewController.swift; sourceTree = "<group>"; };
-		722099181E5F47980098229D /* LifecycleDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleDemoViewController.swift; sourceTree = "<group>"; };
-		7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleConsoleViewController.swift; sourceTree = "<group>"; };
-		7220991C1E5F4C970098229D /* LogViewEventsBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewEventsBehavior.swift; sourceTree = "<group>"; };
 		7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogAppearanceBehavior.swift; sourceTree = "<group>"; };
 		726F86F21EB7CAC50075A1F3 /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Pods-Swiftilities_Example-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 			children = (
 				726F86F11EB7CA930075A1F3 /* Graidient View */,
 				72F94C741E65F67200C6DC13 /* About View */,
-				722099171E5F47830098229D /* Lifecycle */,
+				722099171E5F47830098229D /* Lifecycle Behaviors */,
 				7220990B1E5F47690098229D /* Keyboard Avoidance */,
 				7220990D1E5F47690098229D /* Main */,
 				7220990F1E5F47690098229D /* Text Formatting */,
@@ -263,14 +263,15 @@
 			path = "Tinted Buttons";
 			sourceTree = "<group>";
 		};
-		722099171E5F47830098229D /* Lifecycle */ = {
+		722099171E5F47830098229D /* Lifecycle Behaviors */ = {
 			isa = PBXGroup;
 			children = (
-				722099181E5F47980098229D /* LifecycleDemoViewController.swift */,
-				7220991A1E5F48090098229D /* LifecycleConsoleViewController.swift */,
-				7220991C1E5F4C970098229D /* LogViewEventsBehavior.swift */,
 				7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */,
+				0050C1C11ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift */,
+				0050C1C31ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift */,
+				0050C1C51EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift */,
 			);
+			name = "Lifecycle Behaviors";
 			path = Lifecycle;
 			sourceTree = "<group>";
 		};
@@ -507,17 +508,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7220991D1E5F4C970098229D /* LogViewEventsBehavior.swift in Sources */,
 				726F86F31EB7CAC50075A1F3 /* GradientViewController.swift in Sources */,
 				722099151E5F47690098229D /* TextFormattingViewController.swift in Sources */,
 				72F94C761E65F67200C6DC13 /* AboutViewController.swift in Sources */,
-				7220991B1E5F48090098229D /* LifecycleConsoleViewController.swift in Sources */,
 				722099131E5F47690098229D /* KeyboardAvoidanceViewController.swift in Sources */,
 				722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */,
 				7220990A1E5F471F0098229D /* AppDelegate.swift in Sources */,
+				0050C1C61EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift in Sources */,
+				0050C1C41ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift in Sources */,
 				722099141E5F47690098229D /* MainScreenViewController.swift in Sources */,
-				722099191E5F47980098229D /* LifecycleDemoViewController.swift in Sources */,
 				722099161E5F47690098229D /* TintedButtonsViewController.swift in Sources */,
+				0050C1C21ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

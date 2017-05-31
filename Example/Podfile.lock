@@ -10,6 +10,7 @@ PODS:
     - Swiftilities/AboutView
     - Swiftilities/AccessibilityHelpers
     - Swiftilities/Acknowledgements
+    - Swiftilities/BetterButton
     - Swiftilities/ColorHelpers
     - Swiftilities/CoreDataStack
     - Swiftilities/Deselection
@@ -17,16 +18,22 @@ PODS:
     - Swiftilities/FormattedTextField
     - Swiftilities/Forms
     - Swiftilities/HairlineView
+    - Swiftilities/ImageHelpers
     - Swiftilities/Keyboard
     - Swiftilities/LicenseFormatter
     - Swiftilities/Lifecycle
     - Swiftilities/Logging
     - Swiftilities/Math
     - Swiftilities/RootViewController
+    - Swiftilities/Shapes
     - Swiftilities/StackViewHelpers
     - Swiftilities/TableViewHelpers
     - Swiftilities/TintedButton
     - Swiftilities/Views
+  - Swiftilities/BetterButton (0.13.0):
+    - Swiftilities/ColorHelpers
+    - Swiftilities/ImageHelpers
+    - Swiftilities/Shapes
   - Swiftilities/ColorHelpers (0.13.0)
   - Swiftilities/CoreDataStack (0.13.0)
   - Swiftilities/Deselection (0.13.0)
@@ -34,12 +41,16 @@ PODS:
   - Swiftilities/FormattedTextField (0.13.0)
   - Swiftilities/Forms (0.13.0)
   - Swiftilities/HairlineView (0.13.0)
+  - Swiftilities/ImageHelpers (0.13.0)
   - Swiftilities/Keyboard (0.13.0)
   - Swiftilities/LicenseFormatter (0.13.0)
-  - Swiftilities/Lifecycle (0.13.0)
+  - Swiftilities/Lifecycle (0.13.0):
+    - Swiftilities/HairlineView
+    - Swiftilities/Math
   - Swiftilities/Logging (0.13.0)
   - Swiftilities/Math (0.13.0)
   - Swiftilities/RootViewController (0.13.0)
+  - Swiftilities/Shapes (0.13.0)
   - Swiftilities/StackViewHelpers (0.13.0)
   - Swiftilities/TableViewHelpers (0.13.0)
   - Swiftilities/TintedButton (0.13.0)
@@ -53,7 +64,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: 280f3a9b6491210b2381e04555fcaafa1c33a83f
+  Swiftilities: 5ac74a32951aa3b509559e9cf8bd9f0467fbdffc
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 

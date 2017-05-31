@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9CH-13-TfJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9CH-13-TfJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Lifecycle Behaviors-->
         <scene sceneID="Xsr-eT-Tb9">
             <objects>
-                <viewController title="Lifecycle Behaviors" automaticallyAdjustsScrollViewInsets="NO" id="dS0-7O-UqT" customClass="LifecycleConsoleViewController" customModule="Swiftilities_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Lifecycle Behaviors" automaticallyAdjustsScrollViewInsets="NO" id="dS0-7O-UqT" customClass="LifecycleBehaviorsListViewController" customModule="Swiftilities_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XBT-Cr-zV1"/>
                         <viewControllerLayoutGuide type="bottom" id="DJv-kE-9ee"/>
@@ -25,32 +25,30 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdl-IS-gDo">
                                 <rect key="frame" x="16" y="72" width="343" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Present Controller"/>
+                                <state key="normal" title="Nav Bar Hairline Fade"/>
                                 <connections>
-                                    <action selector="presentLifecycleController:" destination="dS0-7O-UqT" eventType="touchUpInside" id="1pA-PE-LIh"/>
+                                    <action selector="hairlineDemoSelected" destination="dS0-7O-UqT" eventType="primaryActionTriggered" id="pNt-IT-kiU"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSS-bw-VTi">
-                                <rect key="frame" x="16" y="113" width="343" height="546"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wea-sb-aln">
+                                <rect key="frame" x="16" y="113" width="343" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <state key="normal" title="Title Transition to Nav Bar"/>
+                                <connections>
+                                    <action selector="titleTransitionDemoSelected" destination="dS0-7O-UqT" eventType="primaryActionTriggered" id="0Eh-1V-2Bt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qSS-bw-VTi" firstAttribute="top" secondItem="cdl-IS-gDo" secondAttribute="bottom" constant="8" id="2dt-qg-t4w"/>
+                            <constraint firstItem="wea-sb-aln" firstAttribute="trailing" secondItem="1rE-ln-GoJ" secondAttribute="trailingMargin" id="03d-tz-QoX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cdl-IS-gDo" secondAttribute="trailing" id="7Se-Vx-tUS"/>
-                            <constraint firstItem="qSS-bw-VTi" firstAttribute="leading" secondItem="1rE-ln-GoJ" secondAttribute="leadingMargin" id="HUb-XO-PGc"/>
                             <constraint firstItem="cdl-IS-gDo" firstAttribute="leading" secondItem="1rE-ln-GoJ" secondAttribute="leadingMargin" id="Wgg-tX-MYb"/>
-                            <constraint firstItem="DJv-kE-9ee" firstAttribute="top" secondItem="qSS-bw-VTi" secondAttribute="bottom" constant="8" id="bQZ-lU-iPF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qSS-bw-VTi" secondAttribute="trailing" id="bc5-zK-DeJ"/>
+                            <constraint firstItem="wea-sb-aln" firstAttribute="leading" secondItem="1rE-ln-GoJ" secondAttribute="leadingMargin" id="oJ8-cC-E4l"/>
+                            <constraint firstItem="wea-sb-aln" firstAttribute="top" secondItem="cdl-IS-gDo" secondAttribute="bottom" constant="8" id="tqs-bd-Ka0"/>
                             <constraint firstItem="cdl-IS-gDo" firstAttribute="top" secondItem="XBT-Cr-zV1" secondAttribute="bottom" constant="8" id="yql-kW-wQz"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="lifecycleLogTextView" destination="qSS-bw-VTi" id="ZxR-ss-Lag"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBg-zB-p8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,7 +143,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TGz-NW-V1v">
-                                <rect key="frame" x="16" y="74" width="343" height="377"/>
+                                <rect key="frame" x="16" y="74" width="343" height="463"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xta-GV-UYS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
@@ -217,6 +215,22 @@
                                         <state key="normal" title="Gradient View"/>
                                         <connections>
                                             <segue destination="wwE-xZ-TmU" kind="show" id="t5H-RG-zHO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxv-wa-G3K" userLabel="Shapes View">
+                                        <rect key="frame" x="0.0" y="387" width="343" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Shapes"/>
+                                        <connections>
+                                            <segue destination="mgH-lf-JKR" kind="show" id="gIP-R6-bw9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Eq-5z-cIx" userLabel="Buttons View">
+                                        <rect key="frame" x="0.0" y="430" width="343" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Buttons"/>
+                                        <connections>
+                                            <segue destination="ahM-bp-QPf" kind="show" id="3d6-zi-Lw0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -538,6 +552,70 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cy7-bA-B8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258.39999999999998" y="-1236.4317841079462"/>
+        </scene>
+        <!--Shapes View-->
+        <scene sceneID="Xcg-WS-bAx">
+            <objects>
+                <viewController title="Shapes" id="mgH-lf-JKR" userLabel="Shapes View" customClass="ShapesViewController" customModule="Swiftilities_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Re-ZJ-hZp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hyd-8j-Dii"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EIF-FR-hdf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aLg-fG-xov">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hyd-8j-Dii" firstAttribute="top" secondItem="aLg-fG-xov" secondAttribute="bottom" placeholder="YES" id="9fj-jA-cqr"/>
+                            <constraint firstItem="aLg-fG-xov" firstAttribute="leading" secondItem="EIF-FR-hdf" secondAttribute="leadingMargin" id="VdZ-5l-xSD"/>
+                            <constraint firstItem="aLg-fG-xov" firstAttribute="top" secondItem="0Re-ZJ-hZp" secondAttribute="bottom" id="axw-k4-Rw7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aLg-fG-xov" secondAttribute="trailing" id="w2r-FU-IKO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="aLg-fG-xov" id="8xx-v0-2LU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66u-Bs-MIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258.39999999999998" y="-1236.4317841079462"/>
+        </scene>
+        <!--Buttons View-->
+        <scene sceneID="gLR-eR-1ia">
+            <objects>
+                <viewController title="Buttons" id="ahM-bp-QPf" userLabel="Buttons View" customClass="ButtonsViewController" customModule="Swiftilities_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jmw-o6-uB4"/>
+                        <viewControllerLayoutGuide type="bottom" id="lDo-gK-zWQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BAr-qq-Ud1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UX4-hN-Kir">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UX4-hN-Kir" firstAttribute="leading" secondItem="BAr-qq-Ud1" secondAttribute="leadingMargin" id="4L1-7m-Yrd"/>
+                            <constraint firstItem="UX4-hN-Kir" firstAttribute="top" secondItem="Jmw-o6-uB4" secondAttribute="bottom" id="FXP-di-ATJ"/>
+                            <constraint firstItem="lDo-gK-zWQ" firstAttribute="top" secondItem="UX4-hN-Kir" secondAttribute="bottom" placeholder="YES" id="dEV-qQ-muF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UX4-hN-Kir" secondAttribute="trailing" id="dVh-bL-rOR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="UX4-hN-Kir" id="abc-t1-udQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ye1-yG-DW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-258.39999999999998" y="-1236.4317841079462"/>
         </scene>
