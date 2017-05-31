@@ -1,15 +1,16 @@
 PODS:
-  - Swiftilities (0.12.0):
-    - Swiftilities/All (= 0.12.0)
-  - Swiftilities/AboutView (0.12.0)
-  - Swiftilities/AccessibilityHelpers (0.12.0)
-  - Swiftilities/Acknowledgements (0.12.0):
+  - Swiftilities (0.13.0):
+    - Swiftilities/All (= 0.13.0)
+  - Swiftilities/AboutView (0.13.0)
+  - Swiftilities/AccessibilityHelpers (0.13.0)
+  - Swiftilities/Acknowledgements (0.13.0):
     - Swiftilities/Deselection
     - Swiftilities/LicenseFormatter
-  - Swiftilities/All (0.12.0):
+  - Swiftilities/All (0.13.0):
     - Swiftilities/AboutView
     - Swiftilities/AccessibilityHelpers
     - Swiftilities/Acknowledgements
+    - Swiftilities/BetterButton
     - Swiftilities/ColorHelpers
     - Swiftilities/CoreDataStack
     - Swiftilities/Deselection
@@ -17,33 +18,40 @@ PODS:
     - Swiftilities/FormattedTextField
     - Swiftilities/Forms
     - Swiftilities/HairlineView
+    - Swiftilities/ImageHelpers
     - Swiftilities/Keyboard
     - Swiftilities/LicenseFormatter
     - Swiftilities/Lifecycle
     - Swiftilities/Logging
     - Swiftilities/Math
     - Swiftilities/RootViewController
+    - Swiftilities/Shapes
     - Swiftilities/StackViewHelpers
     - Swiftilities/TableViewHelpers
     - Swiftilities/TintedButton
     - Swiftilities/Views
-  - Swiftilities/ColorHelpers (0.12.0)
-  - Swiftilities/CoreDataStack (0.12.0)
-  - Swiftilities/Deselection (0.12.0)
-  - Swiftilities/DeviceSize (0.12.0)
-  - Swiftilities/FormattedTextField (0.12.0)
-  - Swiftilities/Forms (0.12.0)
-  - Swiftilities/HairlineView (0.12.0)
-  - Swiftilities/Keyboard (0.12.0)
-  - Swiftilities/LicenseFormatter (0.12.0)
-  - Swiftilities/Lifecycle (0.12.0)
-  - Swiftilities/Logging (0.12.0)
-  - Swiftilities/Math (0.12.0)
-  - Swiftilities/RootViewController (0.12.0)
-  - Swiftilities/StackViewHelpers (0.12.0)
-  - Swiftilities/TableViewHelpers (0.12.0)
-  - Swiftilities/TintedButton (0.12.0)
-  - Swiftilities/Views (0.12.0)
+  - Swiftilities/BetterButton (0.13.0):
+    - Swiftilities/ImageHelpers
+    - Swiftilities/Shapes
+  - Swiftilities/ColorHelpers (0.13.0)
+  - Swiftilities/CoreDataStack (0.13.0)
+  - Swiftilities/Deselection (0.13.0)
+  - Swiftilities/DeviceSize (0.13.0)
+  - Swiftilities/FormattedTextField (0.13.0)
+  - Swiftilities/Forms (0.13.0)
+  - Swiftilities/HairlineView (0.13.0)
+  - Swiftilities/ImageHelpers (0.13.0)
+  - Swiftilities/Keyboard (0.13.0)
+  - Swiftilities/LicenseFormatter (0.13.0)
+  - Swiftilities/Lifecycle (0.13.0)
+  - Swiftilities/Logging (0.13.0)
+  - Swiftilities/Math (0.13.0)
+  - Swiftilities/RootViewController (0.13.0)
+  - Swiftilities/Shapes (0.13.0)
+  - Swiftilities/StackViewHelpers (0.13.0)
+  - Swiftilities/TableViewHelpers (0.13.0)
+  - Swiftilities/TintedButton (0.13.0)
+  - Swiftilities/Views (0.13.0)
 
 DEPENDENCIES:
   - Swiftilities (from `../`)
@@ -53,7 +61,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: a79a2955d497e9e864904487e2532df2ed78176b
+  Swiftilities: e3f1bfbb060cb7168df1d701cf583e81eb21945e
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 

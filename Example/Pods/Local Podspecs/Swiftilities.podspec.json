@@ -1,6 +1,6 @@
 {
   "name": "Swiftilities",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "summary": "A collection of useful Swift utilities.",
   "description": "A collection of useful Swift utilities. All components and\nextensions found in this library are consise enough on their own\nso as to not warrant their own project.",
   "homepage": "https://github.com/raizlabs/Swiftilities",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/raizlabs/Swiftilities.git",
-    "tag": "0.12.0"
+    "tag": "0.13.0"
   },
   "platforms": {
     "ios": "9.0"
@@ -43,6 +43,21 @@
         ]
       },
       "source_files": "Pod/Classes/Acknowledgements/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
+      "name": "BetterButton",
+      "source_files": "Pod/Classes/BetterButton/*.swift",
+      "dependencies": {
+        "Swiftilities/Shapes": [
+
+        ],
+        "Swiftilities/ImageHelpers": [
+
+        ]
+      },
       "frameworks": [
         "UIKit"
       ]
@@ -98,6 +113,13 @@
       ]
     },
     {
+      "name": "ImageHelpers",
+      "source_files": "Pod/Classes/ImageHelpers/*.swift",
+      "frameworks": [
+        "UIKit"
+      ]
+    },
+    {
       "name": "Keyboard",
       "source_files": "Pod/Classes/Keyboard/*.swift",
       "frameworks": [
@@ -133,6 +155,13 @@
       "frameworks": [
         "UIKit",
         "MessageUI"
+      ]
+    },
+    {
+      "name": "Shapes",
+      "source_files": "Pod/Classes/Shapes/*.swift",
+      "frameworks": [
+        "UIKit"
       ]
     },
     {
@@ -177,6 +206,9 @@
         "Swiftilities/Acknowledgements": [
 
         ],
+        "Swiftilities/BetterButton": [
+
+        ],
         "Swiftilities/ColorHelpers": [
 
         ],
@@ -198,6 +230,9 @@
         "Swiftilities/HairlineView": [
 
         ],
+        "Swiftilities/ImageHelpers": [
+
+        ],
         "Swiftilities/Keyboard": [
 
         ],
@@ -214,6 +249,9 @@
 
         ],
         "Swiftilities/RootViewController": [
+
+        ],
+        "Swiftilities/Shapes": [
 
         ],
         "Swiftilities/StackViewHelpers": [
