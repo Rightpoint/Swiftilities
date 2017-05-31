@@ -102,7 +102,7 @@ fileprivate extension NavTitlePositionUpdater {
         let scrollRange = titleCenter...titleCenter + offscreenTranslationY //scrollView contentOffset range through which the animation will take place
 
         let offset = scrollView.contentOffset.y + scrollView.contentInset.top
-        let adjustment = offset.scaled(from: scrollRange, to: titleTransitionRange, clamp: true) //map scroll view offset to title offset
+        let adjustment = offset.scaled(from: scrollRange, to: titleTransitionRange, clamped: true) //map scroll view offset to title offset
         let invertedAdjustment = titleTransitionRange.upperBound - adjustment //invert the relationship
 
         navBar.titleOffset = invertedAdjustment

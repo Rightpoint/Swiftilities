@@ -1,12 +1,10 @@
 //
-//  MathHelpers.swift
+//  Clamping.swift
 //  Swiftilities
 //
 //  Created by John Stricker on 5/3/16.
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
-
-import Foundation
 
 public extension Comparable {
 
