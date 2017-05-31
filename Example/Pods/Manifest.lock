@@ -31,6 +31,7 @@ PODS:
     - Swiftilities/TintedButton
     - Swiftilities/Views
   - Swiftilities/BetterButton (0.13.0):
+    - Swiftilities/ColorHelpers
     - Swiftilities/ImageHelpers
     - Swiftilities/Shapes
   - Swiftilities/ColorHelpers (0.13.0)
@@ -43,7 +44,9 @@ PODS:
   - Swiftilities/ImageHelpers (0.13.0)
   - Swiftilities/Keyboard (0.13.0)
   - Swiftilities/LicenseFormatter (0.13.0)
-  - Swiftilities/Lifecycle (0.13.0)
+  - Swiftilities/Lifecycle (0.13.0):
+    - Swiftilities/HairlineView
+    - Swiftilities/Math
   - Swiftilities/Logging (0.13.0)
   - Swiftilities/Math (0.13.0)
   - Swiftilities/RootViewController (0.13.0)
@@ -61,7 +64,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: e3f1bfbb060cb7168df1d701cf583e81eb21945e
+  Swiftilities: 5ac74a32951aa3b509559e9cf8bd9f0467fbdffc
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 

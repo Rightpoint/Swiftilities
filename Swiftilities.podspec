@@ -123,7 +123,9 @@ Pod::Spec.new do |s|
   # Lifecycle
 
   s.subspec "Lifecycle" do |ss|
-    ss.source_files = ["Pod/Classes/Lifecycle/*.swift"]
+    ss.dependency 'Swiftilities/Math'
+    ss.dependency 'Swiftilities/HairlineView'
+    ss.source_files = ["Pod/Classes/Lifecycle/**/*.swift"]
     ss.frameworks   = ["UIKit"]
   end
 
