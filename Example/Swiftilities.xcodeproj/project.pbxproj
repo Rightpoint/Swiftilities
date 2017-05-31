@@ -22,6 +22,8 @@
 		722099151E5F47690098229D /* TextFormattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722099101E5F47690098229D /* TextFormattingViewController.swift */; };
 		722099161E5F47690098229D /* TintedButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722099121E5F47690098229D /* TintedButtonsViewController.swift */; };
 		722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */; };
+		726E5EFC1EDF5D1E00000DEE /* ButtonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E5EFA1EDF5D1E00000DEE /* ButtonsViewController.swift */; };
+		726E5EFD1EDF5D1E00000DEE /* ShapesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726E5EFB1EDF5D1E00000DEE /* ShapesViewController.swift */; };
 		726F86F31EB7CAC50075A1F3 /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726F86F21EB7CAC50075A1F3 /* GradientViewController.swift */; };
 		72D32B801DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */; };
 		72E281A71E5DDE59000D0C9D /* RootViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */; };
@@ -66,6 +68,8 @@
 		722099101E5F47690098229D /* TextFormattingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFormattingViewController.swift; sourceTree = "<group>"; };
 		722099121E5F47690098229D /* TintedButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TintedButtonsViewController.swift; sourceTree = "<group>"; };
 		7220991F1E5F706B0098229D /* LogAppearanceBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogAppearanceBehavior.swift; sourceTree = "<group>"; };
+		726E5EFA1EDF5D1E00000DEE /* ButtonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonsViewController.swift; sourceTree = "<group>"; };
+		726E5EFB1EDF5D1E00000DEE /* ShapesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapesViewController.swift; sourceTree = "<group>"; };
 		726F86F21EB7CAC50075A1F3 /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Pods-Swiftilities_Example-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewControllerTests.swift; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 		722098FE1E5F46EE0098229D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				726E5EFF1EDF5D2F00000DEE /* Shapes */,
+				726E5EFE1EDF5D2300000DEE /* Buttons */,
 				726F86F11EB7CA930075A1F3 /* Graidient View */,
 				72F94C741E65F67200C6DC13 /* About View */,
 				722099171E5F47830098229D /* Lifecycle Behaviors */,
@@ -273,6 +279,22 @@
 			);
 			name = "Lifecycle Behaviors";
 			path = Lifecycle;
+			sourceTree = "<group>";
+		};
+		726E5EFE1EDF5D2300000DEE /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				726E5EFA1EDF5D1E00000DEE /* ButtonsViewController.swift */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		726E5EFF1EDF5D2F00000DEE /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				726E5EFB1EDF5D1E00000DEE /* ShapesViewController.swift */,
+			);
+			name = Shapes;
 			sourceTree = "<group>";
 		};
 		726F86F11EB7CA930075A1F3 /* Graidient View */ = {
@@ -509,9 +531,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				726F86F31EB7CAC50075A1F3 /* GradientViewController.swift in Sources */,
+				726E5EFD1EDF5D1E00000DEE /* ShapesViewController.swift in Sources */,
 				722099151E5F47690098229D /* TextFormattingViewController.swift in Sources */,
 				72F94C761E65F67200C6DC13 /* AboutViewController.swift in Sources */,
 				722099131E5F47690098229D /* KeyboardAvoidanceViewController.swift in Sources */,
+				726E5EFC1EDF5D1E00000DEE /* ButtonsViewController.swift in Sources */,
 				722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */,
 				7220990A1E5F471F0098229D /* AppDelegate.swift in Sources */,
 				0050C1C61EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift in Sources */,

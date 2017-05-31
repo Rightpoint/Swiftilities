@@ -612,7 +612,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="stackView" destination="UX4-hN-Kir" id="abc-t1-udQ"/>
+                        <outlet property="stackView" destination="UX4-hN-Kir" id="Mch-eL-D4u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ye1-yG-DW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
