@@ -82,7 +82,7 @@ public class BetterButton: UIButton {
         var borderWidth: CGFloat?
         var adjustMode: HighlightAdjustMode
 
-        init(backgroundColor: UIColor,
+        public init(backgroundColor: UIColor,
              highlightedBackgroundColor: UIColor?,
              foregroundColor: UIColor,
              highlightedForegroundColor: UIColor?,
