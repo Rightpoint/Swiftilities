@@ -96,7 +96,8 @@ fileprivate final class NavBarHairlineFadeUpdater: NSObject {
 fileprivate extension NavBarHairlineFadeUpdater {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        hairlineAlpha = scrollView.contentOffset.y.scaled(from: contentOffsetFadeRange, to: 0...1, clamped: true)
+        let shift = scrollView.contentInset.top + scrollView.contentOffset.y
+        hairlineAlpha = shift.scaled(from: contentOffsetFadeRange, to: 0...1, clamped: true)
     }
 
     func navBarDidChangeBounds(_ navBar: UINavigationBar) {
