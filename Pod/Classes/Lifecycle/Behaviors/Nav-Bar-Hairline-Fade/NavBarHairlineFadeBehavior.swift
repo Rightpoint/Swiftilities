@@ -6,7 +6,7 @@
 //
 //
 
-public final class NavBarHarilineFadeBehavior: ViewControllerLifecycleBehavior {
+public final class NavBarHairlineFadeBehavior: ViewControllerLifecycleBehavior {
 
     fileprivate var navBarHairlineFadeUpdater: NavBarHairlineFadeUpdater
 
@@ -26,7 +26,7 @@ public final class NavBarHarilineFadeBehavior: ViewControllerLifecycleBehavior {
 
 }
 
-public extension NavBarHarilineFadeBehavior {
+public extension NavBarHairlineFadeBehavior {
 
     var contentOffsetFadeRange: ClosedRange<CGFloat> {
         set { navBarHairlineFadeUpdater.contentOffsetFadeRange = newValue }
