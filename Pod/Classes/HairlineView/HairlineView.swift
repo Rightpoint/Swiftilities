@@ -30,13 +30,7 @@ open class HairlineView: UIView {
 
     @IBInspectable open var hairlineColor: UIColor = UIColor.darkGray {
         willSet {
-            var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
-            newValue.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-            if alpha != 1.0 {
-                self.alpha = alpha
-                let solid = newValue.withAlphaComponent(1.0)
-                self.hairlineColor = solid
-            }
+            update(hairlineColor: newValue)
         }
         didSet {
             setNeedsDisplay()
@@ -49,6 +43,7 @@ open class HairlineView: UIView {
         self.thickness = thickness
         self.hairlineColor = hairlineColor
         super.init(frame: .zero)
+        update(hairlineColor: hairlineColor)
 
         setNeedsUpdateConstraints()
     }
@@ -110,6 +105,16 @@ open class HairlineView: UIView {
 
     open override func contentCompressionResistancePriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority {
         return contentHuggingPriority(for: axis)
+    }
+
+    private func update(hairlineColor: UIColor) {
+        var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
+        hairlineColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        if alpha != 1.0 {
+            self.alpha = alpha
+            let solid = hairlineColor.withAlphaComponent(1.0)
+            self.hairlineColor = solid
+        }
     }
 
 }
