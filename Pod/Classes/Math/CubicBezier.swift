@@ -14,10 +14,11 @@
 
 import UIKit
 
+// swiftlint:disable identifier_name
 extension CubicBezier {
 
-    static func value(for t: CGFloat, controlPoint1: CGPoint, controlPoint2: CGPoint) -> CGFloat {
-        return CubicBezier(p1: controlPoint1, p2: controlPoint2).valueForX(x: t)
+    static func value(for input: CGFloat, controlPoint1: CGPoint, controlPoint2: CGPoint) -> CGFloat {
+        return CubicBezier(p1: controlPoint1, p2: controlPoint2).valueForX(x: input)
     }
 
 }
