@@ -13,7 +13,7 @@ public extension FloatingPoint {
     /// - Parameters:
     ///   - source: The range to interpret the number as being a part of.
     ///   - destination: The range to map the number to.
-    ///   - timingTransform: An optional transform mapping input percentage to output percentage. Defaults to `nil`
+    ///   - transform: An optional closure mapping input percentage to output percentage. Defaults to `nil`
     ///   - clamped: Whether the result should be clamped to the `to` range. Defaults to `false`.
     ///   - reversed: whether the output mapping should be revserd, such that
     ///               as the input increases, the output decreases. Defaults to `false`.
