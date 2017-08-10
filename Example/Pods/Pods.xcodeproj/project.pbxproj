@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		008E6B1C1F3CC8930089DB05 /* TimingCurveProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E6B1A1F3CC6E90089DB05 /* TimingCurveProvider.swift */; };
 		0122EDFED9451B208BD43CD7D41F02E6 /* Swiftilities-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 979B241450EA5CCF1764130FB121845E /* Swiftilities-dummy.m */; };
 		0317D612E31939282067852B35A54B52 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42930219899399016FC74883ADF06E48 /* CoreData.framework */; };
 		09B2B73AFAD898C33D5EA4D622722FC2 /* CGSize+DeviceSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E89F58B5F97EB85122BA2D3D9EDB001 /* CGSize+DeviceSize.swift */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		003DB0BE73FB497D6D13EAA0C6405D47 /* FieldValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
+		008E6B1A1F3CC6E90089DB05 /* TimingCurveProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingCurveProvider.swift; sourceTree = "<group>"; };
 		04A97D1645A6C69B5160BDE1CA39CFA6 /* CoreDataStack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		06E0E4493911625F943C4866C6E9134C /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		0A4F02F615C40353C0680E4569CC7854 /* Pods-Swiftilities_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swiftilities_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -95,7 +97,7 @@
 		2374F768632E9D4624D1D1387750F47C /* UIViewController+Lifecycle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Lifecycle.swift"; sourceTree = "<group>"; };
 		24876CA5FDD523DE75FDFBF652ECC947 /* UIStackView+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIStackView+Helpers.swift"; sourceTree = "<group>"; };
 		25A89FF62F09184ECB5170E40BAD3386 /* FormattedTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormattedTextField.swift; sourceTree = "<group>"; };
-		269F29704ED137D6449054AEC30E9386 /* Pods-Swiftilities_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Swiftilities_Example.modulemap"; sourceTree = "<group>"; };
+		269F29704ED137D6449054AEC30E9386 /* Pods-Swiftilities_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Swiftilities_Example.modulemap"; sourceTree = "<group>"; };
 		27328E988CD2B2BC758A0B7A0DE7D52A /* FloatingPoint+Scale.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Scale.swift"; sourceTree = "<group>"; };
 		2AD4A54EBF79CF2541B30FD1DA600E17 /* UIImage+Tinting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Tinting.swift"; sourceTree = "<group>"; };
 		2C85DDFFF6334DF255B73AD3864C2231 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -106,17 +108,17 @@
 		31F1C75908F44C1AD7759FCB4D94EC2C /* Clamping.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Clamping.swift; sourceTree = "<group>"; };
 		321D086829ABC14939D3F33C686903B5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		390C48AFA7742FFE163E8BF7DDFBA368 /* LifecycleBehaviorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LifecycleBehaviorViewController.swift; sourceTree = "<group>"; };
-		3D57E3361448F273295AD3EDD1E6F0C3 /* Swiftilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Swiftilities.modulemap; sourceTree = "<group>"; };
+		3D57E3361448F273295AD3EDD1E6F0C3 /* Swiftilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Swiftilities.modulemap; sourceTree = "<group>"; };
 		40D9966DE6674DA52E55771354B985D5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		40F965F95D1B8F483145B956FF73E22E /* Pods-Swiftilities_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swiftilities_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		42930219899399016FC74883ADF06E48 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
-		44FC8BB50C8D30E9350DE5A45380B209 /* Pods_Swiftilities_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Swiftilities_Tests.framework; path = "Pods-Swiftilities_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44FC8BB50C8D30E9350DE5A45380B209 /* Pods_Swiftilities_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftilities_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4786263FEF9462E2D6D52BCD9C503855 /* Pods-Swiftilities_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swiftilities_Example-resources.sh"; sourceTree = "<group>"; };
 		4FCB38709C0F6C51E0FCA2775D82B4C5 /* Swiftilities-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swiftilities-umbrella.h"; sourceTree = "<group>"; };
 		54C1B204A1C6B99FA98540CC82250612 /* Pods-Swiftilities_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Swiftilities_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		5E0E1A47937211E91F5E10BEB9C9D31A /* Pods-Swiftilities_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swiftilities_Example-frameworks.sh"; sourceTree = "<group>"; };
 		5E90E6822CA11C67DE2C5A6590A4EC35 /* TailoredSwiftTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TailoredSwiftTextView.swift; sourceTree = "<group>"; };
-		60884E507317D6485B563BA36208FBAA /* Pods-Swiftilities_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Swiftilities_Tests.modulemap"; sourceTree = "<group>"; };
+		60884E507317D6485B563BA36208FBAA /* Pods-Swiftilities_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Swiftilities_Tests.modulemap"; sourceTree = "<group>"; };
 		60E75FAE3E33400AC58A70F18620FBAE /* FeedbackPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FeedbackPresenter.swift; sourceTree = "<group>"; };
 		67F6453BADC2CA5A327FFA08A9F93F9F /* Pods-Swiftilities_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Swiftilities_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		68400E577914B0D12DB6516BE181DDE4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
@@ -128,9 +130,9 @@
 		83D0894181A9F709E5138AD71465BAE9 /* NavTitleTransitionBehavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NavTitleTransitionBehavior.swift; sourceTree = "<group>"; };
 		85AAE58704AA587D516214F71ED4A2B2 /* Pods-Swiftilities_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swiftilities_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8769A0D6F810627FAB743954AC2294F9 /* Pods-Swiftilities_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swiftilities_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8BB251CF7D3A4254C0358207BF47DC8A /* Pods_Swiftilities_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Swiftilities_Example.framework; path = "Pods-Swiftilities_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BB251CF7D3A4254C0358207BF47DC8A /* Pods_Swiftilities_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftilities_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AF2C0D8C8765EA7BD4465F0CB3F60E /* CubicBezier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CubicBezier.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9533BBE4A49A7C42829276A334DA1F6A /* AcknowlegementsListViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcknowlegementsListViewModel.swift; sourceTree = "<group>"; };
 		979B241450EA5CCF1764130FB121845E /* Swiftilities-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Swiftilities-dummy.m"; sourceTree = "<group>"; };
 		9E89F58B5F97EB85122BA2D3D9EDB001 /* CGSize+DeviceSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CGSize+DeviceSize.swift"; sourceTree = "<group>"; };
@@ -151,7 +153,7 @@
 		CC54223EC4A4520CAC35E236ED206C16 /* Swiftilities-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swiftilities-prefix.pch"; sourceTree = "<group>"; };
 		CF06845C44D3CEF15E2F6DD0C8FBAEF6 /* Pods-Swiftilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swiftilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DC2CC59ABEDDD7B6530927C22996C6CC /* AcknowledgementViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AcknowledgementViewController.swift; sourceTree = "<group>"; };
-		DCB87E481A625527948A3FE74C38D811 /* Swiftilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Swiftilities.framework; path = Swiftilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCB87E481A625527948A3FE74C38D811 /* Swiftilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0201242420CC35AB09448A84ABFA894 /* Keyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		E50C1B8C01234091A27E99C049F58636 /* AccessibilityHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AccessibilityHelpers.swift; sourceTree = "<group>"; };
 		E601A7D5D3DF3B8145E7929E30E3E270 /* Pods-Swiftilities_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Swiftilities_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -199,7 +201,6 @@
 			children = (
 				D1E6CBA88CA430C667E36A74F9DC3651 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -216,7 +217,6 @@
 			children = (
 				E11F4950C367D482ECC7F34BB1B964F4 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -225,7 +225,6 @@
 			children = (
 				FD902AA52BD5ED0F4C1BDF71A2929001 /* DeviceSize */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -244,7 +243,6 @@
 				B3381FCAFB01D852DA9C531883B44BF3 /* AppInfo.swift */,
 				60E75FAE3E33400AC58A70F18620FBAE /* FeedbackPresenter.swift */,
 			);
-			name = AboutView;
 			path = AboutView;
 			sourceTree = "<group>";
 		};
@@ -253,7 +251,6 @@
 			children = (
 				A4D8D88032D77B36E98ACEE2429FFFB4 /* UIColor+Helpers.swift */,
 			);
-			name = ColorHelpers;
 			path = ColorHelpers;
 			sourceTree = "<group>";
 		};
@@ -262,7 +259,6 @@
 			children = (
 				06E0E4493911625F943C4866C6E9134C /* GradientView.swift */,
 			);
-			name = Gradient;
 			path = Gradient;
 			sourceTree = "<group>";
 		};
@@ -287,7 +283,6 @@
 			children = (
 				25398A1D0B630BF53D55873F4BFAB862 /* RootViewController */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -296,7 +291,6 @@
 			children = (
 				243C0BC7B26D99917013C23A664BCD71 /* FormattedTextField */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -313,7 +307,6 @@
 			children = (
 				C11BB9C5D0F98985592EA48139F35928 /* Acknowledgements */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -338,7 +331,6 @@
 			children = (
 				83D0894181A9F709E5138AD71465BAE9 /* NavTitleTransitionBehavior.swift */,
 			);
-			name = "Nav-Bar-Title-Transition";
 			path = "Nav-Bar-Title-Transition";
 			sourceTree = "<group>";
 		};
@@ -347,7 +339,6 @@
 			children = (
 				7065247AF443C96999FED1691DA0AE4E /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -356,7 +347,6 @@
 			children = (
 				25A89FF62F09184ECB5170E40BAD3386 /* FormattedTextField.swift */,
 			);
-			name = FormattedTextField;
 			path = FormattedTextField;
 			sourceTree = "<group>";
 		};
@@ -365,7 +355,6 @@
 			children = (
 				2169E068374E2DDAB1530AAF9F4DE86E /* UIWindow+RootViewController.swift */,
 			);
-			name = RootViewController;
 			path = RootViewController;
 			sourceTree = "<group>";
 		};
@@ -374,7 +363,6 @@
 			children = (
 				73A221F65D4CD239B39CCD1F46CACEFA /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -386,7 +374,6 @@
 				5E90E6822CA11C67DE2C5A6590A4EC35 /* TailoredSwiftTextView.swift */,
 				B01A9B5EA697C830100BF4A04FBD8A23 /* UITextView+Extensions.swift */,
 			);
-			name = Textview;
 			path = Textview;
 			sourceTree = "<group>";
 		};
@@ -395,7 +382,6 @@
 			children = (
 				7C20E8107412D5451E81E2E2693865DE /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -420,7 +406,6 @@
 			children = (
 				576A3D97C2D68007AC36554F45C2E248 /* HairlineView */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -429,7 +414,6 @@
 			children = (
 				1C70BA29BE80F701F329EFD6064B27EA /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -446,7 +430,6 @@
 			children = (
 				24876CA5FDD523DE75FDFBF652ECC947 /* UIStackView+Helpers.swift */,
 			);
-			name = StackViewHelpers;
 			path = StackViewHelpers;
 			sourceTree = "<group>";
 		};
@@ -464,7 +447,6 @@
 				EF39F672C19087A3079D38C299CBA03B /* Nav-Bar-Hairline-Fade */,
 				1ED3B1318F1407012536F05895709115 /* Nav-Bar-Title-Transition */,
 			);
-			name = Behaviors;
 			path = Behaviors;
 			sourceTree = "<group>";
 		};
@@ -473,7 +455,6 @@
 			children = (
 				B881086FD9EEF7B683048EBA91CBEB65 /* Shapes */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -499,7 +480,6 @@
 			children = (
 				AF044C87A9BD072E4E355FAE9DD21EB8 /* BetterButton.swift */,
 			);
-			name = BetterButton;
 			path = BetterButton;
 			sourceTree = "<group>";
 		};
@@ -508,7 +488,6 @@
 			children = (
 				6DFE061CDC9822E1376C697007EBAB4F /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -517,7 +496,6 @@
 			children = (
 				E50C1B8C01234091A27E99C049F58636 /* AccessibilityHelpers.swift */,
 			);
-			name = AccessibilityHelpers;
 			path = AccessibilityHelpers;
 			sourceTree = "<group>";
 		};
@@ -526,7 +504,6 @@
 			children = (
 				169FFC6AF89BECDDFF51AA85499C7612 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -535,7 +512,6 @@
 			children = (
 				BDC66EE4B4E4B39F1D6DB83C4998A174 /* Log.swift */,
 			);
-			name = Logging;
 			path = Logging;
 			sourceTree = "<group>";
 		};
@@ -544,7 +520,6 @@
 			children = (
 				C6AD38129FECE91C1082919828635749 /* HairlineView.swift */,
 			);
-			name = HairlineView;
 			path = HairlineView;
 			sourceTree = "<group>";
 		};
@@ -554,7 +529,6 @@
 				E0201242420CC35AB09448A84ABFA894 /* Keyboard.swift */,
 				EEACE84486C57E50D03D70C8B9B736D9 /* UIView+KeyboardLayoutGuide.swift */,
 			);
-			name = Keyboard;
 			path = Keyboard;
 			sourceTree = "<group>";
 		};
@@ -563,7 +537,6 @@
 			children = (
 				E6898E5DA6CA1C84AAE615A793C584B5 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -590,7 +563,6 @@
 			children = (
 				3BC80503ACCFED9978A696FDBA7E8FA6 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -618,7 +590,6 @@
 			children = (
 				E407D0745301152A10D9379415770BBC /* Deselection */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -627,7 +598,6 @@
 			children = (
 				59FB784A42BCC93CBB10726D990E099A /* Keyboard */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -662,7 +632,6 @@
 			children = (
 				0D44A515F1DF9726A881D97BB43DE8B4 /* AboutView */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -673,7 +642,6 @@
 				AE21D78CCB95CA97A003D16940A368E7 /* TableSection.swift */,
 				40D9966DE6674DA52E55771354B985D5 /* UITableView+Extensions.swift */,
 			);
-			name = TableViewHelpers;
 			path = TableViewHelpers;
 			sourceTree = "<group>";
 		};
@@ -690,7 +658,6 @@
 			children = (
 				CABFE83ECD69006F4859F178DC1996CD /* TintedButton */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -699,7 +666,6 @@
 			children = (
 				4104C44F3CD9D5F62C827EF4CDC41AA9 /* StackViewHelpers */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -708,7 +674,6 @@
 			children = (
 				C1DAF5E6C8C47480D4DA368F5DCFB2CE /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -728,7 +693,6 @@
 			children = (
 				7645A7E13D6AC86A147E229C21DD5A56 /* TableViewHelpers */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -759,7 +723,6 @@
 			children = (
 				04A97D1645A6C69B5160BDE1CA39CFA6 /* CoreDataStack.swift */,
 			);
-			name = CoreDataStack;
 			path = CoreDataStack;
 			sourceTree = "<group>";
 		};
@@ -768,7 +731,6 @@
 			children = (
 				EC13632616A8C63E7F554DDE6BD1F8AA /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -777,7 +739,6 @@
 			children = (
 				57292DF963F0ED7D73C630FF9DC635EF /* Logging */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -786,7 +747,6 @@
 			children = (
 				A8704A2D1E9D38301DD1FBA22DF83D06 /* Views */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -795,7 +755,6 @@
 			children = (
 				7C6C643746116C06EC8DDF2205EF2DB0 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -804,7 +763,6 @@
 			children = (
 				CE0D21901C1B0CCA4CB92EA1A91EA971 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -813,7 +771,6 @@
 			children = (
 				8B05E363894F41F1E7D1E6AEECDC7487 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -823,7 +780,6 @@
 				441CD34E41319610432F05D1FB2E2EEB /* Behaviors */,
 				B3920B82CE69FE264BA57813373FE5A9 /* Framework */,
 			);
-			name = Lifecycle;
 			path = Lifecycle;
 			sourceTree = "<group>";
 		};
@@ -832,7 +788,6 @@
 			children = (
 				88D76827A34FF976A7A2F2B2C4B7DA73 /* CoreDataStack */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -841,7 +796,6 @@
 			children = (
 				4542C61464C07E3E43300B74986EA44D /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -858,7 +812,6 @@
 			children = (
 				03C0E7DFF60CB4682FCCB364A2E3E14F /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -908,7 +861,6 @@
 				11B24616DE4019552C8817C99CA0487A /* Gradient */,
 				2C0492CADFC4C1182141A3305B5CB81A /* Textview */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -925,7 +877,6 @@
 			children = (
 				8B733782422C87EF6627F1D6F1485990 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -945,7 +896,6 @@
 				2374F768632E9D4624D1D1387750F47C /* UIViewController+Lifecycle.swift */,
 				2CDE0CA7C3C49142B923E0E2C3739263 /* ViewControllerLifecycleBehavior.swift */,
 			);
-			name = Framework;
 			path = Framework;
 			sourceTree = "<group>";
 		};
@@ -954,7 +904,6 @@
 			children = (
 				AF2BE48894B7E599BDD44244FA080420 /* Shapes.swift */,
 			);
-			name = Shapes;
 			path = Shapes;
 			sourceTree = "<group>";
 		};
@@ -963,7 +912,6 @@
 			children = (
 				D410E394D240BB874405BCDCC3461167 /* Math */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -972,7 +920,6 @@
 			children = (
 				E6D6737BE54A41BD1D68BC75820BB0D4 /* Forms */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -981,7 +928,6 @@
 			children = (
 				9E2E3EDB16B1E61494A405DE25BF4F2A /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -992,7 +938,6 @@
 				DC2CC59ABEDDD7B6530927C22996C6CC /* AcknowledgementViewController.swift */,
 				9533BBE4A49A7C42829276A334DA1F6A /* AcknowlegementsListViewModel.swift */,
 			);
-			name = Acknowledgements;
 			path = Acknowledgements;
 			sourceTree = "<group>";
 		};
@@ -1001,7 +946,6 @@
 			children = (
 				4DCA6F3D14FADB6D442C2283C8BB1351 /* BetterButton */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -1010,7 +954,6 @@
 			children = (
 				0BD6816DE3710C468BE01FA18768BE63 /* TintedButton.swift */,
 			);
-			name = TintedButton;
 			path = TintedButton;
 			sourceTree = "<group>";
 		};
@@ -1019,7 +962,6 @@
 			children = (
 				5455777E63488F3DEF9D8BE2ECD6967D /* AccessibilityHelpers */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -1028,7 +970,6 @@
 			children = (
 				818D00556BC9622B7CB4284148DD2B0D /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -1037,7 +978,6 @@
 			children = (
 				BB1168FE43F7D490641E0498F802E9D3 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -1054,7 +994,6 @@
 			children = (
 				E70B50481874599699426AC33DD833D9 /* LicenseFormatter */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -1064,8 +1003,8 @@
 				31F1C75908F44C1AD7759FCB4D94EC2C /* Clamping.swift */,
 				91AF2C0D8C8765EA7BD4465F0CB3F60E /* CubicBezier.swift */,
 				27328E988CD2B2BC758A0B7A0DE7D52A /* FloatingPoint+Scale.swift */,
+				008E6B1A1F3CC6E90089DB05 /* TimingCurveProvider.swift */,
 			);
-			name = Math;
 			path = Math;
 			sourceTree = "<group>";
 		};
@@ -1082,7 +1021,6 @@
 			children = (
 				BE105183E0F8CE4413019581B15F4341 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -1091,7 +1029,6 @@
 			children = (
 				100DCD371D6D71E75608F4F4911CAAEC /* ColorHelpers */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -1100,7 +1037,6 @@
 			children = (
 				9FF36082DE02563D26E8ECAEC5B6F34E /* UIViewController+Deselection.swift */,
 			);
-			name = Deselection;
 			path = Deselection;
 			sourceTree = "<group>";
 		};
@@ -1109,7 +1045,6 @@
 			children = (
 				EA85019A081011CF86CD03FE2B763359 /* ImageHelpers */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -1119,7 +1054,6 @@
 				003DB0BE73FB497D6D13EAA0C6405D47 /* FieldValidator.swift */,
 				F2407BA2F4021D1F59ED486B25BB74D9 /* UIView+Lookup.swift */,
 			);
-			name = Forms;
 			path = Forms;
 			sourceTree = "<group>";
 		};
@@ -1128,7 +1062,6 @@
 			children = (
 				EA1DE1A0F43C6C3EAA805AE9F7D95EE0 /* LicenseFormatter.swift */,
 			);
-			name = LicenseFormatter;
 			path = LicenseFormatter;
 			sourceTree = "<group>";
 		};
@@ -1137,7 +1070,6 @@
 			children = (
 				2AD4A54EBF79CF2541B30FD1DA600E17 /* UIImage+Tinting.swift */,
 			);
-			name = ImageHelpers;
 			path = ImageHelpers;
 			sourceTree = "<group>";
 		};
@@ -1154,7 +1086,6 @@
 			children = (
 				9C28B2EF7968F3505615158762F0D989 /* Lifecycle */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -1173,7 +1104,6 @@
 			children = (
 				AAB03BFE8E9B3F13BFDE13A9805CEC48 /* NavBarHairlineFadeBehavior.swift */,
 			);
-			name = "Nav-Bar-Hairline-Fade";
 			path = "Nav-Bar-Hairline-Fade";
 			sourceTree = "<group>";
 		};
@@ -1190,7 +1120,6 @@
 			children = (
 				1B7221CAA86563300560616E8C4142D8 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -1209,7 +1138,6 @@
 				9E89F58B5F97EB85122BA2D3D9EDB001 /* CGSize+DeviceSize.swift */,
 				7B128ACF1810ED6724923A89BE31C5E1 /* DeviceSize.swift */,
 			);
-			name = DeviceSize;
 			path = DeviceSize;
 			sourceTree = "<group>";
 		};
@@ -1304,6 +1232,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					A53BAFFFA81D10CED07C72574D1B8CEF = {
+						LastSwiftMigration = 0830;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1375,6 +1308,7 @@
 				B10BE2DB9EFF208DBB9F3DC11EFC9506 /* PlaceholderTextView.swift in Sources */,
 				448AA570D552C128AFAF496814CE646A /* Protocols.swift in Sources */,
 				C55A1CA2215EDF8796E4D586ED6CC17A /* Shapes.swift in Sources */,
+				008E6B1C1F3CC8930089DB05 /* TimingCurveProvider.swift in Sources */,
 				0122EDFED9451B208BD43CD7D41F02E6 /* Swiftilities-dummy.m in Sources */,
 				38B06A32847C8A434BE9911DBA591AB0 /* TableSection.swift in Sources */,
 				9F0E2465032611B4A6C747B5B58E24C8 /* TailoredSwiftTextView.swift in Sources */,
@@ -1487,6 +1421,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8769A0D6F810627FAB743954AC2294F9 /* Pods-Swiftilities_Example.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1526,6 +1461,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8358FCF4638B3696C11B933AD523C28F /* Pods-Swiftilities_Example.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
