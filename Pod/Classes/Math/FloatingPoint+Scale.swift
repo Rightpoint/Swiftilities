@@ -24,22 +24,16 @@ public extension BinaryFloatingPoint {
         let destinationEnd = reversed ? destination.lowerBound : destination.upperBound
 
         // these are broken up to speed up compile time
-        let selfMinusLower = self - source.lowerBound
+        let value = clamped ? self.clamped(to: source) : self
+        let selfMinusLower = value - source.lowerBound
         let sourceUpperMinusLower = source.upperBound - source.lowerBound
         let destinationUpperMinusLower = destinationEnd - destinationStart
 
-        var percentThroughSource = (selfMinusLower / sourceUpperMinusLower)
-        if clamped {
-            percentThroughSource = percentThroughSource.clamped(to: source)
-        }
-
+        let percentThroughSource = (selfMinusLower / sourceUpperMinusLower)
         let curvedPercent = curve?.map(percentThroughSource) ?? percentThroughSource
         var result = curvedPercent * destinationUpperMinusLower + destinationStart
+        result = clamped ? result.clamped(to: destination) : result
 
-        if clamped {
-            result = result.clamped(to: destination)
-        }
-        
         return result
     }
 
