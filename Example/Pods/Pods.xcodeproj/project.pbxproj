@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		008E6B1C1F3CC8930089DB05 /* TimingCurveProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E6B1A1F3CC6E90089DB05 /* TimingCurveProvider.swift */; };
+		008E6B1C1F3CC8930089DB05 /* CurveProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E6B1A1F3CC6E90089DB05 /* CurveProvider.swift */; };
 		0122EDFED9451B208BD43CD7D41F02E6 /* Swiftilities-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 979B241450EA5CCF1764130FB121845E /* Swiftilities-dummy.m */; };
 		0317D612E31939282067852B35A54B52 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42930219899399016FC74883ADF06E48 /* CoreData.framework */; };
 		09B2B73AFAD898C33D5EA4D622722FC2 /* CGSize+DeviceSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E89F58B5F97EB85122BA2D3D9EDB001 /* CGSize+DeviceSize.swift */; };
@@ -85,7 +85,7 @@
 
 /* Begin PBXFileReference section */
 		003DB0BE73FB497D6D13EAA0C6405D47 /* FieldValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
-		008E6B1A1F3CC6E90089DB05 /* TimingCurveProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingCurveProvider.swift; sourceTree = "<group>"; };
+		008E6B1A1F3CC6E90089DB05 /* CurveProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveProvider.swift; sourceTree = "<group>"; };
 		04A97D1645A6C69B5160BDE1CA39CFA6 /* CoreDataStack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		06E0E4493911625F943C4866C6E9134C /* GradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		0A4F02F615C40353C0680E4569CC7854 /* Pods-Swiftilities_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swiftilities_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -1003,7 +1003,7 @@
 				31F1C75908F44C1AD7759FCB4D94EC2C /* Clamping.swift */,
 				91AF2C0D8C8765EA7BD4465F0CB3F60E /* CubicBezier.swift */,
 				27328E988CD2B2BC758A0B7A0DE7D52A /* FloatingPoint+Scale.swift */,
-				008E6B1A1F3CC6E90089DB05 /* TimingCurveProvider.swift */,
+				008E6B1A1F3CC6E90089DB05 /* CurveProvider.swift */,
 			);
 			path = Math;
 			sourceTree = "<group>";
@@ -1308,7 +1308,7 @@
 				B10BE2DB9EFF208DBB9F3DC11EFC9506 /* PlaceholderTextView.swift in Sources */,
 				448AA570D552C128AFAF496814CE646A /* Protocols.swift in Sources */,
 				C55A1CA2215EDF8796E4D586ED6CC17A /* Shapes.swift in Sources */,
-				008E6B1C1F3CC8930089DB05 /* TimingCurveProvider.swift in Sources */,
+				008E6B1C1F3CC8930089DB05 /* CurveProvider.swift in Sources */,
 				0122EDFED9451B208BD43CD7D41F02E6 /* Swiftilities-dummy.m in Sources */,
 				38B06A32847C8A434BE9911DBA591AB0 /* TableSection.swift in Sources */,
 				9F0E2465032611B4A6C747B5B58E24C8 /* TailoredSwiftTextView.swift in Sources */,

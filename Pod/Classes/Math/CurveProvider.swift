@@ -1,5 +1,5 @@
 //
-//  TimingCurveProvider.swift
+//  CurveProvider.swift
 //  Pods
 //
 //  Created by Jason Clark on 8/10/17.
@@ -34,8 +34,25 @@ extension UIViewAnimationCurve: CurveProvider {
             return UICubicTimingParameters(animationCurve: self).map(inputPercent)
         }
         else {
-            //TODO: fallback implmentation?
-            return inputPercent
+            let controlPoint1, controlPoint2: CGPoint
+            switch self {
+            case .linear:
+                controlPoint1 = CGPoint(x: 0, y: 0)
+                controlPoint2 = CGPoint(x: 1, y: 1)
+            case .easeIn:
+                controlPoint1 = CGPoint(x: 0.42, y: 0)
+                controlPoint2 = CGPoint(x: 1, y: 1)
+            case .easeOut:
+                controlPoint1 = CGPoint(x: 0, y: 0)
+                controlPoint2 = CGPoint(x: 0.58, y: 1)
+            case .easeInOut:
+                controlPoint1 = CGPoint(x: 0.42, y: 0)
+                controlPoint2 = CGPoint(x: 0.58, y: 1)
+            }
+            return T(CubicBezier.value(for: CGFloat(inputPercent.doubleValue),
+                                       controlPoint1: controlPoint1,
+                                       controlPoint2: controlPoint2).doubleValue)
+
         }
     }
 
