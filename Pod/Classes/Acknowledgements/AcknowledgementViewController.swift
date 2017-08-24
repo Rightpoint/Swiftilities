@@ -15,9 +15,9 @@ open class AcknowledgementViewController: UIViewController {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.hyphenationFactor = 1
         paragraphStyle.paragraphSpacing = font.pointSize / 2
-        let attributes: [String: Any] = [
-            NSFontAttributeName: font,
-            NSParagraphStyleAttributeName: paragraphStyle,
+        let attributes: [NSAttributedStringKey: Any] = [
+            NSAttributedStringKey.font: font,
+            NSAttributedStringKey.paragraphStyle: paragraphStyle,
             ]
         return NSAttributedString(string: string, attributes: attributes)
     }
@@ -112,7 +112,7 @@ private class VerticalScrollView: UIScrollView {
         let newConstraints: [NSLayoutConstraint] = subviews.map { subView in
             let constriant = subView.widthAnchor.constraint(equalTo: widthAnchor,
                                                             constant: -(contentInset.left + contentInset.right))
-            constriant.priority = UILayoutPriorityDefaultHigh
+            constriant.priority = UILayoutPriority.defaultHigh
             return constriant
         }
         subviewWidthConstraints = newConstraints

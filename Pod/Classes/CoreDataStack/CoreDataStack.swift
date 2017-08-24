@@ -62,11 +62,10 @@ public class CoreDataStack {
         let urlCandidate = bundle.url(forResource: name, withExtension: "momd") ??
             bundle.url(forResource: name, withExtension: "mom")
 
-        guard let modelURL = urlCandidate,
-            let model = NSManagedObjectModel(contentsOf: modelURL) else {
+        guard let modelURL = urlCandidate else {
             fatalError("invalid model name provided: \(name)")
         }
-
+        let model = NSManagedObjectModel(contentsOf: modelURL)
         let url = CoreDataStack.url(forModelNamed: name, storeType: type)
 
         let description: PersistentStoreDescription

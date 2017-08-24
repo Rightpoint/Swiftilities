@@ -52,7 +52,6 @@ public struct FieldValidator {
 public protocol FieldValidationRule {
 
     func validate(_ value: String) throws
-    init()
 
 }
 

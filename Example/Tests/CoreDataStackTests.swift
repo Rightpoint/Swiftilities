@@ -10,7 +10,7 @@ import CoreData
 import Swiftilities
 import XCTest
 
-fileprivate let modelName: String = "TestModel"
+private let modelName: String = "TestModel"
 
 class CoreDataTestCase: XCTestCase {
 
@@ -20,7 +20,7 @@ class CoreDataTestCase: XCTestCase {
     lazy var stack: CoreDataStack = { [unowned self] in
         let bundle = Bundle(for: CoreDataTestCase.self)
         let url = bundle.url(forResource: modelName, withExtension: "momd")!
-        let model = NSManagedObjectModel(contentsOf: url)!
+        let model = NSManagedObjectModel(contentsOf: url)
         let stack = CoreDataStack(name: modelName, managedObjectModel: model)
         return stack
     }()
@@ -28,7 +28,7 @@ class CoreDataTestCase: XCTestCase {
     override func setUp() {
         if !isLoaded {
             let expectLoading = expectation(description: "load persistent stores")
-            stack.loadPersistentStores(completionHandler: { _ in
+            stack.loadPersistentStores(completionHandler: { _, _  in
                 self.isLoaded = true
                 expectLoading.fulfill()
             })
