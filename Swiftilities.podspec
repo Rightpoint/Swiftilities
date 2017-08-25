@@ -177,6 +177,13 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # UIControlBlocks
+
+  s.subspec "UIControlBlocks" do |ss|
+    ss.source_files = "Pod/Classes/UIControlBlocks/*.swift"
+    ss.frameworks   = ["UIKit"]
+  end
+
   # Views
 
   s.subspec "Views" do |ss|
@@ -198,7 +205,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/FormattedTextField'
     ss.dependency 'Swiftilities/Forms'
     ss.dependency 'Swiftilities/HairlineView'
-	ss.dependency 'Swiftilities/ImageHelpers'
+    ss.dependency 'Swiftilities/ImageHelpers'
     ss.dependency 'Swiftilities/Keyboard'
     ss.dependency 'Swiftilities/LicenseFormatter'
     ss.dependency 'Swiftilities/Lifecycle'
@@ -209,6 +216,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/StackViewHelpers'
     ss.dependency 'Swiftilities/TableViewHelpers'
     ss.dependency 'Swiftilities/TintedButton'
+    ss.dependency 'Swiftilities/UIControlBlocks'
     ss.dependency 'Swiftilities/Views'
   end
 

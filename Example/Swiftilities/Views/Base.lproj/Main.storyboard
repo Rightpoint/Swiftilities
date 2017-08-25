@@ -143,7 +143,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TGz-NW-V1v">
-                                <rect key="frame" x="16" y="74" width="343" height="463"/>
+                                <rect key="frame" x="16" y="74" width="343" height="503"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xta-GV-UYS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
@@ -231,6 +231,13 @@
                                         <state key="normal" title="Buttons"/>
                                         <connections>
                                             <segue destination="ahM-bp-QPf" kind="show" id="3d6-zi-Lw0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRF-0f-zlF">
+                                        <rect key="frame" x="0.0" y="473" width="343" height="30"/>
+                                        <state key="normal" title="UIControl+Blocks"/>
+                                        <connections>
+                                            <segue destination="OsK-Wn-zSm" kind="show" id="dO3-DI-7aT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -554,6 +561,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cy7-bA-B8w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-258.39999999999998" y="-1236.4317841079462"/>
+        </scene>
+        <!--Control Blocks View Controller-->
+        <scene sceneID="6Tu-xl-3Am">
+            <objects>
+                <viewController id="OsK-Wn-zSm" customClass="UIControlBlocksViewController" customModule="Swiftilities_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k6G-4R-UuM"/>
+                        <viewControllerLayoutGuide type="bottom" id="T2O-UH-jC5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jq2-PD-K1Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cJP-4C-hRK">
+                                <rect key="frame" x="37.5" y="199.5" width="300" height="267.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbk-JI-2dM">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54C-tm-CdR">
+                                        <rect key="frame" x="0.0" y="40.5" width="300" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q0E-kH-aqH">
+                                        <rect key="frame" x="0.0" y="90.5" width="300" height="29"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VjR-Ef-anb">
+                                        <rect key="frame" x="0.0" y="138.5" width="300" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LaH-Dy-YAn">
+                                        <rect key="frame" x="-2" y="188.5" width="304" height="31"/>
+                                    </slider>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Eip-p2-dMy">
+                                        <rect key="frame" x="0.0" y="238.5" width="94" height="29"/>
+                                    </stepper>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="6gh-kc-iwy"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cJP-4C-hRK" firstAttribute="centerY" secondItem="Jq2-PD-K1Z" secondAttribute="centerY" id="fc5-3a-hba"/>
+                            <constraint firstItem="cJP-4C-hRK" firstAttribute="centerX" secondItem="Jq2-PD-K1Z" secondAttribute="centerX" id="gKk-qh-VJb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="54C-tm-CdR" id="sdM-xc-GIa"/>
+                        <outlet property="segmentedControl" destination="Q0E-kH-aqH" id="IdD-YV-5NV"/>
+                        <outlet property="slider" destination="LaH-Dy-YAn" id="tFx-Xy-IHL"/>
+                        <outlet property="statusLabel" destination="bbk-JI-2dM" id="HFC-sa-oiz"/>
+                        <outlet property="stepper" destination="Eip-p2-dMy" id="dte-rL-9b8"/>
+                        <outlet property="textField" destination="VjR-Ef-anb" id="xoo-gt-aAG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KIl-vk-Erm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448.80000000000001" y="-1218.440779610195"/>
         </scene>
         <!--Shapes View-->
         <scene sceneID="Xcg-WS-bAx">

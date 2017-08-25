@@ -28,6 +28,7 @@
 		72D32B801DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D32B7F1DE3750D00D43933 /* Pods-Swiftilities_Example-acknowledgements.plist */; };
 		72E281A71E5DDE59000D0C9D /* RootViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */; };
 		72F94C761E65F67200C6DC13 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F94C751E65F67200C6DC13 /* AboutViewController.swift */; };
+		86E596401F50587800AE8BD8 /* UIControlBlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E5963F1F50587800AE8BD8 /* UIControlBlocksViewController.swift */; };
 		CD32DE751CEA1ECA00FC0C7E /* MathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD32DE731CEA1EC600FC0C7E /* MathTests.swift */; };
 		CD74F57E1E2FC4D3005E59FF /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD74F57D1E2FC4D3005E59FF /* ValidatorTests.swift */; };
 		CDCBBA9D1EA7D95D00610F47 /* TableViewHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCBBA9C1EA7D95D00610F47 /* TableViewHelperTests.swift */; };
@@ -77,6 +78,7 @@
 		7396494F9BA8221A6823B9D4 /* Pods-Swiftilities_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		849AC9425E95C2FF6F694A7F /* Pods_Swiftilities_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftilities_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8627BD5B9862F25C77AEF3CC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		86E5963F1F50587800AE8BD8 /* UIControlBlocksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlBlocksViewController.swift; sourceTree = "<group>"; };
 		924C5184A5C0F6DB0F5D4FBA /* Pods-Swiftilities_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		976D290FB4A827B6C10F7501 /* Pods-Swiftilities_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CD32DE731CEA1EC600FC0C7E /* MathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathTests.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		722098FE1E5F46EE0098229D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				86E5963E1F50586C00AE8BD8 /* UIControlBlocks */,
 				726E5EFF1EDF5D2F00000DEE /* Shapes */,
 				726E5EFE1EDF5D2300000DEE /* Buttons */,
 				726F86F11EB7CA930075A1F3 /* Graidient View */,
@@ -311,6 +314,14 @@
 				72F94C751E65F67200C6DC13 /* AboutViewController.swift */,
 			);
 			path = "About View";
+			sourceTree = "<group>";
+		};
+		86E5963E1F50586C00AE8BD8 /* UIControlBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				86E5963F1F50587800AE8BD8 /* UIControlBlocksViewController.swift */,
+			);
+			path = UIControlBlocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,6 +545,7 @@
 				726E5EFD1EDF5D1E00000DEE /* ShapesViewController.swift in Sources */,
 				722099151E5F47690098229D /* TextFormattingViewController.swift in Sources */,
 				72F94C761E65F67200C6DC13 /* AboutViewController.swift in Sources */,
+				86E596401F50587800AE8BD8 /* UIControlBlocksViewController.swift in Sources */,
 				722099131E5F47690098229D /* KeyboardAvoidanceViewController.swift in Sources */,
 				726E5EFC1EDF5D1E00000DEE /* ButtonsViewController.swift in Sources */,
 				722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */,
