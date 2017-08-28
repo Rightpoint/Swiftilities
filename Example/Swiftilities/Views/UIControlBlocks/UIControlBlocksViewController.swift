@@ -24,19 +24,19 @@ class UIControlBlocksViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.setBlockTarget(for: .touchUpInside) { [weak self] _ in
+        button.setCallback(for: .touchUpInside) { [weak self] _ in
             self?.report(status: "Button Tapped")
         }
-        slider.setBlockTarget(for: .valueChanged) { [weak self] (slider) in
+        slider.setCallback(for: .valueChanged) { [weak self] (slider) in
             self?.report(status: "Slider: \(slider.value)")
         }
-        stepper.setBlockTarget(for: .valueChanged) { [weak self] (stepper) in
+        stepper.setCallback(for: .valueChanged) { [weak self] (stepper) in
             self?.report(status: "Stepper: \(stepper.value)")
         }
-        segmentedControl.setBlockTarget(for: .valueChanged) { [weak self] (segmentedControl) in
+        segmentedControl.setCallback(for: .valueChanged) { [weak self] (segmentedControl) in
             self?.report(status: "Segment: \(segmentedControl.selectedSegmentIndex)")
         }
-        textField.setBlockTarget(for: .editingChanged) { [weak self] (textField) in
+        textField.setCallback(for: .editingChanged) { [weak self] (textField) in
             self?.report(status: "TextField: \(textField.text ?? "")")
         }
     }

@@ -14,43 +14,30 @@ extension UIControl: BlockControl {}
 
 public extension BlockControl where Self: UIControl {
     /**
-     Set a block handler for an event.
+     Set a callback to use for an event. Only one callback can be set per event, and multiple
+     invocations will remove the previously set callback.
 
-     - parameter event: A UIControlEvents event
-     - parameter callback: The event handler function
+     - parameter event: A UIControlEvents value
+     - parameter callback: The event handler callback
      */
-    func setBlockTarget(for event: UIControlEvents, callback: @escaping (Self) -> Void) {
-        let target = BlockTarget() { (control) in
+    func setCallback(for events: UIControlEvents, _ callback: @escaping (Self) -> Void) {
+        let target = BlockControlTarget { (control) in
             guard let control = control as? Self else { fatalError("") }
             callback(control)
         }
-        blockTargets[event.rawValue] = target
-        addTarget(target, action: #selector(BlockTarget.recognized(_:)), for: event)
+        blockTargets[events.rawValue] = target
+        addTarget(target, action: #selector(BlockControlTarget.recognized(_:)), for: events)
     }
 
     /**
-     Set a block handler for multiple events.
+     Removes the callback registered for the specified events.
 
-     - parameter event: A UIControlEvents event
+     - parameter events: The specific event to clear. If not specified, all registered events are removed.
      - parameter callback: The event handler function
      */
-    func setBlockTarget(for events: [UIControlEvents], callback: @escaping (Self) -> Void) {
-        for event in events {
-            setBlockTarget(for: event, callback: callback)
-        }
-    }
-
-    /**
-     Removes the block handlers for the specified events.
-
-     - parameter events: The specific events to clear. If not specified, all registered events are removed.
-     - parameter callback: The event handler function
-     */
-    func clearBlockTargets(for events: [UIControlEvents]? = nil) {
+    func clearCallbacks(for events: UIControlEvents? = nil) {
         if let events = events {
-            for event in events {
-                blockTargets.removeValue(forKey: event.rawValue)
-            }
+            blockTargets.removeValue(forKey: events.rawValue)
         }
         else {
             blockTargets.removeAll()
@@ -59,7 +46,7 @@ public extension BlockControl where Self: UIControl {
 
 }
 
-private class BlockTarget {
+private class BlockControlTarget {
     let callback: (UIControl) -> Void
 
     init(callback: @escaping (UIControl) -> Void) {
@@ -75,9 +62,9 @@ private class BlockTarget {
 private var key = "com.raizlabs.blocktarget"
 
 private extension UIControl {
-    final var blockTargets: [UInt: BlockTarget] {
+    final var blockTargets: [UInt: BlockControlTarget] {
         get {
-            return objc_getAssociatedObject(self, &key) as? [UInt: BlockTarget] ?? [:]
+            return objc_getAssociatedObject(self, &key) as? [UInt: BlockControlTarget] ?? [:]
         }
 
         set {
