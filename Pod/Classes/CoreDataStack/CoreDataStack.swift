@@ -65,7 +65,11 @@ public class CoreDataStack {
         guard let modelURL = urlCandidate else {
             fatalError("invalid model name provided: \(name)")
         }
-        let model = NSManagedObjectModel(contentsOf: modelURL)
+
+        guard let model = NSManagedObjectModel(contentsOf: modelURL) else {
+            fatalError("Model could not be loaded")
+        }
+
         let url = CoreDataStack.url(forModelNamed: name, storeType: type)
 
         let description: PersistentStoreDescription

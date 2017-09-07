@@ -21,7 +21,7 @@ class CoreDataTestCase: XCTestCase {
         let bundle = Bundle(for: CoreDataTestCase.self)
         let url = bundle.url(forResource: modelName, withExtension: "momd")!
         let model = NSManagedObjectModel(contentsOf: url)
-        let stack = CoreDataStack(name: modelName, managedObjectModel: model)
+        let stack = CoreDataStack(name: modelName, managedObjectModel: model!)
         return stack
     }()
 
