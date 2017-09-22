@@ -12,8 +12,9 @@ private struct StyleConstants {
 
     /// The threshold used to decide if highlight state should darken or lighten.
     static let highlightLightenDarkenThreshold: CGFloat = 0.10
-    /// The darken highlight percentage.
-    static let defaultHighlightDarkenAdjust: CGFloat = 0.10
+    /// The darken highlight percentage. ranges
+    static let defaultHighlightDarkenAdjustStart: CGFloat = 0.10
+    static let defaultHighlightDarkenAdjustEnd: CGFloat = 0.40
     /// The lighten highlight percentage.
     static let defaultHighlightLightenAdjust: CGFloat = 0.25
 
@@ -64,13 +65,25 @@ public class BetterButton: UIButton {
             func adjustedColor(from color: UIColor) -> UIColor {
                 switch self {
                 case .darken(let adjustmentOverride):
-                    let adjustment = adjustmentOverride ?? StyleConstants.defaultHighlightDarkenAdjust
+                    let adjustment = adjustmentOverride ?? StyleConstants.defaultHighlightDarkenAdjustStart
                     return color.darkened(by: adjustment)
                 case .lighten(let adjustmentOverride):
                     let adjustment = adjustmentOverride ?? StyleConstants.defaultHighlightLightenAdjust
                     return color.lightened(by: adjustment)
                 }
             }
+
+            /// Produces a darken enum value based on the provided brightness. The lighter the color, the darker the adjustment.
+            ///
+            /// - Parameter brightness: The brightness value
+            /// - Returns: A draken adjust mode enum value
+            static func darkenAdjust(forBrightness brightness: CGFloat) -> HighlightAdjustMode {
+                let adjust = brightness.scaled(
+                    from: StyleConstants.highlightLightenDarkenThreshold...1.0,
+                    to: StyleConstants.defaultHighlightDarkenAdjustStart...StyleConstants.defaultHighlightDarkenAdjustEnd)
+                return .darken(by: adjust)
+            }
+
         }
 
         var backgroundColor: UIColor
@@ -82,15 +95,16 @@ public class BetterButton: UIButton {
         var borderWidth: CGFloat?
         var adjustMode: HighlightAdjustMode
 
-        public init(backgroundColor: UIColor,
-             highlightedBackgroundColor: UIColor?,
-             foregroundColor: UIColor,
-             highlightedForegroundColor: UIColor?,
-             borderColor: UIColor?,
-             highlightedBorderColor: UIColor?,
-             borderWidth: CGFloat?,
-             adjustMode: HighlightAdjustMode = .darken(by: nil)) {
-
+        public init(
+            backgroundColor: UIColor,
+            highlightedBackgroundColor: UIColor?,
+            foregroundColor: UIColor,
+            highlightedForegroundColor: UIColor?,
+            borderColor: UIColor?,
+            highlightedBorderColor: UIColor?,
+            borderWidth: CGFloat?,
+            adjustMode: HighlightAdjustMode = .darken(by: nil)
+            ) {
             self.backgroundColor = backgroundColor
             self.foregroundColor = foregroundColor
             self.adjustMode = adjustMode
@@ -259,8 +273,7 @@ private extension BetterButton.Style {
     var attributes: BetterButton.StyleAttributes {
         switch self {
         case .solid(let backgroundColor, let foregroundColor):
-            let adjustMode: BetterButton.StyleAttributes.HighlightAdjustMode =
-                backgroundColor.averageBrightness > StyleConstants.highlightLightenDarkenThreshold ? .darken(by: nil) : .lighten(by: nil)
+            let adjustMode = highlightAdjustMode(forBrightness: backgroundColor.averageBrightness)
             return BetterButton.StyleAttributes(
                 backgroundColor: backgroundColor,
                 highlightedBackgroundColor: nil,
@@ -271,8 +284,7 @@ private extension BetterButton.Style {
                 borderWidth: nil,
                 adjustMode: adjustMode)
         case .outlineOnly(let backgroundColor, let foregroundColor):
-            let adjustMode: BetterButton.StyleAttributes.HighlightAdjustMode =
-                foregroundColor.averageBrightness > StyleConstants.highlightLightenDarkenThreshold ? .darken(by: nil) : .lighten(by: nil)
+            let adjustMode = highlightAdjustMode(forBrightness: foregroundColor.averageBrightness)
             return BetterButton.StyleAttributes(
                 backgroundColor: backgroundColor,
                 highlightedBackgroundColor: backgroundColor,
@@ -293,6 +305,15 @@ private extension BetterButton.Style {
                 borderWidth: 1.0)
         case .custom(let attributes):
             return attributes
+        }
+    }
+
+    func highlightAdjustMode(forBrightness brightness: CGFloat) -> BetterButton.StyleAttributes.HighlightAdjustMode {
+        if brightness > StyleConstants.highlightLightenDarkenThreshold {
+            return BetterButton.StyleAttributes.HighlightAdjustMode.darkenAdjust(forBrightness: brightness)
+        }
+        else {
+            return .lighten(by: nil)
         }
     }
 
