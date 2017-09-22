@@ -49,6 +49,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Shapes'
 	ss.dependency 'Swiftilities/ImageHelpers'
 	ss.dependency 'Swiftilities/ColorHelpers'
+	ss.dependency 'Swiftilities/Math'
 	ss.frameworks   = ["UIKit"]
   end
 

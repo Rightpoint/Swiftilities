@@ -28,7 +28,6 @@ public class Shapes {
 
     fileprivate static let shared = Shapes()
 
-
     fileprivate let imageCache: NSCache<AnyObject, UIImage> = {
         let cache = NSCache<AnyObject, UIImage>()
         cache.name = "com.raizlabs.Swiftilities.Shapes.ImageCache"
@@ -86,7 +85,6 @@ private extension Shapes {
     func layer(for shape: Shape, size: CGSize, attributes: [Attribute]) -> CAShapeLayer {
         return shape.shapeLayer(for: size, attributes: attributes)
     }
-
 
     static func draw(_ shape: Shape, size: CGSize, attributes: [Attribute], context: CGContext) {
         let path = shape.path(for: size)
