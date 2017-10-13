@@ -21,7 +21,7 @@ private struct StyleConstants {
 }
 
 /// A "better" version of `UIButton` that supports various button styles and shapes.
-public open class BetterButton: UIButton {
+open class BetterButton: UIButton {
 
     /// The shape of the button.
     ///
