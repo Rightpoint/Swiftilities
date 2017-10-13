@@ -209,7 +209,7 @@ open class BetterButton: UIButton {
         fatalError("BetterButton does not yet support the use of Interface Builder.")
     }
 
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
         self.bringSubview(toFront: activityIndicator)
@@ -217,7 +217,7 @@ open class BetterButton: UIButton {
         self.titleLabel?.isHidden = isLoading
     }
 
-    override public var frame: CGRect {
+    override open var frame: CGRect {
         get {
             return super.frame
         }
@@ -227,7 +227,7 @@ open class BetterButton: UIButton {
         }
     }
 
-    override public var bounds: CGRect {
+    override open var bounds: CGRect {
         get {
             return super.bounds
         }
