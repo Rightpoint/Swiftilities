@@ -58,13 +58,13 @@ private extension FormattedTextField {
     typealias TextFieldState = (length: Int, selectedRange: UITextRange?)
 
     func saveTextFieldState() -> TextFieldState {
-        let savedLength = text?.characters.count ?? 0
+        let savedLength = text?.count ?? 0
         return (length: savedLength, selectedRange: selectedTextRange)
     }
 
     func restoreTextField(to state: TextFieldState) {
         if let savedRange = state.selectedRange, let text = text {
-            let newLen = text.characters.count
+            let newLen = text.count
             let diff = max(0, newLen - state.length)
 
             if let start = position(from: savedRange.start, offset: diff),

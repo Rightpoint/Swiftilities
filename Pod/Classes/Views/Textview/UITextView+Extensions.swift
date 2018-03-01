@@ -44,7 +44,7 @@ extension PlaceholderConfigurable where Self: UITextView {
     }
 
     func adjustPlaceholder() {
-        placeholderLabel.isHidden = text.characters.count > 0
+        placeholderLabel.isHidden = text.count > 0
 
         let position = placeholderPosition
         placeholderConstraints.x?.constant = position.x
