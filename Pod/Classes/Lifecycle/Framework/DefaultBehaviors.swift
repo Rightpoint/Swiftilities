@@ -48,7 +48,7 @@ public struct DefaultBehaviors {
         }
 
         let swizzledIMP = imp_implementationWithBlock(unsafeBitCast(swizzledIMPBlock, to: AnyObject.self))
-        originalIMP = method_setImplementation(instanceViewDidLoad, swizzledIMP)
+        originalIMP = method_setImplementation(instanceViewDidLoad!, swizzledIMP)
 
     }
 

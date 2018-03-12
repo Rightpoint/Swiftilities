@@ -1,7 +1,8 @@
 {
   "name": "Swiftilities",
-  "version": "0.13.0",
+  "version": "0.16.0",
   "summary": "A collection of useful Swift utilities.",
+  "swift_version": "4.0",
   "description": "A collection of useful Swift utilities. All components and\nextensions found in this library are consise enough on their own\nso as to not warrant their own project.",
   "homepage": "https://github.com/raizlabs/Swiftilities",
   "license": "MIT",
@@ -10,7 +11,7 @@
   },
   "source": {
     "git": "https://github.com/raizlabs/Swiftilities.git",
-    "tag": "0.13.0"
+    "tag": "0.16.0"
   },
   "platforms": {
     "ios": "9.0"
@@ -58,6 +59,9 @@
 
         ],
         "Swiftilities/ColorHelpers": [
+
+        ],
+        "Swiftilities/Math": [
 
         ]
       },

@@ -13,7 +13,7 @@ open class HairlineView: UIView {
     #if TARGET_INTERFACE_BUILDER
     @IBInspectable open var axis: Int = 0
     #else
-    open var axis: UILayoutConstraintAxis = .horizontal {
+    @objc open var axis: UILayoutConstraintAxis = .horizontal {
         didSet {
             invalidateIntrinsicContentSize()
             setNeedsUpdateConstraints()
@@ -105,7 +105,7 @@ open class HairlineView: UIView {
     }
 
     open override func contentHuggingPriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority {
-        return (self.axis == axis ? UILayoutPriorityRequired : UILayoutPriorityDefaultLow)
+        return (self.axis == axis ? UILayoutPriority.required : UILayoutPriority.defaultLow)
     }
 
     open override func contentCompressionResistancePriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority {

@@ -52,7 +52,6 @@ public struct FieldValidator {
 public protocol FieldValidationRule {
 
     func validate(_ value: String) throws
-    init()
 
 }
 
@@ -99,12 +98,12 @@ public struct LengthValidator: FieldValidationRule {
             allowedMin = minimum
         }
         if let maximum = allowedMax {
-            guard value.characters.count <= maximum else {
+            guard value.count <= maximum else {
                 throw RuleError.aboveMaxmimumLength(maximum)
             }
         }
         if let minimum = allowedMin {
-            guard value.characters.count >= minimum else {
+            guard value.count >= minimum else {
                 throw RuleError.belowMinimumLength(minimum)
             }
         }
@@ -128,7 +127,7 @@ public struct DiscreteLengthValidator: FieldValidationRule {
     }
 
     public func validate(_ value: String) throws {
-        let length = value.characters.count
+        let length = value.count
         if !allowedLengths.contains(length) {
             throw RuleError.invalidLength(allowedLengths)
         }

@@ -19,7 +19,7 @@ extension AboutMailViewController: MFMailComposeViewControllerDelegate {
 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         let completion = (controller as? AboutMailViewController)?.mailCompletionHandler
-        controller.dismiss(animated: true) { _ in
+        controller.dismiss(animated: true) {
             completion?(result)
         }
     }

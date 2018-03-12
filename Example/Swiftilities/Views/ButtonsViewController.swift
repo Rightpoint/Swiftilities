@@ -41,7 +41,7 @@ class ButtonsViewController: UIViewController {
         let getButton = BetterButton(shape: .rectangle(cornerRadius: 0), style: .outlineInvert(backgroundColor: .darkGray, foregroundColor: .blue))
         getButton.setTitle("GET", for: .normal)
         getButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        getButton.setContentCompressionResistancePriority(UILayoutPriorityRequired, for: .horizontal)
+        getButton.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
         getButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         stackView.addArrangedSubview(getButton)
 
@@ -60,7 +60,7 @@ class ButtonsViewController: UIViewController {
 
     }
 
-    func toggleLoading(button: BetterButton) {
+    @objc func toggleLoading(button: BetterButton) {
         button.isLoading = true
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
             button.isLoading = false
