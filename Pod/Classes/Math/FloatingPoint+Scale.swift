@@ -13,10 +13,10 @@ public extension BinaryFloatingPoint {
     /// - Parameters:
     ///   - source: The range to interpret the number as being a part of.
     ///   - destination: The range to map the number to.
-    ///   - curve: An optional mapping of input percentage to output percentage. Defaults to `nil`
     ///   - clamped: Whether the result should be clamped to the `to` range. Defaults to `false`.
     ///   - reversed: whether the output mapping should be revserd, such that
     ///               as the input increases, the output decreases. Defaults to `false`.
+    ///   - curve: An optional mapping of input percentage to output percentage. Defaults to `nil`
     /// - Returns: The input number, scaled from the `from` range to the `to` range.
     public func scaled(from source: ClosedRange<Self>, to destination: ClosedRange<Self>, clamped: Bool = false, reversed: Bool = false, curve: CurveProvider? = nil) -> Self {
 
