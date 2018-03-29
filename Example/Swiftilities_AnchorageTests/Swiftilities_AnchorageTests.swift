@@ -58,20 +58,26 @@ private class TestView: UIView {
 
         button.bottomAnchor == bottomAnchor + DeviceSize.adjust(
             74,
-            for: cgfloat)
+            for: [.small: 25.0])
         button.bottomAnchor == bottomAnchor + DeviceSize.adjust(
             74,
-            for: float)
+            for: [.small: float])
 
         button.bottomAnchor == bottomAnchor + DeviceSize.adjust(
             CGFloat(74),
-            for: float)
+            for: [.small: float])
         button.bottomAnchor == bottomAnchor + DeviceSize.adjust(
             CGFloat(74),
-            for: cgfloat)
+            for: [.small: cgfloat])
         button.bottomAnchor == bottomAnchor + CGFloat(DeviceSize.adjust(
             CGFloat(74),
-            for: cgfloat))
+            for: [.small: cgfloat]))
+        button.bottomAnchor == bottomAnchor + CGFloat(DeviceSize.adjust(
+            CGFloat(74),
+            for: [.small: CGFloat(55)]))
+        button.bottomAnchor == bottomAnchor + DeviceSize.adjust(
+            1,
+            for: [.small: CGFloat(55)])
         button.bottomAnchor == bottomAnchor + explicitCGFloat
 
         // should this be allowed?
