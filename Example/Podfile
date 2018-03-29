@@ -11,3 +11,8 @@ target 'Swiftilities_Tests' do
 
 
 end
+
+target 'Swiftilities_AnchorageTests' do
+  pod 'Swiftilities', :path => '../'
+  pod 'Anchorage'
+end
