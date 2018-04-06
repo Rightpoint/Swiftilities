@@ -23,7 +23,7 @@ jobs:
           command: brew outdated carthage || (brew uninstall carthage --force; HOMEBREW_NO_AUTO_UPDATE=1 brew install carthage --force-bottle)
       - run:
           name: Build with Carthage
-          command: carthage build --no-skip-current && test -d Carthage/Build/iOS/Swiftilities.framework || exit 1; done
+          command: carthage build --no-skip-current && test -d Carthage/Build/iOS/Swiftilities.framework
 
   deploy-to-cocoapods:
     macos:
