@@ -6,6 +6,7 @@ jobs:
       xcode: "9.2.0"
     steps:
       - checkout
+      - run: bundle install
       - run: ./scripts/iOS.sh
       - run: bundle exec pod lib lint
 
