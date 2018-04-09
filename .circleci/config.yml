@@ -6,6 +6,10 @@ jobs:
       xcode: "9.2.0"
     steps:
       - checkout
+      - run:
+          name: Install CocoaPods Specs Repo
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       - run: bundle install
       - run: ./scripts/iOS.sh
       - run: bundle exec pod lib lint
@@ -15,6 +19,10 @@ jobs:
       xcode: "9.2.0"
     steps:
       - checkout
+      - run:
+          name: Install CocoaPods Specs Repo
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       - run:
           name: Update homebrew dependencies
           command: brew update 1> /dev/null 2> /dev/null
@@ -30,6 +38,10 @@ jobs:
       xcode: "9.2.0"
     steps:
       - checkout
+      - run:
+          name: Install CocoaPods Specs Repo
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       - run: bundle install
       - run: bundle exec pod trunk push
 
