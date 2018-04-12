@@ -6,7 +6,7 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
-public extension FloatingPoint {
+public extension BinaryFloatingPoint {
 
     /// Re-maps a number from one range to another.
     ///
@@ -16,20 +16,24 @@ public extension FloatingPoint {
     ///   - clamped: Whether the result should be clamped to the `to` range. Defaults to `false`.
     ///   - reversed: whether the output mapping should be revserd, such that
     ///               as the input increases, the output decreases. Defaults to `false`.
+    ///   - curve: An optional mapping of input percentage to output percentage. Defaults to `nil`
     /// - Returns: The input number, scaled from the `from` range to the `to` range.
-    public func scaled(from source: ClosedRange<Self>, to destination: ClosedRange<Self>, clamped: Bool = false, reversed: Bool = false) -> Self {
+    public func scaled(from source: ClosedRange<Self>, to destination: ClosedRange<Self>, clamped: Bool = false, reversed: Bool = false, curve: CurveProvider? = nil) -> Self {
 
         let destinationStart = reversed ? destination.upperBound : destination.lowerBound
         let destinationEnd = reversed ? destination.lowerBound : destination.upperBound
 
         // these are broken up to speed up compile time
-        let selfMinusLower = self - source.lowerBound
+        let value = clamped ? self.clamped(to: source) : self
+        let selfMinusLower = value - source.lowerBound
         let sourceUpperMinusLower = source.upperBound - source.lowerBound
         let destinationUpperMinusLower = destinationEnd - destinationStart
-        var result = (selfMinusLower / sourceUpperMinusLower) * destinationUpperMinusLower + destinationStart
-        if clamped {
-            result = result.clamped(to: destination)
-        }
+
+        let percentThroughSource = (selfMinusLower / sourceUpperMinusLower)
+        let curvedPercent = curve?.map(percentThroughSource) ?? percentThroughSource
+        var result = curvedPercent * destinationUpperMinusLower + destinationStart
+        result = clamped ? result.clamped(to: destination) : result
+
         return result
     }
 
