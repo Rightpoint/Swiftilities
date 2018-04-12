@@ -6,8 +6,8 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
-import UIKit
 import Swiftilities
+import UIKit
 
 class ShapesViewController: UIViewController {
 
@@ -44,7 +44,7 @@ class ShapesViewController: UIViewController {
                 .fillColor(.lightGray),
                          .lineWidth(2),
                          .strokeColor(.blue)
-            )
+            ),
         ]
 
         images.forEach { (image) in

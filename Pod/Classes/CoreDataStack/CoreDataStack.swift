@@ -62,9 +62,12 @@ public class CoreDataStack {
         let urlCandidate = bundle.url(forResource: name, withExtension: "momd") ??
             bundle.url(forResource: name, withExtension: "mom")
 
-        guard let modelURL = urlCandidate,
-            let model = NSManagedObjectModel(contentsOf: modelURL) else {
+        guard let modelURL = urlCandidate else {
             fatalError("invalid model name provided: \(name)")
+        }
+
+        guard let model = NSManagedObjectModel(contentsOf: modelURL) else {
+            fatalError("Model could not be loaded")
         }
 
         let url = CoreDataStack.url(forModelNamed: name, storeType: type)

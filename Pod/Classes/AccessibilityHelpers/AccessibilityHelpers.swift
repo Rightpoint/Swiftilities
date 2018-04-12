@@ -47,7 +47,7 @@ public class Accessibility: NSObject {
         UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, text)
     }
 
-    public func handleAnnounceDidFinish(_ notification: NSNotification) {
+    @objc public func handleAnnounceDidFinish(_ notification: NSNotification) {
         if let userInfo = notification.userInfo {
             concurrentAnnouncementQueue.sync {
                 announceCompletion?(userInfo[UIAccessibilityAnnouncementKeyStringValue] as? String,

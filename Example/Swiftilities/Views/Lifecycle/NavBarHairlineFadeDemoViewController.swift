@@ -19,7 +19,7 @@ final class NavBarHairlineFadeDemoViewController: UIViewController {
         navigationItem.title = "Nav Bar Hairline Fade"
         titleLabel.text = "Scroll View"
         view.backgroundColor = .white
-        let behavior = NavBarHarilineFadeBehavior(scrollView: scrollView)
+        let behavior = NavBarHairlineFadeBehavior(scrollView: scrollView)
         addBehaviors([behavior])
     }
 
