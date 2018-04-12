@@ -22,6 +22,7 @@ public extension UIViewController {
     public func addBehaviors(_ behaviors: [ViewControllerLifecycleBehavior]) {
         let behaviorViewController = LifecycleBehaviorViewController(behaviors: behaviors)
 
+        loadViewIfNeeded()
         addChildViewController(behaviorViewController)
         view.addSubview(behaviorViewController.view)
         behaviorViewController.didMove(toParentViewController: self)
