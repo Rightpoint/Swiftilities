@@ -24,6 +24,9 @@ public final class NavBarHairlineFadeBehavior: ViewControllerLifecycleBehavior {
         navBarHairlineFadeUpdater.enabled = false
     }
 
+    deinit {
+        navBarHairlineFadeUpdater.enabled = false
+    }
 }
 
 public extension NavBarHairlineFadeBehavior {
