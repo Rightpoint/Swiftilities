@@ -73,7 +73,11 @@ private extension AcknowledgementsListViewModel {
         // First and last elements in the settings bundle are not needed (title and empty row).
         // these are broken up to speed up compile times
         let innerRange = 1..<(specifiers.count - 1)
+        #if swift(>=4.1)
+        let rawAcknowledgements = specifiers[innerRange].compactMap(AcknowledgementViewModel.init(dictionary:))
+        #else
         let rawAcknowledgements = specifiers[innerRange].flatMap(AcknowledgementViewModel.init(dictionary:))
+        #endif
         let acknowledgements = rawAcknowledgements.sorted {
             return $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedAscending
         }

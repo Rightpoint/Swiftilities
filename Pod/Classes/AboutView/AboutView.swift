@@ -10,7 +10,7 @@ import UIKit
 
 open class AboutView: UIView {
 
-    open let imageView: UIImageView = {
+    public let imageView: UIImageView = {
         let imageView = UIImageView()
 
         imageView.accessibilityTraits = UIAccessibilityTraitNone
@@ -22,7 +22,7 @@ open class AboutView: UIView {
         return imageView
     }()
 
-    open let label: UILabel = {
+    public let label: UILabel = {
         let label = UILabel()
 
         label.backgroundColor = .clear
