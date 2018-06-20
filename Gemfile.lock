@@ -9,10 +9,10 @@ GEM
       tzinfo (~> 1.1)
     atomos (0.1.2)
     claide (1.0.2)
-    cocoapods (1.5.0)
+    cocoapods (1.5.3)
       activesupport (>= 4.0.2, < 5)
       claide (>= 1.0.2, < 2.0)
-      cocoapods-core (= 1.5.0)
+      cocoapods-core (= 1.5.3)
       cocoapods-deintegrate (>= 1.0.2, < 2.0)
       cocoapods-downloader (>= 1.2.0, < 2.0)
       cocoapods-plugins (>= 1.0.0, < 2.0)
@@ -28,12 +28,12 @@ GEM
       nap (~> 1.0)
       ruby-macho (~> 1.1)
       xcodeproj (>= 1.5.7, < 2.0)
-    cocoapods-core (1.5.0)
+    cocoapods-core (1.5.3)
       activesupport (>= 4.0.2, < 6)
       fuzzy_match (~> 2.0.4)
       nap (~> 1.0)
     cocoapods-deintegrate (1.0.2)
-    cocoapods-downloader (1.2.0)
+    cocoapods-downloader (1.2.1)
     cocoapods-plugins (1.0.0)
       nap
     cocoapods-search (1.0.0)
@@ -56,16 +56,16 @@ GEM
     nap (1.1.0)
     netrc (0.11.0)
     rouge (2.0.7)
-    ruby-macho (1.1.0)
+    ruby-macho (1.2.0)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    xcodeproj (1.5.7)
+    xcodeproj (1.5.9)
       CFPropertyList (>= 2.3.3, < 4.0)
       atomos (~> 0.1.2)
       claide (>= 1.0.2, < 2.0)
       colored2 (~> 3.1)
-      nanaimo (~> 0.2.4)
+      nanaimo (~> 0.2.5)
     xcpretty (0.2.8)
       rouge (~> 2.0.7)
 
@@ -77,4 +77,4 @@ DEPENDENCIES
   xcpretty
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
