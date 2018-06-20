@@ -31,3 +31,6 @@ Carthage
 # `pod install` in .travis.yml
 #
 # Pods/
+
+Example/fastlane/report.xml
+Example/fastlane/test_output

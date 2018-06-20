@@ -37,12 +37,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
+		D909A58020DAE3E7007BCA07 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
-			remoteInfo = Swiftilities;
+			remoteInfo = Swiftilities_Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -349,7 +349,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
+				D909A58120DAE3E7007BCA07 /* PBXTargetDependency */,
 			);
 			name = Swiftilities_Tests;
 			productName = Tests;
@@ -544,10 +544,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
+		D909A58120DAE3E7007BCA07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* Swiftilities_Example */;
-			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+			targetProxy = D909A58020DAE3E7007BCA07 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
