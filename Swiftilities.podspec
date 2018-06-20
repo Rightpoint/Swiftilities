@@ -61,6 +61,12 @@ Pod::Spec.new do |s|
     ss.frameworks   = ["UIKit"]
   end
 
+  # Compatibility
+
+  s.subspec "Compatibility" do |ss|
+    ss.source_files = "Pod/Classes/Compatibility/*.swift"
+  end
+
   # CoreDataStack
 
   s.subspec "CoreDataStack" do |ss|
@@ -194,13 +200,14 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/Acknowledgements'
     ss.dependency 'Swiftilities/BetterButton'
     ss.dependency 'Swiftilities/ColorHelpers'
+    ss.dependency 'Swiftilities/Compatibility'
     ss.dependency 'Swiftilities/CoreDataStack'
     ss.dependency 'Swiftilities/Deselection'
     ss.dependency 'Swiftilities/DeviceSize'
     ss.dependency 'Swiftilities/FormattedTextField'
     ss.dependency 'Swiftilities/Forms'
     ss.dependency 'Swiftilities/HairlineView'
-	ss.dependency 'Swiftilities/ImageHelpers'
+	  ss.dependency 'Swiftilities/ImageHelpers'
     ss.dependency 'Swiftilities/Keyboard'
     ss.dependency 'Swiftilities/LicenseFormatter'
     ss.dependency 'Swiftilities/Lifecycle'

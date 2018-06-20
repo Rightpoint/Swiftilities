@@ -77,6 +77,10 @@
       ]
     },
     {
+      "name": "Compatibility",
+      "source_files": "Pod/Classes/Compatibility/*.swift"
+    },
+    {
       "name": "CoreDataStack",
       "source_files": "Pod/Classes/CoreDataStack/*.swift",
       "frameworks": [
@@ -225,6 +229,9 @@
 
         ],
         "Swiftilities/ColorHelpers": [
+
+        ],
+        "Swiftilities/Compatibility": [
 
         ],
         "Swiftilities/CoreDataStack": [

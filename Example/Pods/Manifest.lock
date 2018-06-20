@@ -12,6 +12,7 @@ PODS:
     - Swiftilities/Acknowledgements
     - Swiftilities/BetterButton
     - Swiftilities/ColorHelpers
+    - Swiftilities/Compatibility
     - Swiftilities/CoreDataStack
     - Swiftilities/Deselection
     - Swiftilities/DeviceSize
@@ -36,6 +37,7 @@ PODS:
     - Swiftilities/Math
     - Swiftilities/Shapes
   - Swiftilities/ColorHelpers (0.18.0)
+  - Swiftilities/Compatibility (0.18.0)
   - Swiftilities/CoreDataStack (0.18.0)
   - Swiftilities/Deselection (0.18.0)
   - Swiftilities/DeviceSize (0.18.0)
@@ -65,7 +67,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Swiftilities: f58dfafe3d2225dbafcfb3a8c153ae5f82def76c
+  Swiftilities: 113ea123dc5e5d55df384474a2918b2077208a49
 
 PODFILE CHECKSUM: b1d3049f81e75c3304f48a3fb9386cc1458c9549
 
