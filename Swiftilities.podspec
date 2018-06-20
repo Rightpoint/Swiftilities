@@ -39,6 +39,7 @@ Pod::Spec.new do |s|
   s.subspec "Acknowledgements" do |ss|
     ss.dependency 'Swiftilities/LicenseFormatter'
     ss.dependency 'Swiftilities/Deselection'
+    ss.dependency 'Swiftilities/Compatibility'
     ss.source_files = "Pod/Classes/Acknowledgements/*.swift"
     ss.frameworks   = ["UIKit"]
   end
@@ -48,10 +49,10 @@ Pod::Spec.new do |s|
   s.subspec "BetterButton" do |ss|
     ss.source_files = "Pod/Classes/BetterButton/*.swift"
     ss.dependency 'Swiftilities/Shapes'
-	ss.dependency 'Swiftilities/ImageHelpers'
-	ss.dependency 'Swiftilities/ColorHelpers'
-	ss.dependency 'Swiftilities/Math'
-	ss.frameworks   = ["UIKit"]
+    ss.dependency 'Swiftilities/ImageHelpers'
+    ss.dependency 'Swiftilities/ColorHelpers'
+    ss.dependency 'Swiftilities/Math'
+    ss.frameworks   = ["UIKit"]
   end
 
   # ColorHelpers
@@ -207,7 +208,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/FormattedTextField'
     ss.dependency 'Swiftilities/Forms'
     ss.dependency 'Swiftilities/HairlineView'
-	  ss.dependency 'Swiftilities/ImageHelpers'
+    ss.dependency 'Swiftilities/ImageHelpers'
     ss.dependency 'Swiftilities/Keyboard'
     ss.dependency 'Swiftilities/LicenseFormatter'
     ss.dependency 'Swiftilities/Lifecycle'
