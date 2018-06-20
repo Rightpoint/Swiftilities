@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -9,15 +9,15 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5776205E46583EBCE09D65E2C15E64FF"
-               BuildableName = "Swiftilities.framework"
-               BlueprintName = "Swiftilities"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "607FACE41AFB9204008FA782"
+               BuildableName = "Swiftilities_Tests.xctest"
+               BlueprintName = "Swiftilities_Tests"
+               ReferencedContainer = "container:Swiftilities.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,19 +35,10 @@
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
                BuildableName = "Swiftilities_Tests.xctest"
                BlueprintName = "Swiftilities_Tests"
-               ReferencedContainer = "container:../Swiftilities.xcodeproj">
+               ReferencedContainer = "container:Swiftilities.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5776205E46583EBCE09D65E2C15E64FF"
-            BuildableName = "Swiftilities.framework"
-            BlueprintName = "Swiftilities"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,10 +55,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5776205E46583EBCE09D65E2C15E64FF"
-            BuildableName = "Swiftilities.framework"
-            BlueprintName = "Swiftilities"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "607FACE41AFB9204008FA782"
+            BuildableName = "Swiftilities_Tests.xctest"
+            BlueprintName = "Swiftilities_Tests"
+            ReferencedContainer = "container:Swiftilities.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -82,10 +73,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5776205E46583EBCE09D65E2C15E64FF"
-            BuildableName = "Swiftilities.framework"
-            BlueprintName = "Swiftilities"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "607FACE41AFB9204008FA782"
+            BuildableName = "Swiftilities_Tests.xctest"
+            BlueprintName = "Swiftilities_Tests"
+            ReferencedContainer = "container:Swiftilities.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
