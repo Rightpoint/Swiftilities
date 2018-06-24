@@ -8,6 +8,4 @@ end
 
 target 'Swiftilities_Tests' do
   pod 'Swiftilities', :path => '../'
-
-
 end
