@@ -148,7 +148,17 @@ Pod::Spec.new do |s|
   # Math
 
   s.subspec "Math" do |ss|
-    ss.source_files = "Pod/Classes/Math/*.swift"
+    ss.ios.deployment_target = '9.0'
+    ss.ios.source_files = "Pod/Classes/Math/*.swift"
+
+    ss.tvos.deployment_target = '9.0'
+    ss.tvos.source_files = "Pod/Classes/Math/*.swift"
+
+    ss.osx.deployment_target = '10.11'
+    ss.osx.source_files = "Pod/Classes/Math/*.swift"
+
+    ss.watchos.deployment_target = '2.2'
+    ss.watchos.source_files = "Pod/Classes/Math/*.swift"
   end
 
   # RootViewController
