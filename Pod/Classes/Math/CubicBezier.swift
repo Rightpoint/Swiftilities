@@ -12,8 +12,6 @@
  This licensed material is licensed under the Apache 2.0 license. http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-import UIKit
-
 // swiftlint:disable identifier_name
 extension CubicBezier {
 
