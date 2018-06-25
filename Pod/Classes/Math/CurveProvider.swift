@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import CoreGraphics.CGBase
 
 public protocol CurveProvider {
 
@@ -14,6 +14,7 @@ public protocol CurveProvider {
 
 }
 
+#if os(iOS)
 @available(iOS 10.0, *)
 extension UICubicTimingParameters: CurveProvider {
 
@@ -57,6 +58,7 @@ extension UIViewAnimationCurve: CurveProvider {
     }
 
 }
+#endif
 
 extension BinaryFloatingPoint {
 

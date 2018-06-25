@@ -41,6 +41,9 @@
         ],
         "Swiftilities/Deselection": [
 
+        ],
+        "Swiftilities/Compatibility": [
+
         ]
       },
       "source_files": "Pod/Classes/Acknowledgements/*.swift",
@@ -166,7 +169,24 @@
     },
     {
       "name": "Math",
-      "source_files": "Pod/Classes/Math/*.swift"
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "9.0",
+        "osx": "10.11",
+        "watchos": "2.2"
+      },
+      "ios": {
+        "source_files": "Pod/Classes/Math/*.swift"
+      },
+      "tvos": {
+        "source_files": "Pod/Classes/Math/*.swift"
+      },
+      "osx": {
+        "source_files": "Pod/Classes/Math/*.swift"
+      },
+      "watchos": {
+        "source_files": "Pod/Classes/Math/*.swift"
+      }
     },
     {
       "name": "RootViewController",

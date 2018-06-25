@@ -54,7 +54,7 @@ GEM
     declarative-option (0.1.0)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    dotenv (2.4.0)
+    dotenv (2.5.0)
     emoji_regex (0.1.1)
     escape (0.0.4)
     excon (0.62.0)
