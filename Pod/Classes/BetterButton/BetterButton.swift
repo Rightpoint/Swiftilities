@@ -187,7 +187,7 @@ open class BetterButton: UIButton {
 
     // TODO: Investigate allowing content to remain, with offset spinner.
     fileprivate let activityIndicator: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        let view = UIActivityIndicatorView(style: .white)
         view.hidesWhenStopped = true
         return view
     }()
@@ -212,7 +212,7 @@ open class BetterButton: UIButton {
     open override func layoutSubviews() {
         super.layoutSubviews()
         activityIndicator.center = CGPoint(x: bounds.midX, y: bounds.midY)
-        self.bringSubview(toFront: activityIndicator)
+        self.bringSubviewToFront(activityIndicator)
         self.imageView?.isHidden = isLoading
         self.titleLabel?.isHidden = isLoading
     }

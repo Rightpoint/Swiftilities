@@ -29,7 +29,7 @@ enum AppInfo {
     }
 
     static var accessibleVersion: String {
-        if UIAccessibilityIsVoiceOverRunning() {
+        if UIAccessibility.isVoiceOverRunning {
             let separator = NSLocalizedString(" point ", comment: "The spelled out version of the “point” in version numbers, like 2 point 0 point 1, with spaces on either side")
             return version.components(separatedBy: ".").joined(separator: separator)
         }
