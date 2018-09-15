@@ -423,7 +423,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Swiftilities/Swiftilities.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -432,7 +432,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		662F65D4D4E8DC340A9997D2 /* [CP] Check Pods Manifest.lock */ = {
@@ -459,7 +459,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Swiftilities/Swiftilities.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -468,7 +468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		72B69E871DE4B32900272BC1 /* Swiftlint */ = {
