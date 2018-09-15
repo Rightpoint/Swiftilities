@@ -32,10 +32,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install CocoaPods Specs Repo
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-      - run:
           name: Update homebrew dependencies
           command: brew update 1> /dev/null 2> /dev/null
       - run:
