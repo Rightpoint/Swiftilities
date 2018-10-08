@@ -54,13 +54,15 @@ public class Keyboard {
 extension UIView.AnimationCurve {
     func animationOption() -> UIView.AnimationOptions {
         switch self {
-        case .easeInOut: return UIView.AnimationOptions()
         case .easeIn:    return .curveEaseIn
         case .easeOut:   return .curveEaseOut
         case .linear:    return .curveLinear
+        case .easeInOut: return UIView.AnimationOptions()
+        default:
+            // Some private UIViewAnimationCurve values unknown to the compiler can leak through notifications.
+            return UIView.AnimationOptions()
         }
     }
-
 }
 
 // MARK: - Private
