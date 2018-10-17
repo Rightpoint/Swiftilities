@@ -52,12 +52,13 @@ public class Keyboard {
 }
 
 extension UIViewAnimationCurve {
-    func animationOption() -> UIViewAnimationOptions {
+    func animationOptions() -> UIViewAnimationOptions {
         switch self {
-        case .easeInOut: return UIViewAnimationOptions()
+        case .easeInOut: return .curveEaseInOut
         case .easeIn:    return .curveEaseIn
         case .easeOut:   return .curveEaseOut
         case .linear:    return .curveLinear
+        default:         return UIViewAnimationOptions(rawValue: UInt(rawValue << 16))
         }
     }
 
@@ -79,10 +80,9 @@ private extension Keyboard {
                 if let durationValue = (notification as NSNotification).userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber, handler.animated {
 
                     let curveValue = ((notification as NSNotification).userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue
-                    let curve = UIViewAnimationCurve(rawValue: curveValue ?? 0)
-                    let animationOption = curve?.animationOption() ?? UIViewAnimationOptions()
+                    let curve = curveValue.flatMap(UIViewAnimationCurve.init) ?? .easeInOut
 
-                    UIView.animate(withDuration: durationValue.doubleValue, delay: 0.0, options: animationOption, animations: {
+                    UIView.animate(withDuration: durationValue.doubleValue, delay: 0.0, options: curve.animationOptions(), animations: {
                         handler.handler(frame)
                     }, completion: nil)
                 }
