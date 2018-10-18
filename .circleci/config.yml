@@ -65,10 +65,6 @@ workflows:
           filters:
             tags:
               only: /.*/
-      - test-xcode-9-2:
-          filters:
-            tags:
-              only: /.*/
       - carthage-build:
           filters:
             tags:
