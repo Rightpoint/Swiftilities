@@ -17,7 +17,7 @@ platform :ios do
   lane :test do
     scan(
       output_types: 'junit',
-      scheme: 'Swiftilities_Tests',
+      scheme: 'Swiftilities-Example',
     )
   end
 end
