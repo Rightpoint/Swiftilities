@@ -13,7 +13,7 @@ open class HairlineView: UIView {
     #if TARGET_INTERFACE_BUILDER
     @IBInspectable open var axis: Int = 0
     #else
-    @objc open var axis: UILayoutConstraintAxis = .horizontal {
+    @objc open var axis: NSLayoutConstraint.Axis = .horizontal {
         didSet {
             invalidateIntrinsicContentSize()
             setNeedsUpdateConstraints()
@@ -37,7 +37,7 @@ open class HairlineView: UIView {
         }
     }
 
-    public init(axis: UILayoutConstraintAxis, thickness: CGFloat = CGFloat(1.0 / UIScreen.main.scale),
+    public init(axis: NSLayoutConstraint.Axis, thickness: CGFloat = CGFloat(1.0 / UIScreen.main.scale),
                 hairlineColor: UIColor = UIColor.darkGray) {
         self.axis = axis
         self.thickness = thickness
@@ -50,7 +50,7 @@ open class HairlineView: UIView {
 
     public required init?(coder aDecoder: NSCoder) {
         if aDecoder.containsValue(forKey: #keyPath(axis)) {
-            guard let decodedAxis = UILayoutConstraintAxis(rawValue: aDecoder.decodeInteger(forKey: #keyPath(axis))) else {
+            guard let decodedAxis = NSLayoutConstraint.Axis(rawValue: aDecoder.decodeInteger(forKey: #keyPath(axis))) else {
                 return nil
             }
             axis = decodedAxis
@@ -89,7 +89,7 @@ open class HairlineView: UIView {
     }
 
     open override var intrinsicContentSize: CGSize {
-        var size = CGSize(width: UIViewNoIntrinsicMetric, height: UIViewNoIntrinsicMetric)
+        var size = CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
 
         switch axis {
         case .horizontal: size.height = thickness
@@ -99,11 +99,11 @@ open class HairlineView: UIView {
         return size
     }
 
-    open override func contentHuggingPriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority {
+    open override func contentHuggingPriority(for axis: NSLayoutConstraint.Axis) -> UILayoutPriority {
         return (self.axis == axis ? UILayoutPriority.required : UILayoutPriority.defaultLow)
     }
 
-    open override func contentCompressionResistancePriority(for axis: UILayoutConstraintAxis) -> UILayoutPriority {
+    open override func contentCompressionResistancePriority(for axis: NSLayoutConstraint.Axis) -> UILayoutPriority {
         return contentHuggingPriority(for: axis)
     }
 

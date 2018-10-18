@@ -51,24 +51,26 @@ public class Keyboard {
 
 }
 
-extension UIViewAnimationCurve {
-    func animationOption() -> UIViewAnimationOptions {
+extension UIView.AnimationCurve {
+    func animationOptions() -> UIView.AnimationOptions {
         switch self {
-        case .easeInOut: return UIViewAnimationOptions()
+        case .easeInOut: return .curveEaseInOut
         case .easeIn:    return .curveEaseIn
         case .easeOut:   return .curveEaseOut
         case .linear:    return .curveLinear
+        default:
+            // Some private UIViewAnimationCurve values unknown to the compiler can leak through notifications.
+            return UIView.AnimationOptions(rawValue: UInt(rawValue << 16))
         }
     }
-
 }
 
 // MARK: - Private
 
 private extension Keyboard {
     static func setupObservers() {
-        notificationObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: .main) { notification -> Void in
-            guard let frameValue: NSValue = (notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+        notificationObserver = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: .main) { notification -> Void in
+            guard let frameValue: NSValue = (notification as NSNotification).userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
                 return
             }
             frame = frameValue.cgRectValue
@@ -76,13 +78,12 @@ private extension Keyboard {
             let handlers = frameObservers.objectEnumerator()
 
             while let handler = handlers?.nextObject() as? KeyboardHandler<FrameChangeHandler> {
-                if let durationValue = (notification as NSNotification).userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber, handler.animated {
+                if let durationValue = (notification as NSNotification).userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber, handler.animated {
 
-                    let curveValue = ((notification as NSNotification).userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue
-                    let curve = UIViewAnimationCurve(rawValue: curveValue ?? 0)
-                    let animationOption = curve?.animationOption() ?? UIViewAnimationOptions()
+                    let curveValue = ((notification as NSNotification).userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber)?.intValue
+                    let curve = curveValue.flatMap(UIView.AnimationCurve.init) ?? .easeInOut
 
-                    UIView.animate(withDuration: durationValue.doubleValue, delay: 0.0, options: animationOption, animations: {
+                    UIView.animate(withDuration: durationValue.doubleValue, delay: 0.0, options: curve.animationOptions(), animations: {
                         handler.handler(frame)
                     }, completion: nil)
                 }

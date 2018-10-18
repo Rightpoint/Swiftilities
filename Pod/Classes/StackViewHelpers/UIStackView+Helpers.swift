@@ -9,11 +9,11 @@ import UIKit
 
 public extension UIStackView {
 
-    convenience init(axis: UILayoutConstraintAxis, arrangedSubviews: UIView...) {
+    convenience init(axis: NSLayoutConstraint.Axis, arrangedSubviews: UIView...) {
         self.init(axis: axis, arrangedSubviews: arrangedSubviews)
     }
 
-    convenience init(axis: UILayoutConstraintAxis, arrangedSubviews: [UIView]) {
+    convenience init(axis: NSLayoutConstraint.Axis, arrangedSubviews: [UIView]) {
         self.init(arrangedSubviews: arrangedSubviews)
         self.axis = axis
     }
