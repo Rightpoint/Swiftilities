@@ -27,7 +27,7 @@ extension UICubicTimingParameters: CurveProvider {
 
 }
 
-extension UIViewAnimationCurve: CurveProvider {
+extension UIView.AnimationCurve: CurveProvider {
 
     public func map<T: BinaryFloatingPoint>(_ inputPercent: T) -> T {
         guard self != .linear else { return inputPercent }

@@ -22,7 +22,7 @@ public class Accessibility: NSObject {
         super.init()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(Accessibility.handleAnnounceDidFinish(_:)),
-                                               name: NSNotification.Name.UIAccessibilityAnnouncementDidFinish,
+                                               name: UIAccessibility.announcementDidFinishNotification,
                                                object: nil)
     }
 
@@ -30,7 +30,7 @@ public class Accessibility: NSObject {
      Check if VoiceOver is currently running (UIAccessibilityIsVoiceOverRunning()).
      */
     public static var isVoiceOverRunning: Bool {
-        return UIAccessibilityIsVoiceOverRunning()
+        return UIAccessibility.isVoiceOverRunning
     }
 
     /**
@@ -44,14 +44,14 @@ public class Accessibility: NSObject {
             announceCompletion?(nil, false)
             announceCompletion = completion
         }
-        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, text)
+        UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: text)
     }
 
     @objc public func handleAnnounceDidFinish(_ notification: NSNotification) {
         if let userInfo = notification.userInfo {
             concurrentAnnouncementQueue.sync {
-                announceCompletion?(userInfo[UIAccessibilityAnnouncementKeyStringValue] as? String,
-                                    (userInfo[UIAccessibilityAnnouncementKeyWasSuccessful] as? Bool ?? false))
+                announceCompletion?(userInfo[UIAccessibility.announcementStringValueUserInfoKey] as? String,
+                                    (userInfo[UIAccessibility.announcementWasSuccessfulUserInfoKey] as? Bool ?? false))
                 announceCompletion = nil
             }
         }
@@ -63,7 +63,7 @@ public class Accessibility: NSObject {
      - parameter focusView: A view to be focussed on as part of the layout change.
      */
     public func layoutChanged(in focusView: UIView? = nil) {
-        UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, focusView)
+        UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: focusView)
     }
 
 }

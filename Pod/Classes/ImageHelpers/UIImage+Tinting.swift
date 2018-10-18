@@ -53,7 +53,7 @@ public extension UIImage {
 
         // Restore original properties
         image = image.withAlignmentRectInsets(originalAlignmentRectInsets)
-        if !UIEdgeInsetsEqualToEdgeInsets(originalCapInsets, image.capInsets) || originalResizingMode != image.resizingMode {
+        if originalCapInsets != image.capInsets || originalResizingMode != image.resizingMode {
             image = image.resizableImage(withCapInsets: originalCapInsets, resizingMode: originalResizingMode)
         }
 

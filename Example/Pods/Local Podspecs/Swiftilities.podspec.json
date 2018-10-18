@@ -2,7 +2,7 @@
   "name": "Swiftilities",
   "version": "0.19.0",
   "summary": "A collection of useful Swift utilities.",
-  "swift_version": "4.0",
+  "swift_version": "4.2",
   "description": "A collection of useful Swift utilities. All components and\nextensions found in this library are consise enough on their own\nso as to not warrant their own project.",
   "homepage": "https://github.com/raizlabs/Swiftilities",
   "license": "MIT",

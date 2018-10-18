@@ -15,9 +15,9 @@ open class AcknowledgementViewController: UIViewController {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.hyphenationFactor = 1
         paragraphStyle.paragraphSpacing = font.pointSize / 2
-        let attributes: [NSAttributedStringKey: Any] = [
-            NSAttributedStringKey.font: font,
-            NSAttributedStringKey.paragraphStyle: paragraphStyle,
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.paragraphStyle: paragraphStyle,
             ]
         return NSAttributedString(string: string, attributes: attributes)
     }

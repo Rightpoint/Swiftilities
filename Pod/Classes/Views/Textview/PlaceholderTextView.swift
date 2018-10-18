@@ -60,7 +60,7 @@ open class PlaceholderTextView: UITextView, PlaceholderConfigurable {
 
     deinit {
         NotificationCenter.default.removeObserver(self,
-                                                            name: NSNotification.Name.UITextViewTextDidChange,
+                                                            name: UITextView.textDidChangeNotification,
                                                             object: nil)
     }
 
@@ -71,7 +71,7 @@ open class PlaceholderTextView: UITextView, PlaceholderConfigurable {
         adjustPlaceholder()
         NotificationCenter.default.addObserver(self,
                                                          selector: #selector(textDidChange),
-                                                         name:NSNotification.Name.UITextViewTextDidChange,
+                                                         name:UITextView.textDidChangeNotification,
                                                          object: nil)
     }
 

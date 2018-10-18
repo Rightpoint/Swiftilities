@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name             = "Swiftilities"
   s.version          = "0.19.0"
   s.summary          = "A collection of useful Swift utilities."
-  s.swift_version    = '4.0'
+  s.swift_version    = '4.2'
 
   s.description      = <<-DESC
                         A collection of useful Swift utilities. All components and

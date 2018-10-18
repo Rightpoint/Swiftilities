@@ -13,7 +13,7 @@ open class AboutView: UIView {
     open private(set) var imageView: UIImageView = {
         let imageView = UIImageView()
 
-        imageView.accessibilityTraits = UIAccessibilityTraitNone
+        imageView.accessibilityTraits = UIAccessibilityTraits.none
 
         imageView.backgroundColor = .clear
         imageView.contentMode = .scaleAspectFit

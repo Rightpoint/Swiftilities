@@ -23,9 +23,9 @@ public extension UIViewController {
         let behaviorViewController = LifecycleBehaviorViewController(behaviors: behaviors)
 
         loadViewIfNeeded()
-        addChildViewController(behaviorViewController)
+        addChild(behaviorViewController)
         view.addSubview(behaviorViewController.view)
-        behaviorViewController.didMove(toParentViewController: self)
+        behaviorViewController.didMove(toParent: self)
     }
 
 }

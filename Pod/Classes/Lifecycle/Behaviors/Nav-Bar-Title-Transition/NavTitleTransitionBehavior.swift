@@ -59,7 +59,7 @@ fileprivate final class NavTitlePositionUpdater: NSObject {
 
     func activate() {
         if let navBar = navigationBar {
-            let font = navBar.titleTextAttributes?[NSAttributedStringKey.font] as? UIFont ??
+            let font = navBar.titleTextAttributes?[NSAttributedString.Key.font] as? UIFont ??
                 UIFont.systemFont(ofSize: 17, weight:UIFont.Weight.semibold) //NavBar default
             navBarDidChangeBounds(navBar)
             let navHeight = navBar.frame.size.height
