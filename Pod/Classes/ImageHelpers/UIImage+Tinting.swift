@@ -21,7 +21,7 @@ public extension UIImage {
     ///
     /// - Parameter theColor: The color to use to tint the receiver.
     /// - Returns: A tinted copy of the image.
-    func tintedImage(color theColor: UIColor) -> UIImage {
+    func rz_tintedImage(color theColor: UIColor) -> UIImage {
         let imageRect = CGRect(origin: .zero, size: size)
         // Save original properties
         let originalCapInsets = capInsets
