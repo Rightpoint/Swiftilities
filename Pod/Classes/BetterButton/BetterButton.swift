@@ -159,8 +159,8 @@ open class BetterButton: UIButton {
         didSet {
             if let image = iconImage {
                 let styleAttributes = style.attributes
-                let normalImage = image.tintedImage(color: styleAttributes.foregroundColor)
-                let highlightedImage = image.tintedImage(color: styleAttributes.highlightedForegroundColor)
+                let normalImage = image.rz_tintedImage(color: styleAttributes.foregroundColor)
+                let highlightedImage = image.rz_tintedImage(color: styleAttributes.highlightedForegroundColor)
                 self.setImage(normalImage, for: .normal)
                 self.setImage(highlightedImage, for: .highlighted)
                 self.setImage(highlightedImage, for: .selected)
