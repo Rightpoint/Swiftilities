@@ -13,6 +13,7 @@
 		04CD173B1AB7C4F6286F8FA1 /* Pods_Swiftilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849AC9425E95C2FF6F694A7F /* Pods_Swiftilities_Example.framework */; };
 		2340A5B91E8CC29A00572417 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */; };
 		2340A5BD1E8CC67A00572417 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5BA1E8CC3B500572417 /* TestModel.xcdatamodeld */; };
+		63127C6321C9A2A200481A5F /* DashlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63127C6221C9A2A200481A5F /* DashlineViewController.swift */; };
 		722099011E5F46EE0098229D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722098FF1E5F46EE0098229D /* Main.storyboard */; };
 		722099061E5F470D0098229D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722099031E5F470D0098229D /* LaunchScreen.xib */; };
 		722099071E5F470D0098229D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722099051E5F470D0098229D /* Images.xcassets */; };
@@ -59,6 +60,7 @@
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Swiftilities_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swiftilities_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63127C6221C9A2A200481A5F /* DashlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashlineViewController.swift; sourceTree = "<group>"; };
 		722099001E5F46EE0098229D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		722099041E5F470D0098229D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		722099051E5F470D0098229D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -203,9 +205,18 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		63127C6121C9A27200481A5F /* Hairline */ = {
+			isa = PBXGroup;
+			children = (
+				63127C6221C9A2A200481A5F /* DashlineViewController.swift */,
+			);
+			path = Hairline;
+			sourceTree = "<group>";
+		};
 		722098FE1E5F46EE0098229D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63127C6121C9A27200481A5F /* Hairline */,
 				726E5EFF1EDF5D2F00000DEE /* Shapes */,
 				726E5EFE1EDF5D2300000DEE /* Buttons */,
 				726F86F11EB7CA930075A1F3 /* Graidient View */,
@@ -514,6 +525,7 @@
 				726E5EFD1EDF5D1E00000DEE /* ShapesViewController.swift in Sources */,
 				722099151E5F47690098229D /* TextFormattingViewController.swift in Sources */,
 				72F94C761E65F67200C6DC13 /* AboutViewController.swift in Sources */,
+				63127C6321C9A2A200481A5F /* DashlineViewController.swift in Sources */,
 				722099131E5F47690098229D /* KeyboardAvoidanceViewController.swift in Sources */,
 				726E5EFC1EDF5D1E00000DEE /* ButtonsViewController.swift in Sources */,
 				722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */,
