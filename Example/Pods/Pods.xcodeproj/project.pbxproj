@@ -40,7 +40,7 @@
 		A5470F060A7C64C6034AF0BCA3B433B5 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB79E00966320965987E436345333BCC /* Protocols.swift */; };
 		A7E37DB771CE512F93366B2C412A86FB /* CurveProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FA797457E73ED497C5EEE4E4B1FA03 /* CurveProvider.swift */; };
 		AA22FA00291D632E893E6610C3CDAE21 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940B0A2D09859E25E0C046063E95BFC4 /* Log.swift */; };
-		AF1511BBD986176081563A647301CA30 /* AcknowlegementsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0756D80CE21702DDC522117EEBDE3 /* AcknowlegementsListViewModel.swift */; };
+		AF1511BBD986176081563A647301CA30 /* AcknowledgementsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0756D80CE21702DDC522117EEBDE3 /* AcknowledgementsListViewModel.swift */; };
 		AF3497C5CBF2744E9E8790E54BF7BE2D /* UIView+Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA9D79E72955387108C16F9368F8A43 /* UIView+Lookup.swift */; };
 		B0DEC690E26E5DBA892EA80B2D4AC1CD /* FeedbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDC1E88CDD974A895EFE9DF2CDFD202 /* FeedbackPresenter.swift */; };
 		B711E49FA3BEE521751B6DB82781003A /* FormattedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795B4F1668735E863D4CAD301476C9E8 /* FormattedTextField.swift */; };
@@ -128,7 +128,7 @@
 		7CAAFE9A085FACF39641A71C6369452E /* Pods-Swiftilities_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Swiftilities_Tests-Info.plist"; sourceTree = "<group>"; };
 		7D0783A645D519687CC56B8440062377 /* Pods-Swiftilities_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swiftilities_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		844EC5F14E534907EC1DFD675D4C3D20 /* AboutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AboutView.swift; path = Pod/Classes/AboutView/AboutView.swift; sourceTree = "<group>"; };
-		84C0756D80CE21702DDC522117EEBDE3 /* AcknowlegementsListViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowlegementsListViewModel.swift; path = Pod/Classes/Acknowledgements/AcknowlegementsListViewModel.swift; sourceTree = "<group>"; };
+		84C0756D80CE21702DDC522117EEBDE3 /* AcknowledgementsListViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AcknowledgementsListViewModel.swift; path = Pod/Classes/Acknowledgements/AcknowledgementsListViewModel.swift; sourceTree = "<group>"; };
 		863E5C281E14570F58990AA4F0A9470A /* UIStackView+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStackView+Helpers.swift"; path = "Pod/Classes/StackViewHelpers/UIStackView+Helpers.swift"; sourceTree = "<group>"; };
 		8852491219653FEE14B8E74D380DF2A1 /* Swiftilities-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Swiftilities-Info.plist"; sourceTree = "<group>"; };
 		886679EA1A598DB6D47E468052B6FD69 /* Clamping.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Clamping.swift; path = Pod/Classes/Math/Clamping.swift; sourceTree = "<group>"; };
@@ -363,7 +363,7 @@
 			children = (
 				1F5C0B941B6DB54AC610A285F1B6F4F8 /* AcknowledgementsListViewController.swift */,
 				195EBA775389DDF9F89680CE1D206601 /* AcknowledgementViewController.swift */,
-				84C0756D80CE21702DDC522117EEBDE3 /* AcknowlegementsListViewModel.swift */,
+				84C0756D80CE21702DDC522117EEBDE3 /* AcknowledgementsListViewModel.swift */,
 			);
 			name = Acknowledgements;
 			sourceTree = "<group>";
@@ -779,7 +779,7 @@
 				37F036BD20F4775E0837200A10EBFFF6 /* AccessibilityHelpers.swift in Sources */,
 				9286800D9295E3B0B62DCFC109571683 /* AcknowledgementsListViewController.swift in Sources */,
 				D4AA5E03F37B0328BCE96E6278C14A0E /* AcknowledgementViewController.swift in Sources */,
-				AF1511BBD986176081563A647301CA30 /* AcknowlegementsListViewModel.swift in Sources */,
+				AF1511BBD986176081563A647301CA30 /* AcknowledgementsListViewModel.swift in Sources */,
 				364DC7802BC34A637F0858FDF98E5A67 /* AppInfo.swift in Sources */,
 				0C83BEB189C238ADF54519A85E375246 /* BetterButton.swift in Sources */,
 				DEA9C0AB89E024ADDA65B615287404A2 /* CGFloat+DeviceSize.swift in Sources */,

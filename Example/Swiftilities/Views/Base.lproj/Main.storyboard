@@ -182,7 +182,7 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Acknowledgements"/>
                                         <connections>
-                                            <action selector="showAcknowlegements:" destination="awA-To-3aY" eventType="touchUpInside" id="Z8Y-X9-lvW"/>
+                                            <action selector="showAcknowledgements:" destination="awA-To-3aY" eventType="touchUpInside" id="jfI-RF-Veo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xm4-sK-PQK">

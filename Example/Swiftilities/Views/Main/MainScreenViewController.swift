@@ -22,11 +22,11 @@ class MainScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func showAcknowlegements(_ sender: Any) {
+    @IBAction func showAcknowledgements(_ sender: Any) {
         do {
             let viewModel = try AcknowledgementsListViewModel(plistNamed: "Pods-Swiftilities_Example-acknowledgements")
             let viewController = LightGrayListViewController(viewModel: viewModel)
-            viewController.childViewControllerClass = LightGrayAcknowlegement.self
+            viewController.childViewControllerClass = LightGrayAcknowledgement.self
             navigationController?.pushViewController(viewController, animated: true)
         }
         catch {
@@ -66,7 +66,7 @@ private class LightGrayListViewController: AcknowledgementsListViewController {
     }
 }
 
-private class LightGrayAcknowlegement: AcknowledgementViewController {
+private class LightGrayAcknowledgement: AcknowledgementViewController {
 
     override func loadView() {
         super.loadView()

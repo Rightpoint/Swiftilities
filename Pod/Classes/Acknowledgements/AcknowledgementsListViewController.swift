@@ -15,7 +15,7 @@ open class AcknowledgementsListViewController: UITableViewController {
     public var childViewControllerClass: AcknowledgementViewController.Type = AcknowledgementViewController.self
 
     public enum LocalizedStrings {
-        public static let acknowlegementsTitle = NSLocalizedString("Acknowledgements", comment: "Default title for the Acknowlegements view controller from Swiftilities")
+        public static let acknowledgementsTitle = NSLocalizedString("Acknowledgements", comment: "Default title for the Acknowledgements view controller from Swiftilities")
     }
 
     open var viewModel: AcknowledgementsListViewModel = AcknowledgementsListViewModel(title: "", acknowledgements: []) {
@@ -34,7 +34,7 @@ open class AcknowledgementsListViewController: UITableViewController {
         }
     }
 
-    public convenience init(title: String = LocalizedStrings.acknowlegementsTitle,
+    public convenience init(title: String = LocalizedStrings.acknowledgementsTitle,
                             viewModel: AcknowledgementsListViewModel,
                             licenseFormatter: @escaping (String) -> NSAttributedString = AcknowledgementViewController.defaultLicenseFormatter) {
         self.init(style: .plain)
