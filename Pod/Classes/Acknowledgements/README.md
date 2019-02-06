@@ -1,6 +1,6 @@
 # Acknowledgements
 
-An all-in-one solution for adding an acknowledgement section to your app.
+An all-in-one solution for adding an acknowledgement section to your app. Includes all pod licenses from the [Cocoapods generated plist](https://github.com/CocoaPods/CocoaPods/wiki/Acknowledgements).
 
 ## Screenshots
 
@@ -31,22 +31,27 @@ To use the existing `AcknowledgementsListViewController` as-is, you'll want to d
 3. Create an instance of `AcknowledgementsListViewController` using your view model.
 4. Push your view controller onto your existing  `UINavigationController` to take advantage of the built-in back button.
 
+### Custom
 
-`insert how to`
+#### AcknowledgementsListViewController
 
-If you do not plan on subclassing `listviewcontroller` and `viewcontroller`, you must
+To customize, just subclass it. Please note that it is already subclassing `UITableViewController` so you may need to override table view methods to further customize the look and feel.
 
-To use as-is, you must present `listviewcontroller` inside a `navigationcontroller`
+| Property | Type | Notes |
+|----------|------|-------|
+| childViewControllerClass | AcknowledgementViewController.Type | Be sure to set this if you are using a custom `AcknowledgementViewController` for the license view. |
+| viewModel | AcknowledgementsListViewModel | Best to use as-is. |
+| licenseFormatter | (String) -> NSAttributedString | Closure for formatting the text |
+| licenseViewBackgroundColor | UIColor | Set the background color for the license view. |
+| cellBackgroundColor | UIColor | Set the background color for the list view. |
 
-[Using Cocoapods generated plist](https://github.com/CocoaPods/CocoaPods/wiki/Acknowledgements)
+#### AcknowledgementViewController
 
-`insert code sample`
+There isn't that much benefit to subclassing this. Just use the parent view controller properties `licenseFormatter` and `licenseViewBackgroundColor` instead.
 
-## Code sample
+## Code Samples
 
-### Default
-
-#### Podfile
+### Podfile
 
 ```ruby
 post_install do | installer |
@@ -56,7 +61,7 @@ end
 ```
 This `post_install` hook copies the generated `plist` into your project root folder. _Rememeber to replace `<project-name>` with your project's name_
 
-#### Swift
+### Default
 
 ```swift
 do {
@@ -68,4 +73,33 @@ catch {
 }
 ```
 
-[Screenshots courtesy of AcknowledgementSample](https://github.com/pauluhn/AcknowledgementSample)
+### Custom
+
+#### AcknowledgementsListViewController
+
+```swift
+class CustomAcknowledgementsListViewController: AcknowledgementsListViewController {
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cell = super.tableView(tableView, cellForRowAt: indexPath)
+      cell.textLabel?.textColor = .random
+      return cell
+  }
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      defer { super.tableView(tableView, didSelectRowAt: indexPath) }
+      guard let cell = tableView.cellForRow(at: indexPath) else { return }
+      licenseViewBackgroundColor = .random
+  }
+}
+```
+
+```swift
+do {
+  let viewModel = try AcknowledgementsListViewModel()
+  let viewController = CustomAcknowledgementsListViewController(viewModel: viewModel)
+  navigationController?.pushViewController(viewController, animated: true)  
+catch {
+  print(error.localizedDescription)
+}
+```
+
+_Screenshots courtesy of [AcknowledgementSample](https://github.com/pauluhn/AcknowledgementSample)_

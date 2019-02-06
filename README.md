@@ -12,7 +12,7 @@
 
 - AboutView
 - AccessibilityHelpers  
-- [Acknowledgements](Pod/Classes/Acknowledgements/README.md) - Simple solution for adding acknowledgement section.
+- [Acknowledgements](Pod/Classes/Acknowledgements/README.md) - Simple solution for adding acknowledgement section with pod licenses.
 - BetterButton
 - ColorHelpers
 - Compatibility
