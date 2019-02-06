@@ -46,12 +46,12 @@ open class AcknowledgementsListViewController: UITableViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: AcknowledgementsListViewController.reuseID)
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.tableFooterView = UIView(frame: .zero)
     }
 
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.smoothlyDeselectItems(tableView)
+        smoothlyDeselectItems(tableView)
     }
 
     // MARK: - Table view data source
@@ -78,8 +78,8 @@ open class AcknowledgementsListViewController: UITableViewController {
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let entry = viewModel.acknowledgements[indexPath.row]
         let acknowledgementVC = childViewControllerClass.init(viewModel: entry,
-                                                         licenseFormatter: licenseFormatter,
-                                                         viewBackgroundColor: licenseViewBackgroundColor)
+                                                              licenseFormatter: licenseFormatter,
+                                                              viewBackgroundColor: licenseViewBackgroundColor)
         navigationController?.pushViewController(acknowledgementVC, animated: true)
     }
 

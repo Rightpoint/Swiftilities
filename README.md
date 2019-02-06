@@ -8,6 +8,10 @@
 [![Platform](https://img.shields.io/cocoapods/p/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+## What's Inside?
+
+[Acknowledgements](Pod/Classes/Acknowledgements/README.md) - Simple solution for adding acknowledgement section.
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

@@ -14,10 +14,10 @@ open class AcknowledgementViewController: UIViewController {
         let font = UIFont.preferredFont(forTextStyle: .body)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.hyphenationFactor = 1
-        paragraphStyle.paragraphSpacing = font.pointSize / 2
+        paragraphStyle.paragraphSpacing = font.pointSize * 0.5
         let attributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.font: font,
-            NSAttributedString.Key.paragraphStyle: paragraphStyle,
+            .font: font,
+            .paragraphStyle: paragraphStyle,
             ]
         return NSAttributedString(string: string, attributes: attributes)
     }
