@@ -10,30 +10,30 @@
 
 ## What's Inside?
 
-AboutView
-AccessibilityHelpers
-[Acknowledgements](Pod/Classes/Acknowledgements/README.md) - Simple solution for adding acknowledgement section.
-BetterButton
-ColorHelpers
-Compatibility
-CoreDataStack
-Deselection
-DeviceSize
-FormattedTextField
-Forms
-HairlineView
-ImageHelpers
-Keyboard
-LicenseFormatter
-Lifecycle
-Logging
-Math
-RootViewController
-Shapes
-StackViewHelpers
-TableViewHelpers
-TintedButton
-Views (GradientView, TextView)
+- AboutView
+- AccessibilityHelpers  
+- Acknowledgements](Pod/Classes/Acknowledgements/README.md) - Simple solution for adding acknowledgement section.
+- BetterButton
+- ColorHelpers
+- Compatibility
+- CoreDataStack
+- Deselection
+- DeviceSize
+- FormattedTextField
+- Forms
+- HairlineView
+- ImageHelpers
+- Keyboard
+- LicenseFormatter
+- Lifecycle
+- Logging
+- Math
+- RootViewController
+- Shapes
+- StackViewHelpers
+- TableViewHelpers
+- TintedButton
+- Views (GradientView, TextView)
 
 ## Usage
 
