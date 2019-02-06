@@ -6,15 +6,19 @@ An all-in-one solution for adding an acknowledgement section to your app.
 
 ### Default
 
+<p>
 <img src="AcknowledgementsListViewController.png" width="200">
 <img src="AcknowledgementViewController1.png" width="200">
 <img src="AcknowledgementViewController2.png" width="200">
+</p>
 
 ### Custom
 
+<p>
 <img src="CustomAcknowledgementsListViewController.png" width="200">
 <img src="CustomAcknowledgementViewController1.png" width="200">
 <img src="CustomAcknowledgementViewController2.png" width="200">
+</p>
 
 ## How To
 
