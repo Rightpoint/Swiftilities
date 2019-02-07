@@ -2,38 +2,58 @@
 
 An all-in-one solution for adding an acknowledgement section to your app. Includes all pod licenses from the [Cocoapods generated plist](https://github.com/CocoaPods/CocoaPods/wiki/Acknowledgements).
 
-## Screenshots
+## Default Appearance
 
-### Default
+<details>
+<summary>Screenshots</summary>
 
 <p>
 <img src="AcknowledgementsListViewController.png" width="200">
-<img src="AcknowledgementViewController1.png" width="200">
-<img src="AcknowledgementViewController2.png" width="200">
+<img src="AcknowledgementViewController.png" width="200">
 </p>
 
-### Custom
+</details>
+
+### Quick Start
+
+To use `AcknowledgementsListViewController` as-is, follow these 4 easy steps:
+
+1. Add `post_install` hook to the end of your `Podfile` to copy the generated `plist` into your project root folder. _Rememeber to replace `<project-name>` with your project's name_
+```ruby
+post_install do | installer |
+    require 'fileutils'
+    FileUtils.cp_r('Pods/Target Support Files/Pods-<project-name>/Pods-<project-name>.plist', '<project-name>/Acknowledgements.plist', :remove_destination => true)
+end
+```
+
+2. Create an instance of `AcknowledgementsListViewModel`. Requires a `try` to catch any `throw`.
+
+3. Create an instance of `AcknowledgementsListViewController` using your view model.
+
+4. Push your view controller onto your existing  `UINavigationController` to take advantage of the built-in back button.
+```swift
+do {
+    let viewModel = try AcknowledgementsListViewModel() // STEP 2
+    let viewController = AcknowledgementsListViewController(viewModel: viewModel) // STEP 3
+    navigationController?.pushViewController(viewController, animated: true) // STEP 4
+catch {
+    print(error.localizedDescription)
+}
+```
+
+## Custom Appearance
+
+<details>
+<summary>Screenshots</summary>
 
 <p>
 <img src="CustomAcknowledgementsListViewController.png" width="200">
-<img src="CustomAcknowledgementViewController1.png" width="200">
-<img src="CustomAcknowledgementViewController2.png" width="200">
+<img src="CustomAcknowledgementViewController.png" width="200">
 </p>
 
-## How To
+</details>
 
-### Default
-
-To use the existing `AcknowledgementsListViewController` as-is, you'll want to do these 4 steps:
-
-1. Add `post_install` hook to your `Podfile` to copy the generated `plist`.
-2. Create an instance of `AcknowledgementsListViewModel`. Requires a `try` to catch any `throw`.
-3. Create an instance of `AcknowledgementsListViewController` using your view model.
-4. Push your view controller onto your existing  `UINavigationController` to take advantage of the built-in back button.
-
-### Custom
-
-#### AcknowledgementsListViewController
+### AcknowledgementsListViewController
 
 To customize, just subclass it. Please note that it is already subclassing `UITableViewController` so you may need to override table view methods to further customize the look and feel.
 
@@ -44,38 +64,6 @@ To customize, just subclass it. Please note that it is already subclassing `UITa
 | licenseFormatter | (String) -> NSAttributedString | Closure for formatting the text |
 | licenseViewBackgroundColor | UIColor | Set the background color for the license view. |
 | cellBackgroundColor | UIColor | Set the background color for the list view. |
-
-#### AcknowledgementViewController
-
-There isn't that much benefit to subclassing this. Just use the parent view controller properties `licenseFormatter` and `licenseViewBackgroundColor` instead.
-
-## Code Samples
-
-### Podfile
-
-```ruby
-post_install do | installer |
-    require 'fileutils'
-    FileUtils.cp_r('Pods/Target Support Files/Pods-<project-name>/Pods-<project-name>.plist', '<project-name>/Acknowledgements.plist', :remove_destination => true)
-end
-```
-This `post_install` hook copies the generated `plist` into your project root folder. _Rememeber to replace `<project-name>` with your project's name_
-
-### Default
-
-```swift
-do {
-  let viewModel = try AcknowledgementsListViewModel()
-  let viewController = AcknowledgementsListViewController(viewModel: viewModel)
-  navigationController?.pushViewController(viewController, animated: true)  
-catch {
-  print(error.localizedDescription)
-}
-```
-
-### Custom
-
-#### AcknowledgementsListViewController
 
 ```swift
 class CustomAcknowledgementsListViewController: AcknowledgementsListViewController {
@@ -101,5 +89,9 @@ catch {
   print(error.localizedDescription)
 }
 ```
+
+### AcknowledgementViewController
+
+There isn't that much benefit to subclassing this. Just use the parent view controller properties `licenseFormatter` and `licenseViewBackgroundColor` instead.
 
 _Screenshots courtesy of [AcknowledgementSample](https://github.com/pauluhn/AcknowledgementSample)_
