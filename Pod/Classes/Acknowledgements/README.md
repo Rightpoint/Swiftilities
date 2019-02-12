@@ -1,6 +1,6 @@
 # Acknowledgements
 
-An all-in-one solution for adding an acknowledgement section to your app. Includes all pod licenses from the [Cocoapods generated plist](https://github.com/CocoaPods/CocoaPods/wiki/Acknowledgements).
+A simple solution for adding an acknowledgement section to your app. Includes all pod licenses from the [Cocoapods generated plist](https://github.com/CocoaPods/CocoaPods/wiki/Acknowledgements).
 
 ## Default Appearance
 
