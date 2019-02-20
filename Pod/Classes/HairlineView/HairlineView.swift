@@ -37,7 +37,7 @@ open class HairlineView: UIView {
         }
     }
 
-    public init(axis: NSLayoutConstraint.Axis, thickness: CGFloat = CGFloat(1.0 / UIScreen.main.scale),
+    public init(axis: NSLayoutConstraint.Axis = .horizontal, thickness: CGFloat = CGFloat(1.0 / UIScreen.main.scale),
                 hairlineColor: UIColor = UIColor.darkGray) {
         self.axis = axis
         self.thickness = thickness

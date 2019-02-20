@@ -21,7 +21,7 @@
 - DeviceSize
 - FormattedTextField
 - Forms
-- HairlineView
+- [HairlineView](Pod/Classes/HairlineView/README.md) - Simple horizontal or vertical hairline view
 - ImageHelpers
 - Keyboard
 - LicenseFormatter
