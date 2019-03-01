@@ -1,28 +1,27 @@
 # HairlineView
 
-A UIView that can be defined by axis, thickness and color
+A `UIView` has an intrinsic size in one axis (thickness) and is freely resizable in the other. Has a fixed axis, line thickness, and color.
+
 
 ## Default Appearance
 
 <details>
 <summary>Screenshots</summary>
 
-<p>
 <img src="HairlineTableCells.png" width="200">
-</p>
 
 </details>
 
 ### Quick Start
 
-A simple 1 pixel, horizontal, darkGray hairline:
+A simple 1 pixel, horizontal, dark gray hairline:
 ```swift
 let hairline = HairlineView()
 cell.contentView.addSubview(hairline)
 hairline.translatesAutoresizingMaskIntoConstraints = false
-hairline.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor).isActive = true
+hairline.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor).isActive = true
+hairline.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor).isActive = true
 hairline.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
-
 ```
 
 ## Custom Appearance
@@ -30,9 +29,7 @@ hairline.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActiv
 <details>
 <summary>Screenshots</summary>
 
-<p>
 <img src="HairlineButtonDivide.png" width="200">
-</p>
 
 </details>
 
