@@ -33,7 +33,9 @@
 - StackViewHelpers
 - TableViewHelpers
 - TintedButton
-- Views (GradientView, TextView)
+- Views:
+ - GradientView
+ - TextView
 
 ## Usage
 
