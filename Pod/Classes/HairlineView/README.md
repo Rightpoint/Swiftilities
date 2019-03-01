@@ -1,6 +1,6 @@
 # HairlineView
 
-A `UIView` has an intrinsic size in one axis (thickness) and is freely resizable in the other. Has a fixed axis, line thickness, and color.
+A `UIView` that has an intrinsic size in one axis (thickness) and is freely resizable in the other. `HairlineView` has a fixed axis, line thickness, and color.
 
 
 ## Default Appearance
