@@ -34,8 +34,8 @@
 - TableViewHelpers
 - TintedButton
 - Views:
- - GradientView
- - TextView
+ - [GradientView](Pod/Classes/Views/Gradient/README.md) - UIView containing a color gradient.
+ - [TextView](Pod/Classes/Views/Textview/README.md) - UITextView that can present placeholder text or expand it’s height to accommodate text content.
 
 ## Usage
 

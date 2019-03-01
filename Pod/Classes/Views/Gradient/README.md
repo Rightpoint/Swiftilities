@@ -7,21 +7,19 @@ A UIView that contains a gradient
 <details>
 <summary>Screenshots</summary>
 
-<p>
-<img src="HairlineTableCells.png" width="200">
-</p>
+<img src="GradioentSimple.png" width="200">
 
 </details>
 
 ### Quick Start
 
-A simple 1 pixel, horizontal, darkGray hairline:
+A linear gradient transitioning from white to blue:
 ```swift
-let hairline = HairlineView()
-cell.contentView.addSubview(hairline)
-hairline.translatesAutoresizingMaskIntoConstraints = false
-hairline.widthAnchor.constraint(equalTo: cell.contentView.widthAnchor).isActive = true
-hairline.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActive = true
+let gradientView = GradientView(direction: .leftToRight, colors: [.white, .blue])
+cell.contentView.addSubview(gradientView)
+gradientView.translatesAutoresizingMaskIntoConstraints = false
+gradientView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+gradientView.heightAnchor.constraint(equalToConstant: 64.0).isActive = true
 
 ```
 
@@ -30,19 +28,29 @@ hairline.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor).isActiv
 <details>
 <summary>Screenshots</summary>
 
-<p>
-<img src="HairlineButtonDivide.png" width="200">
-</p>
+<img src="GradientCustom.png" width="200">
 
 </details>
 
-To customize, add init parameters for axis, thickness and color.
+Direction can be changed or a custom direction can be defined with Floats from 0.0 to 1.0 describing the start and end position within the view. Locations can be provided to define how the color array should be spaced; if no locations are provided, the colors will be evenly spaced between the start and end positions.
 
 ```swift
-let hairline = HairlineView(axis: .vertical, thickness: 3.0, hairlineColor: .red)
-view.addSubview(hairline)
-hairline.translatesAutoresizingMaskIntoConstraints = false
-hairline.heightAnchor.constraint(equalToConstant: 12.0).isActive = true
-hairline.centerYAnchor.constraint(equalTo: button.centerYAnchor).isActive = true
-hairline.leadingAnchor.constraint(equalTo: button.trailingAnchor, constant: 20).isActive = true
+let gradients = [
+    GradientView(direction: .leftToRight, colors: [.red, .white, .blue]),
+    GradientView(direction: .topToBottom, colors: [.green, .black, .orange]),
+    // Gradient starting in top left corner (0,0) and ending in bottom right corner (1,1):
+    GradientView(
+        direction: .custom(start: CGPoint(x: 0, y: 0), end: CGPoint(x: 1, y: 1)),
+        colors: [.blue, .orange, .purple]
+    ),
+    // Gradient confined to bottom 10%:
+    GradientView(direction: .topToBottom, colors: [.purple, .black], locations: [0.9, 1.0]),
+]
+gradients.forEach { view in
+    stackView.addArrangedSubview(view)
+    view.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+    view.heightAnchor.constraint(equalToConstant: 64.0).isActive = true
+    view.layer.masksToBounds = true
+    view.layer.cornerRadius = 6.0
+}
 ```
