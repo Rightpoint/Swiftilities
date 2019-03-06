@@ -64,7 +64,7 @@
 		F457627BD306AD2B11C27CC4F60280BD /* DeviceSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0069723A261C89412C4680213A391B /* DeviceSize.swift */; };
 		F4E4CD53C95CA2CAD6BCF13D93E9BD54 /* Clamping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886679EA1A598DB6D47E468052B6FD69 /* Clamping.swift */; };
 		F9AB9CB212CD44052143B69E7436D209 /* UIWindow+RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C14BD0A6A27C4BD31B85DD08AF70B2 /* UIWindow+RootViewController.swift */; };
-		FF07D2CA71F2B3F4CCBD0FBC543F3FEB /* TailoredSwiftTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2036F3CC9113552E16EBD23781F5F70 /* TailoredSwiftTextView.swift */; };
+		FF07D2CA71F2B3F4CCBD0FBC543F3FEB /* ExpandingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2036F3CC9113552E16EBD23781F5F70 /* ExpandingTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,7 +158,7 @@
 		D7B4BC5C2ADAD87F37922463DD7FAECC /* AccessibilityHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessibilityHelpers.swift; path = Pod/Classes/AccessibilityHelpers/AccessibilityHelpers.swift; sourceTree = "<group>"; };
 		DCB87E481A625527948A3FE74C38D811 /* Swiftilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swiftilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD42ABF69B6B141FC0F5FDEB72D5363C /* UIViewController+Lifecycle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Lifecycle.swift"; sourceTree = "<group>"; };
-		E2036F3CC9113552E16EBD23781F5F70 /* TailoredSwiftTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TailoredSwiftTextView.swift; sourceTree = "<group>"; };
+		E2036F3CC9113552E16EBD23781F5F70 /* ExpandingTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExpandingTextView.swift; sourceTree = "<group>"; };
 		E4965FFBD9827CE5C069BD169AEE86A2 /* Pods-Swiftilities_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Swiftilities_Tests-umbrella.h"; sourceTree = "<group>"; };
 		EC8D8F576F2761A961911225DFB05FF9 /* Pods-Swiftilities_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swiftilities_Example-dummy.m"; sourceTree = "<group>"; };
 		EDF25FAF07E97E68541B6FC4638C44F4 /* Swiftilities-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swiftilities-umbrella.h"; sourceTree = "<group>"; };
@@ -553,7 +553,7 @@
 			children = (
 				599236C695218CDB122DB7260DDBA607 /* PlaceholderTextView.swift */,
 				FB79E00966320965987E436345333BCC /* Protocols.swift */,
-				E2036F3CC9113552E16EBD23781F5F70 /* TailoredSwiftTextView.swift */,
+				E2036F3CC9113552E16EBD23781F5F70 /* ExpandingTextView.swift */,
 				13A3DE90E89F7CA900EDA35ED9AA5A30 /* UITextView+Extensions.swift */,
 			);
 			name = Textview;
@@ -807,7 +807,7 @@
 				DBDA271D285E5A2BD715337D5A5393EE /* Shapes.swift in Sources */,
 				2A6AC29737F33F4056E860FF5F59F4C1 /* Swiftilities-dummy.m in Sources */,
 				A14CBC92B685CFC6AC90EB26239D2AE8 /* TableSection.swift in Sources */,
-				FF07D2CA71F2B3F4CCBD0FBC543F3FEB /* TailoredSwiftTextView.swift in Sources */,
+				FF07D2CA71F2B3F4CCBD0FBC543F3FEB /* ExpandingTextView.swift in Sources */,
 				87525C0B0E97834EC18D483C89890DB8 /* TintedButton.swift in Sources */,
 				BCF3A91A50B180C8D0DC68CCFCD58B51 /* UIColor+Helpers.swift in Sources */,
 				03A9918CE1E8823CC4E2C026FD58E5A5 /* UIImage+Tinting.swift in Sources */,

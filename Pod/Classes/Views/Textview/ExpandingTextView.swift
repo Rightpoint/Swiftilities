@@ -1,5 +1,5 @@
 //
-//  TailoredSwiftTextView.swift
+//  ExpandingTextView.swift
 //  Swiftilities
 //
 //  Created by Derek Ostrander on 6/8/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class TailoredSwiftTextView: PlaceholderTextView, HeightAutoAdjustable {
+open class ExpandingTextView: PlaceholderTextView, HeightAutoAdjustable {
     open weak var animationDelegate: TextViewAnimationDelegate?
     open var animateHeightChange: Bool = true
     open var heightPriority: UILayoutPriority = UILayoutPriority.defaultHigh

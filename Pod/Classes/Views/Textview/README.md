@@ -26,7 +26,7 @@ aTextView.heightAnchor.constraint(equalToConstant: 100.0).isActive = true
 ```
 A text color can be assigned to `.placeholderTextColor`, or fully styled text can be assigned to the `.attributedPlaceholder` property.
 
-# TailoredSwiftTextView
+# ExpandingTextView
 
 A PlaceholderTextView that resizes height to fit text entered
 
@@ -43,13 +43,13 @@ A PlaceholderTextView that resizes height to fit text entered
 
 A simple TextView with placeholder text:
 ```swift
-let tailorTextView = TailoredSwiftTextView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-tailorTextView.backgroundColor = .red
-tailorTextView.textColor = .white
-tailorTextView.font = .systemFont(ofSize: 18)
-view.addSubview(tailorTextView)
-tailorTextView.translatesAutoresizingMaskIntoConstraints = false
-tailorTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-tailorTextView.topAnchor.constraint(equalTo: aTextView.bottomAnchor, constant: 20).isActive = true
-tailorTextView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+let expandingTextView = ExpandingTextView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+expandingTextView.backgroundColor = .red
+expandingTextView.textColor = .white
+expandingTextView.font = .systemFont(ofSize: 18)
+view.addSubview(expandingTextView)
+expandingTextView.translatesAutoresizingMaskIntoConstraints = false
+expandingTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+expandingTextView.topAnchor.constraint(equalTo: aTextView.bottomAnchor, constant: 20).isActive = true
+expandingTextView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
 ```
