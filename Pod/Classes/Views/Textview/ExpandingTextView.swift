@@ -8,6 +8,9 @@
 
 import UIKit
 
+@available(*, unavailable, renamed: "ExpandingTextView")
+typealias TailoredSwiftTextView = ExpandingTextView
+
 open class ExpandingTextView: PlaceholderTextView, HeightAutoAdjustable {
     open weak var animationDelegate: TextViewAnimationDelegate?
     open var animateHeightChange: Bool = true
