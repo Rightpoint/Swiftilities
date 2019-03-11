@@ -43,6 +43,7 @@ open class HairlineView: UIView {
         self.thickness = thickness
         self.hairlineColor = hairlineColor
         super.init(frame: .zero)
+        layoutMargins = .zero
         update(hairlineColor: hairlineColor)
 
         setNeedsUpdateConstraints()
@@ -71,7 +72,7 @@ open class HairlineView: UIView {
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
         hairlineColor.setFill()
-        UIRectFill(rect)
+        UIRectFill(rect.inset(by: layoutMargins))
     }
 
     open override func updateConstraints() {
