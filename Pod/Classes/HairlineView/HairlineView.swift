@@ -72,7 +72,16 @@ open class HairlineView: UIView {
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
         hairlineColor.setFill()
-        UIRectFill(rect.inset(by: layoutMargins))
+        UIRectFill(rect)
+    }
+
+    open override var alignmentRectInsets: UIEdgeInsets {
+        return UIEdgeInsets(
+            top: -layoutMargins.top,
+            left: -layoutMargins.left,
+            bottom: -layoutMargins.bottom,
+            right: -layoutMargins.right
+        )
     }
 
     open override func updateConstraints() {
