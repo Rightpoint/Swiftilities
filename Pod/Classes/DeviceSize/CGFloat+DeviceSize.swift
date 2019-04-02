@@ -21,7 +21,7 @@ public extension CGFloat {
      - parameter size: Reference DeviceSize value
      - parameter axis: Axis to compare
      */
-    public func proportional(toDeviceSize size: DeviceSize, axis: Axis) -> CGFloat {
+    func proportional(toDeviceSize size: DeviceSize, axis: Axis) -> CGFloat {
         let defaultDimension = (axis == .x) ? size.dimensions.width : size.dimensions.height
         guard defaultDimension != 0, size != DeviceSize.current else {
             return self

@@ -29,16 +29,16 @@ public protocol ViewControllerLifecycleBehavior {
 
 public extension ViewControllerLifecycleBehavior {
 
-    public func beforeAppearing(_ viewController: UIViewController, animated: Bool) {}
+    func beforeAppearing(_ viewController: UIViewController, animated: Bool) {}
 
-    public func afterAppearing(_ viewController: UIViewController, animated: Bool) {}
+    func afterAppearing(_ viewController: UIViewController, animated: Bool) {}
 
-    public func beforeDisappearing(_ viewController: UIViewController, animated: Bool) {}
+    func beforeDisappearing(_ viewController: UIViewController, animated: Bool) {}
 
-    public func afterDisappearing(_ viewController: UIViewController, animated: Bool) {}
+    func afterDisappearing(_ viewController: UIViewController, animated: Bool) {}
 
-    public func beforeLayingOutSubviews(_ viewController: UIViewController) {}
+    func beforeLayingOutSubviews(_ viewController: UIViewController) {}
 
-    public func afterLayingOutSubviews(_ viewController: UIViewController) {}
+    func afterLayingOutSubviews(_ viewController: UIViewController) {}
 
 }

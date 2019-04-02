@@ -18,7 +18,7 @@ public extension BinaryFloatingPoint {
     ///               as the input increases, the output decreases. Defaults to `false`.
     ///   - curve: An optional mapping of input percentage to output percentage. Defaults to `nil`
     /// - Returns: The input number, scaled from the `from` range to the `to` range.
-    public func scaled(from source: ClosedRange<Self>, to destination: ClosedRange<Self>, clamped: Bool = false, reversed: Bool = false, curve: CurveProvider? = nil) -> Self {
+    func scaled(from source: ClosedRange<Self>, to destination: ClosedRange<Self>, clamped: Bool = false, reversed: Bool = false, curve: CurveProvider? = nil) -> Self {
 
         let destinationStart = reversed ? destination.upperBound : destination.lowerBound
         let destinationEnd = reversed ? destination.lowerBound : destination.upperBound
