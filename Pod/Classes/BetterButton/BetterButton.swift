@@ -299,12 +299,7 @@ private extension BetterButton.Style {
     var requiresCustomConfiguration: Bool {
         switch self {
         case .custom(stateStyles: let styles, adjustMode: let adjustment):
-            if adjustment != nil,
-                !styles.contains(where: { $0.controlState == .normal }) {
-                return true
-            } else {
-                return false
-            }
+            return adjustment != nil && !styles.contains(where: { $0.controlState == .normal })
         default:
             return false
         }
