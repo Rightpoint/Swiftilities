@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Swiftilities"
-  s.version          = "0.19.0"
+  s.version          = "0.20.0"
   s.summary          = "A collection of useful Swift utilities."
   s.swift_version    = '4.2'
 
