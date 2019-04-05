@@ -48,12 +48,18 @@ class ButtonsViewController: UIViewController {
         let baselineStyle = BetterButton.StyleAttributes(backgroundColor: .white, foregroundColor: .blue, borderColor: .blue, borderWidth: 2.0)
         let adjustMode = BetterButton.Style.HighlightAdjustMode.darken(by: nil)
         let disabledStateAttributes = BetterButton.StyleAttributes(backgroundColor: .white, foregroundColor: .gray, borderColor: nil, borderWidth: nil)
-        let disabledState = BetterButton.StateStyle(controlState: .disabled, attributes: disabledStateAttributes)
         let highlightStyle = BetterButton.StyleAttributes(backgroundColor: .blue, foregroundColor: .white, borderColor: .white, borderWidth: 1.0)
-        let highlightedState = BetterButton.StateStyle(controlState: .highlighted, attributes: highlightStyle)
-        let customStyle = BetterButton.Style.custom(normal: baselineStyle, customStateStyles: [disabledState, highlightedState], adjustMode: adjustMode)
         
-        let customStatePill = BetterButton(shape: .pill, style: customStyle)
+        let customStatePill = BetterButton(
+            shape: .pill,
+            style: .custom(
+                stateStyles: [
+                    .normal(baselineStyle),
+                    .disabled(disabledStateAttributes),
+                    .highlighted(highlightStyle),
+                    ],
+                adjustMode: adjustMode))
+
         customStatePill.setTitle("Pill (Custom) Disable Me!", for: .normal)
         customStatePill.setTitle("I'm Higlighted", for: .highlighted)
         customStatePill.setTitle("I'm Selected", for: .selected)

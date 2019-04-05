@@ -56,11 +56,10 @@ open class BetterButton: UIButton {
          Defines a custom BetterButton configuration
         
          - Params:
-             - normal: Required *StyleAttributes* for *UIControl.State.normal*.
-             - customStateStyles: Attributes to apply based on a designated `UIControl.State`. Last given style per `UIControl.State` takes precedence. Will overwrite `normal` and `adjustMode`
-             - adjustMode: Optional adjustment to apply to the <normal> style for `UIControl.State.selected` and `UIControl.State.highlighted`. Subordinate to `customStateStyles`
+             - stateStyles: Attributes to apply based on a designated `UIControl.State`. Last given style per `UIControl.State` takes precedence.
+             - adjustMode: Optional adjustment to apply to the last `.normal` stateStyle for `UIControl.State.selected` and `UIControl.State.highlighted`. Subordinate to provided `stateStyles` for `.highlighted` and `.selected`
          */
-        case custom(normal: StyleAttributes, customStateStyles: [StateStyle], adjustMode: HighlightAdjustMode?)
+        case custom(stateStyles: [StateStyle], adjustMode: HighlightAdjustMode?)
         
         /// Defines the highlight behavior for a button.
         ///
@@ -105,13 +104,46 @@ open class BetterButton: UIButton {
     }
     
     /// A UIControl.State context wrapper for `BetterButton.StyleAttributes`
-    public struct StateStyle {
-        public let controlState: UIControl.State
-        public let styleAttributes: StyleAttributes
-        
-        public init(controlState: UIControl.State, attributes: StyleAttributes) {
-            self.controlState = controlState
-            self.styleAttributes = attributes
+    public enum StateStyle {
+
+        case normal(StyleAttributes)
+        case selected(StyleAttributes)
+        case highlighted(StyleAttributes)
+        case selectedAndHighlighted(StyleAttributes)
+        case disabled(StyleAttributes)
+        case other(state: UIControl.State, attributes: StyleAttributes)
+
+        public var controlState: UIControl.State{
+            switch self {
+            case .normal:
+                return .normal
+            case .selected:
+                return .selected
+            case .highlighted:
+                return .highlighted
+            case .selectedAndHighlighted:
+                return [.selected, .highlighted]
+            case .disabled:
+                return .disabled
+            case .other(state: let state, _):
+                return state
+            }
+        }
+        public var styleAttributes: StyleAttributes {
+            switch self {
+            case .normal(let attributes):
+                return attributes
+            case .selected(let attributes):
+                return attributes
+            case .highlighted(let attributes):
+                return attributes
+            case .selectedAndHighlighted(let attributes):
+                return attributes
+            case .disabled(let attributes):
+                return attributes
+            case .other(_, attributes: let attributes):
+                return attributes
+            }
         }
     }
 
@@ -210,7 +242,7 @@ open class BetterButton: UIButton {
         }
         set {
             super.frame = newValue
-            render()
+            render(style: style)
         }
     }
 
@@ -220,7 +252,7 @@ open class BetterButton: UIButton {
         }
         set {
             super.bounds = newValue
-            render()
+            render(style: style)
         }
     }
 }
@@ -229,7 +261,7 @@ open class BetterButton: UIButton {
 
 private extension BetterButton {
 
-    func render() {
+    func render(style: Style) {
         configureTitle(for: style)
         configureBackground(for: style)
         activityIndicator.color = style.activityIndicatorColor
@@ -263,6 +295,20 @@ private extension BetterButton.Style {
     var activityIndicatorColor: UIColor {
         return stateStyles.first(where: { $0.controlState == .normal })?.styleAttributes.foregroundColor ?? .white
     }
+
+    var requiresCustomConfiguration: Bool {
+        switch self {
+        case .custom(stateStyles: let styles, adjustMode: let adjustment):
+            if adjustment != nil,
+                !styles.contains(where: { $0.controlState == .normal }) {
+                return true
+            } else {
+                return false
+            }
+        default:
+            return false
+        }
+    }
     
     var stateStyles: [BetterButton.StateStyle] {
         switch self {
@@ -271,41 +317,42 @@ private extension BetterButton.Style {
             let baselineAttributes = BetterButton.StyleAttributes(backgroundColor: backgroundColor, foregroundColor: foregroundColor, borderColor: nil, borderWidth: nil)
             let adjustedAttributes = adjustMode.adjustedStyleAttributes(from: baselineAttributes)
             return [
-                BetterButton.StateStyle(controlState: .normal, attributes: baselineAttributes),
-                BetterButton.StateStyle(controlState: .highlighted, attributes: adjustedAttributes),
-                BetterButton.StateStyle(controlState: .selected, attributes: adjustedAttributes),
+                .normal(baselineAttributes),
+                .highlighted(adjustedAttributes),
+                .selected(adjustedAttributes),
             ]
         case .outlineOnly(let backgroundColor, let foregroundColor):
             let adjustMode = highlightAdjustMode(forBrightness: foregroundColor.averageBrightness)
             let baselineAttributes = BetterButton.StyleAttributes(backgroundColor: backgroundColor, foregroundColor: foregroundColor, borderColor: foregroundColor, borderWidth: 1.0)
-            let adjustedAttributtes = adjustMode.adjustedStyleAttributes(from: baselineAttributes)
+            let adjustedAttributes = adjustMode.adjustedStyleAttributes(from: baselineAttributes)
             return [
-                BetterButton.StateStyle(controlState: .normal, attributes: baselineAttributes),
-                BetterButton.StateStyle(controlState: .highlighted, attributes: adjustedAttributtes),
-                BetterButton.StateStyle(controlState: .selected, attributes: adjustedAttributtes),
+                .normal(baselineAttributes),
+                .highlighted(adjustedAttributes),
+                .selected(adjustedAttributes),
             ]
         case .outlineInvert(let backgroundColor, let foregroundColor):
             let baselineAttributes = BetterButton.StyleAttributes(backgroundColor: backgroundColor, foregroundColor: foregroundColor, borderColor: foregroundColor, borderWidth: 1.0)
             let invertedAttributtes = BetterButton.StyleAttributes(backgroundColor: foregroundColor, foregroundColor: backgroundColor, borderColor: foregroundColor, borderWidth: 1.0)
             return [
-                BetterButton.StateStyle(controlState: .normal, attributes: baselineAttributes),
-                BetterButton.StateStyle(controlState: .highlighted, attributes: invertedAttributtes),
-                BetterButton.StateStyle(controlState: .selected, attributes: invertedAttributtes),
+                .normal(baselineAttributes),
+                .highlighted(invertedAttributtes),
+                .selected(invertedAttributtes),
             ]
-        case .custom(normal: let baselineAttributes, customStateStyles: let customStyles, adjustMode: let adjustMode):
-            // Start with the `.normal` state style.
-            var stateStyles: [BetterButton.StateStyle] = [BetterButton.StateStyle(controlState: .normal, attributes: baselineAttributes)]
-            
-            // Second, if an adjustMode is provided, add default highlighted and selected states.
-            if let adjustment = adjustMode {
-                let adjustedAttributes = adjustment.adjustedStyleAttributes(from: baselineAttributes)
+        case .custom(stateStyles: let customStyles, adjustMode: let adjustMode):
+
+            var stateStyles: [BetterButton.StateStyle] = []
+
+            // Start with the adjustMode state styles.
+            if let normal = customStyles.last(where: { $0.controlState == .normal }),
+                let adjustMode = adjustMode {
+                let adjustedAttributes = adjustMode.adjustedStyleAttributes(from: normal.styleAttributes)
                 stateStyles += [
-                    BetterButton.StateStyle(controlState: .highlighted, attributes: adjustedAttributes),
-                    BetterButton.StateStyle(controlState: .selected, attributes: adjustedAttributes),
+                    .highlighted(adjustedAttributes),
+                    .selected(adjustedAttributes),
                 ]
             }
             
-            // Last, add the custom styles
+            // Then, add the custom styles
             stateStyles += customStyles
             
             return stateStyles
