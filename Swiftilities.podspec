@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Swiftilities"
-  s.version          = "0.20.0"
+  s.version          = "0.21.0"
   s.summary          = "A collection of useful Swift utilities."
   s.swift_version    = '4.2'
 
@@ -10,10 +10,10 @@ Pod::Spec.new do |s|
                         so as to not warrant their own project.
                        DESC
 
-  s.homepage         = "https://github.com/raizlabs/Swiftilities"
+  s.homepage         = "https://github.com/rightpoint/Swiftilities"
   s.license          = 'MIT'
   s.author           = { "Nicholas Bonatsakis" => "nick.bonatsakis@raizlabs.com" }
-  s.source           = { :git => "https://github.com/raizlabs/Swiftilities.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/rightpoint/Swiftilities.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '9.0'
   s.requires_arc = true
