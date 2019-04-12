@@ -23,7 +23,7 @@ jobs:
           command: |
             cd Example
             bundle exec fastlane test
-      - run: bundle exec pod lib lint --allow-warnings
+      - run: bundle exec pod lib lint
 
   carthage-build:
     macos:
@@ -64,7 +64,7 @@ jobs:
           command: |
             curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       - run: bundle install
-      - run: bundle exec pod trunk push --allow-warnings
+      - run: bundle exec pod trunk push
 
 workflows:
   version: 2
