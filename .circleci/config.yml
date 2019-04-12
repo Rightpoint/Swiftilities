@@ -64,7 +64,8 @@ jobs:
           command: |
             curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       - run: bundle install
-      - run: bundle exec pod trunk push
+      # Warnings must be ignored on CocoaPods 1.6.1 https://github.com/CocoaPods/CocoaPods/issues/8635
+      - run: bundle exec pod trunk push --allow-warnings
 
 workflows:
   version: 2
