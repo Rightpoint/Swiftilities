@@ -75,7 +75,7 @@ public extension DeviceSize {
     }
 
 
-    #if swift(>=5.0)
+    #if swift(>=4.2)
         func hash(into hasher: inout Hasher) {
             let a: Int = Int(dimensions.width)
             let b: Int = Int(dimensions.height)
