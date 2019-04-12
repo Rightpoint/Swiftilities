@@ -3,12 +3,15 @@ version: 2
 jobs:
   test:
     macos:
-      xcode: "10.0.0"
+      xcode: "10.2.0"
     environment:
       LC_ALL: en_US.UTF-8
       LANG: en_US.UTF-8
     shell: /bin/bash --login -eo pipefail
     steps:
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.5" > ~/.ruby-version
       - checkout
       - run:
           name: Install CocoaPods Specs Repo
@@ -24,12 +27,15 @@ jobs:
 
   carthage-build:
     macos:
-      xcode: "10.0.0"
+      xcode: "10.2.0"
     environment:
       LC_ALL: en_US.UTF-8
       LANG: en_US.UTF-8
     shell: /bin/bash --login -eo pipefail
     steps:
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.5" > ~/.ruby-version
       - checkout
       - run:
           name: Update homebrew dependencies
@@ -43,12 +49,15 @@ jobs:
 
   deploy-to-cocoapods:
     macos:
-      xcode: "10.0.0"
+      xcode: "10.2.0"
     environment:
       LC_ALL: en_US.UTF-8
       LANG: en_US.UTF-8
     shell: /bin/bash --login -eo pipefail
     steps:
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.5" > ~/.ruby-version
       - checkout
       - run:
           name: Install CocoaPods Specs Repo
