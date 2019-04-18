@@ -44,7 +44,7 @@ public extension FeedbackPresenter where Self: UIViewController {
     /// - Parameters:
     ///   - email: the email address that feedback should be sent to
     ///   - completion: a completion handler to be executed after the mail compose view controller is dismissed
-    public func presentSendFeedback(to email: String, completion: ((MFMailComposeResult) -> Void)?) {
+    func presentSendFeedback(to email: String, completion: ((MFMailComposeResult) -> Void)?) {
         let deviceModel = AppInfo.deviceModel
         guard deviceModel != "i386", deviceModel != "x86_64" else {
             let alert = UIAlertController(title: "Not supported in simulator",
@@ -78,7 +78,7 @@ public extension FeedbackPresenter where Self: UIViewController {
     ///   - anchorView: The view to anchor the presented view to on the iPad
     ///   - frame: The frame to anchor the presented view to on the iPad, if the value is nil it will default to the
     ///            frame of the anchor view
-    public func presentShareApp(shareText: NSString, shareURL: URL, presentedFrom anchorView: UIView, with frame: CGRect? = nil) {
+    func presentShareApp(shareText: NSString, shareURL: URL, presentedFrom anchorView: UIView, with frame: CGRect? = nil) {
         let activityViewController = UIActivityViewController(activityItems: [shareText, shareURL], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = anchorView
         activityViewController.popoverPresentationController?.sourceRect = frame ?? anchorView.frame
@@ -91,7 +91,7 @@ public extension FeedbackPresenter where Self: UIViewController {
     ///   - shareText: The text to share
     ///   - shareURL: The URL to share
     ///   - barButtonItem: The UIBarButtonItem to anchor to on it iPad
-    public func presentShareApp(shareText: NSString, shareURL: URL, presentedFrom barButtonItem: UIBarButtonItem) {
+    func presentShareApp(shareText: NSString, shareURL: URL, presentedFrom barButtonItem: UIBarButtonItem) {
         let activityViewController = UIActivityViewController(activityItems: [shareText, shareURL], applicationActivities: nil)
         activityViewController.popoverPresentationController?.barButtonItem = barButtonItem
         present(activityViewController, animated: true, completion: nil)

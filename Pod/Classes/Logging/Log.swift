@@ -89,22 +89,22 @@ open class Log {
     // MARK: Log Methods
 
     public static func error<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
-        log(object, level:.error, fileName, functionName, line)
+        log(object(), level:.error, fileName, functionName, line)
     }
 
     public static func warn<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
-        log(object, level:.warn, fileName, functionName, line)
+        log(object(), level:.warn, fileName, functionName, line)
     }
 
     public static func info<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
-        log(object, level:.info, fileName, functionName, line)
+        log(object(), level:.info, fileName, functionName, line)
     }
 
     public static func debug<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
-        log(object, level:.debug, fileName, functionName, line)
+        log(object(), level:.debug, fileName, functionName, line)
     }
 
     public static func verbose<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
-        log(object, level:.verbose, fileName, functionName, line)
+        log(object(), level:.verbose, fileName, functionName, line)
     }
 }
