@@ -282,7 +282,7 @@ private extension BetterButton {
     
     func configureImage(_ image: UIImage, for style: Style) {
         style.stateStyles.forEach { stateStyle in
-            let styledImage = image.tintedImage(color: stateStyle.styleAttributes.foregroundColor)
+            let styledImage = image.rz_tintedImage(color: stateStyle.styleAttributes.foregroundColor)
             setImage(styledImage, for: stateStyle.controlState)
         }
     }
