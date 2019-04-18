@@ -8,7 +8,7 @@
 
 import Foundation
 
-private struct AcknowlegmentConstants {
+private struct AcknowledgmentConstants {
     static let settingsKeyTitle = "Title"
     static let settingsKeySpecifiers = "PreferenceSpecifiers"
     static let settingsKeyFooterText = "FooterText"
@@ -30,7 +30,7 @@ public struct AcknowledgementsListViewModel {
 
 public extension AcknowledgementsListViewModel {
 
-    public init(plistNamed plistName: String = "Acknowledgements", in bundle: Bundle = Bundle.main) throws {
+    init(plistNamed plistName: String = "Acknowledgements", in bundle: Bundle = Bundle.main) throws {
         guard let url = bundle.url(forResource: plistName, withExtension: "plist") else {
             throw AcknowledgementsError.missingPlistNamed(plistName)
         }
@@ -39,7 +39,7 @@ public extension AcknowledgementsListViewModel {
         acknowledgements = try AcknowledgementsListViewModel.parseAcknowledgements(from: dictionary)
     }
 
-    public init(plistURL: URL) throws {
+    init(plistURL: URL) throws {
         let dictionary = try AcknowledgementsListViewModel.loadPlist(at: plistURL)
         title = try AcknowledgementsListViewModel.parseTitle(from: dictionary)
         acknowledgements = try AcknowledgementsListViewModel.parseAcknowledgements(from: dictionary)
@@ -57,14 +57,14 @@ private extension AcknowledgementsListViewModel {
     }
 
     static func parseTitle(from dictionary: [String: Any]) throws -> String {
-        guard let title = dictionary[AcknowlegmentConstants.settingsKeyTitle] as? String else {
+        guard let title = dictionary[AcknowledgmentConstants.settingsKeyTitle] as? String else {
             throw AcknowledgementsError.noTitle
         }
         return title
     }
 
     static func parseAcknowledgements(from dictionary: [String: Any]) throws -> [AcknowledgementViewModel] {
-        guard let specifiers = dictionary[AcknowlegmentConstants.settingsKeySpecifiers] as? [[String: Any]] else {
+        guard let specifiers = dictionary[AcknowledgmentConstants.settingsKeySpecifiers] as? [[String: Any]] else {
             throw AcknowledgementsError.noSpecifiers
         }
         guard specifiers.count > 2 else {
@@ -91,8 +91,8 @@ public struct AcknowledgementViewModel {
 private extension AcknowledgementViewModel {
 
     init?(dictionary: [String: Any]) {
-        guard let title = dictionary[AcknowlegmentConstants.settingsKeyTitle] as? String,
-            let footerText = dictionary[AcknowlegmentConstants.settingsKeyFooterText] as? String else {
+        guard let title = dictionary[AcknowledgmentConstants.settingsKeyTitle] as? String,
+            let footerText = dictionary[AcknowledgmentConstants.settingsKeyFooterText] as? String else {
                 return nil
         }
         self.title = title

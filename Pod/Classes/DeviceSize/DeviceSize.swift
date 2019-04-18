@@ -74,13 +74,23 @@ public extension DeviceSize {
         }
     }
 
-    var hashValue: Int {
-        let a: Int = Int(dimensions.width)
-        let b: Int = Int(dimensions.height)
 
-        // Using Cantor's pairing function:
-        return (a + b) * (a + b + 1) / 2 + b
-    }
+    #if swift(>=4.2)
+        func hash(into hasher: inout Hasher) {
+            let a: Int = Int(dimensions.width)
+            let b: Int = Int(dimensions.height)
+            hasher.combine(a)
+            hasher.combine(b)
+        }
+    #else
+        var hashValue: Int {
+            let a: Int = Int(dimensions.width)
+            let b: Int = Int(dimensions.height)
+
+            // Using Cantor's pairing function:
+            return (a + b) * (a + b + 1) / 2 + b
+        }
+    #endif
 }
 
 public func == (lhs: DeviceSize, rhs: DeviceSize) -> Bool {

@@ -15,7 +15,7 @@ open class AcknowledgementsListViewController: UITableViewController {
     public var childViewControllerClass: AcknowledgementViewController.Type = AcknowledgementViewController.self
 
     public enum LocalizedStrings {
-        public static let acknowlegementsTitle = NSLocalizedString("Acknowledgements", comment: "Default title for the Acknowlegements view controller from Swiftilities")
+        public static let acknowledgementsTitle = NSLocalizedString("Acknowledgements", comment: "Default title for the Acknowledgements view controller from Swiftilities")
     }
 
     open var viewModel: AcknowledgementsListViewModel = AcknowledgementsListViewModel(title: "", acknowledgements: []) {
@@ -34,7 +34,7 @@ open class AcknowledgementsListViewController: UITableViewController {
         }
     }
 
-    public convenience init(title: String = LocalizedStrings.acknowlegementsTitle,
+    public convenience init(title: String = LocalizedStrings.acknowledgementsTitle,
                             viewModel: AcknowledgementsListViewModel,
                             licenseFormatter: @escaping (String) -> NSAttributedString = AcknowledgementViewController.defaultLicenseFormatter) {
         self.init(style: .plain)
@@ -46,12 +46,12 @@ open class AcknowledgementsListViewController: UITableViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: AcknowledgementsListViewController.reuseID)
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.tableFooterView = UIView(frame: .zero)
     }
 
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.smoothlyDeselectItems(tableView)
+        smoothlyDeselectItems(tableView)
     }
 
     // MARK: - Table view data source
@@ -78,8 +78,8 @@ open class AcknowledgementsListViewController: UITableViewController {
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let entry = viewModel.acknowledgements[indexPath.row]
         let acknowledgementVC = childViewControllerClass.init(viewModel: entry,
-                                                         licenseFormatter: licenseFormatter,
-                                                         viewBackgroundColor: licenseViewBackgroundColor)
+                                                              licenseFormatter: licenseFormatter,
+                                                              viewBackgroundColor: licenseViewBackgroundColor)
         navigationController?.pushViewController(acknowledgementVC, animated: true)
     }
 

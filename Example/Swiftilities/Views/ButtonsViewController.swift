@@ -44,6 +44,33 @@ class ButtonsViewController: UIViewController {
         getButton.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
         getButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         stackView.addArrangedSubview(getButton)
+        
+        let baselineStyle = BetterButton.StyleAttributes(backgroundColor: .white, foregroundColor: .blue, borderColor: .blue, borderWidth: 2.0)
+        let adjustMode = BetterButton.Style.HighlightAdjustMode.darken(by: nil)
+        let disabledStateAttributes = BetterButton.StyleAttributes(backgroundColor: .white, foregroundColor: .gray, borderColor: nil, borderWidth: nil)
+        let highlightStyle = BetterButton.StyleAttributes(backgroundColor: .blue, foregroundColor: .white, borderColor: .white, borderWidth: 1.0)
+        
+        let customStatePill = BetterButton(
+            shape: .pill,
+            style: .custom(
+                stateStyles: [
+                    .normal(baselineStyle),
+                    .disabled(disabledStateAttributes),
+                    .highlighted(highlightStyle),
+                    ],
+                adjustMode: adjustMode))
+
+        customStatePill.setTitle("Pill (Custom) Disable Me!", for: .normal)
+        customStatePill.setTitle("I'm Higlighted", for: .highlighted)
+        customStatePill.setTitle("I'm Selected", for: .selected)
+        customStatePill.setTitle("I'm Disabled", for: .disabled)
+        customStatePill.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        customStatePill.setContentCompressionResistancePriority(UILayoutPriority.required, for: .horizontal)
+        customStatePill.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        customStatePill.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        customStatePill.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        customStatePill.addTarget(self, action: #selector(flipEnabled(button:)), for: .primaryActionTriggered)
+        stackView.addArrangedSubview(customStatePill)
 
         let circleOutlineInvert = BetterButton(shape: .circle, style: .outlineInvert(backgroundColor: .darkGray, foregroundColor: .red))
         circleOutlineInvert.iconImage = #imageLiteral(resourceName: "icn-twitter")
@@ -64,6 +91,13 @@ class ButtonsViewController: UIViewController {
         button.isLoading = true
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
             button.isLoading = false
+        }
+    }
+    
+    @objc func flipEnabled(button: BetterButton) {
+        button.isEnabled = !button.isEnabled
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            button.isEnabled = !button.isEnabled
         }
     }
 }
