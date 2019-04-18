@@ -75,7 +75,7 @@ public extension UITableView {
      Focus the VoiceOver layout on the first cell of this UITableView instance.
      If the table view has no rows, this is a no-op.
      */
-    @nonobjc public func accessibilityFocusOnFirstCell() {
+    @nonobjc func accessibilityFocusOnFirstCell() {
         guard let sections = dataSource?.numberOfSections?(in: self), sections > 0,
             let rows = dataSource?.tableView(self, numberOfRowsInSection: 0), rows > 0,
             let cell = self.cellForRow(at: IndexPath(row: 0, section: 0)) else {
