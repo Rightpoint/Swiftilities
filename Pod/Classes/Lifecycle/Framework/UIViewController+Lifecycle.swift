@@ -19,7 +19,7 @@ public extension UIViewController {
     /// in `viewDidLoad` to avoid it being loaded prematurely.
     ///
     /// - Parameter behaviors: The behaviors to add
-    public func addBehaviors(_ behaviors: [ViewControllerLifecycleBehavior]) {
+    func addBehaviors(_ behaviors: [ViewControllerLifecycleBehavior]) {
         let behaviorViewController = LifecycleBehaviorViewController(behaviors: behaviors)
 
         loadViewIfNeeded()
