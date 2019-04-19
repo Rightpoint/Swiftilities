@@ -2,7 +2,7 @@
 
 
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org)
-[![CircleCI](https://img.shields.io/circleci/project/github/Raizlabs/Swiftilities.svg)](https://circleci.com/gh/Raizlabs/Swiftilities/tree/develop)
+[![CircleCI](https://img.shields.io/circleci/project/github/Rightpoint/Swiftilities.svg)](https://circleci.com/gh/Rightpoint/Swiftilities/tree/master)
 [![Version](https://img.shields.io/cocoapods/v/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
 [![License](https://img.shields.io/cocoapods/l/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
 [![Platform](https://img.shields.io/cocoapods/p/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
