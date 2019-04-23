@@ -2,6 +2,17 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../CONTRIBUTING.md">
+   </FileRef>
+   <FileRef
+      location = "group:../Gemfile"
+      assignedFileDataType = "public.ruby-script">
+   </FileRef>
+   <FileRef
+      location = "group:../Swiftilities.podspec"
+      assignedFileDataType = "public.ruby-script">
+   </FileRef>
+   <FileRef
       location = "group:Swiftilities.xcodeproj">
    </FileRef>
    <FileRef
