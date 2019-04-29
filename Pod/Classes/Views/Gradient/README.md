@@ -7,7 +7,7 @@ A UIView that contains a gradient
 <details>
 <summary>Screenshots</summary>
 
-<img src="GradioentSimple.png" width="200">
+<img src="GradientSimple.png" width="200">
 
 </details>
 
@@ -20,7 +20,6 @@ cell.contentView.addSubview(gradientView)
 gradientView.translatesAutoresizingMaskIntoConstraints = false
 gradientView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
 gradientView.heightAnchor.constraint(equalToConstant: 64.0).isActive = true
-
 ```
 
 ## Custom Appearance
