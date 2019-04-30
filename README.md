@@ -32,7 +32,7 @@
 - Shapes
 - StackViewHelpers
 - TableViewHelpers
-- TintedButton
+- [TintedButton](Pod/Classes/TintedButton/README.md) - UIButton with border and default highlighting
 - Views:
  - [GradientView](Pod/Classes/Views/Gradient/README.md) - UIView containing a color gradient.
  - [Text Views](Pod/Classes/Views/Textview/README.md) - UITextViews that can present placeholder text or expand height to accommodate content.
