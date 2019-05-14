@@ -51,7 +51,7 @@ extension UIView.AnimationCurve: CurveProvider {
                 controlPoint2 = CGPoint(x: 0.58, y: 1)
 #if swift(>=5.0)
             @unknown default:
-                Log.error("ERROR: Unhandled UIView.AnimationCurve case!")
+                debugPrint("ERROR: Unhandled UIView.AnimationCurve case \(self)!")
                 controlPoint1 = .zero
                 controlPoint2 = .zero
 #endif

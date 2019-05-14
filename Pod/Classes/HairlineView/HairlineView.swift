@@ -96,7 +96,7 @@ open class HairlineView: UIView {
         case .vertical: size.width = thickness
 #if swift(>=5.0)
         @unknown default:
-            Log.error("ERROR: Unhandled NSLayoutConstraint.Axis case!")
+            debugPrint("ERROR: Unhandled NSLayoutConstraint.Axis case \(axis)!")
             break
 #endif
         }
