@@ -26,7 +26,7 @@
 - Keyboard
 - LicenseFormatter
 - Lifecycle
-- Logging
+- [Logging](Pod/Classes/Logging/README.md) - Log events by priority
 - Math
 - RootViewController
 - Shapes
