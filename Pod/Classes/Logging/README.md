@@ -4,7 +4,7 @@ Set a logging level to dictate priority of events logged
 
 ### Quick Start
 
-By default, nothing will be logged, so you wan't to set a logging level during app set-up, before any loggable events. Different logging levels are often set for different build schemes (debug scheme may be `.verbose` while release might be `.warn`)
+By default, nothing will be logged, so you want to set a logging level during app set-up, before any loggable events. Different logging levels are often set for different build schemes (debug scheme may be `.verbose` while release might be `.warn`).
 ```swift
 Log.logLevel = .warn
 ```
