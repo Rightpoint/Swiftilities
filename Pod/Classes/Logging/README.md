@@ -38,3 +38,10 @@ Log level can also be represented by emoji instead of strings.
 ```swift
 Log.useEmoji = true
 ```
+
+Emoji key:
+- .verbose = 📖
+- .debug = 🐝
+- .info = ✏️
+- .warn = ⚠️
+- .error = ⁉️
