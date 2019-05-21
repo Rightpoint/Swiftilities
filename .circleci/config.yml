@@ -1,42 +1,22 @@
-version: 2
+version: 2.1
 
 jobs:
   test:
-    macos:
-      xcode: "10.2.0"
-    environment:
-      LC_ALL: en_US.UTF-8
-      LANG: en_US.UTF-8
-    shell: /bin/bash --login -eo pipefail
+    executor: xcode-10
     steps:
-      - run:
-          name: Set Ruby Version
-          command:  echo "ruby-2.5" > ~/.ruby-version
-      - checkout
-      - run:
-          name: Install CocoaPods Specs Repo
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-      - run: bundle install
+      - setup
       - run:
           name: Fastlane Test
           command: |
             cd Example
             bundle exec fastlane test
-      - run: bundle exec pod lib lint
+      - run: bundle exec pod lib lint --swift-version=4.2
+      - run: bundle exec pod lib lint --swift-version=5.0
 
   carthage-build:
-    macos:
-      xcode: "10.2.0"
-    environment:
-      LC_ALL: en_US.UTF-8
-      LANG: en_US.UTF-8
-    shell: /bin/bash --login -eo pipefail
+    executor: xcode-10
     steps:
-      - run:
-          name: Set Ruby Version
-          command:  echo "ruby-2.5" > ~/.ruby-version
-      - checkout
+      - setup
       - run:
           name: Update homebrew dependencies
           command: brew update 1> /dev/null 2> /dev/null
@@ -48,24 +28,40 @@ jobs:
           command: carthage build --no-skip-current && test -d Carthage/Build/iOS/Swiftilities.framework
 
   deploy-to-cocoapods:
+    executor: xcode-10
+    steps:
+      - setup
+      - run: bundle exec pod trunk push
+
+executors:
+  xcode-10:
     macos:
       xcode: "10.2.0"
     environment:
       LC_ALL: en_US.UTF-8
       LANG: en_US.UTF-8
     shell: /bin/bash --login -eo pipefail
+
+commands:
+  setup:
+    description: "Shared setup"
+    steps:
+      - checkout
+      - restore-gems
+
+  restore-gems:
+    description: "Restore Ruby Gems"
     steps:
       - run:
           name: Set Ruby Version
           command:  echo "ruby-2.5" > ~/.ruby-version
-      - checkout
-      - run:
-          name: Install CocoaPods Specs Repo
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-      - run: bundle install
-      # Warnings must be ignored on CocoaPods 1.6.1 https://github.com/CocoaPods/CocoaPods/issues/8635
-      - run: bundle exec pod trunk push --allow-warnings
+      - restore_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+      - run: bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
 
 workflows:
   version: 2

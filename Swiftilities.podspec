@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = "Swiftilities"
-  s.version          = "0.23.0"
+  s.version          = "0.23.1"
   s.summary          = "A collection of useful Swift utilities."
-  s.swift_version    = '5.0'
+  s.swift_versions    = ['4.2', '5.0']
 
   s.description      = <<-DESC
                         A collection of useful Swift utilities. All components and
