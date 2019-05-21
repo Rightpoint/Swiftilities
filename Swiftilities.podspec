@@ -15,23 +15,32 @@ Pod::Spec.new do |s|
   s.author           = { "Nicholas Bonatsakis" => "nick.bonatsakis@raizlabs.com" }
   s.source           = { :git => "https://github.com/rightpoint/Swiftilities.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '9.0'
+  s.ios.deployment_target  = '9.0'
+  s.osx.deployment_target = '10.11'
+  s.watchos.deployment_target = '2.2'
+  s.tvos.deployment_target = '10.0'
+
   s.requires_arc = true
 
   s.default_subspec = 'All'
 
+  s.ios.framework  = 'UIKit'
+  s.tvos.framework = 'UIKit'
+
   # About
 
   s.subspec "AboutView" do |ss|
-    ss.source_files = "Pod/Classes/AboutView/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.source_files = "Pod/Classes/AboutView/*.swift"
+    ss.ios.deployment_target  = '9.0'
+    ss.ios.frameworks = ['UIKit', 'MessageUI']
   end
 
   # AccessibilityHelpers
 
   s.subspec "AccessibilityHelpers" do |ss|
     ss.source_files = "Pod/Classes/AccessibilityHelpers/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
 
   # Acknowledgements
@@ -40,8 +49,8 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/LicenseFormatter'
     ss.dependency 'Swiftilities/Deselection'
     ss.dependency 'Swiftilities/Compatibility'
-    ss.source_files = "Pod/Classes/Acknowledgements/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.source_files = "Pod/Classes/Acknowledgements/*.swift"
+    ss.ios.deployment_target  = '9.0'
   end
 
   # BetterButton
@@ -52,14 +61,16 @@ Pod::Spec.new do |s|
     ss.dependency 'Swiftilities/ImageHelpers'
     ss.dependency 'Swiftilities/ColorHelpers'
     ss.dependency 'Swiftilities/Math'
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
 
   # ColorHelpers
 
   s.subspec "ColorHelpers" do |ss|
     ss.source_files = "Pod/Classes/ColorHelpers/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
 
   # Compatibility
@@ -79,54 +90,58 @@ Pod::Spec.new do |s|
 
   s.subspec "Deselection" do |ss|
     ss.source_files = "Pod/Classes/Deselection/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
 
   # DeviceSize
 
   s.subspec "DeviceSize" do |ss|
-    ss.source_files = "Pod/Classes/DeviceSize/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.source_files = "Pod/Classes/DeviceSize/*.swift"
+    ss.ios.deployment_target  = '9.0'
   end
 
   # FormattedTextField
 
   s.subspec "FormattedTextField" do |ss|
     ss.source_files = "Pod/Classes/FormattedTextField/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
 
   # Forms
 
   s.subspec "Forms" do |ss|
     ss.source_files = "Pod/Classes/Forms/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
 
   # HairlineView
 
   s.subspec "HairlineView" do |ss|
     ss.source_files = "Pod/Classes/HairlineView/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
   
   s.subspec "ImageHelpers" do |ss|
     ss.source_files = "Pod/Classes/ImageHelpers/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0' 
   end
 
   # Keyboard
 
   s.subspec "Keyboard" do |ss|
-    ss.source_files = "Pod/Classes/Keyboard/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.source_files = "Pod/Classes/Keyboard/*.swift"
+    ss.ios.deployment_target  = '9.0'
   end
 
   # LicenseFormatter
 
   s.subspec "LicenseFormatter" do |ss|
     ss.source_files = "Pod/Classes/LicenseFormatter/*.swift"
-    ss.frameworks   = "Foundation"
   end
 
   # Lifecycle
@@ -134,102 +149,111 @@ Pod::Spec.new do |s|
   s.subspec "Lifecycle" do |ss|
     ss.dependency 'Swiftilities/Math'
     ss.dependency 'Swiftilities/HairlineView'
-    ss.source_files = ["Pod/Classes/Lifecycle/**/*.swift"]
-    ss.frameworks   = ["UIKit"]
+    ss.ios.source_files = ["Pod/Classes/Lifecycle/**/*.swift"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0' 
   end
 
   # Logging
 
   s.subspec "Logging" do |ss|
     ss.source_files = "Pod/Classes/Logging/*.swift"
-    ss.frameworks   = "Foundation"
   end
 
   # Math
 
   s.subspec "Math" do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.ios.source_files = "Pod/Classes/Math/*.swift"
-
-    ss.tvos.deployment_target = '9.0'
-    ss.tvos.source_files = "Pod/Classes/Math/*.swift"
-
-    ss.osx.deployment_target = '10.11'
-    ss.osx.source_files = "Pod/Classes/Math/*.swift"
-
-    ss.watchos.deployment_target = '2.2'
-    ss.watchos.source_files = "Pod/Classes/Math/*.swift"
+    ss.source_files = "Pod/Classes/Math/*.swift"
+    ss.frameworks = ["CoreGraphics"]
   end
 
   # RootViewController
 
   s.subspec "RootViewController" do |ss|
-    ss.source_files = "Pod/Classes/RootViewController/*.swift"
-    ss.frameworks   = ["UIKit", "MessageUI"]
+    ss.ios.source_files = "Pod/Classes/RootViewController/*.swift"
+    ss.ios.frameworks   = ["UIKit", "MessageUI"]
+    ss.ios.deployment_target  = '9.0'
   end
 
   # Shapes
 
   s.subspec "Shapes" do |ss|
     ss.source_files = "Pod/Classes/Shapes/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
 
   # StackViewHelpers
 
   s.subspec "StackViewHelpers" do |ss|
     ss.source_files = "Pod/Classes/StackViewHelpers/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
   
   # TableViewHelpers
 
   s.subspec "TableViewHelpers" do |ss|
     ss.source_files = "Pod/Classes/TableViewHelpers/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
 
   # TintedButton
 
   s.subspec "TintedButton" do |ss|
     ss.source_files = "Pod/Classes/TintedButton/*.swift"
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
+    ss.tvos.deployment_target = '10.0'
   end
 
   # Views
 
   s.subspec "Views" do |ss|
     ss.source_files = ["Pod/Classes/Views/**/*.swift"]
-    ss.frameworks   = ["UIKit"]
+    ss.ios.deployment_target  = '9.0'
   end
 
   # Catch All
 
   s.subspec "All" do |ss|
-    ss.dependency 'Swiftilities/AboutView'
-    ss.dependency 'Swiftilities/AccessibilityHelpers'
-    ss.dependency 'Swiftilities/Acknowledgements'
-    ss.dependency 'Swiftilities/BetterButton'
-    ss.dependency 'Swiftilities/ColorHelpers'
-    ss.dependency 'Swiftilities/Compatibility'
-    ss.dependency 'Swiftilities/CoreDataStack'
-    ss.dependency 'Swiftilities/Deselection'
-    ss.dependency 'Swiftilities/DeviceSize'
-    ss.dependency 'Swiftilities/FormattedTextField'
-    ss.dependency 'Swiftilities/Forms'
-    ss.dependency 'Swiftilities/HairlineView'
-    ss.dependency 'Swiftilities/ImageHelpers'
-    ss.dependency 'Swiftilities/Keyboard'
-    ss.dependency 'Swiftilities/LicenseFormatter'
-    ss.dependency 'Swiftilities/Lifecycle'
-    ss.dependency 'Swiftilities/Logging'
-    ss.dependency 'Swiftilities/Math'
-    ss.dependency 'Swiftilities/RootViewController'
-    ss.dependency 'Swiftilities/Shapes'
-    ss.dependency 'Swiftilities/StackViewHelpers'
-    ss.dependency 'Swiftilities/TableViewHelpers'
-    ss.dependency 'Swiftilities/TintedButton'
-    ss.dependency 'Swiftilities/Views'
+    ss.ios.dependency  'Swiftilities/AboutView'
+    ss.ios.dependency  'Swiftilities/AccessibilityHelpers'
+    ss.tvos.dependency 'Swiftilities/AccessibilityHelpers'
+    ss.ios.dependency  'Swiftilities/Acknowledgements'
+    ss.ios.dependency  'Swiftilities/BetterButton'
+    ss.tvos.dependency 'Swiftilities/BetterButton'
+    ss.ios.dependency  'Swiftilities/ColorHelpers'
+    ss.tvos.dependency 'Swiftilities/ColorHelpers'
+    ss.dependency      'Swiftilities/Compatibility'
+    ss.dependency      'Swiftilities/CoreDataStack'
+    ss.ios.dependency  'Swiftilities/Deselection'
+    ss.tvos.dependency 'Swiftilities/Deselection'
+    ss.ios.dependency  'Swiftilities/DeviceSize'
+    ss.ios.dependency  'Swiftilities/FormattedTextField'
+    ss.tvos.dependency 'Swiftilities/FormattedTextField'
+    ss.ios.dependency  'Swiftilities/Forms'
+    ss.tvos.dependency 'Swiftilities/Forms'
+    ss.ios.dependency  'Swiftilities/HairlineView'
+    ss.tvos.dependency 'Swiftilities/HairlineView'
+    ss.ios.dependency  'Swiftilities/ImageHelpers'
+    ss.tvos.dependency 'Swiftilities/ImageHelpers'
+    ss.ios.dependency  'Swiftilities/Keyboard'
+    ss.dependency      'Swiftilities/LicenseFormatter'
+    ss.ios.dependency  'Swiftilities/Lifecycle'
+    ss.tvos.dependency 'Swiftilities/Lifecycle'
+    ss.dependency      'Swiftilities/Logging'
+    ss.dependency      'Swiftilities/Math'
+    ss.ios.dependency  'Swiftilities/RootViewController'
+    ss.ios.dependency  'Swiftilities/Shapes'
+    ss.tvos.dependency 'Swiftilities/Shapes'
+    ss.ios.dependency  'Swiftilities/StackViewHelpers'
+    ss.tvos.dependency 'Swiftilities/StackViewHelpers'
+    ss.ios.dependency  'Swiftilities/TableViewHelpers'
+    ss.tvos.dependency 'Swiftilities/TableViewHelpers'
+    ss.ios.dependency  'Swiftilities/TintedButton'
+    ss.tvos.dependency 'Swiftilities/TintedButton'
+    ss.ios.dependency  'Swiftilities/Views'
   end
 
 end
