@@ -10,6 +10,7 @@ jobs:
           command: |
             cd Example
             bundle exec fastlane test
+      - run: bundle exec pod repo add-cdn jsDelivr-Specs "https://cdn.jsdelivr.net/cocoa/"
       - run: bundle exec pod lib lint --swift-version=4.2
       - run: bundle exec pod lib lint --swift-version=5.0
 
