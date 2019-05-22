@@ -17,9 +17,15 @@ public extension UIView {
 
     /// A layout guide for the keyboard
     @nonobjc var keyboardLayoutGuide: UILayoutGuide? {
+        #if swift(>=5.0)
+        if let existingIdx = layoutGuides.firstIndex(where: { $0 is KeyboardLayoutGuide }) {
+            return layoutGuides[existingIdx]
+        }
+        #else
         if let existingIdx = layoutGuides.index(where: { $0 is KeyboardLayoutGuide }) {
             return layoutGuides[existingIdx]
         }
+        #endif
         return nil
     }
 
