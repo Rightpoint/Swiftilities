@@ -1,37 +1,59 @@
 {
   "name": "Swiftilities",
-  "version": "0.19.0",
+  "version": "0.23.0",
   "summary": "A collection of useful Swift utilities.",
-  "swift_version": "4.2",
+  "swift_versions": [
+    "4.2",
+    "5.0"
+  ],
   "description": "A collection of useful Swift utilities. All components and\nextensions found in this library are consise enough on their own\nso as to not warrant their own project.",
-  "homepage": "https://github.com/raizlabs/Swiftilities",
+  "homepage": "https://github.com/rightpoint/Swiftilities",
   "license": "MIT",
   "authors": {
-    "Nicholas Bonatsakis": "nick.bonatsakis@raizlabs.com"
+    "Chris Ballinger": "cballinger@rightpoint.com",
+    "Nicholas Bonatsakis": "nbonatsakis@rightpoint.com",
+    "Zev Eisenberg": "zeisenberg@rightpoint.com",
+    "Andrew McKnight": "amcknight@rightpoint.com"
   },
   "source": {
-    "git": "https://github.com/raizlabs/Swiftilities.git",
-    "tag": "0.19.0"
+    "git": "https://github.com/rightpoint/Swiftilities.git",
+    "tag": "0.23.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "9.0",
+    "osx": "10.11",
+    "watchos": "2.2",
+    "tvos": "10.0"
   },
   "requires_arc": true,
   "default_subspecs": "All",
+  "ios": {
+    "frameworks": "UIKit"
+  },
+  "tvos": {
+    "frameworks": "UIKit"
+  },
   "subspecs": [
     {
       "name": "AboutView",
-      "source_files": "Pod/Classes/AboutView/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "ios": {
+        "source_files": "Pod/Classes/AboutView/*.swift",
+        "frameworks": [
+          "UIKit",
+          "MessageUI"
+        ]
+      },
+      "platforms": {
+        "ios": "9.0"
+      }
     },
     {
       "name": "AccessibilityHelpers",
       "source_files": "Pod/Classes/AccessibilityHelpers/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "Acknowledgements",
@@ -46,10 +68,12 @@
 
         ]
       },
-      "source_files": "Pod/Classes/Acknowledgements/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "ios": {
+        "source_files": "Pod/Classes/Acknowledgements/*.swift"
+      },
+      "platforms": {
+        "ios": "9.0"
+      }
     },
     {
       "name": "BetterButton",
@@ -68,16 +92,18 @@
 
         ]
       },
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "ColorHelpers",
       "source_files": "Pod/Classes/ColorHelpers/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "Compatibility",
@@ -94,56 +120,64 @@
     {
       "name": "Deselection",
       "source_files": "Pod/Classes/Deselection/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "DeviceSize",
-      "source_files": "Pod/Classes/DeviceSize/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "ios": {
+        "source_files": "Pod/Classes/DeviceSize/*.swift"
+      },
+      "platforms": {
+        "ios": "9.0"
+      }
     },
     {
       "name": "FormattedTextField",
       "source_files": "Pod/Classes/FormattedTextField/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "Forms",
       "source_files": "Pod/Classes/Forms/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "HairlineView",
       "source_files": "Pod/Classes/HairlineView/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "ImageHelpers",
       "source_files": "Pod/Classes/ImageHelpers/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "Keyboard",
-      "source_files": "Pod/Classes/Keyboard/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "ios": {
+        "source_files": "Pod/Classes/Keyboard/*.swift"
+      },
+      "platforms": {
+        "ios": "9.0"
+      }
     },
     {
       "name": "LicenseFormatter",
-      "source_files": "Pod/Classes/LicenseFormatter/*.swift",
-      "frameworks": "Foundation"
+      "source_files": "Pod/Classes/LicenseFormatter/*.swift"
     },
     {
       "name": "Lifecycle",
@@ -155,133 +189,195 @@
 
         ]
       },
-      "source_files": [
-        "Pod/Classes/Lifecycle/**/*.swift"
-      ],
-      "frameworks": [
-        "UIKit"
-      ]
-    },
-    {
-      "name": "Logging",
-      "source_files": "Pod/Classes/Logging/*.swift",
-      "frameworks": "Foundation"
-    },
-    {
-      "name": "Math",
+      "ios": {
+        "source_files": [
+          "Pod/Classes/Lifecycle/**/*.swift"
+        ]
+      },
       "platforms": {
         "ios": "9.0",
-        "tvos": "9.0",
-        "osx": "10.11",
-        "watchos": "2.2"
-      },
-      "ios": {
-        "source_files": "Pod/Classes/Math/*.swift"
-      },
-      "tvos": {
-        "source_files": "Pod/Classes/Math/*.swift"
-      },
-      "osx": {
-        "source_files": "Pod/Classes/Math/*.swift"
-      },
-      "watchos": {
-        "source_files": "Pod/Classes/Math/*.swift"
+        "tvos": "10.0"
       }
     },
     {
-      "name": "RootViewController",
-      "source_files": "Pod/Classes/RootViewController/*.swift",
+      "name": "Logging",
+      "source_files": "Pod/Classes/Logging/*.swift"
+    },
+    {
+      "name": "Math",
+      "source_files": "Pod/Classes/Math/*.swift",
       "frameworks": [
-        "UIKit",
-        "MessageUI"
+        "CoreGraphics"
       ]
+    },
+    {
+      "name": "RootViewController",
+      "ios": {
+        "source_files": "Pod/Classes/RootViewController/*.swift",
+        "frameworks": [
+          "UIKit",
+          "MessageUI"
+        ]
+      },
+      "platforms": {
+        "ios": "9.0"
+      }
     },
     {
       "name": "Shapes",
       "source_files": "Pod/Classes/Shapes/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "StackViewHelpers",
       "source_files": "Pod/Classes/StackViewHelpers/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "TableViewHelpers",
       "source_files": "Pod/Classes/TableViewHelpers/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "TintedButton",
       "source_files": "Pod/Classes/TintedButton/*.swift",
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0",
+        "tvos": "10.0"
+      }
     },
     {
       "name": "Views",
       "source_files": [
         "Pod/Classes/Views/**/*.swift"
       ],
-      "frameworks": [
-        "UIKit"
-      ]
+      "platforms": {
+        "ios": "9.0"
+      }
     },
     {
       "name": "All",
+      "ios": {
+        "dependencies": {
+          "Swiftilities/AboutView": [
+
+          ],
+          "Swiftilities/AccessibilityHelpers": [
+
+          ],
+          "Swiftilities/Acknowledgements": [
+
+          ],
+          "Swiftilities/BetterButton": [
+
+          ],
+          "Swiftilities/ColorHelpers": [
+
+          ],
+          "Swiftilities/Deselection": [
+
+          ],
+          "Swiftilities/DeviceSize": [
+
+          ],
+          "Swiftilities/FormattedTextField": [
+
+          ],
+          "Swiftilities/Forms": [
+
+          ],
+          "Swiftilities/HairlineView": [
+
+          ],
+          "Swiftilities/ImageHelpers": [
+
+          ],
+          "Swiftilities/Keyboard": [
+
+          ],
+          "Swiftilities/Lifecycle": [
+
+          ],
+          "Swiftilities/RootViewController": [
+
+          ],
+          "Swiftilities/Shapes": [
+
+          ],
+          "Swiftilities/StackViewHelpers": [
+
+          ],
+          "Swiftilities/TableViewHelpers": [
+
+          ],
+          "Swiftilities/TintedButton": [
+
+          ],
+          "Swiftilities/Views": [
+
+          ]
+        }
+      },
+      "tvos": {
+        "dependencies": {
+          "Swiftilities/AccessibilityHelpers": [
+
+          ],
+          "Swiftilities/BetterButton": [
+
+          ],
+          "Swiftilities/ColorHelpers": [
+
+          ],
+          "Swiftilities/Deselection": [
+
+          ],
+          "Swiftilities/FormattedTextField": [
+
+          ],
+          "Swiftilities/Forms": [
+
+          ],
+          "Swiftilities/HairlineView": [
+
+          ],
+          "Swiftilities/ImageHelpers": [
+
+          ],
+          "Swiftilities/Lifecycle": [
+
+          ],
+          "Swiftilities/Shapes": [
+
+          ],
+          "Swiftilities/StackViewHelpers": [
+
+          ],
+          "Swiftilities/TableViewHelpers": [
+
+          ],
+          "Swiftilities/TintedButton": [
+
+          ]
+        }
+      },
       "dependencies": {
-        "Swiftilities/AboutView": [
-
-        ],
-        "Swiftilities/AccessibilityHelpers": [
-
-        ],
-        "Swiftilities/Acknowledgements": [
-
-        ],
-        "Swiftilities/BetterButton": [
-
-        ],
-        "Swiftilities/ColorHelpers": [
-
-        ],
         "Swiftilities/Compatibility": [
 
         ],
         "Swiftilities/CoreDataStack": [
 
         ],
-        "Swiftilities/Deselection": [
-
-        ],
-        "Swiftilities/DeviceSize": [
-
-        ],
-        "Swiftilities/FormattedTextField": [
-
-        ],
-        "Swiftilities/Forms": [
-
-        ],
-        "Swiftilities/HairlineView": [
-
-        ],
-        "Swiftilities/ImageHelpers": [
-
-        ],
-        "Swiftilities/Keyboard": [
-
-        ],
         "Swiftilities/LicenseFormatter": [
-
-        ],
-        "Swiftilities/Lifecycle": [
 
         ],
         "Swiftilities/Logging": [
@@ -289,26 +385,9 @@
         ],
         "Swiftilities/Math": [
 
-        ],
-        "Swiftilities/RootViewController": [
-
-        ],
-        "Swiftilities/Shapes": [
-
-        ],
-        "Swiftilities/StackViewHelpers": [
-
-        ],
-        "Swiftilities/TableViewHelpers": [
-
-        ],
-        "Swiftilities/TintedButton": [
-
-        ],
-        "Swiftilities/Views": [
-
         ]
       }
     }
-  ]
+  ],
+  "swift_version": "5.0"
 }
