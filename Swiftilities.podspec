@@ -12,7 +12,12 @@ Pod::Spec.new do |s|
 
   s.homepage         = "https://github.com/rightpoint/Swiftilities"
   s.license          = 'MIT'
-  s.author           = { "Nicholas Bonatsakis" => "nick.bonatsakis@raizlabs.com" }
+  s.authors          = {
+                         "Chris Ballinger" => "cballinger@rightpoint.com",
+                         "Nicholas Bonatsakis" => "nbonatsakis@rightpoint.com",
+                         "Zev Eisenberg" => "zeisenberg@rightpoint.com",
+                         "Andrew McKnight" => "amcknight@rightpoint.com",
+                       }
   s.source           = { :git => "https://github.com/rightpoint/Swiftilities.git", :tag => s.version.to_s }
 
   s.ios.deployment_target  = '9.0'
