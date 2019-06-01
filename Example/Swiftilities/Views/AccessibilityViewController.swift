@@ -16,15 +16,32 @@ class AccessibilityViewController: UIViewController {
     @IBOutlet weak var announceDelay1: UITextField!
     @IBOutlet weak var announceDelay2: UITextField!
     @IBOutlet weak var announceConsole: UITextView!
+    @IBOutlet weak var turnOnVoiceOver: UIView!
     
     private let accessibility = Accessibility.shared
     private var delay1: Double { return announceDelay1.text.double }
     private var delay2: Double { return announceDelay2.text.double }
+    private lazy var allResponders = [announceString1, announceString2, announceDelay1, announceDelay2, announceConsole]
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handleVoiceOverStatusChange()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        announceConsole.text = accessibility.isVoiceOverRunning ? "Tap Talk Button" : "Turn on VoiceOver"
+        
+        let note: NSNotification.Name = {
+            if #available(iOS 11, *) {
+                return UIAccessibility.voiceOverStatusDidChangeNotification
+            } else {
+                return NSNotification.Name(rawValue: UIAccessibilityVoiceOverStatusChanged)
+            }
+        }()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleVoiceOverStatusChange), name: note, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func talkButtonTapped(_ sender: UIButton) {
@@ -41,14 +58,19 @@ class AccessibilityViewController: UIViewController {
         announce(string2, delay2)
     }
     
+    @objc func handleVoiceOverStatusChange() {
+        turnOnVoiceOver.isHidden = accessibility.isVoiceOverRunning
+        allResponders.
+    }
+    
     private func append(_ text: String) {
-        announceConsole.text += text + "\n"
+        announceConsole.text = text + "\n" + announceConsole.text
     }
     
     private func announce(_ text: String, _ delay: Double) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             self.accessibility.announce(text) { string, success in
-                let s = String(describing: string)
+                let s = string ?? "n/a"
                 if success {
                     self.append("Announced '\(s)'")
                 } else {

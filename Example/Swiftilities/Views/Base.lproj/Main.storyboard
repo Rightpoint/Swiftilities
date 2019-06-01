@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -141,8 +142,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TGz-NW-V1v">
-                                <rect key="frame" x="16" y="74" width="343" height="506"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TGz-NW-V1v">
+                                <rect key="frame" x="16" y="74" width="343" height="484"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xta-GV-UYS">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
@@ -153,7 +154,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZD-RB-9Z3">
-                                        <rect key="frame" x="0.0" y="43" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="41" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Keyboard Avoidance"/>
                                         <connections>
@@ -161,7 +162,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJr-zL-eYe">
-                                        <rect key="frame" x="0.0" y="86" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="82" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Tinted Button"/>
                                         <connections>
@@ -169,7 +170,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eR-w6-YvW">
-                                        <rect key="frame" x="0.0" y="129" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="123" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Hairline View"/>
                                         <connections>
@@ -177,7 +178,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFa-aa-tca">
-                                        <rect key="frame" x="0.0" y="172" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="164" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Acknowledgements"/>
                                         <connections>
@@ -185,7 +186,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xm4-sK-PQK">
-                                        <rect key="frame" x="0.0" y="215" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="205" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Root View Controller Cycling"/>
                                         <connections>
@@ -193,7 +194,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nk3-qX-hyA">
-                                        <rect key="frame" x="0.0" y="258" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="246" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Lifecycle Behaviors"/>
                                         <connections>
@@ -201,7 +202,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAI-RE-wkg">
-                                        <rect key="frame" x="0.0" y="301" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="287" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="About View"/>
                                         <connections>
@@ -209,7 +210,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLS-1r-OYc" userLabel="Gradient View">
-                                        <rect key="frame" x="0.0" y="344" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="328" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Gradient View"/>
                                         <connections>
@@ -217,7 +218,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxv-wa-G3K" userLabel="Shapes View">
-                                        <rect key="frame" x="0.0" y="387" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="369" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Shapes"/>
                                         <connections>
@@ -225,7 +226,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Eq-5z-cIx" userLabel="Buttons View">
-                                        <rect key="frame" x="0.0" y="430" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="410" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Buttons"/>
                                         <connections>
@@ -233,7 +234,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRP-UE-OyX">
-                                        <rect key="frame" x="0.0" y="473" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="451" width="343" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Accessibility"/>
                                         <connections>
@@ -578,7 +579,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qBf-XE-SAW">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBf-XE-SAW">
                                 <rect key="frame" x="16" y="247" width="343" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -592,10 +593,28 @@
                                     <action selector="talkButtonTapped:" destination="zMC-Ih-BvS" eventType="touchUpInside" id="VRD-Nt-5e0"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4m-0q-Oej">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn On VoiceOver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Gd-e2-cNf">
+                                        <rect key="frame" x="67" y="283.5" width="241.5" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="2Gd-e2-cNf" firstAttribute="centerX" secondItem="k4m-0q-Oej" secondAttribute="centerX" id="ckW-Xe-AeY"/>
+                                    <constraint firstItem="2Gd-e2-cNf" firstAttribute="centerY" secondItem="k4m-0q-Oej" secondAttribute="centerY" id="oYE-vV-y0q"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="k4m-0q-Oej" secondAttribute="trailing" id="04D-GV-J2d"/>
                             <constraint firstItem="mBP-aC-neq" firstAttribute="top" secondItem="RsL-Ur-Cn5" secondAttribute="bottom" constant="8" id="0wn-rn-LxH"/>
+                            <constraint firstItem="UO9-XY-7tF" firstAttribute="top" secondItem="k4m-0q-Oej" secondAttribute="bottom" id="1e8-3P-VBK"/>
                             <constraint firstItem="SRG-5s-zeA" firstAttribute="leading" secondItem="O3D-qT-x3U" secondAttribute="leadingMargin" constant="8" id="9yN-Ub-PX1"/>
                             <constraint firstItem="mBP-aC-neq" firstAttribute="trailing" secondItem="O3D-qT-x3U" secondAttribute="trailingMargin" id="A1o-Cm-atk"/>
                             <constraint firstItem="RsL-Ur-Cn5" firstAttribute="trailing" secondItem="O3D-qT-x3U" secondAttribute="trailingMargin" id="Ae5-TM-JgA"/>
@@ -613,11 +632,13 @@
                             <constraint firstAttribute="trailing" secondItem="lF0-AC-d3M" secondAttribute="trailing" constant="14" id="fsQ-Cn-gFI"/>
                             <constraint firstItem="SRG-5s-zeA" firstAttribute="top" secondItem="xX8-vw-Gls" secondAttribute="bottom" constant="8" id="g4h-wm-97f"/>
                             <constraint firstItem="lF0-AC-d3M" firstAttribute="top" secondItem="Ehb-9X-vk1" secondAttribute="bottom" constant="8" id="i88-A4-Aai"/>
+                            <constraint firstItem="k4m-0q-Oej" firstAttribute="top" secondItem="Ehb-9X-vk1" secondAttribute="bottom" id="rs3-tB-qJI"/>
                             <constraint firstItem="xX8-vw-Gls" firstAttribute="top" secondItem="uoG-MY-RZr" secondAttribute="bottom" constant="8" id="tgI-jn-YG8"/>
                             <constraint firstItem="VQg-89-Llu" firstAttribute="leading" secondItem="O3D-qT-x3U" secondAttribute="leadingMargin" id="vWQ-bU-Bq6"/>
                             <constraint firstItem="mBP-aC-neq" firstAttribute="width" secondItem="lF0-AC-d3M" secondAttribute="width" id="vXW-bT-JlA"/>
                             <constraint firstItem="qBf-XE-SAW" firstAttribute="leading" secondItem="O3D-qT-x3U" secondAttribute="leadingMargin" id="wCR-Ll-yTF"/>
                             <constraint firstItem="qBf-XE-SAW" firstAttribute="top" secondItem="SRG-5s-zeA" secondAttribute="bottom" constant="40" id="xE2-R0-72D"/>
+                            <constraint firstItem="k4m-0q-Oej" firstAttribute="leading" secondItem="O3D-qT-x3U" secondAttribute="leading" id="xJt-hw-HoH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -626,6 +647,7 @@
                         <outlet property="announceDelay2" destination="mBP-aC-neq" id="gAm-5c-kSQ"/>
                         <outlet property="announceString1" destination="uoG-MY-RZr" id="b28-lX-INP"/>
                         <outlet property="announceString2" destination="xX8-vw-Gls" id="6ad-C9-kUW"/>
+                        <outlet property="turnOnVoiceOver" destination="k4m-0q-Oej" id="WD9-SJ-yWT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLa-Qg-j5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
