@@ -10,15 +10,31 @@ import UIKit
 
 public typealias AccessibilityAnnounceCompletion = (_ anncouncedString: String?, _ success: Bool) -> Void
 
-/// A set of handy UIAccessibility helpers
+/**
+ A set of handy UIAccessibility helpers.
+ 
+ ```
+ let accessibility = Accessibility.shared
+ if accessibility.isVoiceOverRunning {
+    accessibility.announce("Hello World!") { (string, success) in
+        if success {
+            print("Announced '\(string)'")
+        } else {
+            print("Did not announce '\(string)'")
+        }
+    }
+ }
+ ```
+ */
 public class Accessibility: NSObject {
 
     public static let shared = Accessibility()
 
+    private var announceString: String?
     private var announceCompletion: AccessibilityAnnounceCompletion?
-    private let concurrentAnnouncementQueue = DispatchQueue(label: "com.raizlabs.announcements.queue")
+    private let announcementQueue = DispatchQueue(label: "com.raizlabs.announcements.queue")
 
-    public override init() {
+    private override init() {
         super.init()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(Accessibility.handleAnnounceDidFinish(_:)),
@@ -27,43 +43,45 @@ public class Accessibility: NSObject {
     }
 
     /**
-     Check if VoiceOver is currently running (UIAccessibilityIsVoiceOverRunning()).
+     Check if VoiceOver is currently running (UIAccessibility.isVoiceOverRunning).
      */
-    public static var isVoiceOverRunning: Bool {
+    public var isVoiceOverRunning: Bool {
         return UIAccessibility.isVoiceOverRunning
     }
 
     /**
-     Announce a message via VoiceOver with optional completion callback (UIAccessibilityAnnouncementNotification).
+     Announce a message via VoiceOver with optional completion callback (UIAccessibility.Notification.announcement).
 
      - parameter text:       The text to be spoken.
      - parameter completion: A block to be invoked when the announcement has completed.
      */
     public func announce(_ text: String, completion: AccessibilityAnnounceCompletion? = nil) {
-        concurrentAnnouncementQueue.sync {
-            announceCompletion?(nil, false)
+        announcementQueue.sync {
+            announceCompletion?(announceString, false)
+            announceString = text
             announceCompletion = completion
         }
-        UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: text)
+        UIAccessibility.post(notification: .announcement, argument: text)
     }
 
-    @objc public func handleAnnounceDidFinish(_ notification: NSNotification) {
+    @objc public func handleAnnounceDidFinish(_ notification: Notification) {
         if let userInfo = notification.userInfo {
-            concurrentAnnouncementQueue.sync {
+            announcementQueue.sync {
                 announceCompletion?(userInfo[UIAccessibility.announcementStringValueUserInfoKey] as? String,
                                     (userInfo[UIAccessibility.announcementWasSuccessfulUserInfoKey] as? Bool ?? false))
+                announceString = nil
                 announceCompletion = nil
             }
         }
     }
 
     /**
-     Notify VoiceOver that layout has changed and focus on an optionally provided view (UIAccessibilityLayoutChangedNotification).
+     Notify VoiceOver that layout has changed and focus on an optionally provided view (UIAccessibility.Notification.layoutChanged).
 
      - parameter focusView: A view to be focussed on as part of the layout change.
      */
     public func layoutChanged(in focusView: UIView? = nil) {
-        UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: focusView)
+        UIAccessibility.post(notification: .layoutChanged, argument: focusView)
     }
 
 }
@@ -78,7 +96,7 @@ public extension UITableView {
     @nonobjc public func accessibilityFocusOnFirstCell() {
         guard let sections = dataSource?.numberOfSections?(in: self), sections > 0,
             let rows = dataSource?.tableView(self, numberOfRowsInSection: 0), rows > 0,
-            let cell = self.cellForRow(at: IndexPath(row: 0, section: 0)) else {
+            let cell = cellForRow(at: IndexPath(row: 0, section: 0)) else {
                 return
         }
         Accessibility.shared.layoutChanged(in: cell)

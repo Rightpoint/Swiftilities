@@ -11,6 +11,7 @@
 		0050C1C41ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050C1C31ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift */; };
 		0050C1C61EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050C1C51EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift */; };
 		04CD173B1AB7C4F6286F8FA1 /* Pods_Swiftilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849AC9425E95C2FF6F694A7F /* Pods_Swiftilities_Example.framework */; };
+		1776D6BF2225FC8F00C93D3F /* AccessibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1776D6BE2225FC8F00C93D3F /* AccessibilityViewController.swift */; };
 		2340A5B91E8CC29A00572417 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */; };
 		2340A5BD1E8CC67A00572417 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5BA1E8CC3B500572417 /* TestModel.xcdatamodeld */; };
 		722099011E5F46EE0098229D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722098FF1E5F46EE0098229D /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		0050C1C11ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarTitleTransitionDemoViewController.swift; sourceTree = "<group>"; };
 		0050C1C31ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarHairlineFadeDemoViewController.swift; sourceTree = "<group>"; };
 		0050C1C51EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleBehaviorsListViewController.swift; sourceTree = "<group>"; };
+		1776D6BE2225FC8F00C93D3F /* AccessibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityViewController.swift; sourceTree = "<group>"; };
 		2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
 		2340A5BB1E8CC3B500572417 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		3ED95507725D28046957F181 /* Pods-Swiftilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1776D6BD2225FC5400C93D3F /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				1776D6BE2225FC8F00C93D3F /* AccessibilityViewController.swift */,
+			);
+			name = Accessibility;
+			sourceTree = "<group>";
+		};
 		29B6E955EAF61BE595882E45 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +225,7 @@
 				7220990D1E5F47690098229D /* Main */,
 				7220990F1E5F47690098229D /* Text Formatting */,
 				722099111E5F47690098229D /* Tinted Buttons */,
+				1776D6BD2225FC5400C93D3F /* Accessibility */,
 				722098FF1E5F46EE0098229D /* Main.storyboard */,
 			);
 			path = Views;
@@ -519,6 +530,7 @@
 				722099131E5F47690098229D /* KeyboardAvoidanceViewController.swift in Sources */,
 				726E5EFC1EDF5D1E00000DEE /* ButtonsViewController.swift in Sources */,
 				722099201E5F706B0098229D /* LogAppearanceBehavior.swift in Sources */,
+				1776D6BF2225FC8F00C93D3F /* AccessibilityViewController.swift in Sources */,
 				7220990A1E5F471F0098229D /* AppDelegate.swift in Sources */,
 				0050C1C61EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift in Sources */,
 				0050C1C41ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift in Sources */,
