@@ -49,6 +49,12 @@ extension UIView.AnimationCurve: CurveProvider {
             case .easeInOut:
                 controlPoint1 = CGPoint(x: 0.42, y: 0)
                 controlPoint2 = CGPoint(x: 0.58, y: 1)
+#if swift(>=5.0)
+            @unknown default:
+                debugPrint("ERROR: Unhandled UIView.AnimationCurve case \(self)!")
+                controlPoint1 = .zero
+                controlPoint2 = .zero
+#endif
             }
             return T(CubicBezier.value(for: CGFloat(inputPercent.doubleValue),
                                        controlPoint1: controlPoint1,

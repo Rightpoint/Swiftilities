@@ -1,8 +1,8 @@
 # Swiftilities
 
 
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org)
-[![CircleCI](https://img.shields.io/circleci/project/github/Raizlabs/Swiftilities.svg)](https://circleci.com/gh/Raizlabs/Swiftilities/tree/develop)
+[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org)
+[![CircleCI](https://img.shields.io/circleci/project/github/Rightpoint/Swiftilities.svg)](https://circleci.com/gh/Rightpoint/Swiftilities/tree/master)
 [![Version](https://img.shields.io/cocoapods/v/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
 [![License](https://img.shields.io/cocoapods/l/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
 [![Platform](https://img.shields.io/cocoapods/p/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
@@ -21,19 +21,21 @@
 - DeviceSize
 - FormattedTextField
 - Forms
-- HairlineView
+- [HairlineView](Pod/Classes/HairlineView/README.md) - A horizontal or vertical hairline view
 - ImageHelpers
 - Keyboard
 - LicenseFormatter
 - Lifecycle
-- Logging
+- [Logging](Pod/Classes/Logging/README.md) - Log events by priority
 - Math
 - RootViewController
 - Shapes
 - StackViewHelpers
 - TableViewHelpers
-- TintedButton
-- Views (GradientView, TextView)
+- [TintedButton](Pod/Classes/TintedButton/README.md) - UIButton with border and default highlighting
+- Views:
+ - [GradientView](Pod/Classes/Views/Gradient/README.md) - UIView containing a color gradient.
+ - [Text Views](Pod/Classes/Views/Textview/README.md) - UITextViews that can present placeholder text or expand height to accommodate content.
 
 ## Usage
 

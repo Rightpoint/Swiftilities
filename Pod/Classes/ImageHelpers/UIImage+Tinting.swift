@@ -21,7 +21,7 @@ public extension UIImage {
     ///
     /// - Parameter theColor: The color to use to tint the receiver.
     /// - Returns: A tinted copy of the image.
-    func tintedImage(color theColor: UIColor) -> UIImage {
+    func rz_tintedImage(color theColor: UIColor) -> UIImage {
         let imageRect = CGRect(origin: .zero, size: size)
         // Save original properties
         let originalCapInsets = capInsets
@@ -29,7 +29,9 @@ public extension UIImage {
         let originalAlignmentRectInsets = alignmentRectInsets
 
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        let context = UIGraphicsGetCurrentContext()!
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return self
+        }
 
         // Flip the context vertically
         context.translateBy(x: 0.0, y: size.height)
@@ -45,7 +47,9 @@ public extension UIImage {
         context.fill(imageRect)
 
         // Get new image
-        var image = UIGraphicsGetImageFromCurrentImageContext()!
+        guard var image = UIGraphicsGetImageFromCurrentImageContext() else {
+            return self
+        }
         UIGraphicsEndImageContext()
 
         // Prevent further tinting

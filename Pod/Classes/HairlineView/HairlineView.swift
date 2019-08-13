@@ -37,7 +37,7 @@ open class HairlineView: UIView {
         }
     }
 
-    public init(axis: NSLayoutConstraint.Axis, thickness: CGFloat = CGFloat(1.0 / UIScreen.main.scale),
+    public init(axis: NSLayoutConstraint.Axis = .horizontal, thickness: CGFloat = CGFloat(1.0 / UIScreen.main.scale),
                 hairlineColor: UIColor = UIColor.darkGray) {
         self.axis = axis
         self.thickness = thickness
@@ -104,6 +104,11 @@ open class HairlineView: UIView {
         switch axis {
         case .horizontal: size.height = thickness
         case .vertical: size.width = thickness
+#if swift(>=5.0)
+        @unknown default:
+            debugPrint("ERROR: Unhandled NSLayoutConstraint.Axis case \(axis)!")
+            break
+#endif
         }
 
         return size
