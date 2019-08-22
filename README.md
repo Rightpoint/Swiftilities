@@ -25,7 +25,7 @@
 - ImageHelpers
 - Keyboard
 - LicenseFormatter
-- Lifecycle
+- [Lifecycle](Pod/Classes/Lifecycle/readme.md) - Declaratively customize your app's behavior and look/feel
 - [Logging](Pod/Classes/Logging/README.md) - Log events by priority
 - Math
 - RootViewController
