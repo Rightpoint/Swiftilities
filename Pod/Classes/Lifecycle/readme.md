@@ -4,8 +4,8 @@ This is a collection of handy [View Controller Lifecycle Behaviors](http://irace
 
 ## Included Behaviors
 
-- [Nav Bar Hairline Fade](https://github.com/Raizlabs/Swiftilities/tree/feature/heyltsjay/behaviors/Pod/Classes/Lifecycle/Behaviors/Nav-Bar-Hairline-Fade)
-- [Nav Bar Title Transition](https://github.com/Raizlabs/Swiftilities/tree/feature/heyltsjay/behaviors/Pod/Classes/Lifecycle/Behaviors/Nav-Bar-Title-Transition)
+- [Nav Bar Hairline Fade](Behaviors/Nav-Bar-Hairline-Fade)
+- [Nav Bar Title Transition](Behaviors/Nav-Bar-Title-Transition)
 
 
 # Usage
