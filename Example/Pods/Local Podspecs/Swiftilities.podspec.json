@@ -10,10 +10,7 @@
   "homepage": "https://github.com/rightpoint/Swiftilities",
   "license": "MIT",
   "authors": {
-    "Chris Ballinger": "cballinger@rightpoint.com",
-    "Nicholas Bonatsakis": "nbonatsakis@rightpoint.com",
-    "Zev Eisenberg": "zeisenberg@rightpoint.com",
-    "Andrew McKnight": "amcknight@rightpoint.com"
+    "Rightpoint": "opensource@rightpoint.com"
   },
   "source": {
     "git": "https://github.com/rightpoint/Swiftilities.git",

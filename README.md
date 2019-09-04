@@ -74,7 +74,7 @@ pod "Swiftilities"
 
 ## Author
 
-Nicholas Bonatsakis, nick.bonatsakis@raizlabs.com
+Rightpoint, opensource@rightpoint.com
 
 ## Code of Conduct
 Please read our contribution [Code of Conduct](./CONTRIBUTING.md).
