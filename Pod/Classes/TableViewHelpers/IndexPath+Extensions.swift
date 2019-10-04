@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension IndexPath {
+public extension IndexPath {
 
     /// The role that a table view cell plays in a table view section.
     enum RowRole {
@@ -25,6 +25,26 @@ extension IndexPath {
         /// This cell is the last row in its section.
         case last
 
+    }
+
+}
+
+public extension IndexPath {
+
+    func role(inSectionWithNumberOfRows rowsInSection: Int) -> RowRole {
+        guard rowsInSection != 0 else {
+            preconditionFailure("Attempt to assess role of index path in section with zero items")
+        }
+
+        guard rowsInSection > 1 else {
+            return .only
+        }
+
+        switch row {
+        case 0: return .first
+        case rowsInSection - 1: return .last
+        default: return .middle
+        }
     }
 
 }

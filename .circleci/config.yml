@@ -2,12 +2,11 @@ version: 2.1
 
 jobs:
   test:
-    executor: xcode-10
+    executor: xcode-11-1-0
     steps:
       - setup
-      - run: bundle exec pod repo add-cdn jsDelivr-Specs "https://cdn.jsdelivr.net/cocoa/"
-      - run: bundle exec pod lib lint --swift-version=4.2 --sources=jsDelivr-Specs
-      - run: bundle exec pod lib lint --swift-version=5.0 --sources=jsDelivr-Specs
+      - run: bundle exec pod lib lint --swift-version=4.2
+      - run: bundle exec pod lib lint --swift-version=5.0
       - run:
           name: Fastlane Test
           command: |
@@ -15,7 +14,7 @@ jobs:
             bundle exec fastlane test
 
   carthage-build:
-    executor: xcode-10
+    executor: xcode-11-1-0
     steps:
       - setup
       - run:
@@ -29,19 +28,15 @@ jobs:
           command: carthage build --no-skip-current && test -d Carthage/Build/iOS/Swiftilities.framework
 
   deploy-to-cocoapods:
-    executor: xcode-10
+    executor: xcode-11-1-0
     steps:
       - setup
-      - run:
-          name: Fetch CocoaPods Specs
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
       - run: bundle exec pod trunk push
 
 executors:
-  xcode-10:
+  xcode-11-1-0:
     macos:
-      xcode: "10.2.1"
+      xcode: "11.1.0"
     environment:
       LC_ALL: en_US.UTF-8
       LANG: en_US.UTF-8
@@ -57,9 +52,6 @@ commands:
   restore-gems:
     description: "Restore Ruby Gems"
     steps:
-      - run:
-          name: Set Ruby Version
-          command:  echo "ruby-2.5" > ~/.ruby-version
       - restore_cache:
           key: 1-gems-{{ checksum "Gemfile.lock" }}
       - run: bundle check || bundle install --path vendor/bundle
