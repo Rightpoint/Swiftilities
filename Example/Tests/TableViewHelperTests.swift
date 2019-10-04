@@ -79,7 +79,7 @@ class TableViewHelperTests: XCTestCase {
         XCTAssertEqual(sections[indexPath: IndexPath(row: 0, section: 2)], .title)
     }
 
-    func testIndexPathRole() {
+    func testIndexPathRoleFromTable() {
         let tester = TableViewTester(sections: sections)
         XCTAssertEqual(tester.tableView.role(ofRow: IndexPath(row: 0, section: 0)), .first)
         XCTAssertEqual(tester.tableView.role(ofRow: IndexPath(row: 1, section: 0)), .middle)
@@ -94,5 +94,21 @@ class TableViewHelperTests: XCTestCase {
 
         XCTAssertEqual(tester.tableView.role(ofRow: IndexPath(row: 0, section: 2)), .only)
     }
+
+    func testIndexPathRoleFromIndexPath() {
+        XCTAssertEqual(IndexPath(row: 0, section: 0).role(inSectionWithNumberOfRows: 6), .first)
+        XCTAssertEqual(IndexPath(row: 1, section: 0).role(inSectionWithNumberOfRows: 6), .middle)
+        XCTAssertEqual(IndexPath(row: 2, section: 0).role(inSectionWithNumberOfRows: 6), .middle)
+        XCTAssertEqual(IndexPath(row: 3, section: 0).role(inSectionWithNumberOfRows: 6), .middle)
+        XCTAssertEqual(IndexPath(row: 4, section: 0).role(inSectionWithNumberOfRows: 6), .middle)
+        XCTAssertEqual(IndexPath(row: 5, section: 0).role(inSectionWithNumberOfRows: 6), .last)
+
+        XCTAssertEqual(IndexPath(row: 0, section: 1).role(inSectionWithNumberOfRows: 3), .first)
+        XCTAssertEqual(IndexPath(row: 1, section: 1).role(inSectionWithNumberOfRows: 3), .middle)
+        XCTAssertEqual(IndexPath(row: 2, section: 1).role(inSectionWithNumberOfRows: 3), .last)
+
+        XCTAssertEqual(IndexPath(row: 0, section: 2).role(inSectionWithNumberOfRows: 1), .only)
+    }
+
 
 }
