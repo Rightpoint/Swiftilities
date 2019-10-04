@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension IndexPath {
+public extension IndexPath {
 
     /// The role that a table view cell plays in a table view section.
     enum RowRole {

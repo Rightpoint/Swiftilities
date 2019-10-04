@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UITableView {
+public extension UITableView {
 
     func role(ofRow indexPath: IndexPath) -> IndexPath.RowRole {
         let rowsInSection = numberOfRows(inSection: indexPath.section)

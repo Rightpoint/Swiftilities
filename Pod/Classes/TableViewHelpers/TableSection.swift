@@ -8,16 +8,21 @@
 
 import Foundation
 
-struct TableSection<SectionType, RowType>: RowContainer {
+public struct TableSection<SectionType, RowType>: RowContainer {
 
-    typealias Row = RowType
+    public typealias Row = RowType
 
-    var section: SectionType
-    var rows: [RowType]
+    public var section: SectionType
+    public var rows: [RowType]
+
+    public init(section: SectionType, rows: [RowType]) {
+        self.section = section
+        self.rows = rows
+    }
 
 }
 
-protocol RowContainer {
+public protocol RowContainer {
 
     associatedtype Row
 
@@ -25,7 +30,7 @@ protocol RowContainer {
 
 }
 
-extension Collection where Iterator.Element: RowContainer, Self.Index == Int {
+public extension Collection where Element: RowContainer, Self.Index == Int {
 
     subscript(indexPath indexPath: IndexPath) -> Iterator.Element.Row {
         return self[indexPath.section].rows[indexPath.row]

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
-@testable import Swiftilities
+import Swiftilities
 import XCTest
 
 enum Row {
