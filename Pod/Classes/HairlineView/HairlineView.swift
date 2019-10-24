@@ -44,6 +44,7 @@ open class HairlineView: UIView {
         self.hairlineColor = hairlineColor
         super.init(frame: .zero)
         update(hairlineColor: hairlineColor)
+        contentMode = .redraw
 
         setNeedsUpdateConstraints()
     }
