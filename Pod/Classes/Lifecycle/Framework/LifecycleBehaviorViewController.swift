@@ -83,6 +83,12 @@ final class LifecycleBehaviorViewController: UIViewController {
         }
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        applyBehaviors { behvior, viewController in
+            behvior.afterTraitCollectionDidChange(viewController, previousTraitCollection: previousTraitCollection)
+        }
+    }
+
 }
 
 private extension LifecycleBehaviorViewController {

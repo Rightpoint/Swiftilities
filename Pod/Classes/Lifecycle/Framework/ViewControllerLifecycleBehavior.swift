@@ -25,6 +25,7 @@ public protocol ViewControllerLifecycleBehavior {
 
     func afterLayingOutSubviews(_ viewController: UIViewController)
 
+    func afterTraitCollectionDidChange(_ viewController: UIViewController, previousTraitCollection: UITraitCollection?)
 }
 
 public extension ViewControllerLifecycleBehavior {
@@ -40,5 +41,7 @@ public extension ViewControllerLifecycleBehavior {
     func beforeLayingOutSubviews(_ viewController: UIViewController) {}
 
     func afterLayingOutSubviews(_ viewController: UIViewController) {}
+
+    func afterTraitCollectionDidChange(_ viewController: UIViewController, previousTraitCollection: UITraitCollection?) {}
 
 }
