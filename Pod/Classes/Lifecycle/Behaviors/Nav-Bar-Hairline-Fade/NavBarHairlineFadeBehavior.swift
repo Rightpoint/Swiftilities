@@ -111,7 +111,7 @@ fileprivate extension NavBarHairlineFadeUpdater {
         
         #if DEBUG
         if logsContentOffset {
-            print("\(shift)")
+            print("content y-offset: \(shift)")
         }
         #endif
     }
