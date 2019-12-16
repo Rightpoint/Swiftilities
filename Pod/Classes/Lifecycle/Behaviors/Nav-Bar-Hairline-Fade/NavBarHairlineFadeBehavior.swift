@@ -113,7 +113,7 @@ fileprivate extension NavBarHairlineFadeUpdater {
         
         #if DEBUG
         if logsContentOffset {
-            print("\(NavBarHairlineFadeUpdater.self) content y-offset: \(String(format: "%\(0.3)f", shift))")
+            print("\(NavBarHairlineFadeUpdater.self) content y-offset: \(String(format: "%0.3f", shift))")
         }
         #endif
     }
