@@ -48,7 +48,7 @@ public extension NavBarHairlineFadeBehavior {
     
     var logsContentOffset: Bool {
         set { navBarHairlineFadeUpdater.logsContentOffset = newValue }
-        get { return navBarHairlineFadeUpdater.logsContentOffset}
+        get { return navBarHairlineFadeUpdater.logsContentOffset }
     }
 
 }
@@ -57,6 +57,8 @@ fileprivate final class NavBarHairlineFadeUpdater: NSObject {
 
     var contentOffsetFadeRange: ClosedRange<CGFloat> = 0...100
 
+    // Toggle for debug purposes:
+    // Logs the scrollview's y-offset while scrolling which helps implementer tweak the fade range more easily.
     var logsContentOffset: Bool = false
 
     var enabled: Bool = false {
@@ -111,7 +113,8 @@ fileprivate extension NavBarHairlineFadeUpdater {
         
         #if DEBUG
         if logsContentOffset {
-            print("content y-offset: \(shift)")
+            // This prints the content y-offset, of the scrollview, truncated to a max of 3 decimals
+            print("\(NavBarHairlineFadeUpdater.self) content y-offset: \(Double(floor(1000*shift)/1000))")
         }
         #endif
     }
