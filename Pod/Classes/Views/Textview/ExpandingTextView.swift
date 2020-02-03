@@ -6,6 +6,7 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 @available(*, unavailable, renamed: "ExpandingTextView")
@@ -51,3 +52,5 @@ open class ExpandingTextView: PlaceholderTextView, HeightAutoAdjustable {
         adjustPlaceholder()
     }
 }
+
+#endif

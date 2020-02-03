@@ -9,6 +9,7 @@
 //  http://khanlou.com/2016/02/many-controllers/ and
 //  http://irace.me/lifecycle-behaviors
 
+#if canImport(UIKit)
 import UIKit
 
 public protocol ViewControllerLifecycleBehavior {
@@ -42,3 +43,5 @@ public extension ViewControllerLifecycleBehavior {
     func afterLayingOutSubviews(_ viewController: UIViewController) {}
 
 }
+
+#endif

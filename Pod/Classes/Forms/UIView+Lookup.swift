@@ -6,7 +6,8 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
-import Foundation
+#if canImport(UIKit)
+import UIKit
 
 extension UIView {
 
@@ -56,3 +57,5 @@ private extension Bool {
     }
 
 }
+
+#endif

@@ -6,6 +6,7 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public extension UITableView {
@@ -17,3 +18,5 @@ public extension UITableView {
     }
 
 }
+
+#endif

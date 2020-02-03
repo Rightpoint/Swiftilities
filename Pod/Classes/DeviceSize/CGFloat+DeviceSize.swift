@@ -6,7 +6,8 @@
 //
 //
 
-import Foundation
+#if canImport(UIKit)
+import UIKit
 
 public extension CGFloat {
 
@@ -34,3 +35,5 @@ public extension CGFloat {
     }
 
 }
+
+#endif

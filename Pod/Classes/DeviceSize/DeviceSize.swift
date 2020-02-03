@@ -7,6 +7,7 @@
 //  Tools for adjusting values given the current screen size.
 //
 
+#if canImport(UIKit)
 import Foundation
 import UIKit
 
@@ -96,3 +97,5 @@ public extension DeviceSize {
 public func == (lhs: DeviceSize, rhs: DeviceSize) -> Bool {
     return lhs.hashValue == rhs.hashValue
 }
+
+#endif

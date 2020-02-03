@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		0050C1C41ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050C1C31ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift */; };
 		0050C1C61EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050C1C51EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift */; };
 		04CD173B1AB7C4F6286F8FA1 /* Pods_Swiftilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849AC9425E95C2FF6F694A7F /* Pods_Swiftilities_Example.framework */; };
-		2340A5B91E8CC29A00572417 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */; };
 		2340A5BD1E8CC67A00572417 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2340A5BA1E8CC3B500572417 /* TestModel.xcdatamodeld */; };
 		722099011E5F46EE0098229D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722098FF1E5F46EE0098229D /* Main.storyboard */; };
 		722099061E5F470D0098229D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722099031E5F470D0098229D /* LaunchScreen.xib */; };
@@ -33,6 +32,7 @@
 		CDCBBA9D1EA7D95D00610F47 /* TableViewHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCBBA9C1EA7D95D00610F47 /* TableViewHelperTests.swift */; };
 		CDF3429E1EA02B5100E6328B /* LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF3429D1EA02B5100E6328B /* LogTests.swift */; };
 		CDF471541DDFB2EB00D4D5A2 /* LicenseFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF471521DDFB20100D4D5A2 /* LicenseFormatterTests.swift */; };
+		D98569CB23E8C54D007EF367 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98569CA23E8C54D007EF367 /* CoreDataStackTests.swift */; };
 		DE5A450412725B332FEFDD30 /* Pods_Swiftilities_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F294762325B4901AA48D27B1 /* Pods_Swiftilities_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,6 @@
 		0050C1C11ED889C800665F74 /* NavBarTitleTransitionDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarTitleTransitionDemoViewController.swift; sourceTree = "<group>"; };
 		0050C1C31ED8A68F00665F74 /* NavBarHairlineFadeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarHairlineFadeDemoViewController.swift; sourceTree = "<group>"; };
 		0050C1C51EDDA02700665F74 /* LifecycleBehaviorsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifecycleBehaviorsListViewController.swift; sourceTree = "<group>"; };
-		2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
 		2340A5BB1E8CC3B500572417 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
 		3ED95507725D28046957F181 /* Pods-Swiftilities_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftilities_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5524B820B7943401CC253A04 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		CDCBBA9C1EA7D95D00610F47 /* TableViewHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHelperTests.swift; sourceTree = "<group>"; };
 		CDF3429D1EA02B5100E6328B /* LogTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTests.swift; sourceTree = "<group>"; };
 		CDF471521DDFB20100D4D5A2 /* LicenseFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicenseFormatterTests.swift; sourceTree = "<group>"; };
+		D98569CA23E8C54D007EF367 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
 		F294762325B4901AA48D27B1 /* Pods_Swiftilities_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiftilities_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,12 +171,12 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D98569C923E8C54D007EF367 /* CoreDataTests */,
 				CD32DE731CEA1EC600FC0C7E /* MathTests.swift */,
 				CDF471521DDFB20100D4D5A2 /* LicenseFormatterTests.swift */,
 				CD74F57D1E2FC4D3005E59FF /* ValidatorTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				72E281A61E5DDE59000D0C9D /* RootViewControllerTests.swift */,
-				2340A5B71E8CC11800572417 /* CoreDataStackTests.swift */,
 				CDCBBA9C1EA7D95D00610F47 /* TableViewHelperTests.swift */,
 				CDF3429D1EA02B5100E6328B /* LogTests.swift */,
 			);
@@ -313,6 +313,14 @@
 			path = "About View";
 			sourceTree = "<group>";
 		};
+		D98569C923E8C54D007EF367 /* CoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				D98569CA23E8C54D007EF367 /* CoreDataStackTests.swift */,
+			);
+			path = CoreDataTests;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,7 +387,7 @@
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "Swiftilities" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -425,13 +433,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Swiftilities/Swiftilities.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swiftilities.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftilities_Example/Pods-Swiftilities_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,13 +468,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Swiftilities/Swiftilities.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swiftilities.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiftilities_Tests/Pods-Swiftilities_Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -535,12 +541,12 @@
 			files = (
 				CD74F57E1E2FC4D3005E59FF /* ValidatorTests.swift in Sources */,
 				CDF471541DDFB2EB00D4D5A2 /* LicenseFormatterTests.swift in Sources */,
-				2340A5B91E8CC29A00572417 /* CoreDataStackTests.swift in Sources */,
 				2340A5BD1E8CC67A00572417 /* TestModel.xcdatamodeld in Sources */,
 				72E281A71E5DDE59000D0C9D /* RootViewControllerTests.swift in Sources */,
 				CDCBBA9D1EA7D95D00610F47 /* TableViewHelperTests.swift in Sources */,
 				CDF3429E1EA02B5100E6328B /* LogTests.swift in Sources */,
 				CD32DE751CEA1ECA00FC0C7E /* MathTests.swift in Sources */,
+				D98569CB23E8C54D007EF367 /* CoreDataStackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,7 +681,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -689,7 +696,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				INFOPLIST_FILE = Swiftilities/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -707,7 +717,10 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Swiftilities/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -728,7 +741,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -744,7 +761,11 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

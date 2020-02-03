@@ -12,6 +12,9 @@ import XCTest
 
 private let modelName: String = "TestModel"
 
+///  This file is currently not testable using Swift Package Manager, pending SE-0271.
+///  When support is available, we should ship the .xcdatamodel as a SPM test resource.
+///  https://github.com/apple/swift-evolution/blob/master/proposals/0271-package-manager-resources.md
 class CoreDataTestCase: XCTestCase {
 
     var isLoaded: Bool = false

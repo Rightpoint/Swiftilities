@@ -6,6 +6,7 @@
 //  Copyright© 2016 Raizlabs
 //
 
+#if canImport(UIKit)
 import Foundation
 import ObjectiveC.runtime
 import UIKit
@@ -70,3 +71,5 @@ public struct DefaultBehaviors {
     }
 
 }
+
+#endif

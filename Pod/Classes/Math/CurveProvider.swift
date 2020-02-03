@@ -15,6 +15,7 @@ public protocol CurveProvider {
 }
 
 #if os(iOS)
+import UIKit
 @available(iOS 10.0, *)
 extension UICubicTimingParameters: CurveProvider {
 

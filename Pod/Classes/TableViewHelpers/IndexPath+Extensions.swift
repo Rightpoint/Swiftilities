@@ -6,7 +6,8 @@
 //  Copyright © 2017 Swiftilities. All rights reserved.
 //
 
-import Foundation
+#if canImport(UIKit)
+import UIKit
 
 public extension IndexPath {
 
@@ -48,3 +49,5 @@ public extension IndexPath {
     }
 
 }
+
+#endif

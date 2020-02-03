@@ -6,6 +6,7 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import Foundation
 import UIKit
 
@@ -68,3 +69,5 @@ public extension UIImage {
     }
 
 }
+
+#endif

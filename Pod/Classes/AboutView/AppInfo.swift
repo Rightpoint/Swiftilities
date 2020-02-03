@@ -6,7 +6,8 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
-import Foundation
+#if canImport(UIKit)
+import UIKit
 
 enum AppInfo {
 
@@ -64,3 +65,5 @@ enum AppInfo {
     }
 
 }
+
+#endif

@@ -6,6 +6,7 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 /**
@@ -49,3 +50,5 @@ public extension UIWindow {
         }
     }
 }
+
+#endif

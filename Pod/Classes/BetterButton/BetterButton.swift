@@ -6,6 +6,7 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 private struct StyleConstants {
@@ -395,3 +396,5 @@ extension BetterButton.StyleAttributes {
     }
     
 }
+
+#endif

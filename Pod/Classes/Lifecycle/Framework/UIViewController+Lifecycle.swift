@@ -9,6 +9,7 @@
 //  http://khanlou.com/2016/02/many-controllers/ and
 //  http://irace.me/lifecycle-behaviors
 
+#if canImport(UIKit)
 import UIKit
 
 public extension UIViewController {
@@ -29,3 +30,5 @@ public extension UIViewController {
     }
 
 }
+
+#endif

@@ -6,6 +6,7 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 open class AcknowledgementViewController: UIViewController {
@@ -119,3 +120,5 @@ private class VerticalScrollView: UIScrollView {
         NSLayoutConstraint.activate(newConstraints)
     }
 }
+
+#endif

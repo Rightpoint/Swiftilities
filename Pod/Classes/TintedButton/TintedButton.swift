@@ -6,6 +6,7 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 /// A button that looks and behaves like the default "Get" button in iTunes
@@ -100,3 +101,5 @@ private extension TintedButton {
         layer.cornerRadius = buttonCornerRadius
     }
 }
+
+#endif

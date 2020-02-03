@@ -6,6 +6,7 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 /// A basic view that wraps CAGradientLayer
@@ -121,3 +122,5 @@ public class GradientView: UIView {
     }
 
 }
+
+#endif
