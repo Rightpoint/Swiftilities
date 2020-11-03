@@ -76,6 +76,7 @@ workflows:
             tags:
               only: /.*/
       - deploy-to-cocoapods:
+          context: CocoaPods
           requires:
             - test
             - carthage-build
