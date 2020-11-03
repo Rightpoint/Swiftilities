@@ -34,3 +34,7 @@ Carthage
 
 Example/fastlane/report.xml
 Example/fastlane/test_output
+
+# SwiftPM
+.build/
+
