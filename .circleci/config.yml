@@ -23,9 +23,10 @@ jobs:
       - run:
           name: Update Carthage
           command: brew outdated carthage || (brew uninstall carthage --force; HOMEBREW_NO_AUTO_UPDATE=1 brew install carthage --force-bottle)
-      - run:
-          name: Build with Carthage
-          command: carthage build --no-skip-current && test -d Carthage/Build/iOS/Swiftilities.framework
+      # Carthage does not work on Xcode 12 https://github.com/Carthage/Carthage/issues/3019
+      # - run:
+      #     name: Build with Carthage
+      #     command: carthage build --no-skip-current && test -d Carthage/Build/iOS/Swiftilities.framework
 
   deploy-to-cocoapods:
     executor: xcode-12
