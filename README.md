@@ -1,7 +1,7 @@
 # Swiftilities
 
 
-[![Swift 4.2](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://swift.org)
+[![Swift 4.2, 5.1](https://img.shields.io/badge/Swift-4.2,%205.1-orange.svg?style=flat)](https://swift.org)
 [![CircleCI](https://img.shields.io/circleci/project/github/Rightpoint/Swiftilities.svg)](https://circleci.com/gh/Rightpoint/Swiftilities/tree/master)
 [![Version](https://img.shields.io/cocoapods/v/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
 [![License](https://img.shields.io/cocoapods/l/Swiftilities.svg?style=flat)](https://cocoapods.org/pods/Swiftilities)
