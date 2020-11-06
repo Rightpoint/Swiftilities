@@ -6,6 +6,7 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public typealias AccessibilityAnnounceCompletion = (_ anncouncedString: String?, _ success: Bool) -> Void
@@ -85,3 +86,5 @@ public extension UITableView {
     }
 
 }
+
+#endif

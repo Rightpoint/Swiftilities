@@ -35,6 +35,6 @@ Carthage
 Example/fastlane/report.xml
 Example/fastlane/test_output
 
-# SwiftPM
+# Swift Package Manager
+.swiftpm/
 .build/
-

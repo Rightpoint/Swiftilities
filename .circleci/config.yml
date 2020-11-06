@@ -5,6 +5,7 @@ jobs:
     executor: xcode-12
     steps:
       - setup
+      - run: swift test
       - run: bundle exec pod lib lint --swift-version=4.2
       - run: bundle exec pod lib lint --swift-version=5.0
       - run:
@@ -16,7 +17,7 @@ jobs:
   carthage-build:
     executor: xcode-12
     steps:
-      - setup
+      - checkout # We can skip the Ruby gem restoration for Carthage
       - run:
           name: Update homebrew dependencies
           command: brew update 1> /dev/null 2> /dev/null

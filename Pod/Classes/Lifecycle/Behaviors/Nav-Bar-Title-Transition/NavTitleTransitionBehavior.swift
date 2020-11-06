@@ -6,6 +6,9 @@
 //
 //
 
+#if canImport(UIKit)
+import UIKit
+
 public final class NavTitleTransitionBehavior: ViewControllerLifecycleBehavior {
 
     fileprivate var navTitlePositionUpdater: NavTitlePositionUpdater?
@@ -175,3 +178,5 @@ fileprivate extension UINavigationBar {
     }
 
 }
+
+#endif

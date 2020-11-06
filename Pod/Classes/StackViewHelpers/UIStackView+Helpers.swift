@@ -5,6 +5,7 @@
 //  Created by Michael Skiba on 11/17/16.
 //  Copyright © 2016 Raizlabs. All rights reserved.
 
+#if canImport(UIKit)
 import UIKit
 
 public extension UIStackView {
@@ -29,3 +30,5 @@ public extension UIStackView {
     }
 
 }
+
+#endif

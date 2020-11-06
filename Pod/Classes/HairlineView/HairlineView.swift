@@ -6,7 +6,8 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
-import Foundation
+#if canImport(UIKit)
+import UIKit
 
 open class HairlineView: UIView {
 
@@ -124,3 +125,5 @@ open class HairlineView: UIView {
     }
 
 }
+
+#endif

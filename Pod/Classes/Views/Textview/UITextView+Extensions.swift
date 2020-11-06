@@ -6,6 +6,7 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 extension PlaceholderConfigurable where Self: UITextView {
@@ -114,3 +115,5 @@ extension HeightAutoAdjustable where Self: UITextView {
         setContentOffset(bottomOffset, animated: animated)
     }
 }
+
+#endif

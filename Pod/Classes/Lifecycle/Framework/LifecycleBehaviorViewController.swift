@@ -9,6 +9,7 @@
 //  http://khanlou.com/2016/02/many-controllers/ and
 //  http://irace.me/lifecycle-behaviors
 
+#if canImport(UIKit)
 import UIKit
 
 final class LifecycleBehaviorViewController: UIViewController {
@@ -99,3 +100,5 @@ private extension LifecycleBehaviorViewController {
     }
 
 }
+
+#endif

@@ -6,6 +6,7 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit) && canImport(MessageUI)
 import MessageUI
 import UIKit
 
@@ -98,3 +99,5 @@ public extension FeedbackPresenter where Self: UIViewController {
     }
 
 }
+
+#endif

@@ -6,7 +6,8 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
-import Foundation
+#if canImport(UIKit)
+import UIKit
 
 public struct TableSection<SectionType, RowType>: RowContainer {
 
@@ -37,3 +38,5 @@ public extension Collection where Element: RowContainer, Self.Index == Int {
     }
 
 }
+
+#endif

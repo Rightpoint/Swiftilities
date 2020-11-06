@@ -1,6 +1,6 @@
 {
   "name": "Swiftilities",
-  "version": "0.23.0",
+  "version": "0.25.0",
   "summary": "A collection of useful Swift utilities.",
   "swift_versions": [
     "4.2",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/rightpoint/Swiftilities.git",
-    "tag": "0.23.0"
+    "tag": "0.25.0"
   },
   "platforms": {
     "ios": "9.0",

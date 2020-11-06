@@ -6,6 +6,7 @@
 //  Copyright © 2016 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 typealias OriginConstraints = (x: NSLayoutConstraint?, y: NSLayoutConstraint?)
@@ -43,3 +44,5 @@ protocol HeightAutoAdjustable {
     func heightConstraint() -> NSLayoutConstraint
     func adjustHeight()
 }
+
+#endif

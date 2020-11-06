@@ -6,6 +6,8 @@
 //  Copyright © 2017 Raizlabs. All rights reserved.
 //
 
+#if canImport(UIKit)
+import UIKit
 import Swiftilities
 import XCTest
 
@@ -53,3 +55,5 @@ class RootViewControllerTests: XCTestCase {
     }
 
 }
+
+#endif

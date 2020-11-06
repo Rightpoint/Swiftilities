@@ -6,6 +6,9 @@
 //
 //
 
+#if canImport(UIKit)
+import UIKit
+
 public final class NavBarHairlineFadeBehavior: ViewControllerLifecycleBehavior {
 
     fileprivate var navBarHairlineFadeUpdater: NavBarHairlineFadeUpdater
@@ -157,3 +160,5 @@ fileprivate extension NavBarHairlineFadeUpdater {
     }
 
 }
+
+#endif
