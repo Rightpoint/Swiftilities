@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import OSLog
+import os
 
 /**
 *  A simple log that outputs to the console via ```print()```` and also logs to the console with OSLog (if available)
@@ -53,11 +53,11 @@ open class Log {
         }
     }
 
-    public static private(set) var standard = Log("", logLevel: .off)
+    public static private(set) var shared = Log("", logLevel: .off)
 
     /// Static instance used for helper methods.
     open class var instance: Log {
-        return standard
+        return shared
     }
 
     /// Subsystem of the OSLog message when running on iOS 14 or later.
@@ -123,23 +123,9 @@ open class Log {
         let logString = "\(levelString)\(date) \(objectName) \(functionName) line \(line):\n\(object())"
 
         if #available(iOS 14.0, *) {
-            let logger = Logger(subsystem: subsystem, category: name)
             let objectString = "\(object())"
             let logMessage = "\(objectName) \(functionName) line \(line)"
-            switch level {
-            case .verbose:
-                logger.trace("\(logMessage):\n\(objectString, privacy: .private)")
-            case .debug:
-                logger.debug("\(logMessage):\n\(objectString, privacy: .private)")
-            case .info:
-                logger.info("\(logMessage):\n\(objectString, privacy: .private)")
-            case .warn:
-                logger.warning("\(logMessage):\n\(objectString, privacy: .private)")
-            case .error:
-                logger.error("\(logMessage):\n\(objectString, privacy: .private)")
-            case .off:
-                break
-            }
+            osLog(logMessage, objectString: objectString, level: level)
         }
         else {
             let nameString = name.count > 0 ? "[\(name)]]" : ""
@@ -147,6 +133,25 @@ open class Log {
         }
         self.handler?(level, logString)
         Log.globalHandler?(self, level, logString)
+    }
+
+    @available(iOS 14.0, *)
+    internal func osLog(_ logMessage: String, objectString: String, level: Level) {
+        let logger = Logger(subsystem: subsystem, category: name)
+        switch level {
+        case .verbose:
+            logger.trace("\(logMessage):\n\(objectString, privacy: .private)")
+        case .debug:
+            logger.debug("\(logMessage):\n\(objectString, privacy: .private)")
+        case .info:
+            logger.info("\(logMessage):\n\(objectString, privacy: .private)")
+        case .warn:
+            logger.warning("\(logMessage):\n\(objectString, privacy: .private)")
+        case .error:
+            logger.error("\(logMessage):\n\(objectString, privacy: .private)")
+        case .off:
+            break
+        }
     }
 
     // MARK: Public
