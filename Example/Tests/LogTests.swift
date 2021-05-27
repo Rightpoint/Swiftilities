@@ -30,7 +30,7 @@ class LogTests: XCTestCase {
         
         var loggedStrings: [(level: Log.Level, string: String)] = []
         Log.globalHandler = { (log, level, string) in
-            handler.addEntry(log: log, level: level, entry: string)
+            handler.addEntry(log: log, level: level, string: string)
             loggedStrings.append((level: level, string: string))
         }
 

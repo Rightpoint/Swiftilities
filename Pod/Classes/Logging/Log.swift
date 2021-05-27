@@ -138,7 +138,7 @@ open class Log {
             osLog(logMessage, objectString: objectString, level: level)
         }
         else {
-            let nameString = name.count > 0 ? "[\(name)]]" : ""
+            let nameString = name.count > 0 ? "[\(name)]" : ""
             print(nameString + logString + "\n")
         }
         self.handler?(level, logString)

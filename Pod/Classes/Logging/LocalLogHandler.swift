@@ -7,11 +7,31 @@
 
 import Foundation
 
+public protocol LogEntry {
+    /// Category of the Log where this entry was originated from
+    var category: String {get}
+
+    /// Log level of entry.
+    var level: Log.Level {get}
+
+    /// Message sent by Log.
+    var message: String {get}
+
+    /// When Log entry was received
+    var timestamp: Date {get}
+}
+
+extension LogEntry {
+    public func matches(query: String) -> Bool {
+        (message.range(of: query, options: .regularExpression)?.isEmpty ?? true) == false
+    }
+}
+
 /// A handler to collect Log messages locally, and allow for searching and filtering.
 open class LocalLogHandler {
 
-    /// Represents a single entry collected from a Log instance
-    public struct LogEntry {
+    /// Basic implementation of the LogEntry protocol
+    struct Entry: LogEntry {
         /// Category of the Log where this entry was originated from
         var category: String
 
@@ -26,7 +46,7 @@ open class LocalLogHandler {
     }
 
     /// Maximum number of Log entries that may be collected.
-    var size: UInt = 1000
+    public var size: UInt = 1000
 
     private var entries: [LogEntry] = []
 
@@ -39,8 +59,13 @@ open class LocalLogHandler {
     // MARK: Public Methods
 
     /// Intended to be called from the Log.globalHandler to record Log messages.
-    public func addEntry(log: Log, level: Log.Level, entry: String) {
-        entries.append(.init(category: log.name, level: level, message: entry, timestamp: Date()))
+    public func addEntry(log: Log, level: Log.Level, string: String) {
+        addEntry(Entry(category: log.name, level: level, message: string, timestamp: Date()))
+    }
+
+    /// Intended to be called from the Log.globalHandler to record Log messages.
+    public func addEntry(_ entry: LogEntry) {
+        entries.append(entry)
         while entries.count > size {
             entries.remove(at: 0)
         }
@@ -101,5 +126,14 @@ open class LocalLogHandler {
         return entries.filter {
             ($0.message.range(of: query, options: .regularExpression)?.isEmpty ?? true) == false
         }
+    }
+
+    /// Exports Data containing a UTF8 summary of all collected Log entries.
+    public func export() -> Data {
+        var log: String = ""
+        entries.forEach {
+            log += $0.message + "\n"
+        }
+        return Data(log.utf8)
     }
 }
