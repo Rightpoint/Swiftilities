@@ -14,7 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        Log.trace("DefaultBehaviors", type: .begin)
         DefaultBehaviors(behaviors: [LogAppearanceBehavior()]).inject()
+        Log.trace("DefaultBehaviors", type: .end)
         return true
     }
 }

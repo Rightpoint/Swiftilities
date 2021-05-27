@@ -24,6 +24,7 @@ open class Log {
      */
     public enum Level: Int, CaseIterable {
         case verbose
+        case trace
         case debug
         case info
         case warn
@@ -33,6 +34,7 @@ open class Log {
         public var name: String {
             switch self {
             case .verbose: return "Verbose"
+            case .trace: return "Trace"
             case .debug: return "Debug"
             case .info: return "Info"
             case .warn: return "Warn"
@@ -44,6 +46,7 @@ open class Log {
         public var emoji: String {
             switch self {
             case .verbose: return "📖"
+            case .trace: return "🪧"
             case .debug: return "🐝"
             case .info: return "✏️"
             case .warn: return "⚠️"
@@ -53,7 +56,14 @@ open class Log {
         }
     }
 
-    public static private(set) var shared = Log("", logLevel: .off)
+    /// Represents the OSSignpostType when sending trace messages to instruments
+    public enum TraceType {
+        case begin
+        case end
+        case event
+    }
+
+    public static private(set) var shared = Log("Log", logLevel: .off)
 
     /// Static instance used for helper methods.
     open class var instance: Log {
@@ -139,7 +149,7 @@ open class Log {
     internal func osLog(_ logMessage: String, objectString: String, level: Level) {
         let logger = Logger(subsystem: subsystem, category: name)
         switch level {
-        case .verbose:
+        case .trace, .verbose:
             logger.trace("\(logMessage):\n\(objectString, privacy: .private)")
         case .debug:
             logger.debug("\(logMessage):\n\(objectString, privacy: .private)")
@@ -151,6 +161,19 @@ open class Log {
             logger.error("\(logMessage):\n\(objectString, privacy: .private)")
         case .off:
             break
+        }
+    }
+
+    @available(iOS 12.0, *)
+    internal func osSignpost(_ name: StaticString, type: TraceType) {
+        let log = OSLog(subsystem: subsystem, category: self.name)
+        switch type {
+        case .begin:
+            os_signpost(.begin, log: log, name: name)
+        case .end:
+            os_signpost(.end, log: log, name: name)
+        case .event:
+            os_signpost(.event, log: log, name: name)
         }
     }
 
@@ -174,6 +197,13 @@ open class Log {
 
     public func verbose<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
         log(object(), level:.verbose, fileName, functionName, line)
+    }
+
+    public func trace(_ name: StaticString, type: TraceType = .event, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+        log("Trace: \(name)", level: .trace, fileName, functionName, line)
+        if #available(iOS 12.0, *) {
+            osSignpost(name, type: type)
+        }
     }
 }
 
@@ -213,5 +243,9 @@ extension Log {
 
     public static func verbose<T>(_ object: @autoclosure () -> T, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
         instance.log(object(), level:.verbose, fileName, functionName, line)
+    }
+
+    public static func trace(_ name: StaticString, type: TraceType = .event, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
+        instance.trace(name, type: type, fileName, functionName, line)
     }
 }

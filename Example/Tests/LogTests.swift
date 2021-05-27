@@ -38,8 +38,10 @@ class LogTests: XCTestCase {
 
         let localInstance = Log("Local Instance", logLevel: .verbose, useEmoji: true)
 
-        Log.logLevel = .info
+        Log.logLevel = .trace
         Log.useEmoji = true
+
+        Log.trace("tests", type: .begin)
         Log.verbose("Ignore me")
         Log.error("Don't ignore me!")
 
@@ -54,12 +56,14 @@ class LogTests: XCTestCase {
         Loggers.userInterface.info("Button Pressed")
         Loggers.app.warn("Out of Memory")
 
+        Log.trace("tests", type: .end)
+
         // Log messages include the date, which is not conducive to testing,
         // so we just check the end of the logged string.
-        XCTAssertEqual(loggedStrings.count, 6)
-        XCTAssertEqual(loggedStrings[0].level, .error)
-        XCTAssertTrue(loggedStrings[0].string.hasSuffix("Don't ignore me!"))
-        XCTAssertTrue(loggedStrings[1].string.hasSuffix("network info"))
+        XCTAssertEqual(loggedStrings.count, 8)
+        XCTAssertEqual(loggedStrings[1].level, .error)
+        XCTAssertTrue(loggedStrings[1].string.hasSuffix("Don't ignore me!"))
+        XCTAssertTrue(loggedStrings[2].string.hasSuffix("network info"))
         XCTAssertEqual(networkStrings.count, 3)
     }
 }

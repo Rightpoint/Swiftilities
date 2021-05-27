@@ -29,6 +29,7 @@ class NavBarTitleTransitionDemoViewController: UIViewController {
 extension NavBarTitleTransitionDemoViewController {
 
     override func loadView() {
+        Log.trace("NavBarTransition", type: .begin)
         view = UIView()
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -52,6 +53,7 @@ extension NavBarTitleTransitionDemoViewController {
             titleLabel.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             titleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 200),
             ])
+        Log.trace("NavBarTransition", type: .end)
     }
 
 }
