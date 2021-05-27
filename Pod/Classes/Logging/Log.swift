@@ -132,7 +132,7 @@ open class Log {
         let levelString = useEmoji ? level.emoji : "|" + level.name.uppercased() + "|"
         let logString = "\(levelString)\(date) \(objectName) \(functionName) line \(line):\n\(object())"
 
-        if #available(iOS 14.0, *) {
+        if #available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *) {
             let objectString = "\(object())"
             let logMessage = "\(objectName) \(functionName) line \(line)"
             osLog(logMessage, objectString: objectString, level: level)
@@ -145,7 +145,7 @@ open class Log {
         Log.globalHandler?(self, level, logString)
     }
 
-    @available(iOS 14.0, *)
+    @available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *)
     internal func osLog(_ logMessage: String, objectString: String, level: Level) {
         let logger = Logger(subsystem: subsystem, category: name)
         switch level {
@@ -164,7 +164,7 @@ open class Log {
         }
     }
 
-    @available(iOS 12.0, *)
+    @available(macOS 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
     internal func osSignpost(_ name: StaticString, type: TraceType) {
         let log = OSLog(subsystem: subsystem, category: self.name)
         switch type {
@@ -201,7 +201,7 @@ open class Log {
 
     public func trace(_ name: StaticString, type: TraceType = .event, _ fileName: String = #file, _ functionName: String = #function, _ line: Int = #line) {
         log("Trace: \(name)", level: .trace, fileName, functionName, line)
-        if #available(iOS 12.0, *) {
+        if #available(macOS 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *) {
             osSignpost(name, type: type)
         }
     }
