@@ -10,7 +10,7 @@ import Foundation
 import os
 
 /**
-*  A simple log that outputs to the console via ```print()```` and also logs to the console with OSLog (if available)
+*  A simple log that outputs to the console via `print()` and also logs to the console with OSLog (if available)
 */
 open class Log {
 
