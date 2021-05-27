@@ -150,15 +150,15 @@ open class Log {
         let logger = Logger(subsystem: subsystem, category: name)
         switch level {
         case .trace, .verbose:
-            logger.trace("\(logMessage):\n\(objectString, privacy: .private)")
+            logger.trace("\(logMessage):\n\(objectString)")
         case .debug:
-            logger.debug("\(logMessage):\n\(objectString, privacy: .private)")
+            logger.debug("\(logMessage):\n\(objectString)")
         case .info:
-            logger.info("\(logMessage):\n\(objectString, privacy: .private)")
+            logger.info("\(logMessage):\n\(objectString)")
         case .warn:
-            logger.warning("\(logMessage):\n\(objectString, privacy: .private)")
+            logger.warning("\(logMessage):\n\(objectString)")
         case .error:
-            logger.error("\(logMessage):\n\(objectString, privacy: .private)")
+            logger.error("\(logMessage):\n\(objectString)")
         case .off:
             break
         }

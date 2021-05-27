@@ -26,8 +26,11 @@ class LogTests: XCTestCase {
 
     func testLogHandler() {
 
+        let handler = LocalLogHandler()
+        
         var loggedStrings: [(level: Log.Level, string: String)] = []
         Log.globalHandler = { (log, level, string) in
+            handler.addEntry(log: log, level: level, entry: string)
             loggedStrings.append((level: level, string: string))
         }
 
@@ -49,21 +52,26 @@ class LogTests: XCTestCase {
         NetworkLog.verbose("network verbose")
         NetworkLog.debug("network debug")
         NetworkLog.info("network info")
-        NetworkLog.warn("network warning")
-        NetworkLog.error("network error")
+        NetworkLog.warn("Network warning")
+        NetworkLog.error("network ERROR!")
 
         localInstance.warn("Local Instance Warning")
         Loggers.userInterface.info("Button Pressed")
+        Loggers.userInterface.info("Button Released")
         Loggers.app.warn("Out of Memory")
 
         Log.trace("tests", type: .end)
 
         // Log messages include the date, which is not conducive to testing,
         // so we just check the end of the logged string.
-        XCTAssertEqual(loggedStrings.count, 8)
+        XCTAssertEqual(loggedStrings.count, 9)
         XCTAssertEqual(loggedStrings[1].level, .error)
         XCTAssertTrue(loggedStrings[1].string.hasSuffix("Don't ignore me!"))
         XCTAssertTrue(loggedStrings[2].string.hasSuffix("network info"))
         XCTAssertEqual(networkStrings.count, 3)
+
+        XCTAssertEqual(handler.getEntries(level: .error).count, 2)
+        XCTAssertEqual(handler.getEntries("Network", level: .error).count, 1)
+        XCTAssertEqual(handler.search("Button").count, 2)
     }
 }
