@@ -23,12 +23,36 @@ Log levels (from highest to lowest priority):
 - error
 - off
 
+When running on iOS 14 or later, log messages will also be reported to OSLog.
+
 ## Advanced functionality
 
-You can include one custom handler that will get called for any string being logged. Assigning another handler will replace the first.
+You can include one global custom handler that will get called for any string being logged across all Log instances. Assigning another handler will replace the first.
 
 ```swift
-Log.handler = { (level, string) in
+Log.globalHandler = { (log, level, string) in
+    sendToAnalytics((key: level, string: string))
+}
+```
+
+Log messages may be categorized by defining separate instances of the Log class.
+
+```swift
+final class Loggers {
+    static let userInterface = Log("UI", logLevel: .verbose)
+    static let app = Log("App")
+    static let network = Log("Network", logLevel: .error)
+}
+
+Loggers.userInterface.info("Button Pressed")
+Loggers.network.error("Token Expired")
+Loggers.app.warn("Out of Memory")
+```
+
+You may also include one custom handler per Log instance. Messages will still be reported to the global handler as well.
+
+```swift
+Loggers.network.handler = { (level, string) in
     sendToAnalytics((key: level, string: string))
 }
 ```
